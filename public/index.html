@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  SITE SKELETON — draft template
+  ============================================================
+
+  HOW TO EDIT THIS FILE
+
+  1. ADD A TAB
+     Copy any <section class="tab" ...> block in <main>.
+     Give it a new id and a new data-label.
+     The nav bar builds itself from these sections — you never
+     touch the nav markup.
+
+         <section class="tab" id="research" data-label="Research">
+           ... your content ...
+         </section>
+
+  2. REMOVE A TAB
+     Delete its <section> block. That's it.
+
+  3. REORDER TABS
+     Move the <section> blocks up or down. Nav order follows
+     document order.
+
+  4. CHANGE THE THEME
+     Edit data-theme on the <html> tag below.
+     Options: harbor | midnight | rosewood | meadow
+     The picker in the header is a drafting tool for previewing
+     — see step 6 to remove it before publishing.
+
+  5. CHANGE THE SITE NAME
+     Edit .brand-name and .brand-tagline in the header, and the
+     <title> tag.
+
+  6. BEFORE PUBLISHING
+     Delete the element marked <!-- THEME PICKER --> and the
+     "Editing this template" tab.
+
+  ============================================================
+-->
+<html lang="en" data-theme="harbor">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Name</title>
+<meta name="description" content="Short description of the site. Shows up in search results and link previews.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- THEMES ---------------------------------------- */
+/* Each theme is just a set of variables. To make your own,
+   copy a block, rename it, and change the hex values.         */
+
+[data-theme="harbor"] {
+  --bg:#EEF2F5; --surface:#FFFFFF; --ink:#16212A; --muted:#5B6B78;
+  --accent:#16697A; --accent-ink:#FFFFFF; --line:#D8E0E7; --shade:#E3EAEF;
+}
+[data-theme="midnight"] {
+  --bg:#10151B; --surface:#19202A; --ink:#E3E9EF; --muted:#93A2B0;
+  --accent:#57A6C4; --accent-ink:#0B1015; --line:#29323E; --shade:#212A35;
+}
+[data-theme="rosewood"] {
+  --bg:#FAF5F5; --surface:#FFFFFF; --ink:#2A1D20; --muted:#6D5A5E;
+  --accent:#8E3B4B; --accent-ink:#FFFFFF; --line:#EADCDD; --shade:#F3E9E9;
+}
+[data-theme="meadow"] {
+  --bg:#F1F5F0; --surface:#FFFFFF; --ink:#1A241D; --muted:#57685C;
+  --accent:#35704A; --accent-ink:#FFFFFF; --line:#DAE4DA; --shade:#E6EDE5;
+}
+
+/* ---------- TYPE & SPACING -------------------------------- */
+:root {
+  --font-display:'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body:'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, 'SF Mono', monospace;
+  --page:1140px;
+  --measure:70ch;
+  --pad:clamp(1.25rem, 4vw, 3rem);
+  --r:5px;
+}
+
+*, *::before, *::after { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1, h2, h3 {
+  font-family:var(--font-display);
+  font-weight:600;
+  line-height:1.15;
+  margin:0 0 .5em;
+  letter-spacing:-.01em;
+}
+h1 { font-size:clamp(2rem, 5vw, 3rem); }
+h2 { font-size:clamp(1.4rem, 3vw, 1.9rem); margin-top:2.2em; }
+h3 { font-size:1.15rem; margin-top:1.8em; font-weight:600; }
+h2:first-child, h3:first-child { margin-top:0; }
+
+p, ul, ol { max-width:var(--measure); }
+p { margin:0 0 1.1em; }
+ul, ol { margin:0 0 1.1em; padding-left:1.3em; }
+li { margin-bottom:.4em; }
+
+a { color:var(--accent); text-decoration-thickness:1px; text-underline-offset:3px; }
+a:hover { text-decoration-thickness:2px; }
+
+:focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:2px; }
+
+.eyebrow {
+  font-family:var(--font-mono);
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--muted);
+  margin:0 0 .9em;
+}
+
+.lead { font-size:1.15rem; color:var(--muted); max-width:60ch; }
+
+/* ---------- SKIP LINK ------------------------------------- */
+.skip {
+  position:absolute; left:-9999px; top:0; z-index:100;
+  background:var(--accent); color:var(--accent-ink);
+  padding:.6em 1em; border-radius:0 0 var(--r) 0;
+}
+.skip:focus { left:0; }
+
+/* ---------- HEADER ---------------------------------------- */
+.site-head {
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  position:sticky; top:0; z-index:20;
+}
+.head-inner {
+  max-width:var(--page); margin:0 auto; padding:1.1rem var(--pad) 0;
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:1rem 1.5rem;
+}
+.brand { margin-right:auto; }
+.brand-name {
+  font-family:var(--font-display);
+  font-size:1.35rem; font-weight:600; letter-spacing:-.015em;
+  margin:0; line-height:1.2;
+}
+.brand-tagline {
+  font-size:.85rem; color:var(--muted); margin:.15em 0 0; max-width:none;
+}
+
+/* ---------- TAB NAV --------------------------------------- */
+.tabs {
+  max-width:var(--page); margin:0 auto; padding:0 var(--pad);
+  display:flex; gap:.15rem; overflow-x:auto;
+  scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar { display:none; }
+.tab-btn {
+  appearance:none; background:none; border:0;
+  font-family:var(--font-body); font-size:.92rem; font-weight:500;
+  color:var(--muted); cursor:pointer;
+  padding:.85rem 1rem; white-space:nowrap;
+  border-bottom:2px solid transparent;
+  margin-bottom:-1px;
+  transition:color .15s ease, border-color .15s ease;
+}
+.tab-btn:hover { color:var(--ink); }
+.tab-btn[aria-selected="true"] { color:var(--ink); border-bottom-color:var(--accent); }
+
+/* ---------- THEME PICKER (drafting only) ------------------ */
+.theme-pick { display:flex; align-items:center; gap:.5rem; }
+.theme-pick > span {
+  font-family:var(--font-mono); font-size:.68rem;
+  letter-spacing:.1em; text-transform:uppercase; color:var(--muted);
+}
+.swatch {
+  width:20px; height:20px; padding:0; cursor:pointer;
+  border-radius:50%; border:2px solid var(--line);
+  transition:transform .15s ease;
+}
+.swatch:hover { transform:scale(1.15); }
+.swatch[aria-pressed="true"] { border-color:var(--ink); }
+
+/* ---------- CONTENT --------------------------------------- */
+main { max-width:var(--page); margin:0 auto; padding:clamp(2rem,5vw,3.5rem) var(--pad) 5rem; }
+.tab[hidden] { display:none; }
+.tab { animation:rise .3s ease; }
+@keyframes rise { from { opacity:0; transform:translateY(6px); } }
+
+/* ---------- REUSABLE BLOCKS ------------------------------- */
+/* Card grid — for feature lists, link collections, etc.       */
+.grid {
+  display:grid; gap:1rem;
+  grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+  margin:1.8rem 0;
+}
+.card {
+  background:var(--surface); border:1px solid var(--line);
+  border-radius:var(--r); padding:1.4rem;
+}
+.card h3 { margin:0 0 .4em; font-size:1.05rem; }
+.card p { margin:0; font-size:.94rem; color:var(--muted); }
+
+/* Callout — for notes, warnings, asides                       */
+.note {
+  background:var(--shade); border-left:3px solid var(--accent);
+  border-radius:0 var(--r) var(--r) 0;
+  padding:1rem 1.2rem; margin:1.6rem 0; max-width:var(--measure);
+}
+.note p:last-child { margin-bottom:0; }
+
+/* Image with caption                                          */
+figure { margin:1.8rem 0; max-width:var(--measure); }
+figure img { width:100%; height:auto; display:block; border-radius:var(--r); border:1px solid var(--line); }
+figcaption { font-size:.85rem; color:var(--muted); margin-top:.6em; }
+
+/* Placeholder box — delete once you drop in real images       */
+.img-slot {
+  aspect-ratio:16/9; background:var(--shade);
+  border:1px dashed var(--line); border-radius:var(--r);
+  display:grid; place-items:center;
+  font-family:var(--font-mono); font-size:.8rem; color:var(--muted);
+}
+
+blockquote {
+  margin:1.8rem 0; padding-left:1.2rem;
+  border-left:2px solid var(--line);
+  font-family:var(--font-display); font-size:1.15rem; color:var(--muted);
+  max-width:var(--measure);
+}
+
+code {
+  font-family:var(--font-mono); font-size:.87em;
+  background:var(--shade); padding:.15em .4em; border-radius:3px;
+}
+
+table { border-collapse:collapse; width:100%; max-width:var(--measure); margin:1.6rem 0; font-size:.94rem; }
+th, td { text-align:left; padding:.65rem .8rem; border-bottom:1px solid var(--line); }
+th { font-weight:600; font-size:.8rem; text-transform:uppercase; letter-spacing:.06em; color:var(--muted); }
+
+hr { border:0; border-top:1px solid var(--line); margin:2.5rem 0; max-width:var(--measure); }
+
+/* ---------- FOOTER ---------------------------------------- */
+.site-foot {
+  border-top:1px solid var(--line); background:var(--surface);
+  font-size:.85rem; color:var(--muted);
+}
+.foot-inner {
+  max-width:var(--page); margin:0 auto; padding:1.8rem var(--pad);
+  display:flex; flex-wrap:wrap; gap:.5rem 1.5rem; justify-content:space-between;
+}
+.foot-inner p { margin:0; max-width:none; }
+
+/* ---------- RESPONSIVE & MOTION --------------------------- */
+@media (max-width:620px) {
+  body { font-size:16px; }
+  .head-inner { padding-top:.9rem; }
+  .theme-pick { order:3; width:100%; padding-bottom:.4rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  *, *::before, *::after { animation:none !important; transition:none !important; }
+}
+</style>
+</head>
+
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="site-head">
+  <div class="head-inner">
+    <div class="brand">
+      <p class="brand-name">Project Name</p>
+      <p class="brand-tagline">One line describing what this site is for.</p>
+    </div>
+
+    <!-- THEME PICKER — drafting tool. Delete this whole div before publishing. -->
+    <div class="theme-pick" id="themePick">
+      <span>Theme</span>
+    </div>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="Sections"></nav>
+</header>
+
+<main id="content">
+
+  <!-- ======================= TAB ======================= -->
+  <section class="tab" id="home" data-label="Home">
+    <p class="eyebrow">Section one</p>
+    <h1>A headline that says what this is</h1>
+    <p class="lead">The opening paragraph. Two or three sentences telling a first-time visitor what they're looking at and why they should keep reading.</p>
+
+    <p>Body text goes here. This paragraph is capped at a comfortable reading width so lines don't stretch across a wide monitor. You can <a href="#about">link between tabs</a> using the tab's id, and those links work as shareable URLs.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Card one</h3>
+        <p>Cards work well for a set of parallel items — features, links, people, categories.</p>
+      </div>
+      <div class="card">
+        <h3>Card two</h3>
+        <p>The grid reflows on its own. Add or remove cards freely without touching the layout.</p>
+      </div>
+      <div class="card">
+        <h3>Card three</h3>
+        <p>Delete a card by removing its div. Add one by copying an existing block.</p>
+      </div>
+    </div>
+
+    <h2>A second-level heading</h2>
+    <p>Use these to break a long tab into scannable chunks.</p>
+
+    <div class="note">
+      <p>This is a callout. Use it for anything the reader shouldn't skim past — a deadline, a caveat, a key instruction.</p>
+    </div>
+  </section>
+
+  <!-- ======================= TAB ======================= -->
+  <section class="tab" id="about" data-label="About">
+    <p class="eyebrow">Section two</p>
+    <h1>About</h1>
+    <p class="lead">Each tab is a plain block of HTML. Write in it the way you'd write in a document.</p>
+
+    <h2>Lists</h2>
+    <ul>
+      <li>Unordered lists for items with no inherent order</li>
+      <li>Numbered lists when sequence actually matters</li>
+      <li>Keep items short enough to scan</li>
+    </ul>
+
+    <h2>A quote</h2>
+    <blockquote>Pull quotes get the display face, so they read as a deliberate break from body text rather than an accident.</blockquote>
+
+    <h2>A table</h2>
+    <table>
+      <thead>
+        <tr><th>Column</th><th>Column</th><th>Column</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Row one</td><td>Value</td><td>Value</td></tr>
+        <tr><td>Row two</td><td>Value</td><td>Value</td></tr>
+        <tr><td>Row three</td><td>Value</td><td>Value</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ======================= TAB ======================= -->
+  <section class="tab" id="images" data-label="Images">
+    <p class="eyebrow">Section three</p>
+    <h1>Images</h1>
+    <p class="lead">Two ways to get pictures onto the page, depending on where we are in the process.</p>
+
+    <h2>While drafting</h2>
+    <p>Right now this is a single file with nothing beside it, so an image has to come from a web address:</p>
+    <figure>
+      <div class="img-slot">image goes here</div>
+      <figcaption>Replace this placeholder div with a real image tag.</figcaption>
+    </figure>
+    <p>Swap the placeholder for <code>&lt;img src="https://..." alt="Describe the image"&gt;</code>. The <code>alt</code> text isn't optional — it's what a screen reader announces, and what shows if the image fails to load.</p>
+
+    <h2>Once we publish</h2>
+    <p>When this becomes a real repo, images live in an <code>assets/img/</code> folder and the path shortens to <code>assets/img/filename.jpg</code>. Send me the files at that point and I'll wire them in.</p>
+
+    <div class="note">
+      <p>Photos straight off a phone are often 4&ndash;8 MB, which makes a page crawl. I'll resize anything you send before it goes live.</p>
+    </div>
+  </section>
+
+  <!-- ======================= TAB ======================= -->
+  <!-- Delete this entire section before publishing. -->
+  <section class="tab" id="editing" data-label="Editing this template">
+    <p class="eyebrow">Remove before publishing</p>
+    <h1>Editing this template</h1>
+    <p class="lead">Everything you need to change is near the top of the file or inside a labelled block.</p>
+
+    <h2>Add a tab</h2>
+    <p>Copy any <code>&lt;section class="tab"&gt;</code> block, give it a fresh <code>id</code> and a new <code>data-label</code>. The nav bar reads the sections and rebuilds itself, so there's no second place to update.</p>
+
+    <h2>Remove or reorder a tab</h2>
+    <p>Delete the section, or move it up or down among the others. Nav order follows the order of the sections in the file.</p>
+
+    <h2>Change the theme</h2>
+    <p>The swatches in the header are for previewing only — they don't save. Once you've settled on one, set it permanently by editing <code>data-theme</code> on the <code>&lt;html&gt;</code> tag at the top of the file.</p>
+    <p>The four themes are just variable sets in the stylesheet. If none of them fit, tell me the mood you're after and I'll build one.</p>
+
+    <h2>Blocks you can reuse</h2>
+    <ul>
+      <li><code>.grid</code> with <code>.card</code> children &mdash; parallel items</li>
+      <li><code>.note</code> &mdash; callouts</li>
+      <li><code>figure</code> &mdash; images with captions</li>
+      <li><code>blockquote</code>, <code>table</code>, <code>hr</code> &mdash; standard</li>
+      <li><code>.eyebrow</code> &mdash; the small label above a heading</li>
+      <li><code>.lead</code> &mdash; the larger intro paragraph</li>
+    </ul>
+
+    <h2>Before it goes live</h2>
+    <ul>
+      <li>Delete the theme picker div, marked in the header</li>
+      <li>Delete this tab</li>
+      <li>Update the <code>&lt;title&gt;</code> and the description meta tag</li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <p>&copy; <span id="yr"></span> Project Name</p>
+    <p>Draft &mdash; not yet published</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  var THEMES = ['harbor', 'midnight', 'rosewood', 'meadow'];
+  var SWATCH = { harbor:'#16697A', midnight:'#19202A', rosewood:'#8E3B4B', meadow:'#35704A' };
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var nav  = document.getElementById('tabs');
+  var pick = document.getElementById('themePick');
+
+  /* ---- build the nav from the sections present ---- */
+  tabs.forEach(function (sec) {
+    var b = document.createElement('button');
+    b.className = 'tab-btn';
+    b.type = 'button';
+    b.textContent = sec.dataset.label || sec.id;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-controls', sec.id);
+    b.addEventListener('click', function () {
+      location.hash = sec.id;
+    });
+    nav.appendChild(b);
+  });
+  nav.setAttribute('role', 'tablist');
+  var btns = Array.prototype.slice.call(nav.children);
+
+  /* ---- show one tab, hide the rest ---- */
+  function show(id) {
+    var found = tabs.some(function (s) { return s.id === id; });
+    if (!found) { id = tabs[0].id; }
+
+    tabs.forEach(function (s, i) {
+      var on = s.id === id;
+      s.hidden = !on;
+      btns[i].setAttribute('aria-selected', on ? 'true' : 'false');
+      btns[i].tabIndex = on ? 0 : -1;
+    });
+
+    var active = btns[tabs.findIndex(function (s) { return s.id === id; })];
+    if (active && active.scrollIntoView) {
+      active.scrollIntoView({ block:'nearest', inline:'nearest' });
+    }
+  }
+
+  /* ---- arrow-key navigation across the tab strip ---- */
+  nav.addEventListener('keydown', function (e) {
+    var i = btns.indexOf(document.activeElement);
+    if (i === -1) { return; }
+    var next = null;
+    if (e.key === 'ArrowRight') { next = (i + 1) % btns.length; }
+    if (e.key === 'ArrowLeft')  { next = (i - 1 + btns.length) % btns.length; }
+    if (e.key === 'Home')       { next = 0; }
+    if (e.key === 'End')        { next = btns.length - 1; }
+    if (next === null) { return; }
+    e.preventDefault();
+    btns[next].focus();
+    btns[next].click();
+  });
+
+  /* ---- theme preview swatches (no saving — drafting aid) ---- */
+  if (pick) {
+    THEMES.forEach(function (name) {
+      var s = document.createElement('button');
+      s.className = 'swatch';
+      s.type = 'button';
+      s.style.background = SWATCH[name];
+      s.title = name;
+      s.setAttribute('aria-label', 'Preview ' + name + ' theme');
+      s.setAttribute('aria-pressed', String(document.documentElement.dataset.theme === name));
+      s.addEventListener('click', function () {
+        document.documentElement.dataset.theme = name;
+        pick.querySelectorAll('.swatch').forEach(function (o) {
+          o.setAttribute('aria-pressed', String(o.title === name));
+        });
+      });
+      pick.appendChild(s);
+    });
+  }
+
+  window.addEventListener('hashchange', function () {
+    show(location.hash.slice(1));
+  });
+
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  show(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
