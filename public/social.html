@@ -9,6 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Public+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<style>
+  .soon { color:var(--muted); font-style:italic; }
+  .link-list .soon-row { display:flex; justify-content:space-between; gap:1rem; padding:.8rem .25rem; color:var(--muted); }
+  .d-code { font-weight:600; color:var(--ink); }
+</style>
 </head>
 <body>
 <a class="skip" href="#content">Skip to content</a>
@@ -16,16 +21,17 @@
 <main id="content">
   <p class="eyebrow">Class events</p>
   <h1>Social</h1>
-  <p class="lead">Events, traditions, and where the photos end up.</p>
+  <p class="lead">Class events and shared photo albums.</p>
 
-  <h2>Photo repositories</h2>
+  <h2>Photo albums</h2>
   <ul class="link-list">
-    <li><a href="#"><span>Example: White coat ceremony</span><span class="lk-note">Google Photos</span></a></li>
-    <li><a href="#"><span>Example: Class shared album</span><span class="lk-note">Google Photos</span></a></li>
+    <li><span class="soon-row"><span>Class of 2030 shared albums</span><span>Coming soon</span></span></li>
   </ul>
 
-  <h2>Standing events</h2>
-  <p>Anything with a firm date belongs in <code>data.js</code> so it appears in the countdown. Use this page for the recurring stuff &mdash; regular gatherings, group chats, who to contact.</p>
+  <h2>Events</h2>
+  <ul class="link-list">
+    <li><span class="soon-row"><span>Class gatherings and group chats</span><span>Coming soon</span></span></li>
+  </ul>
 </main>
 <footer class="site-foot" data-foot></footer>
 <script src="assets/data.js"></script>
