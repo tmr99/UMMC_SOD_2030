@@ -98,14 +98,14 @@ const COURSES = [
     code: "DENT 600A / 600B",
     name: "Gross Anatomy – Osteology",
     instructor: "Dr. Yuefeng Lu · ylu3@umc.edu · R735",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-600.docx",
     note: "Tuesdays 1–5pm, 7A / SOM 324. One competency exam on 9/22, practical and written, with 70% required on each. Repeat attempts are allowed, but remediated scores cap at 70. Written is 10% of 600A; practical is 15% of 600B. Texts: Liebgott ch. 6; McMinn's atlas."
   },
   {
     code: "DENT 601A",
     name: "Microscopic & Developmental Anatomy – Lecture",
     instructor: "Dr. Dongmei Cui · dcui@umc.edu · N-710A",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-601.pdf",
     note: "3 credits. Mon & Wed 8am–12pm, SM 326. Four exams at 25% each, no final. Optional bonus quizzes add points to that block's written score. Texts: Junqueira's Basic Histology 17e; Cui, Histology from a Clinical Perspective 2e."
   },
   {
@@ -119,56 +119,56 @@ const COURSES = [
     code: "DENT 604",
     name: "Biochemistry",
     instructor: "Dr. Drazen Raucher · draucher@umc.edu · 601-984-1510",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-604.docx",
     note: "6 credits. MWF 1–3pm, R354. Four block exams average to 75% of the grade; the comprehensive final is 25%. Exams are on ExamSoft, so scores post on submission. Text: Lippincott Illustrated Reviews: Biochemistry 9e, free through the UMMC library."
   },
   {
     code: "DENT 607-1",
     name: "Basic Life Support",
     instructor: "Dr. Laura Asbill · lasbill@umc.edu · D403-14",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-607.docx",
     note: "1 credit, one afternoon. Group A on 8/25, Group B on 9/1, both 1–5pm at the Training Center, 3rd floor of the medical school. Requires 84% on the AHA written exam plus a practical pass. An existing BLS card does not exempt you; the hours count toward graduation."
   },
   {
     code: "DENT 617-1",
     name: "Biomedical Literature",
     instructor: "Dr. Sarah Adcock · scadcock@umc.edu · Rowland Library U108",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-617.docx",
     note: "1 credit. One session on 8/13, 1–3pm in D113; bring a laptop. Two Canvas quizzes and a reflection are due 8/17, 70 points total."
   },
   {
     code: "DENT 619",
     name: "Materials Science",
     instructor: "Dr. Yuanyuan Duan · yduan@umc.edu · D528-04",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-619.docx",
     note: "3 credits, continuing into spring. Four fall lectures (10/20, 10/29, 11/5, 11/12). All four exams are in the spring semester, dates TBA. An in-class Canvas quiz at every lecture counts for 5% combined. Exam 1 is 38% of the course grade."
   },
   {
     code: "DENT 620-1A / 1B",
     name: "Dental Morphology & Occlusion",
     instructor: "Dr. James Lott · jrlott@umc.edu",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-620.docx",
     note: "4 + 5 credits. Tue 9am, Thu 1pm, Fri 8am in D113/D114, Bench, and Sim. 1A and 1B must be passed separately. Lecture: three exams (80%) plus 8–12 unannounced quizzes (20%, lowest dropped, no make-ups). Lab: waxing exercises 2–6 (30%), tooth ID exam (30%), quadrant occlusal waxing (25%), impressions and casts (15%). Grades are recorded to hundredths."
   },
   {
     code: "DENT 622-1",
     name: "Problem-Oriented Dentistry",
     instructor: "Dr. William Boteler · wboteler@umc.edu",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-622.docx",
     note: "3 credits. Mostly M/W 3–4:50pm in D113, ending 10/21. Five quizzes (25%), midterm (25%), final (25%), plus the dental photographs project. All readings, handouts, and slides are testable."
   },
   {
     code: "DENT 623-1",
     name: "Clinical Problem Solving I",
     instructor: "Scott Phillips · smphillips@umc.edu",
-    syllabus: "",
-    note: "6 credits. Tuesday mornings in the SOD clinics. No fixed exam dates. Compliance Office online training and quizzes must be completed by the medical center deadline to pass the course."
+    syllabus: "assets/syllabi/dent-623.docx",
+    note: "6 credits. Tuesday mornings Grand Round (R154). No fixed exam dates. Compliance Office online training and quizzes must be completed by the medical center deadline to pass the course."
   },
   {
     code: "DENT 642-1",
     name: "Ethics & Professional Identity",
     instructor: "Dr. Kristin Nalls · knalls@umc.edu · D503-04",
-    syllabus: "",
+    syllabus: "assets/syllabi/dent-642.pdf",
     note: "1 credit, five Tuesday sessions 1–3pm in D113. No exams; graded on the Professional Identity and Career Readiness Portfolio and its components. Pre-lecture work is due 11:59pm the night before each session; post-lecture work is due one week after. A missed session requires an alternative assignment."
   }
 ];
