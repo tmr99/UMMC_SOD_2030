@@ -10,24 +10,24 @@
    course, exam, desc — what shows on the page
 
    If a file hasn't been uploaded yet, its row shows
-   "Not uploaded yet" instead of a broken link.
+   "Coming soon" instead of a broken link.
    ============================================================ */
 
 const STUDY_GUIDES = [
   {
-    course: "Histology",
+    course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
     exam:   "Exam 1",
     file:   "histology-exam-1.html",
     desc:   "Cell Biology I and II, epithelium, exocrine glands, connective tissue, cartilage and bone, muscle, and nervous tissue. Identify, classify, and function drills on lecture micrographs, comparison tables, and a 100-question practice exam."
   },
   {
-    course: "Biochemistry",
+    course: "DENT 604 – Biochemistry",
     exam:   "Exam I",
     file:   "biochem-exam-1.html",
     desc:   "Thermodynamics and bonding, acid-base, amino acids and proteins, carbohydrates, and nucleic acids. Topic quizzes, worked calculations, a pH slider for side-chain charge, and a build-your-own practice exam."
   },
   {
-    course: "Dental Morphology",
+    course: "DENT 620-1 – Dental Morphology & Occlusion",
     exam:   "Exam 1",
     file:   "morphology-exam-1.html",
     desc:   "Tooth morphology and occlusion review."
@@ -86,7 +86,7 @@ const STUDY_GUIDES = [
       })
       .catch(function () {
         row.classList.add('is-missing');
-        row.querySelector('.guide-open').textContent = 'Not uploaded yet';
+        row.querySelector('.guide-open').textContent = 'Coming soon';
       });
   });
 })();
