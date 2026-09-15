@@ -2489,8 +2489,8 @@ e:"&Delta;G&deg;' = &minus;1.36 &times; logKeq = &minus;1.36 &times; log(4) = &m
 {t:"thermo",q:"If &Delta;G&deg;' for the reaction A + B &rarr; C + D is &minus;1.2 kcal/mol, what is Keq?",o:["0.08","2.76","7.63","363","Cannot be determined"],a:2,
 e:"Keq = 10^(&minus;&Delta;G&deg;'/1.36) = 10^(1.2/1.36) = 10^0.882 = 7.63. A negative &Delta;G&deg;' must give Keq greater than 1, so 0.08 is out on inspection."},
 
-{t:"thermo",q:"&Delta;G&deg;' for the isomerization of fructose 6-phosphate to glucose 6-phosphate is &minus;0.4 kcal/mol. What is &Delta;G if [F6P] = 0.04 M and [G6P] = 0.01 M?",o:["+0.42 kcal/mol","&minus;1.00 kcal/mol","&minus;1.23 kcal/mol","+1.23 kcal/mol","Cannot be determined"],a:0,
-e:"The keyed answer is +0.42, obtained as &minus;0.4 + 1.36 &times; log(0.04/0.01) = &minus;0.4 + 1.36 &times; 0.602 = +0.42. <strong>Be careful with this one:</strong> that arithmetic treats F6P as the product, while the stem names G6P as the product &mdash; taking the stem literally gives &minus;0.4 + 1.36 &times; log(0.01/0.04) = &minus;1.22, which is option C. The 2025 key says +0.42. If a question like this appears, write out which species is the product before you compute, and consider asking Dr. Logan which direction she intends."},
+{t:"thermo",q:"&Delta;G&deg;' for the isomerization of fructose 6-phosphate to glucose 6-phosphate is &minus;0.4 kcal/mol. What is &Delta;G if [F6P] = 0.04 M and [G6P] = 0.01 M?",o:["+0.42 kcal/mol","&minus;1.00 kcal/mol","&minus;1.23 kcal/mol","+1.23 kcal/mol","Cannot be determined"],a:2,
+e:"G6P is the product, so &Delta;G = &minus;0.4 + 1.36 &times; log([G6P]/[F6P]) = &minus;0.4 + 1.36 &times; log(0.25) = &minus;0.4 &minus; 0.82 = &minus;1.23 kcal/mol. <strong>This exact problem has run all three years with the concentrations swapped:</strong> 2023 had [F6P] 0.04 / [G6P] 0.01 &rarr; &minus;1.22, 2024 had them reversed &rarr; +0.42, and 2025 returned to &minus;1.23. Both values sit in the option list every year, so reading the concentrations backwards lands you on a lettered answer instead of on nothing. Write down which species is the product before you touch the calculator."},
 
 {t:"thermo",q:"Glucose + Pi &rarr; glucose 6-phosphate is +3.3 kcal/mol and ATP &rarr; ADP + Pi is &minus;7.3 kcal/mol. What is &Delta;G&deg;' for the coupled reaction glucose + ATP &rarr; glucose 6-phosphate + ADP?",o:["+4.0 kcal/mol","&minus;4.0 kcal/mol","+10.6 kcal/mol","&minus;10.6 kcal/mol","Cannot be determined"],a:1,
 e:"Thermodynamics is additive: (+3.3) + (&minus;7.3) = &minus;4.0 kcal/mol. Both steps are already written in the direction they run, so no sign flips are needed. The 10.6 options come from subtracting instead of adding."},
@@ -2789,9 +2789,10 @@ NOTES.hbcol = `
     <p style="margin-bottom:0">Organization runs <strong>&alpha;-chain &rarr; collagen molecule &rarr; collagen fibril &rarr; collagen fiber</strong>. Fibrils align in a <strong>"quarter staggered"</strong> arrangement, each displaced longitudinally from its neighbor by slightly less than one quarter of its length &mdash; which is what gives collagen its <strong>banded appearance</strong> in connective tissue.</p>
   </div>
 
-  <div class="box warn">
-    <h4>A handedness discrepancy worth knowing about</h4>
-    <p style="margin-bottom:0">This deck states that the three &alpha;-chains "form individual <strong>right</strong> handed helices." Most textbooks, Lippincott included, teach the opposite convention: each individual &alpha;-chain is a <strong>left</strong>-handed helix, and the three wind together into a <strong>right</strong>-handed superhelix. On the 2025 exam this never had to be resolved &mdash; the false option was false because it said "two polypeptide chains," not because of the handedness. If a question turns on handedness alone, it is worth asking Dr.&nbsp;Anderson which convention she wants.</p>
+  <div class="box key">
+    <h4>On handedness &mdash; settled by the past exams</h4>
+    <p>This deck states that the three &alpha;-chains "form individual <strong>right</strong> handed helices." Most textbooks, Lippincott included, use the opposite convention: each individual &alpha;-chain is <strong>left</strong>-handed, winding into a <strong>right</strong>-handed superhelix.</p>
+    <p style="margin-bottom:0">The exams resolve which one this course grades on. In <strong>2024</strong>, "three polypeptide &alpha;-chains that form individual right-handed helices" appeared as an option in a find-the-false-statement question and was <em>not</em> the false one &mdash; so the course treats right-handed as correct. In <strong>2025</strong> the false option said "<strong>two</strong> polypeptide alpha-chains," and the chain count is what makes it false. Practical rule: <strong>three chains is always the discriminator; never eliminate an option on handedness alone.</strong></p>
   </div>
 
   <h4>Collagen types</h4>
