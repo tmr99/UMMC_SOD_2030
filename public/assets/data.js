@@ -19,7 +19,8 @@ const NAV = [
   { label: "Courses",    href: "courses.html"   },
   { label: "Key Dates",  href: "dates.html"     },
   { label: "Social",     href: "social.html"    },
-  { label: "Resources",  href: "resources.html" }
+  { label: "Resources",  href: "resources.html" },
+  { label: "Study Guides", href: "study-guides.html" }
 ];
 
 
