@@ -13,12 +13,12 @@
    "Coming soon" instead of a broken link.
    ============================================================ */
 
-const STUDY_GUIDES = [
-  {
-    course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
-    exam:   "Exam 1",
-    file:   "histology-exam-1.html",
-    desc:   "Cell Biology I and II, epithelium, exocrine glands, connective tissue, cartilage and bone, muscle, and nervous tissue. Identify, classify, and function drills on lecture micrographs, comparison tables, and a 100-question practice exam."
+const STUDY_GUIDES = [ 
+   {
+    course: "DENT 600A – Osteology",
+    exam:   "Skull ID/ Written",
+    file:   "osteology-2026",
+    desc:   "Skull structures and articulations"
   },
   {
     course: "DENT 604 – Biochemistry",
