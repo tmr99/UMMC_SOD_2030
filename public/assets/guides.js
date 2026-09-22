@@ -22,8 +22,8 @@ const STUDY_GUIDES = [
   },
     {
     course: "DENT 600A – Osteology",
-    exam:   "Skull ID/ Written",
-    file:   "study-guides/osteology-practical-guide.pdf",
+    exam:   "Practical Guide",
+    file:   "osteology-practical-guide.pdf",
     desc:   "Skull Structures Practical Guide"
   },
     {
