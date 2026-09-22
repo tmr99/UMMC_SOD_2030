@@ -21,6 +21,12 @@ const STUDY_GUIDES = [
     desc:   "Skull structures and articulations"
   },
     {
+    course: "DENT 600A – Osteology",
+    exam:   "Skull ID/ Written",
+    file:   "study-guides/osteology-practical-guide.pdf",
+    desc:   "Skull Structures Practical Guide"
+  },
+    {
     course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
     exam:   "Exam 1",
     file:   "histology-exam-1.html",
