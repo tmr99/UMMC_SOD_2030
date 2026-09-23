@@ -44,7 +44,7 @@ const STUDY_GUIDES = [
     file:   "morphology-exam-1.html",
     desc:   "Tooth morphology and occlusion review."
   },
- {
+  {
     course: "DENT 620-1 – Dental Morphology & Occlusion",
     exam:   "Exam 2",
     file:   "morphology-exam2.html",
