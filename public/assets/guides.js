@@ -45,7 +45,13 @@ const STUDY_GUIDES = [
     desc:   "Tooth morphology and occlusion review."
   }
 ];
-
+ {
+    course: "DENT 620-1 – Dental Morphology & Occlusion",
+    exam:   "Exam 2",
+    file:   "morphology-exam2.html",
+    desc:   "Tooth ID, Muscles of Mastication, Dental Anomolies, and General Tooth Morphology"
+  }
+];
 
 /* ---- page machinery: no need to edit below here ---------- */
 (function () {
