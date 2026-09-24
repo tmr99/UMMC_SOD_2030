@@ -177,6 +177,22 @@ td:first-child{font-family:var(--ui);font-weight:500;font-size:14px}
 .flowimg{margin-top:14px;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
 .flowimg img{display:block;width:100%}
 
+/* contact map */
+.maplegend{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--ui);font-size:12.5px;color:var(--ink-2);margin:0 0 12px}
+.maplegend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.maparch{font-family:var(--ui);font-weight:600;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin:18px 0 8px}
+.mapgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(172px,1fr));gap:10px}
+.mapcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:10px 10px 8px;text-align:left;width:100%}
+.mapcard:hover{border-color:var(--accent)}
+.mapcard h4{font-family:var(--ui);font-size:13.5px;font-weight:600;margin:0 0 4px}
+.mapcard svg{display:block;width:100%;height:auto}
+.mapcard .cap{font-family:var(--mono);font-size:10.5px;color:var(--muted);line-height:1.45;margin-top:4px;min-height:30px}
+.mapcard.hid .cap{visibility:hidden}
+/* grid drill */
+.grid td.cell{padding:4px 6px}
+.cellbtn{width:100%;min-width:74px;border:1px dashed var(--line);background:var(--card-2);border-radius:6px;padding:6px 8px;font-family:var(--ui);font-size:12.5px;color:var(--muted);text-align:center}
+.cellbtn.on{border-style:solid;border-color:var(--accent);background:var(--accent-soft);color:var(--accent-ink);font-weight:500}
+.grid th{white-space:normal}
 /* gallery */
 .gal-group{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;margin-bottom:12px}
 .gal-group h3{font-family:var(--ui);font-size:14.5px;margin:0 0 10px;display:flex;gap:10px;align-items:baseline}
@@ -275,7 +291,7 @@ const UNITS = [
       ["Mand lateral","Incisal third","Incisal third","Cervical third","Cervical third","Triangle","Triangular"],
       ["Mand canine","Incisal third","Junction I/M","Cervical third","Cervical third","Triangle","Asymmetric diamond"],
       ["Mand 1st PM","Middle third","Middle third","Cervical third","Middle third","Rhomboid","Diamond"],
-      ["Mand 2nd PM","Middle third","Middle third","Cervical third","Middle/occlusal third","Rhomboid","Square / pentagon"]
+      ["Mand 2nd PM","Middle third","Middle third","Cervical third","Occlusal third","Rhomboid","Square / pentagon"]
     ]},
     rules:["Maxillary premolars from the mesial are trapezoids; mandibular premolars are rhomboids (crowns tilt lingually).","Mesial and distal contacts sit at the same level on the mandibular central and lateral (both incisal third) and on both maxillary premolars (both middle third)."]},
     {h:"Maxillary central incisor", figs:[["perm/t8_facial","#8 facial"],["perm/t8_proximal","#8 proximal"],["perm/t8_incisal","#8 incisal"]],
@@ -992,6 +1008,116 @@ const REAL = [
 const TYPO_TEETH = [8,7,6,5,13,14,2,16,24,23,27,28,29,30,31,32];
 const TYPO_VIEWS = {8:["facial","proximal","incisal"],7:["facial","lingual","proximal","incisal"],6:["facial","lingual","proximal","incisal"],5:["buccal","mesial","occlusal","distal"],13:["buccal","lingual","mesial","occlusal"],14:["buccal","mesial","distal","lingual","occlusal"],2:["buccal","mesial","distal","lingual","occlusal"],16:["buccal","mesial","distal","occlusal"],24:["facial","lingual","proximal","incisal"],23:["facial","lingual","mesial","distal","incisal"],27:["facial","lingual","proximal","incisal"],28:["buccal","lingual","mesial","distal","occlusal"],29:["buccal","lingual","mesial","distal","occlusal"],30:["buccal","lingual","mesial","distal","occlusal"],31:["buccal","lingual","mesial","distal","occlusal"],32:["buccal","lingual","mesial","distal","occlusal"]};
 
+const SHEET=[["Features:", "Maxillary Central Incisors", "Maxillary Lateral Incisors", "Mandibular Central Incisors", "Mandibular Lateral Incisors", "Maxillary Canines", "Mandibular Canines", "Maxillary 1st Pre-moalr", "Maxillary 2nd Pre-molar", "Mandibular 1st Pre-molar", "Mandiular 2nd Pre-molar", "\u2014", "\u2014", "\u2014", "\u2014"], ["Facial HOC", "Cervical", "Cervical", "Cervical", "Cervical", "Cervical", "cervical", "cervical third or junction of cervical/middle", "cervical third", "cervical", "cervical", "\u2014", "\u2014", "\u2014", "\u2014"], ["Lingual HOC", "Cervical", "Cervical", "Cervical", "Cervical", "Cervical", "cervical", "middle", "middle", "middle", "occlusal", "\u2014", "\u2014", "\u2014", "\u2014"], ["Mesial HOC", "Incisal", "Junction of Incisal/middle", "incisal", "Incisal", "jumction of incisal/midle", "incisal", "middle", "middle", "middle", "middle", "\u2014", "\u2014", "\u2014", "\u2014"], ["Distal HOC", "Incisal", "middle", "incisal", "Incisal", "middle", "middle", "middle", "middle", "middle", "middle", "\u2014", "\u2014", "\u2014", "\u2014"], ["Eruption", "7\u20138", "8\u20139", "6\u20137", "8\u20139", "11\u201312", "9\u201310", "10\u201311", "10\u201312", "10\u201312", "11\u201312", "\u2014", "\u2014", "\u2014", "\u2014"], ["Root Completetion", "10\u201311", "11", "9", "10", "13-15", "12\u201314", "12\u201313", "12\u201314", "12\u201313", "13-14", "\u2014", "\u2014", "\u2014", "\u2014"], ["Incisal Edge Position", "in line with root", "in line with root", "leans towards lingual", "leans towards lingual", "slightly facial", "slightly lingual", "in line with roots", "in line with root", "buccal cusp in line with root lingual cusp in line iwth lingual border of root", "buccal cusp NOT centered over root", "\u2014", "\u2014", "\u2014", "\u2014"], ["Mesial or distal side longer?", "relatively even", "relatively even", "relatively even", "mesial slighty longer", "disal cusp ridge longer", "distal cusp ridge longer", "mesial cusp slope longer", "distal cusp slope longer", "distal cusp ridge longer", "\u2014", "\u2014", "\u2014", "\u2014", "\u2014"], ["Wider LL or MD?", "wider mesiodistally", "wider mesiodistally", "wider labiolingually", "wider labiolingudally", "wider labiolingually", "wider labiolingually", "wider buccolingudally", "wider buccolingually", "wider buccolingually", "wider buccolingually", "\u2014", "\u2014", "\u2014", "\u2014"], ["# of Roots", "1", "1", "1", "1", "1", "1 (can be bifurcated)", "2 (bifurcated)", "1", "1", "1", "\u2014", "\u2014", "\u2014", "\u2014"], ["Root apex blunt or sharp", "blunt", "blunt", "sharp", "sharp", "blunt", "sharp", "\u2014", "\u2014", "sharp", "\u2014", "\u2014", "\u2014", "\u2014", "\u2014"], ["root concavity?", "none", "none", "yes- more prominent on distal", "yes", "yes -more prominent on distal", "yes- more prominent than maxillary", "yes- mesial concavity extents onto cervical third of crown", "yes- deeper on distal", "\u2014", "\u2014", "\u2014", "\u2014", "\u2014", "\u2014"], ["Root curvature", "straight", "curves towards distal in apical third", "straigth", "slight distal curve in apical third", "can be straight, curved mesial, or curved distal (most commone)", "relatively straigth", "two roots located bucco lingually", "relatively straight", "apex slightly distal", "apex slighly distal", "\u2014", "\u2014", "\u2014", "\u2014"], ["# Cups", "0", "0", "0", "0", "1 cuspid", "1 cuspid", "bicuspid", "bicuspid", "bicuspid", "2 (H or U shaped) or 3 cusps (3 more common -Y shaped)", "\u2014", "\u2014", "\u2014", "\u2014"], ["# Lobes", "4", "4", "4", "4", "4", "4", "4", "4", "4", "4 or 5", "\u2014", "\u2014", "\u2014", "\u2014"], ["Developmental Grooves?", "none(developmental depressions)", "none(developmental depressions)", "none(developmental depressions)", "none", "none", "none", "mesial marginal developmental groove & central devleopmental groove (1/2 of crown)", "central developmental groove(smaller taking up 1/3 of crown)", "mesiolingual developmental groove", "3 cusps= lingual developmental groove", "\u2014", "\u2014", "\u2014", "\u2014"], ["Facial Shape", "Trapezoidal (longer on incisal)", "Trapezoidal (longer on insisal)", "Trapezoidal (longer on incisal)", "Trapezoidal (longer on incisal)", "Trapezoidal (longer on incisal)", "Trapezoidal (longer on incisal)", "Trapezoidal (longer on incisal)", "Trapezoidal (longer on incisal)", "trapezoidal (longer on incisal)", "trapezoidal (longer on incisal)", "\u2014", "\u2014", "\u2014", "\u2014"], ["Proximal Shape", "Triangular", "Triangular", "Triangular", "Triangular", "Triangular", "Triangular", "Trapezoidal (longer on cervical)", "Trapezoidal (longer on cervical)", "rhombodial", "rhombodial", "\u2014", "\u2014", "\u2014", "\u2014"]];
+/* ============ Contacts & heights of contour ============ */
+/* loc codes: I incisal third · IM junction incisal/middle · O occlusal third · OM junction occlusal/middle · M middle third · C cervical third · N none */
+const HOC_ROWS = [
+ // name, universal # for photos, ant?, mesial contact, distal contact, facial HOC, lingual HOC, crown, root, MD, FL, note
+ {n:"Max central",   t:8,  ant:1, mc:"I",  dc:"IM", fh:"C", lh:"C", cr:10.5, rt:13,  md:8.5, fl:7},
+ {n:"Max lateral",   t:7,  ant:1, mc:"IM", dc:"M",  fh:"C", lh:"C", cr:9,    rt:13,  md:6.5, fl:6},
+ {n:"Max canine",    t:6,  ant:1, mc:"IM", dc:"M",  fh:"C", lh:"C", cr:10,   rt:17,  md:7.5, fl:8},
+ {n:"Max 1st PM",    t:5,  ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:8.5,  rt:14,  md:7,   fl:9, note:"Facial HOC: cervical third, or at the cervical/middle junction."},
+ {n:"Max 2nd PM",    t:4,  ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:8.5,  rt:14,  md:7,   fl:9},
+ {n:"Max 1st molar", t:3,  ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:7.5,  rt:"B 12 / L 13", md:10, fl:11, note:"Distal contact more centered buccolingually than the mesial."},
+ {n:"Max 2nd molar", t:2,  ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:7,    rt:"B 11 / L 12", md:9,  fl:11},
+ {n:"Max 3rd molar", t:1,  ant:0, mc:"M",  dc:"N",  fh:"C", lh:"M", cr:6.5,  rt:11,  md:null, fl:null, note:"No distal contact — nothing behind it."},
+ {n:"Mand central",  t:25, ant:1, mc:"I",  dc:"I",  fh:"C", lh:"C", cr:9.5,  rt:12.5,md:5,   fl:6},
+ {n:"Mand lateral",  t:26, ant:1, mc:"I",  dc:"I",  fh:"C", lh:"C", cr:9.5,  rt:14,  md:5.5, fl:6.5, note:"Distal contact slightly lower than the mesial, but still in the incisal third."},
+ {n:"Mand canine",   t:27, ant:1, mc:"I",  dc:"IM", fh:"C", lh:"C", cr:11,   rt:16,  md:7,   fl:7.5, note:"Your spreadsheet lists the distal contact as middle third; the tooth chart says junction of incisal/middle."},
+ {n:"Mand 1st PM",   t:28, ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:8.5,  rt:14,  md:7,   fl:7.5},
+ {n:"Mand 2nd PM",   t:29, ant:0, mc:"M",  dc:"M",  fh:"C", lh:"O", cr:8,    rt:14.5,md:7,   fl:8, note:"The only tooth on your chart with the lingual HOC in the occlusal third — big lingual cusps."},
+ {n:"Mand 1st molar",t:30, ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:7.5,  rt:14,  md:11,  fl:10.5, note:"Lecture: mesial contact in the middle third near the occlusal-third junction; distal contact centered in the middle third, on the distal cusp."},
+ {n:"Mand 2nd molar",t:31, ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:7,    rt:13,  md:10.5,fl:10},
+ {n:"Mand 3rd molar",t:32, ant:0, mc:"M",  dc:"M",  fh:"C", lh:"M", cr:7,    rt:11,  md:null, fl:null}
+];
+const LOC_NAME = {I:"Incisal third", IM:"Junction of incisal & middle thirds", O:"Occlusal third", OM:"Junction of occlusal & middle thirds", M:"Middle third", C:"Cervical third", N:"No contact"};
+
+const HOC_UNIT = {
+  id:"hoc", code:"00", title:"Contacts & Heights of Contour",
+  short:"Contacts & HOC",
+  source:"Your tooth-anatomy spreadsheet · tooth chart · Mandibular 1st Molar lecture",
+  special:"hoc",
+  blurb:"Sixteen teeth, four locations each, plus four measurements. It looks like 128 separate facts, but almost all of it collapses into five rules. Learn the rules, memorize the handful of exceptions, then drill the grid until it's automatic.",
+  sections:[
+    {h:"The five rules that cover almost everything", rules:[
+      "1 · Facial height of contour is in the CERVICAL THIRD on every permanent tooth. (Maxillary premolars can sit at the cervical/middle junction.)",
+      "2 · Lingual height of contour: anteriors CERVICAL third (it's the cingulum); posteriors MIDDLE third. One exception on your chart: mandibular 2nd premolar, OCCLUSAL third.",
+      "3 · Anterior contacts sit in the incisal third or at the incisal/middle junction. Posterior contacts sit in the MIDDLE third, mesial and distal alike.",
+      "4 · Going from mesial to distal on a tooth, the contact either stays level or drops cervically — the distal contact is never more incisal than the mesial.",
+      "5 · Mandibular incisors are the flat line: both contacts in the incisal third. Maxillary anteriors step down: central I → I/M, lateral and canine I/M → middle. Mandibular canine: I → I/M."
+    ]},
+    {h:"The only contact values you actually have to memorize", table:{head:["Tooth","Mesial contact","Distal contact","Memory hook"],rows:[
+      ["Max central","Incisal third","Junction I/M","Starts highest in the arch, drops one step"],
+      ["Max lateral","Junction I/M","Middle third","One step lower than the central, both sides"],
+      ["Max canine","Junction I/M","Middle third","Same as the lateral"],
+      ["Mand central","Incisal third","Incisal third","Flat — both at the incisal edge"],
+      ["Mand lateral","Incisal third","Incisal third","Flat — distal a hair lower, still incisal third"],
+      ["Mand canine","Incisal third","Junction I/M","Same pattern as the MAXILLARY central"],
+      ["Every premolar and molar","Middle third","Middle third","Level (max 3rd molar has no distal contact)"]
+    ]},
+    callout:"Pairs where mesial and distal sit at the same level: both mandibular incisors (incisal third) and every premolar and molar (middle third). That's the answer to the 'contacts at the same level' question on the old exam."},
+    {h:"Heights of contour, whole arch", table:{head:["Group","Facial HOC","Lingual HOC","Why"],rows:[
+      ["All anteriors","Cervical third","Cervical third","Cervical ridge facially; cingulum lingually"],
+      ["Maxillary premolars","Cervical third (or C/M junction)","Middle third","Lingual cusp bulges in the middle"],
+      ["Mandibular 1st premolar","Cervical third","Middle third","Small lingual cusp"],
+      ["Mandibular 2nd premolar","Cervical third","OCCLUSAL third","Big lingual cusps push the bulge up"],
+      ["All molars","Cervical third","Middle third","Buccal cervical ridge; lingual convexity mid-crown"]
+    ]},
+    rules:["Proximal heights of contour ARE the contact areas — your spreadsheet's 'Mesial HOC' and 'Distal HOC' rows are the same data as the contacts.","From the proximal view, the facial and lingual heights of contour protect the gingiva; a too-bulky or too-flat restoration here is a clinical error, which is why they get tested."]},
+    {h:"Dimensions (mm) — crown length · root length · MD · FL", table:{head:["Tooth","Crown","Root","MD","FL","Wider"],rows:[
+      ["Max central","10.5","13","8.5","7","MD"],["Max lateral","9","13","6.5","6","MD"],["Max canine","10","17","7.5","8","FL"],
+      ["Max 1st PM","8.5","14","7","9","FL"],["Max 2nd PM","8.5","14","7","9","FL"],
+      ["Max 1st molar","7.5","B 12 / L 13","10","11","FL"],["Max 2nd molar","7","B 11 / L 12","9","11","FL"],["Max 3rd molar","6.5","11","—","—",""],
+      ["Mand central","9.5","12.5","5","6","FL"],["Mand lateral","9.5","14","5.5","6.5","FL"],["Mand canine","11","16","7","7.5","FL"],
+      ["Mand 1st PM","8.5","14","7","7.5","FL"],["Mand 2nd PM","8","14.5","7","8","FL"],
+      ["Mand 1st molar","7.5","14","11","10.5","MD"],["Mand 2nd molar","7","13","10.5","10","MD"],["Mand 3rd molar","7","11","—","—",""]
+    ]}},
+    {h:"Dimension patterns that save memorizing", rules:[
+      "Wider MD than FL: only the maxillary central and lateral, and the mandibular molars. Everything else is wider FL.",
+      "Every premolar is 7 mm mesiodistally. Maxillary premolars are 9 mm FL; mandibular premolars 7.5 (1st) and 8 (2nd).",
+      "Both maxillary premolars are identical: 8.5 crown · 14 root · 7 MD · 9 FL.",
+      "Crown lengths: mandibular canine is the longest (11), then maxillary central (10.5), then maxillary canine (10). Molar crowns shrink going back (maxillary 7.5 → 7 → 6.5).",
+      "Root lengths: maxillary canine longest (17), mandibular canine next (16). Maxillary molars have a longer lingual root than buccal (by 1 mm).",
+      "Extremes: smallest MD = mandibular central (5); largest MD = mandibular 1st molar (11); largest FL = maxillary molars (11).",
+      "Mandibular central and lateral share a crown length (9.5); the lateral is ½ mm wider both ways and has a longer root (14 vs 12.5)."
+    ]},
+    {h:"Where your sources disagree", rules:[
+      "Maxillary central distal contact: spreadsheet says incisal third; the tooth chart (and the standard answer) says junction of incisal and middle thirds. Use the chart.",
+      "Mandibular canine distal contact: spreadsheet says middle third; the chart says junction of incisal and middle thirds. Use the chart — and remember it matches the maxillary central's pattern.",
+      "Maxillary 1st premolar facial HOC: listed as 'cervical third or junction of cervical/middle' in both sources — either phrasing should be accepted."
+    ]}
+  ],
+  traps:[
+    ["Distal is never higher","If an answer puts a distal contact more incisal/occlusal than the mesial on the same tooth, it's wrong."],
+    ["Lingual HOC switches at the premolars","Anteriors: cervical third (cingulum). Posteriors: middle third. Mandibular 2nd premolar: occlusal third."],
+    ["Facial HOC never moves","Cervical third on every tooth. If the question is about FACIAL height of contour, 'cervical third' is almost always it."],
+    ["Maxillary central vs mandibular canine","Identical contact pattern: mesial incisal third, distal junction I/M."],
+    ["Lateral vs canine (maxillary)","Identical contact pattern: mesial junction I/M, distal middle third."],
+    ["MD vs FL","Only maxillary incisors and mandibular molars are wider MD. Maxillary canine and all maxillary molars are wider FL."],
+    ["Max 3rd molar has no distal contact","Easy free question if it shows up."]
+  ],
+  kinds:[["loc","Contacts & HOC"],["dim","Dimensions"],["pattern","Rules & patterns"]],
+  questions:[
+    {kind:"pattern",q:"On which surface is the height of contour in the cervical third for every permanent tooth?",o:["Facial","Lingual","Mesial","Distal"],a:0,e:"Rule 1. Lingual changes between anteriors (cervical) and posteriors (middle)."},
+    {kind:"pattern",q:"The lingual height of contour of anterior teeth is in the cervical third because of the:",o:["Marginal ridges","Cingulum","Lingual fossa","Incisal ridge"],a:1,e:"The cingulum is the lingual bulge."},
+    {kind:"pattern",q:"The lingual height of contour of most posterior teeth is in the:",o:["Cervical third","Middle third","Occlusal third","Junction of cervical and middle thirds"],a:1,e:"Mandibular 2nd premolar is the exception (occlusal third) on your chart."},
+    {kind:"pattern",q:"Which tooth has its lingual height of contour in the occlusal third on your chart?",o:["Maxillary 1st premolar","Mandibular 1st premolar","Mandibular 2nd premolar","Mandibular 1st molar"],a:2,e:"Its large lingual cusps push the lingual bulge occlusally."},
+    {kind:"pattern",q:"Which anterior teeth have BOTH proximal contacts in the incisal third?",o:["Maxillary central and lateral","Mandibular central and lateral","Maxillary and mandibular canines","Mandibular central and canine"],a:1,e:"The mandibular incisors are the 'flat line'."},
+    {kind:"pattern",q:"Which maxillary anterior teeth have the distal contact in the middle third?",o:["Central and lateral","Lateral and canine","Central and canine","Only the canine"],a:1,e:"The central's distal contact is at the incisal/middle junction."},
+    {kind:"pattern",q:"Which two teeth share the contact pattern 'mesial incisal third, distal junction of incisal and middle thirds'?",o:["Maxillary central and mandibular canine","Maxillary lateral and maxillary canine","Mandibular central and lateral","Maxillary canine and mandibular canine"],a:0,e:"A nice pairing to remember."},
+    {kind:"pattern",q:"Moving from mesial to distal on the same tooth, the contact area:",o:["Always rises occlusally","Stays level or moves cervically","Always moves cervically by one third","Is unrelated"],a:1,e:"Rule 4 — the distal contact is never more incisal/occlusal than the mesial."},
+    {kind:"pattern",q:"Where are the proximal contacts of the permanent premolars and molars?",o:["Occlusal third","Junction of occlusal and middle thirds, both sides","Middle third, both sides","Mesial middle, distal cervical"],a:2,e:"Per your chart. The mandibular 1st molar lecture refines the mesial as 'middle third near the occlusal junction'."},
+    {kind:"pattern",q:"Which tooth has no distal contact?",o:["Maxillary 3rd molar","Mandibular 2nd molar","Maxillary canine","Mandibular 1st premolar"],a:0,e:"Last tooth in the arch — the chart lists 'None'. (Same applies to a mandibular 3rd molar clinically, but the chart only marks the maxillary one.)"},
+    {kind:"pattern",q:"Which teeth are wider mesiodistally than faciolingually?",o:["Maxillary incisors and mandibular molars","Maxillary incisors and maxillary molars","All anteriors","Mandibular incisors and mandibular molars"],a:0,e:"Mandibular incisors are wider labiolingually (5 × 6, 5.5 × 6.5)."},
+    {kind:"pattern",q:"What is the MD crown width of every permanent premolar on your chart?",o:["6.5 mm","7 mm","7.5 mm","8 mm"],a:1,e:"All four premolars: 7 mm."},
+    {kind:"pattern",q:"Which tooth has the largest MD crown dimension?",o:["Maxillary 1st molar","Mandibular 1st molar","Maxillary central","Mandibular 2nd molar"],a:1,e:"11 mm. The maxillary 1st molar is 10 MD but 11 FL."},
+    {kind:"pattern",q:"The maxillary 1st molar's roots, by length:",o:["Buccal 13, lingual 12","Buccal 12, lingual 13","All 13","Buccal 14, lingual 12"],a:1,e:"Lingual root 1 mm longer. The 2nd molar is B 11 / L 12."},
+    {kind:"pattern",q:"On the mandibular 1st molar, the distal contact is:",o:["Smaller than the mesial, on the DB cusp","On the distal cusp, centered over the distal root, larger and broader than the mesial","At the junction of occlusal and middle thirds, on the DL cusp","In the cervical third"],a:1,e:"From the lecture's distal-view slide."},
+    {kind:"pattern",q:"Viewed occlusally, posterior proximal contacts generally lie:",o:["Lingual to center","Buccal to center","Exactly centered","At the lingual line angle"],a:1,e:"That's why posterior lingual embrasures are larger."},
+    {kind:"pattern",q:"Which pair has contacts at the same level mesially and distally?",o:["Maxillary central and maxillary canine","Mandibular central and maxillary 2nd premolar","Maxillary lateral and mandibular canine","Maxillary canine and mandibular canine"],a:1,e:"Mandibular central: incisal/incisal. Maxillary 2nd premolar: middle/middle."}
+  ]
+};
+
 
 /* ============ helpers ============ */
 const $ = s => document.querySelector(s);
@@ -1056,6 +1182,42 @@ const ID_NOTES = {
 };
 function noteFor(code){ const t=parse(code); return ID_NOTES[(t.dent==='D'?'D':t.arch==='max'?'P':'M')+t.pos]||''; }
 
+/* ============ HOC unit: insert first, generate questions, add spreadsheet tables ============ */
+const longName = n => n.replace(/^Max /,'Maxillary ').replace(/^Mand /,'Mandibular ').replace(' PM',' premolar');
+const LOC_SHORT = {I:'Incisal ⅓',IM:'I/M junction',O:'Occlusal ⅓',OM:'O/M junction',M:'Middle ⅓',C:'Cervical ⅓',N:'None'};
+function rowSummary(r){ return `${longName(r.n)}: mesial contact ${LOC_NAME[r.mc].toLowerCase()}, distal ${LOC_NAME[r.dc].toLowerCase()}; facial HOC ${LOC_NAME[r.fh].toLowerCase()}, lingual HOC ${LOC_NAME[r.lh].toLowerCase()}.`+(r.note?' '+r.note:''); }
+(function(){
+  const u=HOC_UNIT;
+  const F={mc:'MESIAL contact',dc:'DISTAL contact',fh:'FACIAL height of contour',lh:'LINGUAL height of contour'};
+  HOC_ROWS.forEach(r=>['mc','dc','fh','lh'].forEach(f=>{
+    let keys = r.ant ? ['I','IM','M','C'] : ['O','OM','M','C'];
+    if(r[f]==='N') keys=['O','M','C','N'];
+    const o=keys.map(k=>LOC_NAME[k]);
+    u.questions.push({kind:'loc',q:`${longName(r.n)} — where is the ${F[f]}?`,o,a:keys.indexOf(r[f]),e:rowSummary(r)});
+  }));
+  const D={cr:['crown length',1],rt:['root length',1],md:['mesiodistal crown diameter',1],fl:['faciolingual crown diameter',1]};
+  Object.keys(D).forEach(f=>{
+    const col=[...new Set(HOC_ROWS.map(r=>r[f]).filter(v=>typeof v==='number'))];
+    HOC_ROWS.forEach(r=>{ const v=r[f]; if(typeof v!=='number') return;
+      let cand=[...new Set([...col,v-1,v-.5,v+.5,v+1])].filter(x=>x!==v&&x>0).sort((a,b)=>Math.abs(a-v)-Math.abs(b-v)).slice(0,5);
+      const pick=shuffle(cand,rng('dim'+f+r.n)).slice(0,3); const opts=[v,...pick].sort((a,b)=>a-b);
+      u.questions.push({kind:'dim',q:`${longName(r.n)} — average ${D[f][0]} on your chart?`,o:opts.map(x=>x+' mm'),a:opts.indexOf(v),e:`${longName(r.n)}: crown ${r.cr}, root ${r.rt}, MD ${r.md??'—'}, FL ${r.fl??'—'} mm.`});
+    });
+  });
+  UNITS.unshift(u);
+  UNITS.forEach((x,i)=>x.code=String(i+1).padStart(2,'0'));
+  UNITS.find(x=>x.id==='toothid').kinds=[['written','Written'],['real','Real teeth'],['typo','Typodont photos']];
+  // spreadsheet tables into the anteriors/premolars unit
+  const names=['Max central','Max lateral','Mand central','Mand lateral','Max canine','Mand canine','Max 1st PM','Max 2nd PM','Mand 1st PM','Mand 2nd PM'];
+  const row=lbl=>{ const r=SHEET.find(x=>x[0].toLowerCase().startsWith(lbl)); return r?r.slice(1,11):names.map(()=>'—'); };
+  const cols=(labels)=>labels.map(l=>row(l));
+  const mk=(h,heads,labels)=>{ const c=cols(labels); return {h, table:{head:['Tooth',...heads],rows:names.map((n,i)=>[n,...c.map(col=>col[i]||'—')])}}; };
+  const ant=UNITS.find(x=>x.id==='antpm');
+  ant.sections.splice(2,0,
+    mk('Your spreadsheet — crown features',['Incisal edge / cusp vs root','Longer side','Wider','Cusps','Lobes','Grooves','Facial shape','Proximal shape'],['incisal edge','mesial or distal','wider','# cu','# lob','developmental','facial shape','proximal shape']),
+    mk('Your spreadsheet — roots and timing',['Roots','Apex','Concavity','Curvature','Eruption (y)','Root complete (y)'],['# of roots','root apex','root concavity','root curvature','eruption','root comp']));
+})();
+
 /* ============ build photo questions into the tooth-ID unit ============ */
 (function(){
   const u = UNITS.find(x=>x.id==='toothid');
@@ -1074,7 +1236,7 @@ function noteFor(code){ const t=parse(code); return ID_NOTES[(t.dent==='D'?'D':t
 
 /* ============ state + persistence ============ */
 const STORE='morph-exam2-v1';
-const state = { unit:UNITS[0].id, view:'notes', answers:{}, exam:null, examAns:{}, searching:false, scope:null, examLen:20, examMode:'random', idKind:'all', tree:'incisors', path:[], galHide:false };
+const state = { kf:{}, order:{}, mapHide:false, mapRev:new Set(), gridCols:'loc', gridRev:new Set(), gridOrder:null, unit:UNITS[0].id, view:'notes', answers:{}, exam:null, examAns:{}, searching:false, scope:null, examLen:20, examMode:'random', idKind:'all', tree:'incisors', path:[], galHide:false };
 try{ const s=JSON.parse(localStorage.getItem(STORE)||'null'); if(s&&s.answers) state.answers=s.answers; }catch(e){}
 function save(){ try{ localStorage.setItem(STORE, JSON.stringify({answers:state.answers})); }catch(e){} }
 
@@ -1123,11 +1285,11 @@ function renderPractice(u){
   const s=unitStats(u);
   let list=u.questions.map((q,i)=>({q,i}));
   let chips='';
-  if(u.special==='toothid'){
-    const c=k=>u.questions.filter(q=>q.kind===k).length;
-    chips=`<div class="chips">${[['all','Everything',u.questions.length],['written','Written',c('written')],['real','Real teeth',c('real')],['typo','Typodont photos',c('typo')]].map(([k,l,n])=>`<button class="btn ${state.idKind===k?'solid':''}" data-kind="${k}">${l} (${n})</button>`).join('')}<button class="btn" data-act="shuffleid">Shuffle order</button></div>`;
-    if(state.idKind!=='all') list=list.filter(x=>x.q.kind===state.idKind);
-    if(state.idOrder && state.idOrder.length===u.questions.length) list=state.idOrder.map(i=>list.find(x=>x.i===i)).filter(Boolean);
+  if(u.kinds){
+    const c=k=>u.questions.filter(q=>q.kind===k).length, cur=state.kf[u.id]||'all';
+    chips=`<div class="chips">${[['all','Everything',u.questions.length],...u.kinds.map(([k,l])=>[k,l,c(k)])].map(([k,l,n])=>`<button class="btn ${cur===k?'solid':''}" data-kind="${k}">${l} (${n})</button>`).join('')}<button class="btn" data-act="shuffleid">Shuffle order</button></div>`;
+    if(cur!=='all') list=list.filter(x=>x.q.kind===cur);
+    const ord=state.order[u.id]; if(ord && ord.length===u.questions.length) list=ord.map(i=>list.find(x=>x.i===i)).filter(Boolean);
   }
   const bar=`<div class="qbar"><span class="stat"><b>${s.done}</b>/${s.total} answered</span><span class="stat"><b>${s.right}</b> correct${s.done?' · '+Math.round(s.right/s.done*100)+'%':''}</span><span class="meter"><i style="width:${s.total?s.done/s.total*100:0}%"></i></span><button class="btn" data-act="reset">Reset this set</button></div>`;
   return chips+bar+list.map((x,n)=>qHTML(x.q,u.id+':'+x.i,n,state.answers[u.id]||{})).join('');
@@ -1159,6 +1321,50 @@ function renderGallery(){
   let html=`<div class="chips"><button class="btn ${state.galHide?'solid':''}" data-act="galhide">${state.galHide?'Show labels':'Hide labels (self-test)'}</button><span class="sublabel" style="margin:0">Tap any photo to enlarge — with labels hidden, the enlarged view still shows the answer.</span></div>`;
   html+=TYPO_TEETH.map(n=>`<div class="gal-group"><h3><span class="num">${state.galHide?'#?':'#'+n}</span>${state.galHide?'Name this tooth':esc(fullName('P'+n).replace(/ \(#\d+\)/,''))}</h3><div class="gal-row">`+TYPO_VIEWS[n].map(v=>`<button class="fig" data-lb="perm/t${n}_${v}" data-cap="${esc(fullName('P'+n))} — ${v} view"><img src="${IMG['perm/t'+n+'_'+v]}" alt=""><span>${esc(cap(n,v))}</span></button>`).join('')+`</div></div>`).join('');
   html+=`<div class="gal-group"><h3><span class="num">Real</span>Student practice set — extracted teeth</h3><div class="gal-row" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">`+REAL.map(([k,code])=>`<button class="fig" data-lb="${k}" data-cap="${esc(fullName(code))}"><img src="${IMG[k]}" alt="" style="height:170px"><span>${state.galHide?'?':esc(fullName(code))}</span></button>`).join('')+`</div></div>`;
+  return html;
+}
+
+/* ============ contact map ============ */
+const LOC_Y={I:16,O:16,IM:31,OM:31,M:46,C:76};
+function toothSVG(r,hide){
+  const crown=(x,label,lk,rk,lc,rc)=>{
+    let g=`<rect x="${x}" y="4" width="54" height="90" rx="9" fill="var(--card-2)" stroke="var(--line)" stroke-width="1.5"/>`+
+      `<line x1="${x}" y1="34" x2="${x+54}" y2="34" stroke="var(--line)" stroke-dasharray="3 3"/><line x1="${x}" y1="64" x2="${x+54}" y2="64" stroke="var(--line)" stroke-dasharray="3 3"/>`+
+      `<text x="${x+27}" y="108" text-anchor="middle" font-size="9" fill="var(--muted)" font-family="IBM Plex Mono,monospace">${label}</text>`;
+    if(!hide){ const yl=LOC_Y[r[lk]], yr=LOC_Y[r[rk]];
+      if(yl&&yr) g+=`<line x1="${x}" y1="${yl}" x2="${x+54}" y2="${yr}" stroke="var(--muted)" stroke-width="1" opacity=".5"/>`;
+      if(yl) g+=`<circle cx="${x}" cy="${yl}" r="6" fill="${lc}"/><text x="${x}" y="${yl+3}" text-anchor="middle" font-size="7.5" fill="#fff" font-family="Archivo,sans-serif" font-weight="700">${lk==='mc'?'M':'F'}</text>`;
+      if(yr) g+=`<circle cx="${x+54}" cy="${yr}" r="6" fill="${rc}"/><text x="${x+54}" y="${yr+3}" text-anchor="middle" font-size="7.5" fill="#fff" font-family="Archivo,sans-serif" font-weight="700">${rk==='dc'?'D':'L'}</text>`;
+      else g+=`<text x="${x+54}" y="50" text-anchor="middle" font-size="8" fill="var(--muted)">none</text>`;
+    }
+    return g; };
+  const top=r.ant?'incisal':'occlusal';
+  return `<svg viewBox="0 0 150 114" role="img" aria-label="${esc(r.n)} contacts and heights of contour"><text x="4" y="12" font-size="7" fill="var(--muted)" font-family="IBM Plex Mono,monospace" transform="rotate(-90 4 12)"></text>`+
+    crown(10,'contacts','mc','dc','var(--accent)','var(--gold)')+crown(86,'HOC (proximal)','fh','lh','#5b6fb5','#a0527a')+
+    `</svg>`;
+}
+function renderMap(){
+  let html=`<div class="callout">Each card shows two crowns with the ${'incisal/occlusal'} edge at the top and dashed lines marking thirds. Left crown (facial view): mesial and distal contacts. Right crown (proximal view): facial and lingual heights of contour. The slope of the line is the point — watch where it tilts and where it stays flat.</div>`;
+  html+=`<div class="chips"><button class="btn ${state.mapHide?'solid':''}" data-act="maphide">${state.mapHide?'Show all dots':'Hide dots — quiz me'}</button>${state.mapHide?`<span class="sublabel" style="margin:0">Say all four locations out loud, then tap the card to check.</span>`:''}</div>`;
+  html+=`<div class="maplegend"><span><i style="background:var(--accent)"></i>Mesial contact</span><span><i style="background:var(--gold)"></i>Distal contact</span><span><i style="background:#5b6fb5"></i>Facial HOC</span><span><i style="background:#a0527a"></i>Lingual HOC</span></div>`;
+  const card=r=>{ const hid=state.mapHide&&!state.mapRev.has(r.n);
+    return `<button class="mapcard ${hid?'hid':''}" data-map="${esc(r.n)}"><h4>${esc(r.n)}</h4>${toothSVG(r,hid)}<div class="cap">M ${LOC_SHORT[r.mc]} · D ${LOC_SHORT[r.dc]}<br>F ${LOC_SHORT[r.fh]} · L ${LOC_SHORT[r.lh]}</div></button>`; };
+  html+=`<div class="maparch">Maxillary</div><div class="mapgrid">${HOC_ROWS.filter(r=>r.t<=16).map(card).join('')}</div>`;
+  html+=`<div class="maparch">Mandibular</div><div class="mapgrid">${HOC_ROWS.filter(r=>r.t>16).map(card).join('')}</div>`;
+  return html;
+}
+/* ============ grid drill ============ */
+const GRID_SETS={loc:[['mc','Mesial contact'],['dc','Distal contact'],['fh','Facial HOC'],['lh','Lingual HOC']],dim:[['cr','Crown'],['rt','Root'],['md','MD'],['fl','FL']]};
+function cellVal(r,f){ const v=r[f]; if(f==='mc'||f==='dc'||f==='fh'||f==='lh') return LOC_SHORT[v]; return v==null?'—':v+(typeof v==='number'?' mm':''); }
+function renderGrid(){
+  const cols=state.gridCols==='both'?[...GRID_SETS.loc,...GRID_SETS.dim]:GRID_SETS[state.gridCols];
+  const rows=state.gridOrder?state.gridOrder.map(i=>HOC_ROWS[i]):HOC_ROWS;
+  const total=rows.length*cols.length, shown=rows.reduce((a,r)=>a+cols.filter(([f])=>state.gridRev.has(r.n+'|'+f)).length,0);
+  let html=`<div class="callout">Cover-the-answer practice. Say the value, tap the cell to check. Work a whole column at a time — it's the fastest way to see the rules.</div>`;
+  html+=`<div class="chips">${[['loc','Contacts & HOC'],['dim','Dimensions'],['both','Everything']].map(([k,l])=>`<button class="btn ${state.gridCols===k?'solid':''}" data-gc="${k}">${l}</button>`).join('')}<button class="btn" data-act="gshuffle">${state.gridOrder?'Arch order':'Shuffle rows'}</button><button class="btn" data-act="gall">Reveal all</button><button class="btn" data-act="gnone">Hide all</button><span class="stat" style="font-family:var(--mono);font-size:12px;color:var(--ink-2)">${shown}/${total} revealed</span></div>`;
+  html+=`<section class="sec"><div class="tblwrap" style="margin:0"><table class="grid"><thead><tr><th>Tooth</th>${cols.map(([,l])=>`<th>${l}</th>`).join('')}</tr></thead><tbody>`+
+    rows.map(r=>`<tr><td>${esc(r.n)}</td>${cols.map(([f])=>{ const k=r.n+'|'+f, on=state.gridRev.has(k); return `<td class="cell"><button class="cellbtn ${on?'on':''}" data-cell="${esc(k)}">${on?esc(cellVal(r,f)):'?'}</button></td>`; }).join('')}</tr>`).join('')+
+    `</tbody></table></div></section>`;
   return html;
 }
 
@@ -1219,6 +1425,7 @@ function render(){
   const u=UNITS.find(x=>x.id===state.unit), s=unitStats(u);
   const tabs=[['notes','Study notes','']];
   if(u.special==='toothid'){ tabs.push(['walk','Flowchart walkthrough','']); tabs.push(['gallery','Photo gallery','']); }
+  if(u.special==='hoc'){ tabs.push(['map','Contact map','']); tabs.push(['grid','Grid drill','']); }
   tabs.push(['traps','Watch out',u.traps.length]); tabs.push(['practice','Practice',s.done+'/'+s.total]);
   stage.innerHTML=`<div class="uhead"><span class="code">UNIT ${u.code}</span><h1>${esc(u.title)}</h1><span class="src">${esc(u.source)}</span><p class="blurb">${esc(u.blurb)}</p></div>
     <div class="segs">${tabs.map(([k,l,n])=>`<button class="seg ${state.view===k?'on':''}" data-v="${k}">${l}${n!==''?`<span class="n">${n}</span>`:''}</button>`).join('')}</div><div id="body"></div>`;
@@ -1227,6 +1434,8 @@ function render(){
   else if(state.view==='traps') body.innerHTML=renderTraps(u);
   else if(state.view==='walk') body.innerHTML=renderWalk();
   else if(state.view==='gallery') body.innerHTML=renderGallery();
+  else if(state.view==='map') body.innerHTML=renderMap();
+  else if(state.view==='grid') body.innerHTML=renderGrid();
   else body.innerHTML=renderPractice(u);
   stage.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{ state.view=b.dataset.v; render(); });
   wireFigs(stage);
@@ -1238,13 +1447,25 @@ function render(){
     if(a('restart')) a('restart').onclick=()=>{ state.path=[]; render(); };
     if(a('flow')) a('flow').onclick=()=>{ state.showFlow=!state.showFlow; render(); };
   }
+  if(state.view==='map'){
+    stage.querySelector('[data-act="maphide"]').onclick=()=>{ state.mapHide=!state.mapHide; state.mapRev=new Set(); render(); };
+    stage.querySelectorAll('[data-map]').forEach(b=>b.onclick=()=>{ if(!state.mapHide) return; const k=b.dataset.map; state.mapRev.has(k)?state.mapRev.delete(k):state.mapRev.add(k); const y=window.scrollY; render(); window.scrollTo({top:y}); });
+  }
+  if(state.view==='grid'){
+    const keep=f=>{ const y=window.scrollY; f(); render(); window.scrollTo({top:y}); };
+    stage.querySelectorAll('[data-gc]').forEach(b=>b.onclick=()=>keep(()=>state.gridCols=b.dataset.gc));
+    stage.querySelectorAll('[data-cell]').forEach(b=>b.onclick=()=>keep(()=>{ const k=b.dataset.cell; state.gridRev.has(k)?state.gridRev.delete(k):state.gridRev.add(k); }));
+    stage.querySelector('[data-act="gshuffle"]').onclick=()=>keep(()=>state.gridOrder=state.gridOrder?null:shuffle(HOC_ROWS.map((_,i)=>i)));
+    stage.querySelector('[data-act="gall"]').onclick=()=>keep(()=>HOC_ROWS.forEach(r=>[...GRID_SETS.loc,...GRID_SETS.dim].forEach(([f])=>state.gridRev.add(r.n+'|'+f))));
+    stage.querySelector('[data-act="gnone"]').onclick=()=>keep(()=>state.gridRev=new Set());
+  }
   if(state.view==='gallery'){ const g=stage.querySelector('[data-act="galhide"]'); g.onclick=()=>{ state.galHide=!state.galHide; render(); }; }
   if(state.view==='practice'){
     state.answers[u.id]=state.answers[u.id]||{};
     wireAnswers(stage,state.answers[u.id],false);
     const r=stage.querySelector('[data-act="reset"]'); if(r) r.onclick=()=>{ state.answers[u.id]={}; save(); render(); };
-    stage.querySelectorAll('[data-kind]').forEach(b=>b.onclick=()=>{ state.idKind=b.dataset.kind; render(); });
-    const sh=stage.querySelector('[data-act="shuffleid"]'); if(sh) sh.onclick=()=>{ state.idOrder=shuffle(u.questions.map((_,i)=>i)); render(); };
+    stage.querySelectorAll('[data-kind]').forEach(b=>b.onclick=()=>{ state.kf[u.id]=b.dataset.kind; render(); });
+    const sh=stage.querySelector('[data-act="shuffleid"]'); if(sh) sh.onclick=()=>{ state.order[u.id]=shuffle(u.questions.map((_,i)=>i)); render(); };
   }
 }
 function wireAnswers(scope,store,isExam){
