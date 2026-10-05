@@ -39,6 +39,12 @@ const STUDY_GUIDES = [
     desc:   "Thermodynamics and bonding, acid-base, amino acids and proteins, carbohydrates, and nucleic acids. Topic quizzes, worked calculations, a pH slider for side-chain charge, and a build-your-own practice exam."
   },
   {
+    course: "DENT 604 – Biochemistry",
+    exam:   "Exam II",
+    file:   "biochem-exam-2.html",
+    desc:   "Molecular Genetics"
+  },
+  {
     course: "DENT 620-1 – Dental Morphology & Occlusion",
     exam:   "Exam 1",
     file:   "morphology-exam-1.html",
