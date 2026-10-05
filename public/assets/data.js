@@ -68,7 +68,7 @@ const DEADLINES = [
   { date: "2026-10-02", title: "Impressions / casts — Group 2",       course: "DENT 620-1",  note: "8:00am–12:00pm, Bench / Clinic" },
   { date: "2026-10-06", title: "Impressions / casts — Group 3",       course: "DENT 620-1",  note: "9:00am–12:00pm, Bench / Clinic" },
   { date: "2026-10-09", title: "Exam II — lectures 23–38",            course: "DENT 604",    note: "1:00pm, R354" },
-  { date: "2026-10-12", title: "Exam 2 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
+  { date: "2026-10-14", title: "Exam 2 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
   { date: "2026-10-12", title: "Quiz 5",                              course: "DENT 622-1",  note: "3:00pm, D113 — sessions 27–33" },
   { date: "2026-10-13", title: "Ethics session 3",                    course: "DENT 642-1",  note: "1:00–3:00pm, D113 — bring questions for the D3/D4 panel" },
   { date: "2026-10-19", title: "Dental photographs project due",      course: "DENT 622-1",  note: "5:00pm in Canvas" },
