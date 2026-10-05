@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Biochemistry Exam 2 — Study Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EDF0EA; --surface:#F8FAF6; --surface-2:#E3E8DE;
+  --ink:#10261E; --ink-soft:#4C5C53; --ink-faint:#7B8A81; --rule:#C8D2C4;
+  --accent:#7A2456; --accent-soft:#F0E2EA; --teal:#14636B; --teal-soft:#DDEAEA;
+  --good:#1B6142; --good-soft:#DEEBE2; --bad:#93291F; --bad-soft:#F3E2DE;
+  --flag:#8A5A00; --flag-soft:#F2E9D4;
+  --serif:"Newsreader",Georgia,serif; --sans:"IBM Plex Sans",-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0}
+p{margin:0 0 .85em}
+a{color:var(--teal)}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.mono,code{font-family:var(--mono);font-size:.92em}
+
+/* ---------- hero ---------- */
+.hero{border-bottom:1px solid var(--rule);background:var(--surface)}
+.hero-in{max-width:1180px;margin:0 auto;padding:40px 28px 26px}
+.hero h1{font-size:clamp(32px,5vw,50px);letter-spacing:-.02em}
+.hero .lede{margin-top:12px;max-width:66ch;color:var(--ink-soft);font-size:17px}
+.hero-meta{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.pill{font-size:13px;padding:4px 11px;border:1px solid var(--rule);border-radius:100px;color:var(--ink-soft);background:var(--paper)}
+.pill.on{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.strip{margin-top:20px;display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:6px}
+.strip button{all:unset;cursor:pointer;display:block;padding:6px 0 0}
+.strip .lab{font-size:12px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
+.strip .bar{display:block;height:6px;background:var(--surface-2);border-radius:3px;overflow:hidden;margin-top:4px}
+.strip .bar i{display:block;height:100%;width:0;background:var(--teal);transition:width .4s}
+.strip .num{display:block;font-size:11.5px;color:var(--ink-faint);font-variant-numeric:tabular-nums}
+
+/* ---------- shell ---------- */
+.shell{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:44px}
+.nav{position:sticky;top:0;align-self:start;max-height:100vh;overflow:auto;padding:28px 0;font-size:14.5px}
+.nav h3{font-size:13px;font-weight:600;font-family:var(--sans);color:var(--ink-faint);margin-bottom:8px}
+.nav a{display:block;padding:6px 10px;margin-left:-10px;border-radius:2px;text-decoration:none;color:var(--ink-soft);border-left:2px solid transparent}
+.nav a:hover{color:var(--ink);background:var(--surface)}
+.nav a.on{color:var(--accent);border-left-color:var(--accent);background:var(--accent-soft);font-weight:500}
+.nav .grp{margin-bottom:20px}
+.nav .prog{font-size:12px;color:var(--ink-faint);float:right;font-variant-numeric:tabular-nums}
+.main{padding:28px 0 100px;min-width:0}
+
+/* ---------- sections ---------- */
+.topic{display:none}
+.topic.on{display:block}
+.topic-head{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:20px}
+.topic-head .src{font-size:13px;color:var(--ink-faint);margin-bottom:6px}
+.topic-head h2{font-size:clamp(26px,3.6vw,38px);letter-spacing:-.015em}
+.topic-head .obj{margin-top:10px;color:var(--ink-soft);max-width:70ch;font-size:15.5px;margin-bottom:0}
+.modes{display:flex;gap:6px;margin:0 0 24px;flex-wrap:wrap}
+.modes button{border:1px solid var(--rule);background:var(--surface);color:var(--ink-soft);padding:7px 15px;border-radius:100px;font-size:14px;cursor:pointer}
+.modes button.on{border-color:var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:500}
+.modes .ct{font-size:12px;color:var(--ink-faint);margin-left:5px}
+.pane{display:none}.pane.on{display:block}
+
+.sec{margin:0 0 30px;max-width:78ch}
+.sec > h3{font-size:22px;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--rule)}
+.sec h4{font-size:16.5px;font-family:var(--sans);font-weight:600;margin:18px 0 6px}
+.sec ul,.sec ol{margin:0 0 14px;padding-left:20px}
+.sec li{margin-bottom:5px}
+dfn{font-style:normal;font-weight:600}
+.box{border:1px solid var(--rule);background:var(--surface);padding:14px 18px;border-radius:3px;margin:0 0 16px}
+.box.key{border-left:3px solid var(--teal);background:var(--teal-soft)}
+.box.warn{border-left:3px solid var(--flag);background:var(--flag-soft)}
+.box.hy{border-left:3px solid var(--accent);background:var(--accent-soft)}
+.box p:last-child,.box ul:last-child{margin-bottom:0}
+.box h4{margin-top:0}
+.flow{font-family:var(--mono);font-size:14px;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:10px 14px;margin:0 0 16px;overflow-x:auto;white-space:pre}
+.tw{overflow-x:auto;margin:0 0 16px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:7px 12px 7px 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-weight:600;font-size:13px;color:var(--ink-soft);border-bottom:1.5px solid var(--ink)}
+
+/* ---------- flashcards ---------- */
+.fc-wrap{max-width:640px}
+.fc-bar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;font-size:14px;color:var(--ink-soft)}
+.card{perspective:1400px;cursor:pointer;height:260px;margin-bottom:14px}
+.card-in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.card.flip .card-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border:1px solid var(--rule);border-radius:4px;background:var(--surface);padding:24px 26px;display:flex;flex-direction:column;justify-content:center;overflow:auto}
+.face .lbl{font-size:12px;color:var(--ink-faint);margin-bottom:10px}
+.face.front .txt{font-family:var(--serif);font-size:23px;line-height:1.3}
+.face.back{transform:rotateY(180deg);background:var(--teal-soft);border-color:var(--teal)}
+.face.back .txt{font-size:16.5px}
+.fc-ctrl{display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:1px solid var(--rule);background:var(--surface);color:var(--ink);padding:8px 16px;border-radius:3px;font-size:14.5px;cursor:pointer}
+.btn:hover{border-color:var(--ink-faint)}
+.btn.pri{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.btn.good{border-color:var(--good);color:var(--good)}
+.btn.bad{border-color:var(--bad);color:var(--bad)}
+.btn:disabled{opacity:.4;cursor:default}
+
+/* ---------- quiz ---------- */
+.qz{max-width:74ch}
+.qz-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px;font-size:14px;color:var(--ink-soft);flex-wrap:wrap}
+.qmeta{font-size:12.5px;color:var(--ink-faint);margin-bottom:6px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.tag{font-size:12px;padding:1px 8px;border-radius:100px;border:1px solid var(--rule)}
+.tag.hy{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.tag.sata{border-color:var(--teal);color:var(--teal);background:var(--teal-soft)}
+.tag.void{border-color:var(--flag);color:var(--flag);background:var(--flag-soft)}
+.qtext{font-family:var(--serif);font-size:20px;line-height:1.35;margin-bottom:16px}
+.opts{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;border:1px solid var(--rule);background:var(--surface);padding:10px 14px;border-radius:3px;font-size:15.5px;cursor:pointer;color:var(--ink);width:100%}
+.opt:hover:not(:disabled){border-color:var(--ink-faint)}
+.opt .k{font-family:var(--mono);font-size:13px;color:var(--ink-faint);min-width:16px;padding-top:2px}
+.opt.sel{border-color:var(--ink);background:var(--surface-2)}
+.opt.right{border-color:var(--good);background:var(--good-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt:disabled{cursor:default}
+.expl{border-left:3px solid var(--teal);background:var(--teal-soft);padding:11px 15px;border-radius:2px;font-size:15px;margin-bottom:14px}
+.expl b.ok{color:var(--good)} .expl b.no{color:var(--bad)}
+.figdesc{font-size:14.5px;background:var(--surface);border:1px dashed var(--rule);padding:10px 14px;border-radius:3px;margin-bottom:14px;color:var(--ink-soft)}
+.res{border:1px solid var(--rule);background:var(--surface);padding:20px 22px;border-radius:3px;margin-bottom:18px}
+.res .big{font-family:var(--serif);font-size:44px;line-height:1}
+.res .sub{color:var(--ink-soft);font-size:14.5px;margin-top:4px}
+.bk{margin-top:14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:8px}
+.bk div{font-size:14px;border:1px solid var(--rule);border-radius:3px;padding:8px 10px;background:var(--paper)}
+.bk b{font-variant-numeric:tabular-nums}
+.miss-item{border-top:1px solid var(--rule);padding:14px 0;font-size:14.5px}
+.sec > h3 + .miss-item{border-top:none}
+.miss-item .qq{font-family:var(--serif);font-size:16px;margin-bottom:5px}
+.miss-item .yy{color:var(--bad)}
+.miss-item .cc{color:var(--good)}
+.setup{padding:4px 0;max-width:62ch}
+.setup label.h{display:block;font-size:14px;margin:16px 0 6px;font-weight:600}
+.setup select,.setup input[type=number]{font-family:inherit;font-size:15px;padding:7px 10px;border:1px solid var(--rule);border-radius:2px;background:var(--surface);color:var(--ink);width:100%;max-width:280px}
+.chk{display:flex;gap:9px;align-items:center;font-size:14.5px;margin:6px 0}
+.chk input{width:16px;height:16px;accent-color:var(--accent)}
+.chks{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:0 14px}
+.timer{font-variant-numeric:tabular-nums;font-size:14px;color:var(--ink-soft)}
+.timer.low{color:var(--bad);font-weight:600}
+.yrs{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-bottom:20px}
+.yr{all:unset;cursor:pointer;border:1px solid var(--rule);background:var(--surface);border-radius:3px;padding:14px 16px}
+.yr:hover{border-color:var(--ink-faint)}
+.yr b{font-family:var(--serif);font-size:21px;font-weight:500;display:block}
+.yr span{font-size:13.5px;color:var(--ink-soft)}
+.yr:focus-visible{outline:2px solid var(--teal)}
+
+@media (max-width:880px){
+  .shell{grid-template-columns:1fr;gap:0;padding:0 18px}
+  .hero-in{padding:28px 18px 22px}
+  .strip{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .nav{position:static;max-height:none;padding:14px 0;border-bottom:1px solid var(--rule);display:flex;gap:6px;overflow-x:auto}
+  .nav h3,.nav .prog{display:none}
+  .nav .grp{margin:0;display:flex;gap:6px}
+  .nav a{white-space:nowrap;border:1px solid var(--rule);border-radius:100px;padding:6px 13px;margin:0;border-left-width:1px}
+  .nav a.on{border-color:var(--accent)}
+  .card{height:300px}
+  .face.front .txt{font-size:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hero-in">
+    <h1>Biochemistry Exam&nbsp;2</h1>
+    <p class="lede">Eight lectures condensed, with flashcards and a practice set for each, a cumulative exam that mixes them, and every past Exam&nbsp;2 from 2020 to 2025 as a runnable test. Built from the 2026 slides, the review deck, and six years of exams.</p>
+    <div class="hero-meta">
+      <span class="pill on">High-yield questions marked in magenta</span>
+      <span class="pill">CMB 704 / DENT 604</span>
+      <span class="pill">Dr. McLaurin and Dr. Stray</span>
+    </div>
+    <div class="strip" id="strip" aria-label="Practice progress by topic"></div>
+  </div>
+</header>
+<div class="shell">
+  <nav class="nav" id="nav" aria-label="Sections"></nav>
+  <main class="main" id="main"></main>
+</div>
+<script>
+const DOC_URL="https://claude.ai/code/artifact/9e9f5e6b-f1f2-4ae1-9cc8-3fb1cf6ec42d";
+const FIG={
+ "2023-34":"Pedigree (described): an affected mother and unaffected father have four children, all affected (two daughters, two sons). Their affected daughter marries an unaffected man; all three of her children are affected. Their affected son marries an unaffected woman; all three of his children are unaffected.",
+ "2025-39":"The pedigree image isn't in your files. Use the X-linked dominant signature: affected father → every daughter, no sons; no skipped generations.",
+ "2020-38":"The pedigree image isn't in your files. Keyed X-linked recessive.",
+ "2020-39":"The pedigree image isn't in your files. Keyed X-linked dominant.",
+ "R26-5":"The pedigree image is on review deck slide 46. Keyed autosomal dominant."
+};
+const START_HTML=`
+<div class="topic-head"><div class="src">Read this first</div><h2>How Exam 2 is built</h2>
+<p class="obj">About 50 single-best-answer questions, split roughly evenly across the lectures (6–8 each), with 3–5 clinical vignettes near the end. Many questions repeat year to year with light rewording.</p></div>
+<div class="sec"><h3>How to use this guide</h3>
+<ol>
+<li>Read a lecture's notes, then run its flashcards until you can clear the deck.</li>
+<li>Do the lecture's practice set. Questions tagged <span class="tag hy">high-yield</span> appeared on more than one exam or are central to the slides.</li>
+<li>Build a cumulative exam from the left menu. Use timed mode (90 seconds per question) for the last few days.</li>
+<li>Take each past exam under timed conditions. 2025 and 2024 are closest to this year's style.</li>
+</ol>
+<p>Progress resets when you reload the page. The full written guide, with every table and the practice bank, is in your <a href="${DOC_URL}" target="_blank" rel="noopener">Claude Doc study guide</a>.</p></div>
+<div class="sec"><h3>Format and source priority</h3>
+<div class="box hy"><p><b>Select-all-that-apply.</b> The 2026 review deck uses them heavily; none of the six past exams did. They're tagged <span class="tag sata">select all</span> here. Ask Dr. McLaurin whether they'll appear.</p></div>
+<p>When sources disagree, trust the 2026 slides first, then the review deck, then the 2023–2025 exams, then 2020–2022 (different instructors, some shaky keys).</p></div>
+<div class="sec"><h3>Things to know about your materials</h3>
+<ul>
+<li><b>The “collected exam questions” PDF is Exam 1 material</b> (glycolysis, TCA, lipids, urea cycle), so it isn't used here.</li>
+<li><b>The 2021 exam stops at question 38.</b> The rest is missing from the file.</li>
+<li><b>The past student's notes have errors.</b> The G2 checkpoint (not G1) follows S phase. Trp attenuation stops transcription, not translation. Their miRNA answer is the wrong content.</li>
+<li><b>Shaky old keys</b> are flagged in each explanation: 2022 Q38 (attenuation vs repression), 2025 Q19 (introns are in pre-mRNA only), 2025 Q9 (two correct answers). Questions where everyone got credit are tagged <span class="tag void">everyone got credit</span>; they still show the best answer and count as correct in past-exam mode.</li>
+<li><b>Pedigree images</b> from 2020 and 2025 aren't in your files. Those items run in past-exam mode only, with the key.</li>
+</ul></div>`;
+const TOPICS=[
+ {id:"pp",nav:"Purines & pyrimidines",src:"Lectures 23–24, Dr. McLaurin",title:"Purine & Pyrimidine Metabolism",obj:"Purines are built on PRPP and break down to insoluble uric acid. Pyrimidines are built as a ring first and break down to soluble CO2 and NH3. Know the regulated enzymes, the salvage pathway, ribonucleotide reductase, and the five disorders."},
+ {id:"dna",nav:"DNA synthesis & repair",src:"Lectures 25–26, Dr. McLaurin",title:"DNA Synthesis & Repair",obj:"Replication is semiconservative, happens in S phase, and always runs 5′→3′. Repair questions are almost always “match the lesion to the pathway.”"},
+ {id:"rna",nav:"RNA synthesis",src:"Lectures 27–28, Dr. McLaurin",title:"RNA Synthesis & Processing",obj:"Prokaryotes use one RNA polymerase and barely process mRNA. Eukaryotes use three, need general transcription factors and open chromatin, and cap, tail, and splice mRNA in the nucleus."},
+ {id:"prot",nav:"Protein synthesis",src:"Protein Synthesis, Dr. Stray",title:"Protein Synthesis & Mutations",obj:"Translation reads mRNA 5′→3′ and builds protein from N to C. Most questions test the code, mutation types, the A/P/E sites, prokaryote vs eukaryote factors, targeting signals, and ubiquitin."},
+ {id:"gene",nav:"Gene expression",src:"Lectures 31–32, Dr. McLaurin",title:"Control of Gene Expression",obj:"Almost every question is a trans-acting molecule binding a cis-acting element. Know the three lac states, three trp states, Gal4/Gal80, the glucocorticoid receptor, and the four mRNA-level mechanisms."},
+ {id:"genet",nav:"Genetic disorders",src:"Lectures 33–34, Dr. McLaurin",title:"Genetic Disorders",obj:"Definitions, Punnett ratios, pedigree identification, and amelogenesis imperfecta (three types, four genes, their inheritance)."},
+ {id:"cc",nav:"Cell cycle & death",src:"Lecture 35, Dr. McLaurin (from Dr. Syed’s F21 slides)",title:"Cell Cycle & Cell Death",obj:"Phases and their lengths, the five stages of mitosis, cyclin–CDK pairs and their inhibitors, RB and p53, and necrosis versus apoptosis. The 2026 deck adds no new exam material over the 2021 slides."},
+ {id:"bio",nav:"Biotechnology",src:"Lecture 36, Dr. McLaurin",title:"Cloning & Biotechnology",obj:"Restriction enzymes, cloning steps and vector requirements, Sanger sequencing, PCR, and which blot detects which molecule."}
+];
+
+const NOTES={};
+NOTES.pp=`
+<div class="sec"><h3>Building blocks</h3>
+<ul>
+<li><dfn>Purines</dfn> have two rings: A and G. <dfn>Pyrimidines</dfn> have one ring: C and T in DNA, C and U in RNA.</li>
+<li><dfn>Nucleoside</dfn> = base + sugar (adenosine, guanosine, cytidine, uridine, thymidine). <dfn>Nucleotide</dfn> = nucleoside + 1–3 phosphates.</li>
+<li><dfn>Modified bases</dfn>: methylation (DNA and RNA; reversible by demethylases), pseudouridylation (RNA only, the most abundant RNA mark), reduction. Non-base DNA marks: glycosylation, acetylation. 5-methylcytosine silences genes; m6A is the common RNA mark. tRNA carries the most modified bases.</li>
+</ul></div>
+<div class="sec"><h3>De novo synthesis compared</h3>
+<div class="tw"><table><tr><th></th><th>Purines</th><th>Pyrimidines</th></tr>
+<tr><td>Ring assembly</td><td>Built directly on PRPP</td><td>Ring finished first, then attached to PRPP</td></tr>
+<tr><td>Ring atoms from</td><td>Gln ×2, Gly, N10-formyl-THF ×2, CO2, Asp</td><td>Gln, CO2, Asp</td></tr>
+<tr><td>Regulated step</td><td><b>GPAT</b>: PRPP + Gln → 5-phosphoribosylamine. Inhibited by AMP/GMP, driven by [PRPP]. (PRPP synthetase before it is inhibited by ADP, GDP.)</td><td><b>CPS II</b> (cytosol): inhibited by <b>UTP</b>, activated by <b>PRPP</b></td></tr>
+<tr><td>First nucleotide</td><td><b>IMP</b> (base = hypoxanthine)</td><td><b>UMP</b> (orotate → OMP → UMP by bifunctional UMP synthase)</td></tr>
+<tr><td>Branches</td><td>IMP → AMP: adenylosuccinate synthetase, Asp + <b>GTP</b>. IMP → GMP: IMP dehydrogenase, Gln + <b>ATP</b> (blocked by mycophenolic acid)</td><td>UMP → UDP → UTP → CTP (CTP synthetase). dUMP → dTMP (thymidylate synthase)</td></tr>
+<tr><td>Breakdown</td><td><b>Uric acid</b> (insoluble)</td><td>β-alanine, β-aminoisobutyrate, <b>CO2 + NH3</b> (soluble)</td></tr>
+<tr><td>Salvage</td><td>HGPRT (hypoxanthine, guanine) and APRT (adenine) use PRPP, irreversible. Adenosine kinase salvages adenosine</td><td>Bases salvaged to nucleosides (why uridine treats orotic aciduria)</td></tr>
+</table></div>
+<div class="box key"><p>GTP fuels AMP synthesis and ATP fuels GMP synthesis, which keeps the pools balanced. Base-specific kinases (adenylate, guanylate) act only on NMPs; one non-specific kinase handles every NDP. So guanylate kinase takes <b>GMP only</b>.</p></div>
+</div>
+<div class="sec"><h3>Folate, degradation, and ribonucleotide reductase</h3>
+<ul>
+<li>Humans get folate only from the diet. <b>Sulfonamides</b> block bacterial folate synthesis, not ours. <b>Methotrexate</b> blocks THF regeneration, stopping purine and dTMP synthesis in all dividing cells.</li>
+<li>Dietary nucleic acids are broken down mostly in the pancreas, then by nucleotidases and nucleosidases in the gut.</li>
+</ul>
+<div class="flow">AMP → IMP → hypoxanthine → xanthine → uric acid
+GMP → guanosine → guanine → xanthine → uric acid
+(adenosine deaminase: adenosine → inosine; xanthine oxidase makes uric acid, blocked by allopurinol)</div>
+<ul>
+<li><dfn>Ribonucleotide reductase</dfn> turns <b>NDPs</b> (ADP, GDP, CDP, UDP) into dNDPs by swapping 2′-OH for H. Active in S phase, not base-specific.</li>
+<li>R1 holds the activity site, specificity site, catalytic site, and two –SH groups. R2 holds a tyrosyl radical. Thioredoxin re-reduces the –SH groups; NADPH re-reduces thioredoxin.</li>
+<li>ATP activates and <b>dATP inhibits</b> at the activity site. dTTP at the specificity site drives GDP → dGDP. <b>Hydroxyurea</b> quenches the R2 radical.</li>
+<li><dfn>Thymidylate synthase</dfn>: dUMP → dTMP with N5,N10-methylene-THF. <b>5-Fluorouracil</b> → 5-FdUMP, a suicide inhibitor.</li>
+</ul></div>
+<div class="sec"><h3>Disorders</h3>
+<div class="tw"><table><tr><th>Disorder</th><th>Defect</th><th>Findings</th></tr>
+<tr><td>Gout</td><td>Excess uric acid (overproduction or underexcretion)</td><td>Urate crystals in big toe or TMJ, kidney stones; high-purine diet or high cell turnover; allopurinol</td></tr>
+<tr><td>Lesch-Nyhan</td><td>Complete HGPRT loss (HPRT1), X-linked recessive</td><td>↑PRPP → ↑de novo synthesis → ↑uric acid; self-mutilation, motor and cognitive deficits</td></tr>
+<tr><td>ADA deficiency</td><td>Adenosine deaminase</td><td>↑adenosine → ↑<b>dATP</b> → RNR blocked → lymphocytes die → <b>SCID</b></td></tr>
+<tr><td>Hereditary orotic aciduria</td><td>UMP synthase</td><td>Orotate builds up; treat with uridine</td></tr>
+<tr><td>OTC deficiency</td><td>Urea cycle</td><td>Extra carbamoyl phosphate spills into pyrimidine synthesis → ↑orotic acid</td></tr>
+</table></div>
+<div class="box warn"><p><b>Traps.</b> RNR's substrate is ADP, not AMP or ATP. The committed purine step is GPAT, not PRPP synthetase. UTP inhibits CPS II, not GPAT. HGPRT deficiency does not raise cytosine. Uric acid's problem is insolubility.</p></div>
+</div>`;
+
+NOTES.dna=`
+<div class="sec"><h3>Structure and packaging</h3>
+<ul>
+<li>Antiparallel strands, sugar-phosphate backbone, read 5′→3′. Phosphodiester bonds link 3′-C to 5′-C and leave a free O<sup>–</sup>, so DNA is negative and hydrophilic.</li>
+<li>Bases pair by <b>hydrogen bonds</b>, the bond that most directly forms the helix.</li>
+<li>DNA wraps positive histones (Lys, Arg). <dfn>Heterochromatin</dfn>: condensed, inactive, histone methylation, HDAC. <dfn>Euchromatin</dfn>: open, active, histone acetylation, HAT.</li>
+</ul>
+<div class="box hy"><h4>Writing complements</h4><p>Complement each base, then reverse so it reads 5′→3′, then check whether the answers are written 3′→5′. RNA from the <b>coding</b> strand = same sequence with U. RNA from the <b>template</b> = reverse complement.<br>5′-ATCGGTA-3′ → 5′-TACCGAT-3′. Template 5′-GGGAAAT-3′ → RNA 5′-AUUUCCC-3′.</p></div></div>
+<div class="sec"><h3>Replication machinery</h3>
+<p>Semiconservative, bidirectional, S phase. Prokaryotes start at one A-T-rich origin (two H-bonds melt more easily); eukaryotes use many origins.</p>
+<div class="tw"><table><tr><th>Protein</th><th>Job</th></tr>
+<tr><td>DnaA</td><td>Binds the DnaA box, melts the A-T-rich region</td></tr>
+<tr><td>Helicase</td><td>Unwinds using ATP; creates supercoils ahead</td></tr>
+<tr><td>SSB proteins</td><td>Bind ssDNA cooperatively, keep strands apart, protect from nucleases</td></tr>
+<tr><td>Topoisomerase I / II</td><td>Remove supercoils. I cuts one strand, no ATP. II (gyrase) cuts both, needs ATP; blocked by etoposide, doxorubicin</td></tr>
+<tr><td>Primase</td><td>~10-nt RNA primer with a free 3′-OH</td></tr>
+<tr><td>DNA pol III</td><td>Main replicative enzyme; 5′→3′ polymerase, 3′→5′ exonuclease proofreading; β subunit is the sliding clamp</td></tr>
+<tr><td>DNA pol I</td><td>Removes RNA primers and fills in DNA (polymerase, 3′ exo, 5′ exo; no endonuclease)</td></tr>
+<tr><td>DNA ligase</td><td>Seals Okazaki fragments</td></tr>
+<tr><td>Tus</td><td>Binds Ter sites to stop the fork</td></tr>
+</table></div>
+<ul>
+<li><dfn>Leading strand</dfn>: continuous, toward the fork. <dfn>Lagging strand</dfn>: discontinuous Okazaki fragments, away from the fork, needs more primers. Both 5′→3′. Trombone model loops ~1000 nt.</li>
+<li>Eukaryotes: ORC finds origins, MCM = helicase, RPA = SSB, PCNA = clamp, FEN1 removes flaps. <b>Pol α contains primase</b>; δ lagging, ε leading, β repair, γ mitochondrial.</li>
+<li><dfn>Telomeres</dfn>: 5′-AGGGTT-3′ repeats that protect chromosome ends and keep them from looking like breaks. They shorten each division (about 52 divisions). <dfn>Telomerase</dfn> (a ribonucleoprotein) keeps them long in germ and stem cells and is high in cancer.</li>
+</ul></div>
+<div class="sec"><h3>Repair</h3>
+<p>Damage comes from ROS, replication errors, normal recombination, radiation, and chemotherapy. Every pathway runs: detect → remove (glycosylases, nucleases) → repair (polymerase, ligase).</p>
+<div class="tw"><table><tr><th>Pathway</th><th>Lesion</th><th>How</th></tr>
+<tr><td>Nucleotide excision</td><td>Bulky distortions; UV <b>pyrimidine dimers</b></td><td>Endonucleases cut out a section, pol fills, ligase seals. Defective in <b>xeroderma pigmentosum</b></td></tr>
+<tr><td>Mismatch</td><td>Mispairs missed by proofreading</td><td><b>MutS</b> recognizes → recruits <b>MutL</b> → activates <b>MutH</b> to nick the daughter. Parent is methylated at GATC</td></tr>
+<tr><td>Base excision</td><td>Single damaged bases (alkylation, deamination, oxidation, abasic)</td><td><b>Glycosylase</b> → AP endonuclease + dRP lyase → pol I → ligase</td></tr>
+<tr><td>NHEJ</td><td>Double-strand break, G1 or non-dividing</td><td><b>Ku</b> binds ends; no template; error-prone</td></tr>
+<tr><td>Homologous recombination</td><td>Double-strand break, <b>S or G2</b></td><td>Uses sister chromatid; most accurate</td></tr>
+</table></div>
+<div class="box warn"><p><b>Traps.</b> Pol I has no 3′ endonuclease. Telomerase protects chromosome ends, not RNA or protein. Reverse transcriptase uses mature mRNA as template. HR only works in S/G2.</p></div></div>`;
+
+NOTES.rna=`
+<div class="sec"><h3>RNA types</h3>
+<div class="tw"><table><tr><th>RNA</th><th>Share</th><th>Job and details</th></tr>
+<tr><td>rRNA</td><td>80%</td><td>Ribosome scaffold and <b>catalyst</b> (ribozyme forms peptide bonds). Euk 80S = 40S (18S) + 60S (28S, 5.8S, 5S)</td></tr>
+<tr><td>tRNA</td><td>15%</td><td>Adaptor that carries amino acids; most modified bases; cloverleaf / L-shape; aa on 3′ CCA</td></tr>
+<tr><td>mRNA</td><td>5%</td><td>Coding. Prok polycistronic, euk monocistronic. Both have 5′ and 3′ UTRs; cap and tail are euk only</td></tr>
+<tr><td>snRNA / snoRNA / miRNA</td><td>small</td><td>Splicing (snRNPs U1, U2, U4, U5, U6) / modify rRNA in nucleolus / silence mRNA</td></tr>
+</table></div>
+<p>RNA has ribose (2′-OH) and U. It is complementary to the <b>template</b> strand and identical to the <b>coding</b> strand. Made 5′→3′ while the template is read 3′→5′. Only ~2% of the genome codes protein.</p></div>
+<div class="sec"><h3>Prokaryotic transcription</h3>
+<ul>
+<li>One RNA polymerase makes everything. Core = 2α + Ω (assembly), β′ (template binding), <b>β (polymerase)</b>. Add <b>σ</b> → holoenzyme, which recognizes the promoter; σ leaves after ~10 nt.</li>
+<li>No primer, no proofreading, higher error rate than replication.</li>
+<li>Promoter: −35 (TTGACA) sets a high rate; <b>−10 Pribnow box</b> (TATAAT) is essential.</li>
+<li><dfn>ρ-independent termination</dfn>: GC-rich hairpin + 8–9 U's. <dfn>ρ-dependent</dfn>: ρ (hexameric ATPase helicase) binds the C-rich rut site and pulls the transcript off.</li>
+</ul></div>
+<div class="sec"><h3>Eukaryotic transcription</h3>
+<div class="tw"><table><tr><th>Polymerase</th><th>Location</th><th>Makes</th></tr>
+<tr><td>Pol I</td><td>Nucleolus</td><td>28S, 18S, 5.8S rRNA (not 5S)</td></tr>
+<tr><td>Pol II</td><td>Nucleus</td><td><b>mRNA</b> (hnRNA), snRNA, snoRNA, miRNA</td></tr>
+<tr><td>Pol III</td><td>Nucleus</td><td><b>tRNA, 5S rRNA</b>, some snRNA</td></tr>
+</table></div>
+<ul>
+<li>Core promoter (cis): TATA / <b>Hogness box</b> at ~−25 (not essential), Inr at +1, DPE at +25.</li>
+<li>General transcription factors (trans): <b>TFIID</b> binds TATA; <b>TFIIF</b> recruits pol II; <b>TFIIH</b> melts DNA (helicase) and phosphorylates pol II (kinase) so it leaves the promoter.</li>
+<li>Proximal elements (&lt;200 nt: CAAT, GC boxes) set <b>how often</b>. Distal elements (enhancers, silencers) set <b>which genes</b> and hormone responses; they work on either strand, near or far. Specific TFs have a DBD + TAD; the TAD recruits HATs, GTFs, and Mediator. GTFs do <b>not</b> bind enhancers.</li>
+<li>Shared with prokaryotes: a promoter and a termination signal. Eukaryote-only: three polymerases, a nucleus, chromatin remodeling.</li>
+</ul></div>
+<div class="sec"><h3>Processing</h3>
+<ul>
+<li><b>rRNA and tRNA are processed in both</b> prokaryotes and eukaryotes. tRNA: ends trimmed, anticodon-loop intron removed, <b>CCA added to the 3′ end</b> by nucleotidyltransferase, bases modified.</li>
+<li>Prokaryotic mRNA is usually not processed. Eukaryotic hnRNA gets:</li>
+</ul>
+<ol>
+<li><b>5′ cap</b> first: 7-methylguanosine, 5′→5′ triphosphate link; methyl from SAM. Protects from nucleases, starts translation.</li>
+<li><b>Poly-A tail</b>: cut after AAUAAA, then 40–250 A's by polyadenylate polymerase. Stability, export, translation.</li>
+<li><b>Splicing</b> by snRNPs (spliceosome); <b>alternative splicing</b> in &gt;90% of genes.</li>
+</ol>
+<div class="box warn"><p><b>Traps.</b> Eukaryotic mRNA is made in the nucleus. HAT acetylates histones, not DNA. CCA goes on the 3′ end. GTFs are trans-acting and recruit pol II.</p></div></div>`;
+NOTES.prot=`
+<div class="sec"><h3>The genetic code</h3>
+<p>64 codons, 20 amino acids. Start = <b>AUG</b> (Met). Stops = <b>UAA, UAG, UGA</b>.</p>
+<div class="tw"><table><tr><th>Property</th><th>Meaning</th></tr>
+<tr><td>Specificity</td><td>A codon always means the same amino acid</td></tr>
+<tr><td>Universality</td><td>Conserved across evolution</td></tr>
+<tr><td>Degeneracy</td><td>One amino acid, several codons (Leu has 6). Met and Trp have one each</td></tr>
+<tr><td>Nonoverlapping, commaless</td><td>Read 3 at a time from a fixed start; AUG sets the frame</td></tr>
+</table></div></div>
+<div class="sec"><h3>Mutations</h3>
+<div class="tw"><table><tr><th>Type</th><th>Effect</th></tr>
+<tr><td>Silent</td><td>Same amino acid (AAA ↔ AAG, Lys)</td></tr>
+<tr><td>Missense</td><td>Different amino acid; conservative or nonconservative</td></tr>
+<tr><td>Nonsense</td><td>New stop codon → truncated protein</td></tr>
+<tr><td>Frameshift</td><td>1 or 2 nt in/del → new downstream sequence. 3 nt adds or removes one amino acid, frame intact</td></tr>
+<tr><td>Trinucleotide repeat</td><td>Huntington (coding), Fragile X (5′-UTR), myotonic dystrophy 1 (3′-UTR)</td></tr>
+<tr><td>Splice site</td><td>Exon lost (shorter) or intron retained (longer)</td></tr>
+</table></div></div>
+<div class="sec"><h3>Components</h3>
+<ul>
+<li>All 20 amino acids must be present.</li>
+<li><dfn>tRNA</dfn>: ~50 species. Amino acid on the 3′-OH of the A in CCA. Anticodon pairs antiparallel. <dfn>Wobble</dfn>: codon base 3 (3′) pairs loosely with anticodon base 1 (5′).</li>
+<li><dfn>Aminoacyl-tRNA synthetases</dfn>: 20, one per amino acid; use ATP; have proofreading/editing (shared with DNA polymerases).</li>
+<li><dfn>mRNA</dfn>: eukaryotic mRNA is circularized (cap–eIF-4–poly-A binding protein) so only mature mRNA is translated, in the cytoplasm.</li>
+<li><dfn>Ribosomes</dfn>: 30S + 50S = 70S; 40S + 60S = 80S. Small subunit binds mRNA; large forms peptide bonds. <b>A</b> = incoming aa-tRNA, <b>P</b> = peptidyl-tRNA, <b>E</b> = exit; each site covers 3 nt.</li>
+<li>Free ribosomes make cytosolic, nuclear, mitochondrial, and peroxisomal proteins. <b>RER-bound</b> ribosomes make secreted, membrane, and <b>lysosomal</b> proteins.</li>
+</ul></div>
+<div class="sec"><h3>Initiation, elongation, termination</h3>
+<div class="tw"><table><tr><th>Step</th><th>Prokaryote</th><th>Eukaryote</th></tr>
+<tr><td>Find the start</td><td><b>Shine-Dalgarno</b> pairs with 16S rRNA in 30S</td><td>40S + eIF-4 bind the <b>5′ cap</b>, scan for AUG (ATP; Kozak context)</td></tr>
+<tr><td>Initiator</td><td><b>fMet</b>-tRNAi via IF-2-GTP</td><td><b>Met</b>-tRNAi via eIF-2-GTP</td></tr>
+<tr><td>Holds off large subunit</td><td>IF-3</td><td>eIF-3</td></tr>
+<tr><td>tRNAi binds</td><td colspan="2"><b>P site</b> (the only tRNA that skips the A site)</td></tr>
+<tr><td>Deliver aa-tRNA to A</td><td>EF-Tu-GTP + EF-Ts</td><td>EF-1α-GTP + EF-1βγ</td></tr>
+<tr><td>Peptide bond</td><td colspan="2">Large-subunit rRNA (ribozyme) moves the P-site chain onto the A-site amino acid</td></tr>
+<tr><td>Translocation</td><td>EF-G-GTP</td><td>eEF-2-GTP</td></tr>
+<tr><td>Stop codon in A site</td><td>RF-1 (UAA, UAG), RF-2 (UGA); RF-3</td><td><b>eRF</b> (all three); eRF-3</td></tr>
+</table></div>
+<p>Required in both: aminoacyl-tRNA binding to the ribosome. <b>Phosphorylating eIF-2 inactivates it</b>, a common control point. Translation is a major antibiotic target.</p></div>
+<div class="sec"><h3>Targeting and degradation</h3>
+<div class="tw"><table><tr><th>Destination</th><th>Signal</th><th>Timing</th></tr>
+<tr><td>Secreted (RER → Golgi)</td><td>N-terminal hydrophobic signal sequence</td><td>Cotranslational</td></tr>
+<tr><td>Nucleus</td><td>Nuclear localization signal</td><td>Post</td></tr>
+<tr><td>Mitochondrial matrix</td><td>N-terminal mitochondrial entry sequence</td><td>Post</td></tr>
+<tr><td>Peroxisome</td><td>C-terminal tripeptide</td><td>Post</td></tr>
+</table></div>
+<p>Folding is spontaneous or chaperone-assisted, set by primary sequence. Defective proteins get a <b>ubiquitin chain</b>; the <b>proteasome</b> unfolds and cuts them to peptides.</p>
+<div class="box warn"><p><b>Traps.</b> The proteasome degrades; it does not add ubiquitin. The synthetase adds the amino acid, not CCA or the formyl group. Peptidyl transferase moves the chain from P to A.</p></div></div>`;
+
+NOTES.gene=`
+<div class="sec"><h3>Ground rules</h3>
+<ul>
+<li>Most regulation is at transcription (cheapest). Constitutive genes run steadily; regulated genes turn on when needed.</li>
+<li><dfn>Cis-acting</dfn>: sequences (promoter, operator, enhancer, silencer, TATA, IRE, GRE). <dfn>Trans-acting</dfn>: diffusible molecules (TFs, repressors, GTFs, IRPs, miRNA).</li>
+<li>DNA-binding motifs: leucine zipper, helix-turn-helix, <b>zinc finger</b> (in the DBD).</li>
+<li><dfn>Operon</dfn> (prokaryotes only): pathway genes under one promoter. The <dfn>operator</dfn> sits downstream of the promoter and binds the <b>repressor</b>; an inducer pulls the repressor off.</li>
+</ul></div>
+<div class="sec"><h3>Lac operon (lacZ, lacY, lacA)</h3>
+<div class="tw"><table><tr><th>Condition</th><th>Repressor on operator?</th><th>cAMP–CAP bound?</th><th>Result</th></tr>
+<tr><td>Lactose −, glucose +</td><td>Yes</td><td>No</td><td>Off, repressed</td></tr>
+<tr><td><b>Lactose +, glucose −</b></td><td>No — <b>allolactose</b> binds lacI</td><td><b>Yes</b> (adenylyl cyclase active)</td><td><b>Maximal</b></td></tr>
+<tr><td>Lactose +, glucose +</td><td>No</td><td>No (glucose blocks cAMP)</td><td>Very low</td></tr>
+</table></div></div>
+<div class="sec"><h3>Trp operon and the stringent response</h3>
+<div class="tw"><table><tr><th>Condition</th><th>What happens</th></tr>
+<tr><td>Trp high</td><td>Trp (<b>corepressor</b>) + repressor bind operator → repressed</td></tr>
+<tr><td>Trp high, polymerase escaped</td><td>Leader hairpin (attenuator) forms → <b>attenuation</b>: transcription stops early</td></tr>
+<tr><td>Trp very low</td><td>Operator empty; ribosome stalls on Trp codons, blocks attenuator → expressed</td></tr>
+</table></div>
+<p>Attenuation needs translation to start before transcription ends, so it's prokaryote-only.</p>
+<p><dfn>Stringent response</dfn>: amino acid starvation → uncharged tRNA in the A site → <b>RelA</b> makes <b>ppGpp</b> → rRNA/tRNA transcription drops, amino acid biosynthesis mRNA is prioritized.</p></div>
+<div class="sec"><h3>Coordinate regulation in eukaryotes</h3>
+<p>No operons. One specific TF binds the same element on every target gene, even on different chromosomes.</p>
+<ol>
+<li><b>Gal4</b> sits on UAS<sub>Gal</sub> with or without galactose.</li>
+<li>No galactose: <b>Gal80</b> covers Gal4's <b>TAD</b> → off.</li>
+<li>Galactose: activates <b>Gal3</b>, which binds Gal80 → TAD free → on. Glucose blocks Gal4 expression.</li>
+</ol>
+<p><dfn>Nuclear receptors</dfn> (glucocorticoid, mineralocorticoid, androgen, estrogen, vitamin D, retinoic acid, thyroid) are TFs with DBD + TAD + LBD. Cortisol binds the LBD → DBD uncovered → nucleus → dimer binds <b>GRE</b> → coordinate expression across chromosomes.</p></div>
+<div class="sec"><h3>mRNA-level control and chromatin</h3>
+<div class="tw"><table><tr><th>Mechanism</th><th>Key facts</th></tr>
+<tr><td>Alternative splicing</td><td>&gt;90% of genes; exon skipping, intron retention, alternative splice sites → isoforms</td></tr>
+<tr><td>mRNA editing (apoB-48)</td><td>Intestine edits C → U in a <b>CAA</b> codon → <b>UAA</b> stop → shorter protein (liver makes apoB-100)</td></tr>
+<tr><td>Iron and TfR mRNA</td><td><b>Low iron: IRP binds 3′ IRE → mRNA stable → ↑TfR.</b> High iron: IRP leaves → degraded</td></tr>
+<tr><td>miRNA (RNAi)</td><td>pri-miRNA → <b>Drosha</b> → pre-miRNA → export → <b>Dicer</b> → guide strand + <b>RISC</b> → binds target mRNA → repressed or degraded</td></tr>
+</table></div>
+<p>Histone <b>acetylation</b> (HAT) opens chromatin; <b>deacetylation</b> (HDAC) closes it. <b>DNA methylation</b> of cytosine at promoter CpG islands silences genes (hypermethylated = inactive).</p>
+<div class="box hy"><h4>Vignette logic</h4><ul>
+<li>Noncoding mutation → high baseline, weak inducer response → <b>silencer</b> lost.</li>
+<li>Noncoding mutation → low mRNA and low promoter acetylation → <b>enhancer</b> lost.</li>
+<li>Point mutation causes loss of an exon → <b>splice donor site</b>.</li>
+<li>Normal DNA, different isoforms → <b>alternative splicing</b>.</li></ul></div>
+<div class="box warn"><p><b>Traps.</b> Lactose present and glucose absent means CAP is active. Allolactose is an inducer, not a corepressor. Attenuation stops transcription. Gal80 blocks the TAD, not the DBD.</p></div></div>`;
+
+NOTES.genet=`
+<div class="sec"><h3>Terms and ratios</h3>
+<ul>
+<li>Allele = one version at a locus. <dfn>Genotype</dfn> = set of alleles. <dfn>Phenotype</dfn> = observable traits. Heterozygote = two different alleles; homozygote = two the same. Dominant = one copy expresses; recessive = two needed.</li>
+<li>Mendel: F1 all round (Ss); F2 3 round : 1 wrinkled.</li>
+<li>Missense variants change the protein → <b>gain or loss of function</b>. Noncoding variants hit promoters, enhancers, or splicing.</li>
+</ul>
+<div class="tw"><table><tr><th>Cross</th><th>Offspring</th></tr>
+<tr><td>Aa × Aa</td><td>1/4 AA : 1/2 Aa : 1/4 aa</td></tr>
+<tr><td>Aa × aa</td><td>1/2 Aa : 1/2 aa</td></tr>
+<tr><td>Aa × AA</td><td>1/2 Aa : 1/2 AA</td></tr>
+<tr><td>AA × aa</td><td>All Aa</td></tr></table></div></div>
+<div class="sec"><h3>Inheritance patterns</h3>
+<p>Read a pedigree for transmission (vertical or horizontal), sex ratio, and <b>segregation</b>: which parent passes it, and to whom.</p>
+<div class="tw"><table><tr><th>Pattern</th><th>Sex ratio</th><th>Skips?</th><th>Signature</th></tr>
+<tr><td>Autosomal dominant</td><td>Equal</td><td>No</td><td>Every affected person has an affected parent; Aa × aa → 50%</td></tr>
+<tr><td>Autosomal recessive</td><td>Equal</td><td>Yes</td><td>Carrier parents; Aa × Aa → 25% affected; consanguinity</td></tr>
+<tr><td>X-linked dominant</td><td>~2 F : 1 M</td><td>No</td><td><b>Affected father → all daughters, no sons</b>; affected mother → half of each</td></tr>
+<tr><td>X-linked recessive</td><td>Mostly males</td><td>Yes</td><td><b>Never father → son</b>; all daughters of affected fathers are carriers</td></tr>
+<tr><td>Y-linked</td><td>Males only</td><td>No</td><td>Father → all sons</td></tr>
+<tr><td>Mitochondrial</td><td>Equal</td><td>No</td><td><b>Affected mother → all children</b>, variable severity; affected father → none</td></tr>
+</table></div>
+<p>Incomplete dominance = intermediate phenotype (lecture lists Tay-Sachs). Codominance = both expressed (AB blood, sickle cell). For Tay-Sachs risk questions, use autosomal recessive.</p></div>
+<div class="sec"><h3>Amelogenesis imperfecta</h3>
+<p>Enamel development disorder: small, discolored, pitted or grooved teeth that wear and break. 1 in 700 in northern Sweden; 1 in 14,000 in the US. About half of cases trace to the four genes below, mostly FAM83H.</p>
+<div class="tw"><table><tr><th>Type</th><th>Stage</th><th>Enamel</th></tr>
+<tr><td>Hypoplastic</td><td>Matrix formation</td><td>Deficient <b>amount</b>: thin, small teeth, gaps, yellow-brown</td></tr>
+<tr><td>Hypomineralized / hypocalcified</td><td>Mineralization</td><td>Deficient <b>quality</b>: normal thickness, porous, rough, <b>chalky</b></td></tr>
+<tr><td>Hypomaturation</td><td>Maturation</td><td>Matrix proteins left behind; <b>soft</b>, whitish</td></tr></table></div>
+<div class="tw"><table><tr><th>Gene</th><th>Normal role</th><th>Mutation</th><th>Inheritance</th></tr>
+<tr><td><b>FAM83H</b></td><td>Cytoplasmic ameloblast protein</td><td>Truncated, <b>mislocalized to nucleus</b></td><td><b>AD</b>, most common</td></tr>
+<tr><td>MMP20</td><td>Enamelysin cleaves amelogenin and ameloblastin for removal</td><td>Proteins not removed → soft enamel</td><td>AR</td></tr>
+<tr><td>ENAM</td><td>Enamelin: crystal formation and growth</td><td>Less or truncated protein</td><td>AR</td></tr>
+<tr><td>AMELX</td><td>Amelogenin separates and supports crystals</td><td>Abnormal or none; <b>vertical grooves</b>; males worse</td><td><b>XLD</b> (~5%)</td></tr></table></div>
+<div class="box warn"><p><b>Traps.</b> Hypocalcified = quality (chalky, normal thickness). Hypoplastic = amount. Hypomaturation = soft. In XLD, more females are affected.</p></div></div>`;
+
+NOTES.cc=`
+<div class="sec"><h3>Phases</h3>
+<div class="tw"><table><tr><th>Phase</th><th>Length</th><th>What happens</th></tr>
+<tr><td>G1</td><td>~10 h, varies most</td><td>Growth, RNA and protein synthesis, organelles duplicate. G1/S checkpoint</td></tr>
+<tr><td>G0</td><td>Variable</td><td>Resting; not committed; can re-enter</td></tr>
+<tr><td>Restriction point</td><td>Late G1</td><td>Committed to S; growth factors no longer needed</td></tr>
+<tr><td>S</td><td>~6 h, constant</td><td>DNA replication; many forks; sister chromatids</td></tr>
+<tr><td>G2</td><td>~4 h</td><td>Prepares for mitosis; G2/M checkpoint (fully replicated, undamaged)</td></tr>
+<tr><td>M</td><td>~1 h</td><td>Mitosis then cytokinesis</td></tr></table></div></div>
+<div class="sec"><h3>Mitosis</h3>
+<div class="tw"><table><tr><th>Stage</th><th>Defining events</th></tr>
+<tr><td>Prophase</td><td>Chromatin condenses into chromatids joined at the <b>centromere</b>; kinetochores form; <b>nucleolus disassembles</b>; envelope still intact</td></tr>
+<tr><td>Prometaphase</td><td><b>Nuclear envelope breaks down</b>; spindle attaches to kinetochores; pulling starts</td></tr>
+<tr><td>Metaphase</td><td>Chromatids line up on the <b>metaphase plate</b>; spindle-assembly checkpoint</td></tr>
+<tr><td>Anaphase</td><td>Centromeres split; <b>sister chromatids move to opposite poles</b></td></tr>
+<tr><td>Telophase</td><td>Kinetochore microtubules and spindle disassemble; <b>nuclear envelopes re-form</b>; chromatids decondense; nucleoli return</td></tr>
+<tr><td>Cytokinesis</td><td>Actin ring contracts → <b>cleavage furrow</b> → two identical cells</td></tr></table></div></div>
+<div class="sec"><h3>Regulation</h3>
+<div class="tw"><table><tr><th>Cyclin</th><th>CDK</th><th>Function</th></tr>
+<tr><td>D</td><td>CDK4/6</td><td>Pass the restriction point (G1/S)</td></tr>
+<tr><td>E, A</td><td>CDK2</td><td>Start DNA synthesis in early S</td></tr>
+<tr><td>B (A)</td><td>CDK1</td><td>G2 → M</td></tr></table></div>
+<ul>
+<li>CDK levels stay constant; cyclins rise and fall. Active complexes phosphorylate Ser/Thr.</li>
+<li><dfn>CKIs</dfn>: <b>INK4</b> (p16) blocks cyclin D–CDK4/6 → stops at the restriction point. <b>CIP/KIP</b> (<b>p21</b>, p27) inhibit CDK2.</li>
+<li><dfn>RB</dfn>: hypophosphorylated RB holds <b>E2F</b> → G1 arrest. Cyclin D–CDK4/6 then cyclin E–CDK2 hyperphosphorylate it → E2F freed → S genes on.</li>
+<li><dfn>p53</dfn>: DNA damage → p53 stabilized → <b>p21</b> → arrest and repair; irreparable → apoptosis.</li>
+<li><dfn>G2 checkpoint</dfn>: CDK1 held off by tyrosine phosphates; <b>Cdc25c</b> removes them → CDK1–cyclin B → mitosis.</li>
+</ul></div>
+<div class="sec"><h3>Necrosis vs apoptosis</h3>
+<div class="tw"><table><tr><th></th><th>Necrosis</th><th>Apoptosis</th></tr>
+<tr><td>Nature</td><td>Passive, injury</td><td>Programmed, ATP-requiring</td></tr>
+<tr><td>Scope</td><td>Groups of cells together</td><td>Single cells</td></tr>
+<tr><td>Size</td><td><b>Swells and lyses</b></td><td><b>Shrinks, no lysis</b>, blebs</td></tr>
+<tr><td>Markers</td><td>Contents spill</td><td><b>Phosphatidylserine</b> on outer leaflet; chromatin condenses; cytochrome c released</td></tr>
+<tr><td>Inflammation</td><td>Yes</td><td>None: phagocytes engulf and release <b>IL-10, TGF-β</b></td></tr>
+<tr><td>Time</td><td>Days</td><td>Hours</td></tr></table></div>
+<div class="box warn"><p><b>Traps.</b> Cleavage furrow = cytokinesis. Envelope breaks down in prometaphase, not prophase. Mutant RB means the cell <i>can't</i> arrest in G1.</p></div></div>`;
+
+NOTES.bio=`
+<div class="sec"><h3>Restriction enzymes and cloning</h3>
+<ul>
+<li>Bacterial defense endonucleases; type II used in the lab. Recognize 4–8 bp <b>palindromes</b> and make <b>double-stranded</b> cuts.</li>
+<li><dfn>Sticky ends</dfn>: BamHI (GGATCC), EcoRI (GAATTC), HindIII (AAGCTT). <dfn>Blunt ends</dfn>: HaeIII (GGCC), PvuII (CAGCTG); joined by T4 ligase.</li>
+<li>Cut insert and vector with the <b>same</b> enzyme so the ends match. EcoRI = E. coli, strain RY13, first enzyme.</li>
+</ul>
+<ol>
+<li>Cut DNA and vector with one restriction enzyme.</li>
+<li>Join with DNA ligase → recombinant DNA.</li>
+<li><b>Transformation</b>: into bacteria or yeast (transfection = eukaryotic cells).</li>
+<li>Select (antibiotic resistance) and grow a clone.</li>
+<li>Cut the insert back out.</li>
+</ol>
+<p><dfn>Vector needs</dfn>: origin of replication, a <b>selectable marker</b>, and a unique restriction site. Plasmids and viruses are common. Libraries: genomic (all DNA) or cDNA (expressed genes, via reverse transcriptase).</p></div>
+<div class="sec"><h3>Sequencing and PCR</h3>
+<ul>
+<li><dfn>Sanger</dfn>: template + primer + four dNTPs, split into four tubes each with a little of one <b>ddNTP</b>. ddNTPs <b>lack a 3′-OH</b>, so chains stop there.</li>
+<li><dfn>PCR</dfn>: thermostable polymerase; <b>primers flanking the target</b> define what's copied; each cycle doubles it. <b>Denature → anneal → extend</b> (the 2020 key: anneal 30–65 °C, extend 60–70 °C).</li>
+</ul></div>
+<div class="sec"><h3>Detection methods</h3>
+<div class="tw"><table><tr><th>Technique</th><th>Detects</th><th>How</th></tr>
+<tr><td>Southern blot</td><td><b>DNA</b></td><td>Cut with RE → gel → denature, transfer → probe</td></tr>
+<tr><td>Northern blot</td><td><b>RNA</b></td><td>mRNA gel → membrane → radiolabeled probe; size and amount</td></tr>
+<tr><td>Microarray</td><td>Thousands of genes</td><td>Fluorescent cDNA on DNA spots; expression patterns, variants</td></tr>
+<tr><td>Western blot</td><td><b>Protein</b></td><td>Labeled antibody</td></tr>
+<tr><td>ELISA</td><td><b>Protein</b>, antibodies</td><td>Microtiter wells; enzyme-linked antibody gives color</td></tr></table></div>
+<div class="box key"><p><b>SNoW DRoP</b>: Southern–DNA, Northern–RNA, Western–Protein. A radiolabeled probe screen is read on X-ray film.</p></div>
+<div class="box warn"><p><b>Traps.</b> Transformation is getting DNA into bacteria, not into the vector. Restriction enzymes don't only make blunt ends. ddNTPs lack the 3′-OH, not the 2′-OH.</p></div></div>`;
+const QB=[];
+function Q(t,y,n,q,o,a,e,f){QB.push({t,y,n,q,o,a,e,f:f||""});}
+const T5=["DNA","RNA","both","neither"];
+
+/* ===================== 2025 ===================== */
+Q("pp","2025",1,"Which of the following is a pyrimidine base found in DNA only and not RNA?",["Cytosine","Thymine","Uracil","Guanine","Adenosine"],1,"Thymine replaces uracil in DNA. Cytosine is in both; guanine is a purine; adenosine is a nucleoside.");
+Q("pp","2025",2,"What distinguishes a nucleoside from a nucleotide?",["Nucleoside contains phosphate","Nucleotide lacks a base","Nucleoside contains only sugar and base","Nucleotide contains only sugar and base","Nucleoside contains sugar and phosphate"],2,"Nucleoside = base + sugar. Add phosphate(s) to get a nucleotide.","hy");
+Q("pp","2025",3,"Which enzyme catalyzes the committed step in purine synthesis?",["PRPP synthetase","Ribonucleotide reductase","HGPRT","GPAT (glutamine-phosphoribosylpyrophosphate amidotransferase)","Thymidylate synthase"],3,"GPAT converts PRPP + glutamine to 5-phosphoribosylamine. It is feedback-inhibited by AMP and GMP.","hy");
+Q("pp","2025",4,"Which enzyme is essential for the purine salvage pathway and deficient in Lesch-Nyhan syndrome?",["HGPRT","PRPP synthetase","GPAT","Ribonucleotide reductase","Adenylate kinase"],0,"HGPRT salvages hypoxanthine and guanine using PRPP. Complete loss causes Lesch-Nyhan.","hy");
+Q("pp","2025",5,"Which of the following is a key difference between de novo and salvage pathways?",["Salvage uses amino acids as precursors","De novo uses recycled nucleotides","Salvage is energy-intensive","Salvage occurs only in the liver","De novo builds nucleotides from scratch"],4,"De novo builds from small precursors (amino acids, CO2, folate). Salvage recycles bases and is cheaper; it matters most in the brain.");
+Q("pp","2025",6,"Which of the following is the end product of pyrimidine degradation?",["Uric acid","Hypoxanthine","Carbon dioxide + ammonia","Xanthine","IMP"],2,"Pyrimidines break down to soluble β-alanine / β-aminoisobutyrate, CO2, and NH3. Uric acid is the purine end product.","hy");
+Q("pp","2025",7,"What is the function of ribonucleotide reductase?",["Converts AMP to ATP","Reduces ribose to deoxyribose","Synthesizes PRPP","Converts UMP to dTMP","Salvages purine bases"],1,"RNR replaces the 2′-OH of ribonucleoside diphosphates with H, making dNDPs for DNA synthesis.","hy");
+Q("dna","2025",8,"Which of the following correctly describes the structure of DNA?",["DNA is composed of a sugar-phosphate backbone and nitrogenous bases","DNA strands are parallel and composed of amino acids","DNA is positively charged due to phosphate groups","DNA strands are held together by covalent bonds between bases","DNA is composed of RNA and proteins"],0,"Antiparallel strands, negatively charged phosphate backbone, bases paired by hydrogen bonds.");
+Q("dna","2025",9,"What is the complementary DNA sequence to 5′-ATGCCGTA-3′?",["5′-TACGGCAT-3′","3′-ATGCCGTA-5′","5′-UACGGCAU-3′","3′-TACGGCAT-5′","3′-UACGGCAU-5′"],3,"Keyed D (complement written 3′→5′). Everyone got credit because the complement is a palindrome, so A is also correct. Always check which direction the choices are written.","void");
+Q("dna","2025",10,"Which enzyme unwinds the DNA helix during replication?",["DNA polymerase I","DNA ligase","Topoisomerase","Primase","DNA helicase"],4,"Helicase uses ATP to separate strands. Topoisomerase relieves the supercoils that unwinding creates.","hy");
+Q("dna","2025",11,"Which of the following is true about telomeres?",["They are coding regions of DNA","They shorten with each cell division in somatic cells","They are synthesized by DNA polymerase III","They are found only in prokaryotes","They are composed of random sequences"],1,"Telomeres are noncoding AGGGTT repeats on linear chromosomes. Telomerase maintains them in germ, stem, and cancer cells.","hy");
+Q("dna","2025",12,"Which repair mechanism is most accurate for double-strand breaks?",["Nucleotide excision repair","Base excision repair","Non-homologous end joining","Homologous recombination","Mismatch repair"],3,"HR copies the sister chromatid (S/G2), so it's essentially error-free. NHEJ joins ends without a template and is error-prone.","hy");
+Q("dna","2025",13,"Which enzyme removes altered bases in base excision repair?",["DNA polymerase","DNA ligase","Glycosylase","Endonuclease","Primase"],2,"Glycosylase removes the base, then AP endonuclease and dRP lyase clear the sugar, pol I fills, ligase seals.");
+Q("dna","2025",14,"What is the role of DNA ligase in lagging strand synthesis?",["Joins Okazaki fragments","Unwinds DNA","Synthesizes RNA primers","Removes RNA primers","Adds nucleotides to the 3′ end"],0,"Pol I swaps primers for DNA; ligase seals the nicks between fragments.");
+Q("rna","2025",15,"Which type of RNA serves as a scaffold and has catalytic activity in the ribosome?",["mRNA","tRNA","miRNA","snRNP","rRNA"],4,"rRNA is 80% of cellular RNA; large-subunit rRNA is the peptidyl transferase ribozyme.","hy");
+Q("rna","2025",16,"Which sequence is found ~10 bases upstream of the transcription start site in prokaryotes?",["TAAT box","CAAT box","Pribnow box","GC box","Enhancer"],2,"Pribnow box (TATAAT) at −10 is essential. The −35 sequence sets the rate. CAAT and GC boxes are eukaryotic proximal elements.");
+Q("rna","2025",17,"Which RNA polymerase synthesizes mRNA in eukaryotes?",["RNA pol I","RNA pol II","RNA pol III","Primase","DNA pol I"],1,"Pol I = large rRNAs (nucleolus); pol II = mRNA, snRNA, miRNA; pol III = tRNA and 5S rRNA.","hy");
+Q("rna","2025",18,"Which subunit of prokaryotic RNA polymerase is responsible for polymerase activity?",["σ","Ω","α","β","β′"],3,"β = 5′→3′ polymerase; β′ = template binding; 2α + Ω = assembly; σ = promoter recognition.");
+Q("rna","2025",19,"Which of the following is true about eukaryotic mRNA?",["It may contain introns","It lacks a 5′ cap","It is polycistronic","It is synthesized in the cytoplasm","It does not undergo posttranscriptional processing"],0,"Keyed A: the pre-mRNA (hnRNA) contains introns. Mature mRNA has had them spliced out. Eukaryotic mRNA is capped, monocistronic, and made in the nucleus.");
+Q("rna","2025",20,"Which transcription factor recognizes and binds the TATA box?",["Mediator","RNA pol II","TFIIH","TFIIF","TFIID"],4,"TFIID binds TATA, Inr, DPE. TFIIF recruits pol II. TFIIH melts DNA and phosphorylates pol II.","hy");
+Q("rna","2025",21,"What is the role of snRNPs in mRNA processing?",["Add poly-A tail","Cap the mRNA","Mediate splicing","Transport mRNA","Degrade introns"],2,"Uracil-rich snRNAs + proteins (U1, U2, U4, U5, U6) base-pair with intron ends and form the spliceosome.");
+Q("prot","2025",22,"Which codon serves as the universal start codon for protein synthesis?",["UAA","AUG","UAG","UGA","AAA"],1,"AUG codes for Met (fMet in bacteria). UAA, UAG, UGA are stops.","hy");
+Q("prot","2025",23,"What does the term “degeneracy” in the genetic code refer to?",["Multiple codons can code for the same amino acid","One codon can code for multiple amino acids","Codons are read in overlapping frames","Codons contain introns","Codons are always mutated"],0,"Degeneracy = redundancy. Specificity = one codon always means one amino acid.","hy");
+Q("prot","2025",24,"A mutation that changes a codon but still codes for the same amino acid is called a:",["Missense mutation","Nonsense mutation","Frameshift mutation","Silent mutation","Splice site mutation"],3,"Silent mutations exploit degeneracy (e.g., AAA ↔ AAG, both Lys).");
+Q("prot","2025",25,"Which enzyme attaches amino acids to tRNA?",["Helicase","RNA polymerase","Peptidyl transferase","tRNA ligase","Aminoacyl-tRNA synthetase"],4,"Aminoacyl-tRNA synthetases (one per amino acid) use ATP to charge tRNA and proofread.","hy");
+Q("prot","2025",26,"What is the function of the Shine-Dalgarno sequence in prokaryotes?",["Adds poly-A tail","Facilitates mRNA splicing","Positions ribosome near start codon","Caps the mRNA","Degrades mRNA"],2,"The purine-rich SD sequence pairs with the 3′ end of 16S rRNA in the 30S subunit, placing it near AUG.","hy");
+Q("prot","2025",27,"Which site on the ribosome does the charged initiator tRNA (tRNAi) bind to?",["A site","P site","E site","T site","R site"],1,"tRNAi is the only aminoacyl-tRNA that goes straight to the P site.","hy");
+Q("prot","2025",28,"What is the function of the proteasome?",["Degrades tagged proteins","Synthesizes proteins","Adds ubiquitin","Transports proteins to the nucleus","Folds proteins"],0,"Ubiquitin chains tag the protein; the proteasome recognizes, unfolds, de-ubiquitinates, and cuts it to peptides.","hy");
+Q("gene","2025",29,"In the lac operon, what happens when lactose is present and glucose is absent?",["Operon is repressed","CAP is inactive","RNA polymerase cannot bind","Maximum transcription occurs","Allolactose is degraded"],3,"Allolactose pulls the repressor off; low glucose → high cAMP → cAMP–CAP bound → maximal transcription.","hy");
+Q("gene","2025",30,"What molecule is produced during the stringent response in bacteria?",["cAMP","NADH","GTP","ATP","ppGpp"],4,"Uncharged tRNA in the A site activates RelA, which makes ppGpp and shuts down rRNA/tRNA transcription.","hy");
+Q("gene","2025",31,"What is attenuation in the trp operon?",["Activation of transcription","Translation of mRNA before transcription","Termination of transcription before completion","Binding of repressor to operator","Splicing of mRNA"],2,"When polymerase escapes repression at high Trp, a leader hairpin terminates transcription early. Prokaryote-only.","hy");
+Q("gene","2025",32,"In the galactose circuit, what protein binds to Gal4 to inhibit transcription?",["TAD","DBD","CAP","Gal80","Gal3"],3,"Gal80 covers Gal4's activation domain. Galactose activates Gal3, which pulls Gal80 off.");
+Q("gene","2025",33,"What change occurs in mRNA to produce apo-B-48?",["CAA is changed to UAA","A codon is deleted","A codon is inserted","A missense mutation occurs","A silent mutation occurs"],0,"Intestinal mRNA editing: C → U turns the Gln codon CAA into the stop codon UAA, giving a shorter protein.","hy");
+Q("bio","2025",34,"What is the main difference between dNTPs and ddNTPs in the context of Sanger sequencing?",["ddNTPs have an extra phosphate group","ddNTPs lack a 3′-OH group","dNTPs are radioactive","dNTPs are fluorescently labeled","ddNTPs lack a 2′-OH group"],1,"No 3′-OH means the next nucleotide can't attach, so the chain stops. (Every deoxy-nucleotide already lacks a 2′-OH.)","hy");
+Q("gene","2025",35,"Which protein complex does the mature miRNA strand associate with to degrade target mRNA?",["Dicer","Drosha","IRP","Gal4","RISC"],4,"Drosha (nucleus) and Dicer (cytoplasm) process the miRNA; the guide strand then loads into RISC.");
+Q("genet","2025",36,"Which of the following best defines a phenotype?",["The DNA sequence of a gene","The observable traits of an organism","The set of alleles inherited from parents","The location of a gene on a chromosome","The dominant and recessive allele"],1,"Phenotype = observable traits. Genotype = set of alleles. Locus = location.","hy");
+Q("gene","2025",37,"What is the effect of DNA methylation in promoter regions?",["Promotes transcription","Increases mRNA stability","Silences gene expression","Enhances translation","Activates enhancers"],2,"Cytosine methylation at promoter CpG islands silences genes; hypermethylated genes are inactive.","hy");
+Q("genet","2025",38,"What are the expected genotypes of progeny from a cross between two heterozygotes (Aa × Aa)?",["1/2 Aa : 1/2 aa","1/2 Aa : 1/2 AA","All Aa","1/4 AA : 1/2 Aa : 1/4 aa","1/2 AA : 1/4 Aa : 1/2 aa"],3,"1:2:1 genotype ratio; 3:1 phenotype ratio if A is dominant.","hy");
+Q("genet","2025",39,"Identify the inheritance pattern based on the pedigree chart shown.",["Autosomal recessive","X-linked dominant","X-linked recessive","Y-linked","Mitochondrial"],1,"Keyed X-linked dominant. Look for: affected father → all daughters, no sons; no skipped generations; more affected females.","img");
+Q("genet","2025",40,"Which inheritance pattern shows affected males more frequently, and skips generations or has transmission through carrier females?",["Mitochondrial","Y-linked","Autosomal dominant","X-linked dominant","X-linked recessive"],4,"X-linked recessive: mostly males, skips through carrier mothers, never father → son.","hy");
+Q("genet","2025",41,"A 10-year-old boy's teeth are “chalky and break easily.” Enamel is creamy white, of normal thickness, but more porous, rough, and weak. Which enamel defect mechanism is most likely?",["Defective enamel matrix formation","Defect in enamel mineralization","Defective dentin formation","Incomplete removal of enamel proteins","Fluoride toxicity"],1,"Normal thickness + chalky/porous = hypomineralized (hypocalcified) AI, a mineralization defect. Thin = hypoplastic (matrix). Soft = hypomaturation (protein removal).","hy");
+Q("genet","2025",42,"Which gene mutation is most commonly associated with autosomal dominant amelogenesis imperfecta?",["ENAM","MMP20","AMELX","FAM83H","DSPP"],3,"FAM83H is AD and the most common known cause. MMP20 and ENAM are AR; AMELX is XLD.","hy");
+Q("cc","2025",43,"What is the function of the G2 phase?",["DNA replication","Preparation for mitosis","Cytoplasmic division","Chromosome alignment","Protein degradation"],1,"G2 (~4 h) is the safety gap before mitosis; the G2/M checkpoint confirms DNA is fully replicated and undamaged.");
+Q("cc","2025",44,"During which stage of mitosis do sister chromatids separate and move to opposite poles?",["Prophase","Metaphase","Anaphase","Telophase","Prometaphase"],2,"Anaphase: centromeres split, kinetochores separate, chromatids move to the poles.","hy");
+Q("bio","2025",45,"What do restriction enzymes do?",["Replicate DNA","Ligate DNA fragments","Denature proteins","Transcribe RNA","Cut DNA at specific sequences"],4,"Restriction endonucleases make double-stranded cuts at 4–8 bp palindromic sites.","hy");
+Q("bio","2025",46,"What is the correct order of PCR steps?",["Anneal → Denature → Extend","Denature → Extend → Anneal","Denature → Anneal → Extend","Extend → Denature → Anneal","Anneal → Extend → Denature"],2,"Separate strands, bind primers, then the thermostable polymerase extends.","hy");
+Q("gene","2025",47,"A 60-year-old man has low serum iron that may be affecting oral healing. Which molecular interaction stabilizes transferrin receptor mRNA under low iron?",["miRNA binding to 5′ UTR","IRP binding to 5′ IRE","IRP binding to 3′ IRE","Dicer cleavage of mRNA","Poly-A tail shortening"],2,"Low iron: IRPs bind the IREs in the 3′-UTR of TfR mRNA, stabilizing it so more receptor is made.","hy");
+Q("dna","2025",48,"An 8-year-old girl gets severe sunburns with minimal sun. Biopsy shows thymine dimers; she has xeroderma pigmentosum. Which repair mechanism is defective?",["Nucleotide excision repair","Mismatch repair","Base excision repair","Homologous recombination","Non-homologous end joining"],0,"XP = recessive NER defects, so UV pyrimidine dimers aren't removed.","hy");
+Q("pp","2025",49,"A 42-year-old man has TMJ pain and swelling after meat and wine. Aspiration shows monosodium urate crystals. Which pathway is most likely contributing?",["Pyrimidine degradation","De novo pyrimidine synthesis","Purine salvage","Ribonucleotide reduction","Purine degradation"],4,"Urate crystals = gout = excess uric acid, the end product of purine degradation.","hy");
+Q("gene","2025",50,"A 28-year-old woman's gum tissue expresses different protein isoforms than expected. DNA sequence and transcription/translation machinery are normal. Which process explains multiple isoforms from one gene?",["RNA editing","Polyadenylation","Transcription termination","5′ capping","Alternative splicing"],4,"Tissue-specific alternative splicing makes several isoforms from one pre-mRNA (>90% of genes).","hy");
+
+/* ===================== 2024 ===================== */
+Q("pp","2024",1,"What is a nucleoside composed of?",["Base + pentose sugar + phosphate","Base + ribose + phosphate","Base + phosphate","Pentose sugar + phosphate","Base + ribose sugar"],4,"No phosphate in a nucleoside.","hy");
+Q("pp","2024",2,"Which enzyme is involved in the committed step of de novo purine synthesis?",["Carbamoyl phosphate synthetase II","PRPP","Glutamine:phosphoribosylpyrophosphate amidotransferase (GPAT)","Adenylosuccinate synthetase","Xanthine oxidase"],2,"GPAT. CPS II is the pyrimidine regulated step; PRPP is a substrate, not an enzyme.","hy");
+Q("pp","2024",3,"What is the primary function of the salvage pathway for purines?",["To synthesize purines from scratch","To degrade purines into uric acid","To promote de novo synthesis of purines","To convert purines into pyrimidines","To recycle purines from the degradation pathway"],4,"HGPRT and APRT reattach bases to PRPP.");
+Q("pp","2024",4,"Which enzyme is responsible for reducing ribonucleotides to deoxyribonucleotides?",["Thymidylate synthase","Ribonucleotide reductase","Adenosine deaminase","Xanthine oxidase","HGPRT"],1,"RNR, regenerated by thioredoxin and NADPH.","hy");
+Q("pp","2024",5,"Which of the following conditions is associated with a complete deficiency in HGPRT?",["Gout","Lesch-Nyhan syndrome","SCID","Tay-Sachs disease","Phenylketonuria"],1,"Complete HGPRT loss = Lesch-Nyhan (X-linked recessive). SCID comes from ADA deficiency.","hy");
+Q("dna","2024",6,"What is the complementary DNA sequence to 5′-ATCGGTA-3′?",["5′-TAGCCAT-3′","5′-TACCGAT-3′","5′-UAGCCAU-3′","5′-ATCGGTA-3′","5′-TAGGCAT-3′"],1,"Complement 3′-TAGCCAT-5′, reversed to read 5′→3′: TACCGAT. Choice A is the classic trap (complement not reversed).","hy");
+Q("dna","2024",7,"During DNA replication, how is the lagging strand synthesized?",["Continuously in the 3′ to 5′ direction","Continuously in the 5′ to 3′ direction","Discontinuously in the 3′ to 5′ direction","Discontinuously in the 5′ to 3′ direction","Discontinuously in the 5′ to 5′ direction"],3,"All DNA synthesis is 5′→3′; the lagging strand is made in Okazaki fragments away from the fork.","hy");
+Q("dna","2024",8,"What is the primary function of telomerase?",["To add repetitive nucleotide sequences to the ends of chromosomes","To repair DNA damage","To initiate DNA replication","To unwind the DNA double helix","To synthesize RNA primers"],0,"Telomerase, a ribonucleoprotein, maintains telomere length.","hy");
+Q("dna","2024",9,"Which DNA repair mechanism is primarily responsible for correcting pyrimidine dimers caused by UV radiation?",["Base excision repair","Mismatch repair","Nucleotide excision repair","Homologous recombination","Non-homologous end joining"],2,"NER removes bulky helix-distorting lesions such as thymine dimers.","hy");
+Q("dna","2024",10,"What type of bond holds the complementary bases together in a DNA molecule?",["Covalent bond","Ionic bond","Phosphodiester bond","Peptide bond","Hydrogen bond"],4,"Hydrogen bonds pair the bases; phosphodiester bonds link nucleotides along each strand.","hy");
+Q("rna","2024",11,"Which type of RNA is primarily involved in carrying amino acids to the ribosome during protein synthesis?",["mRNA","rRNA","tRNA","snRNA","miRNA"],2,"tRNA is the adaptor; the amino acid rides on its 3′ CCA.","hy");
+Q("rna","2024",12,"Which RNA polymerase is responsible for synthesizing mRNA in eukaryotes?",["RNA polymerase I","RNA polymerase II","RNA polymerase III","RNA polymerase IV","RNA polymerase V"],1,"Pol II.","hy");
+Q("rna","2024",13,"Which enzyme adds acetyl groups to histone proteins, leading to a more relaxed chromatin structure?",["Histone acetyltransferase (HAT)","Histone deacetylase (HDAC)","DNA methyltransferase (DMT)","RNA polymerase","DNA helicase"],0,"HAT neutralizes lysine's + charge, loosening DNA–histone contact → euchromatin.","hy");
+Q("rna","2024",14,"What is the purpose of the 5′ cap added to eukaryotic mRNA?",["To initiate transcription from DNA","To protect the mature mRNA from degradation","To facilitate the removal of introns","To add amino acids to the primary mRNA transcript","To initiate DNA replication"],1,"The 7-methylguanosine cap blocks nucleases and recruits eIF-4 for translation.");
+Q("rna","2024",15,"Which transcription factor is responsible for recognizing and binding the TATA box in eukaryotic promoters?",["TFIIB","TFIID","TFIIE","TFIIF","TFIIH"],1,"TFIID.","hy");
+Q("prot","2024",16,"Which of the following is the initiation codon in mRNA?",["UAA","UAG","UGA","AUG","GGG"],3,"AUG.","hy");
+Q("prot","2024",17,"Which characteristic of the genetic code means that multiple codons can code for the same amino acid?",["Specificity","Universality","Commaless","Nonoverlapping","Degeneracy"],4,"Degeneracy.","hy");
+Q("prot","2024",18,"According to the wobble hypothesis, which position (read 5′ to 3′) of the codon allows for nontraditional base pairing?",["First position","Second position","Third position","Fourth position","Fifth position"],2,"The codon's 3rd (3′) base pairs loosely with the anticodon's 1st (5′) base.","hy");
+Q("prot","2024",19,"Which factor is responsible for recognizing the stop codon during translation termination in eukaryotes?",["eRF","eEF-2","eIF-2","EF-Tu","IF-3"],0,"eRF reads all three stops. eEF-2 = translocation; eIF-2 = brings tRNAi; EF-Tu and IF-3 are prokaryotic.","hy");
+Q("prot","2024",20,"What is the role of ubiquitins on proteins?",["To fold proteins into their functional form","To tag defective or misfolded proteins for degradation","To transport proteins to the nucleus from the cytoplasm","To initiate protein translation from mRNA","To protect nascent peptides from degradation"],1,"A ubiquitin chain marks the protein for the proteasome.","hy");
+Q("gene","2024",21,"What is the primary function of the stringent factor (RelA) in E. coli?",["To degrade mRNA","To synthesize more rRNA and tRNA","To produce guanosine tetraphosphate (ppGpp)","To bind to the operator region of the trp operon","To inhibit ribosome function"],2,"RelA makes ppGpp, which selectively inhibits rRNA/tRNA transcription.","hy");
+Q("gene","2024",22,"How can alternative splicing affect gene expression?",["By producing different protein isoforms","By producing different DNA sequences","By increasing the mRNA stability","By increasing the rate of transcription","By increasing the rate of translation"],0,"One pre-mRNA, several isoforms.","hy");
+Q("gene","2024",23,"What happens to the mRNA of the transferrin receptor (TfR) when intracellular iron levels are low?",["The mRNA is degraded by iron regulatory proteins (IRPs)","The mRNA is stabilized by iron regulatory proteins (IRPs)","The mRNA is spliced differently by alternative splicing","The mRNA is translated into a different protein by mRNA editing","The TfR mRNA rate of transcription increases"],1,"IRPs bind the 3′ IREs and protect the mRNA, so more TfR is made to import iron.","hy");
+Q("gene","2024",24,"What is the primary function of miRNAs in gene regulation?",["To bind to tRNAs and block mRNA translation","To degrade DNA to decrease transcription","To bind to ribosomes and enhance translation","To stabilize mRNA for increased protein translation","To repress mRNA translation or degrade mRNA"],4,"miRNA–RISC binds complementary mRNA → translational repression or degradation.","hy");
+Q("gene","2024",25,"What mechanism allows the trp operon to be regulated when tryptophan levels are high but transcription is initiated?",["Repression","Induction","Attenuation","Activation by cAMP","Stabilization of mRNA"],2,"Attenuation catches polymerases that escaped repression.","hy");
+Q("genet","2024",26,"Which term describes the observable characteristics of an organism?",["Phenotype","Genotype","Heterozygote","Homozygote","Allele"],0,"Phenotype.","hy");
+Q("genet","2024",27,"Which type of mutation results in substitution of one amino acid for another?",["Missense mutation","Nonsense mutation","Silent mutation","Frameshift mutation","Sense mutation"],0,"Missense; conservative if the new amino acid has similar properties.");
+Q("genet","2024",28,"Which inheritance pattern is characterized by the trait appearing in every generation and affecting both sexes equally?",["Autosomal recessive","Autosomal dominant","X-linked recessive","X-linked dominant","Y-linked"],1,"AD: vertical transmission, both sexes, every affected person has an affected parent.","hy");
+Q("genet","2024",29,"Which type of amelogenesis imperfecta is characterized by a deficiency in the amount of enamel present?",["Hypomaturation","Hypocalcified","Hypoplastic","Hypomineralized","Hypomature"],2,"Hypoplastic = amount (thin, matrix defect).","hy");
+Q("genet","2024",30,"What is the probability that a male affected by an X-linked recessive disease transmits it to his male offspring? (His mate is homozygous wild-type.)",["0%","25%","50%","75%","100%"],0,"Sons get his Y, not his X. All daughters become carriers.","hy");
+Q("cc","2024",31,"During which phase of the cell cycle does DNA replication occur?",["G1 phase","S phase","G2 phase","M phase","Cytokinesis"],1,"S phase, ~6 h.","hy");
+Q("cc","2024",32,"Which stage of mitosis is characterized by the alignment of chromosomes at the cell's equator?",["Prophase","Prometaphase","Metaphase","Anaphase","Telophase"],2,"Metaphase plate.","hy");
+Q("cc","2024",33,"What is the role of the active form of retinoblastoma (RB) protein in the cell cycle?",["Promotes cell cycle progression out of G1","Inhibits cell cycle progression out of G1","Repairs DNA damage in G1","Initiates apoptosis in G1","Activates CDKs in G1"],1,"Active (hypophosphorylated) RB holds E2F, blocking S-phase genes.","hy");
+Q("bio","2024",34,"What is the correct order of the thermocycling steps in PCR?",["Annealing, Denaturation, Extension","Denaturation, Annealing, Extension","Extension, Denaturation, Annealing","Denaturation, Extension, Annealing","Annealing, Extension, Denaturation"],1,"Denature → anneal → extend.","hy");
+Q("bio","2024",35,"What is the primary function of restriction enzymes in molecular biology?",["To amplify DNA","To amplify cDNA","To cut DNA at specific sequences","To join DNA fragments using sticky/cohesive ends","To clone DNA and cDNA libraries"],2,"They cut; ligase joins.","hy");
+Q("bio","2024",36,"Which enzyme is used to join DNA fragments during the cloning process?",["DNA polymerase","RNA polymerase","DNA helicase","Restriction enzyme","DNA ligase"],4,"DNA ligase (T4 ligase for blunt ends).");
+Q("bio","2024",37,"Which feature is essential for a cloning vector to be useful in gene cloning?",["Presence of a selectable marker","Ability to translate RNA","Ability to increase replication of host DNA","Ability to decrease replication of host DNA","Ability to synthesize proteins"],0,"Vectors need an ori, a selectable marker (usually antibiotic resistance), and a unique restriction site.","hy");
+Q("bio","2024",38,"Which technique is used to detect specific DNA sequences?",["Digestion with restriction enzymes","Southern blotting","Gel electrophoresis","Northern blotting","Western blotting"],1,"SNoW DRoP: Southern–DNA.","hy");
+Q("bio","2024",39,"In the Sanger method, what causes the termination of DNA strand elongation?",["The incorporation of dideoxynucleotides","The incorporation of ribonucleotides","The presence of DNA polymerase inhibitors","The lack of dideoxynucleotides","The presence of exonucleases"],0,"ddNTPs lack a 3′-OH.","hy");
+Q("prot","2024",40,"A 4-year-old who tires easily and has trouble walking has a mutation in an intron of the dystrophin gene. What is most likely defective?",["Initiation of dystrophin translation","Termination of dystrophin translation","Capping of dystrophin mRNA","Splicing of dystrophin mRNA","Tailing of dystrophin mRNA"],3,"Intron mutations usually disrupt splice sites.","hy");
+Q("rna","2024",41,"What is the RNA product of the DNA template sequence 5′-GATCTAC-3′ (both written conventionally)?",["5′-CUAGAUU-3′","5′-CUAGUAG-3′","5′-GUAGAUC-3′","5′-GAUCUAC-3′","5′-CUAGUAC-3′"],2,"Reverse complement of the template with U: 5′-GUAGAUC-3′. Choice D is the coding-strand trap.","hy");
+Q("prot","2024",42,"Which of the following is required for both prokaryotic and eukaryotic protein synthesis?",["Binding of the small subunit to the Shine-Dalgarno sequence","Formylated methionyl-tRNA","Movement of mRNA out of the nucleus","Recognition of the 5′ cap by initiation factors","Binding of aminoacyl-tRNA to the ribosome"],4,"Every other option is specific to one kingdom.");
+Q("gene","2024",43,"Which of the following is best described as trans-acting in gene expression?",["Promoter element","Enhancer element","Silencer element","Transcription factor","TATA box"],3,"Proteins that diffuse to their site are trans; DNA sequences are cis.","hy");
+Q("gene","2024",44,"Which process is most directly associated with DNA methylation in gene expression?",["Increased protein translation","RNA splicing/alternative splicing","Transcriptional repression/silencing","Post-translational modification","Decreased mRNA stability"],2,"Promoter CpG methylation silences transcription.","hy");
+Q("gene","2024",45,"The lac operon will be maximally expressed if:",["cAMP levels are low","glucose and lactose are both available","the attenuation stem loop is able to form","the CAP site is occupied","the Shine-Dalgarno sequence is not accessible"],3,"Max expression needs cAMP–CAP bound (no glucose) and the repressor off (lactose).","hy");
+Q("gene","2024",46,"How does the Gal4 protein regulate the galactose circuit in yeast?",["By binding to the upstream activating sequence (UAS) in each chromosome","By binding to the operator region in each chromosome","By degrading galactose in each chromosome","By inhibiting RNA polymerase in each chromosome","By binding to the repressor protein in each chromosome"],0,"Gal4 sits on UAS<sub>Gal</sub> of every galactose gene; there are no operators in eukaryotes.");
+Q("gene","2024",47,"What is the result of mRNA editing in the production of apo-B-48 protein?",["The mRNA is degraded, creating a shorter protein","The mRNA is spliced differently, creating a shorter protein","C in CAA is changed to U, creating a shorter protein","The mRNA is stabilized, creating a shorter protein","The mRNA is translated into a shorter protein spontaneously"],2,"CAA → UAA stop.","hy");
+Q("pp","2024",48,"Which of the following is a common purine found in both DNA and RNA?",["Cytosine","Thymine","Uracil","Thymidine","Guanine"],4,"A and G are the purines in both.");
+Q("dna","2024",49,"Which enzyme is responsible for unwinding the DNA double helix during replication?",["DNA helicase","DNA polymerase","DNA ligase","Primase","Topoisomerase"],0,"Helicase.","hy");
+Q("prot","2024",50,"Which signal sequence directs proteins to the mitochondria?",["Nuclear localization signal","N-terminal hydrophobic signal sequence","Signal recognition particle","C-terminal tripeptide signal","Mitochondrial entry sequence"],4,"N-terminal mitochondrial entry sequence, posttranslational. Hydrophobic N-terminal = secreted; C-terminal tripeptide = peroxisome.");
+/* ===================== 2023 ===================== */
+Q("pp","2023",1,"Which of the following are pyrimidines?",["Thymine, cytosine, and uracil","Cytosine, uracil, and guanine","Adenine, guanine, and thymine","Adenine and guanine","Guanine and cytosine"],0,"One-ring bases: C, T, U.","hy");
+Q("pp","2023",2,"Which one of the following is a substrate for ribonucleotide reductase to produce deoxyribonucleotides?",["AMP","dAMP","ADP","dADP","ATP"],2,"RNR works on ribonucleoside diphosphates.","hy");
+Q("dna","2023",3,"The lagging strand is synthesized in the:",["3′ to 5′ direction continuously","3′ to 5′ direction discontinuously","5′ to 3′ direction continuously","5′ to 3′ direction discontinuously","same direction as the replication fork"],3,"Okazaki fragments, 5′→3′, away from the fork.","hy");
+Q("dna","2023",4,"Which DNA repair process is activated if an incorrect pairing of bases occurred during synthesis and was not corrected by DNA polymerase's proofreading?",["Nucleotide excision repair","Mismatch excision repair","Base excision repair","Nonhomologous end joining","Homologous recombination"],1,"Mismatch repair (MutS → MutL → MutH in E. coli, methyl-directed).","hy");
+Q("pp","2023",5,"Unusual (modified) bases are:",["chemically identical to common bases","found only in DNA","found only in RNA","found only in tRNA","modified post-transcription"],4,"Bases are modified after synthesis (e.g., methylation, pseudouridylation). They occur in DNA and RNA, most in tRNA.");
+Q("pp","2023",6,"Which regulated enzyme is negatively regulated (inhibited) by UTP during de novo nucleotide synthesis?",["GPAT","Carbamoyl phosphate synthetase II (CPS II)","HGPRT","CTP synthetase","Ribonucleotide reductase"],1,"CPS II: inhibited by UTP, activated by PRPP.","hy");
+Q("pp","2023",7,"Which one of the following is true regarding purines?",["The regulated step in de novo purine synthesis is inhibited by UTP","The regulated step in de novo purine synthesis is inhibited by PRPP","The end product of purine degradation is exhaled","Purines are a single ring structure","The purine nucleobase is built directly on PRPP"],4,"PRPP activates (not inhibits) GPAT; uric acid is excreted in urine; purines have two rings.");
+Q("dna","2023",8,"During initiation of DNA replication in eukaryotes, which polymerase contains primase?",["Pol α","Pol β","Pol δ","Pol ε","Pol γ"],0,"Pol α–primase starts each fragment. δ = lagging, ε = leading, β = repair, γ = mitochondrial.");
+Q("dna","2023",9,"The Ku proteins are involved with which type of DNA repair?",["Nucleotide excision repair","Mismatch excision repair","Base excision repair","Nonhomologous end joining","Homologous recombination"],3,"Ku binds broken ends and recruits polymerase and ligase.","hy");
+Q("rna","2023",10,"Ribosomal RNA (rRNA):",["makes up the smallest portion of the total RNA","plays a major role in transcription","only provides scaffolding","is a type of coding RNA","can have catalytic activity"],4,"80% of RNA; scaffold and ribozyme; noncoding.","hy");
+Q("rna","2023",11,"If the coding strand is 5′-ATGATC-3′, what is the product of transcription?",["5′-AUGAUC-3′","5′-ATGATC-3′","5′-CUAGUA-3′","5′-TACTAG-3′","5′-GATCAT-3′"],0,"RNA matches the coding strand with U for T.","hy");
+Q("rna","2023",12,"The prokaryote RNA polymerase:",["binds the sigma factor during transcription elongation","is different depending on the type of RNA transcribed","has a sigma factor to recognize the promoter region","apoenzyme binds to the Pribnow box","holoenzyme binds to the Hogness box"],2,"σ makes the holoenzyme, recognizes the promoter, then leaves after ~10 nt. Hogness box is eukaryotic.","hy");
+Q("dna","2023",13,"Stem cells have telomerase activity to:",["protect the linear ends of chromosomes","protect the linear ends of the RNA","protect the linear ends of proteins","shorten the telomeric length","shorten cell division"],0,"Telomerase keeps telomeres long so stem and germ cells keep dividing.","hy");
+Q("rna","2023",14,"Which of the following is true regarding prokaryote mRNA?",["Contains 5′-cap","Contains 3′ poly-A tail","Contains 5′- and 3′-UTR (untranslated regions)","Usually monocistronic","Modified heavily posttranscription"],2,"Prokaryotic mRNA has UTRs but no cap, no tail, little processing, and is polycistronic.");
+Q("rna","2023",15,"General transcription factors:",["only have a DNA binding domain","recruit RNA polymerase II to the promoter region","bind to distal regulatory elements","bind to proximal regulatory elements","are cis-acting elements"],1,"GTFs are trans-acting proteins at the core promoter. Specific TFs bind proximal/distal elements.","hy");
+Q("rna","2023",16,"Histone acetyltransferase (HAT) is involved in chromatin remodeling to:",["add an acetyl group to the DNA","add an acetyl group to the histones","remove an acetyl group from the DNA","remove an acetyl group from the histones","strengthen charge interaction between DNA and histone"],1,"HAT acetylates histone lysines, weakening the DNA–histone attraction.","hy");
+Q("rna","2023",17,"Which is true regarding posttranscriptional modifications in tRNA?",["The long pre-transcript is modified in both eukaryotes and prokaryotes","The long pre-transcript is modified only in eukaryotes","The long pre-transcript is modified only in prokaryotes","–CCA is added to the 5′-end","Exons are removed from the anticodon loop"],0,"rRNA and tRNA are processed in both. CCA goes on the 3′ end; an intron (not exon) is removed from the anticodon loop.");
+Q("prot","2023",18,"Which one of the following is a stop codon?",["AUG","UGA","UGG","GUU","UUU"],1,"UAA, UAG, UGA. UGG = Trp.","hy");
+Q("prot","2023",19,"Aminoacyl-tRNA synthetase:",["adds the –CCA sequence to the 3′-end of tRNA","adds the –CCA sequence to the 5′-end of tRNA","adds the formyl group to tRNAi in prokaryotes","adds the formyl group to tRNAi in eukaryotes","adds the amino acid to the tRNA"],4,"CCA is added by nucleotidyltransferase.","hy");
+Q("prot","2023",20,"Eukaryote mRNA is circularized via the 5′-cap, eIF protein, and poly-A tail:",["to translate the polypeptide in the nucleus","to translate the polypeptide in the cytoplasm","to transcribe and translate at the same time","to translate premature mRNA","to transcribe premature mRNA"],1,"Circularization checks that only mature, processed mRNA is translated in the cytoplasm.");
+Q("prot","2023",21,"Which is true regarding eRF (eukaryotes) and RF-1/RF-2 (prokaryotes)?",["Involved in initiation","Involved in elongation","Involved in termination","Involved in transpeptidation","Involved in translocation"],2,"Release factors read stop codons in the A site.","hy");
+Q("gene","2023",22,"MicroRNAs regulate translation by:",["binding to target DNA","binding to target mRNA","introducing cuts in the DNA","directly degrading protein","editing protein localization signals"],1,"miRNA–RISC pairs with complementary mRNA.","hy");
+Q("prot","2023",23,"Defective proteins are marked for destruction by:",["acetylation","deacetylation","methylation","ubiquitination","ribosylation"],3,"Ubiquitin chain → proteasome.","hy");
+Q("gene","2023",24,"In the lac operon, allolactose:",["binds to the repressor when glucose is absent and lactose is present","binds to the repressor when glucose is present and lactose is absent","acts as a corepressor","is produced from the lacI gene","binds to the CAP site"],0,"Allolactose is the inducer made from lactose. lacI makes the repressor; cAMP–CAP binds the CAP site.","hy");
+Q("gene","2023",25,"The trp operon is regulated by attenuation when:",["Trp levels are high and the operon is repressed","Trp levels are high but transcription is initiated","Trp levels are low and the operon is expressed","Trp levels are low but the operon is repressed","Trp levels are very low"],1,"Attenuation is the backup for polymerases that escape repression.","hy");
+Q("gene","2023",26,"Which domain would most likely contain the zinc finger structural motif?",["DNA-binding domain (DBD)","Ligand-binding domain (LBD)","Transcription activation domain (TAD)","Enhancer DNA sequence","Silencer DNA sequence"],0,"Zinc fingers, leucine zippers, and helix-turn-helix are DNA-binding motifs.");
+Q("gene","2023",27,"Which is true regarding coordinate regulation in the yeast galactose circuit?",["It expresses the structural genes in the galactose operon","Gal4's TAD is blocked by Gal80 in the presence of galactose","Gal4's TAD is free to recruit transcription proteins in the presence of galactose","Gal4's DBD is blocked by Gal80 in the presence of galactose","Gal4's DBD is free to recruit transcription proteins in the presence of galactose"],2,"With galactose, Gal3 pulls Gal80 off the TAD. Yeast has no operons; the DBD is always bound to UAS.");
+Q("gene","2023",28,"mRNA editing (apoB-48) is an example of gene regulation that:",["produces a different protein from a posttranscriptional modification in a different tissue","produces more protein from a posttranscriptional modification","produces less protein from a posttranscriptional modification","produces the same protein in a different location","produces a defective protein from an unintended point mutation"],0,"Everyone got credit. Best answer: intestine edits the mRNA to make the shorter apoB-48; liver makes apoB-100.","void");
+Q("gene","2023",29,"Under low [iron], the mRNA for the transferrin receptor is stabilized by:",["the binding of IRPs at the IREs","the dissociation of IRPs from the IREs","decreasing TfR synthesis","decreasing IRE synthesis","decreasing IRP synthesis"],0,"IRP binding to the 3′ IREs stabilizes the mRNA.","hy");
+Q("gene","2023",30,"Hypermethylation of DNA at CpG islands is seen with:",["transcriptionally active genes","transcriptionally inactive genes","euchromatin state","decondensed DNA","relaxed nucleosomes"],1,"Hypermethylated = silent.","hy");
+Q("gene","2023",31,"Histone deacetylase (HDAC) activity will be high in:",["transcriptionally active genes","transcriptionally inactive genes","euchromatin state","decondensed DNA","relaxed nucleosomes"],1,"HDAC restores lysine's + charge → condensed heterochromatin.","hy");
+Q("genet","2023",32,"A conservative missense mutation is when a single base substitution results in:",["an amino acid substitution with similar properties","an amino acid substitution with different properties","a shift in the reading frame","a premature stop codon","the same amino acid due to degeneracy"],0,"Nonconservative = different properties; same amino acid = silent.");
+Q("genet","2023",33,"For an X-linked dominant disease, which characteristic would be expected?",["Equal numbers of males and females affected","More males affected than females","More females affected than males","Affected father has all sons affected","Affected father has no daughters affected"],2,"Females have two X's to get it on; affected fathers give it to all daughters and no sons.","hy");
+Q("genet","2023",34,"What is the most likely inheritance pattern?",["Autosomal dominant","Autosomal recessive","X-linked dominant","X-linked recessive","Mitochondrial"],4,"Every child of the affected mother is affected; the affected son's children are all unaffected. Only mothers transmit = mitochondrial.","img",);
+Q("genet","2023",35,"Patients with hypoplastic amelogenesis imperfecta have:",["an enlarged tooth size","a deficiency in the amount of enamel (thin enamel)","a deficiency in quality (more porous)","a defect in enamel mineralization","soft enamel from a maturation defect"],1,"Hypoplastic = amount; small teeth, thin enamel.","hy");
+Q("genet","2023",36,"A FAM83H mutation causes amelogenesis imperfecta because it causes:",["a change in the location of the protein","overproduction of the protein","incomplete removal of matrix proteins","no protein to be produced","a trinucleotide repeat expansion"],0,"Truncated FAM83H goes to the nucleus instead of the cytoplasm. Incomplete removal = MMP20.","hy");
+Q("cc","2023",37,"During G1 of interphase, the cell is:",["replicating the DNA","preparing for nuclear division","growing and preparing for DNA synthesis","not committed to DNA synthesis","separating sister chromatids"],2,"Everyone got credit. Best answer C. (D describes G0 / cells before the restriction point.)","void");
+Q("cc","2023",38,"During which phase of mitosis does a nuclear envelope form around two nuclei containing chromatids?",["Prophase","Prometaphase","Metaphase","Anaphase","Telophase"],4,"Telophase.","hy");
+Q("cc","2023",39,"After DNA damage in G1, p53 induces p21. Which function of the cyclin E/A–CDK2 complex does p21 inhibit?",["Progression past the restriction point at G1/S","Initiation of DNA synthesis in early S","Transition from G2 to M","Entry into mitosis","Activation of microtubules"],1,"Everyone got credit. Per the cyclin table, E/A–CDK2 initiates DNA synthesis in early S; D–CDK4/6 handles the restriction point.","void");
+Q("cc","2023",40,"During necrosis, the cell will:",["segment and condense the chromatin","be deprived of survival factors","bleb or bud off portions of intact membrane","not damage neighboring cells","increase in volume and lyse"],4,"All the other choices describe apoptosis.","hy");
+Q("bio","2023",41,"Restriction enzymes are important in genetic engineering because:",["they cleave only viral DNA","they can detect host vs nonhost restriction sites","they make single-stranded cuts at restriction sites","they make double-stranded cuts at restriction sites","they can only produce blunt ends"],3,"Double-stranded cuts, sticky or blunt.","hy");
+Q("bio","2023",42,"In cloning, transformation refers to:",["inserting the DNA fragment into the vector","digesting DNA and vector with the restriction enzyme","the sticky ends made in fragment and vector","introducing the foreign DNA into a bacterial cell","releasing the amplified cloned DNA"],3,"Transformation = into bacteria/yeast; transfection = into eukaryotic cells.");
+Q("bio","2023",43,"A cloning vector:",["is digested with a different restriction enzyme than the insert","needs an antibiotic resistance gene to replicate the recombinant DNA","needs an antibiotic resistance gene to select for the recombinant DNA","needs an Ori site to select for the recombinant DNA","includes its own replication machinery"],2,"Everyone got credit. Best answer C: the marker is for selection; the ori is for replication; use the same enzyme on vector and insert.","void");
+Q("dna","2023",44,"A 10-year-old girl with many freckles, sun sensitivity, and two basal cell carcinomas. Which process is most likely defective?",["Repair of double-strand breaks by error-prone homologous recombination","Removal of mismatched bases from Okazaki fragments by a methyl-directed process","Removal of pyrimidine dimers by nucleotide excision repair","Removal of uracil by base excision repair","Removal of mispaired nucleotides by pol 3′→5′ exonuclease"],2,"Xeroderma pigmentosum. Note A is wrong twice: HR is the accurate pathway.","hy");
+Q("genet","2023",45,"An Ashkenazi couple has a son with Tay-Sachs (autosomal recessive). What is their unborn daughter's chance of having it?",["25%","50%","100%","0%","Cannot be determined"],0,"Both parents must be carriers (Rr × Rr) → 1/4 rr. Sex doesn't matter for autosomal traits.","hy");
+Q("prot","2023",46,"A splice-site mutation produces a longer peptide than normal. Most likely cause?",["Decreased mRNA stability","Increased mRNA stability","Translation of retained introns","Increased ubiquitins on the protein","Capping and tailing defect"],2,"Intron retained → extra codons. Exon skipping would make it shorter.","hy");
+Q("bio","2023",47,"ddNTPs stop a sequencing reaction because they:",["lack a 5′ phosphate group","have a 5′ –OH group","lack a 3′ –OH group","permanently bind the active site of DNA polymerase","introduce a restriction site"],2,"No 3′-OH, no next phosphodiester bond.","hy");
+Q("prot","2023",48,"Which occurs only in eukaryotic protein synthesis?",["tRNAi is charged with fMet","tRNAi is charged with Met","Small subunit binds the Shine-Dalgarno sequence","Translation begins during transcription elongation","Transcription begins during translation elongation"],1,"Eukaryotes use plain Met; fMet, SD, and coupled transcription-translation are prokaryotic.");
+Q("bio","2023",49,"In Southern blotting, which step is crucial for identifying fragments and avoiding a smear of bands?",["DNA extraction","Cleaving DNA with a restriction enzyme","Electrophoresis","Denaturing and transferring to membrane","Using a probe"],1,"Everyone got credit. Best reasoning: uncut genomic DNA smears; restriction digestion makes defined fragments.","void");
+Q("gene","2023",50,"What is the typical outcome when a receptor–hormone complex binds a glucocorticoid response element (GRE)?",["It provides a ligand-binding domain","It provides a binding site for steroid hormones","Inhibition of target genes","Coordinate expression of target genes, even on different chromosomes","Dimerization of receptor–hormone complexes"],3,"The dimer binds GREs on every responsive gene. Dimerization happens before GRE binding.");
+
+/* ===================== 2022 ===================== */
+Q("dna","2022",1,"One strand of a DNA molecule reads 5′-CCCATTCTA-3′. Which statement is TRUE?",["There are no T residues in the other strand","The 5′-terminal residue is A","The chain is pyrimidine-rich","The chain is purine-rich","None of the above"],2,"Everyone got credit. Count it: 7 of 9 are C or T, so pyrimidine-rich. The 5′ end is C; the other strand has T's opposite the A's.","void");
+Q("pp","2022",2,"IMP is the first purine nucleotide. Which nucleotides are then made from IMP, each in two steps?",["AMP and GMP","AMP and OMP","dATP and dGTP","UTP and CTP","XMP and CMP"],0,"IMP → AMP (Asp + GTP) and IMP → GMP (via XMP; Gln + ATP).","hy");
+Q("pp","2022",3,"A 42-year-old on radiation therapy develops big-toe pain; joint fluid shows monosodium urate crystals. The pain is caused by overproduction of the end product of which pathway?",["De novo pyrimidine synthesis","Pyrimidine degradation","De novo purine synthesis","Purine salvage","Purine degradation"],4,"Radiation kills cells → nucleic acid turnover → purine degradation → uric acid.","hy");
+Q("pp","2022",4,"A 6-year-old boy has lip lacerations and, from age 2, aggressively bites his thumb and fingers. Which enzyme is most likely deficient?",["APRT","Adenosine deaminase","HGPRT","PRPP synthetase","Xanthine oxidase"],2,"Self-mutilation = Lesch-Nyhan = HGPRT.","hy");
+Q("dna","2022",5,"A telomere:",["contains repeated sequences at the ends of chromosomes","contains repeated sequences at the ends of mRNA","contains repeated sequences at the ends of hnRNA","contains repeated sequences at the ends of proteins","contains repeated sequences at the ends of histones"],0,"Tandem AGGGTT repeats.","hy");
+Q("prot","2022",6,"A G→C transversion in GATA1 causes loss of exon 2 and no functional protein (Diamond-Blackfan anemia). Where is the substitution?",["5′-UTR","3′-UTR","Splice donor site","Promoter","Enhancer"],2,"Exon lost from the mRNA = splicing defect.","hy");
+Q("dna","2022",7,"A child with xeroderma pigmentosum. His keratinocyte DNA would show an abundance of:",["Double-stranded breaks","Pyrimidine dimers","Chromosomal translocations","Nucleotide deletions","Nucleotide substitutions"],1,"Unrepaired UV dimers.","hy");
+Q("rna","2022",8,"The template is 5′-GGGAAAT-3′. Which RNA is synthesized?",["5′-AUUUCCC-3′","5′-GGGAAAU-3′","5′-UAAAGGG-3′","5′-CCCUUUA-3′"],0,"Complement 3′-CCCUUUA-5′, read 5′→3′: AUUUCCC.","hy");
+Q("gene","2022",9,"A silent gene in a liver cell is induced to high expression. What would accompany this?",["Many proteins would become associated with the gene","Increased HDAC activity","Chromatin shifts toward heterochromatin","All of the above","None of the above"],0,"Active genes recruit TFs, coactivators, GTFs, and pol II; HDAC and heterochromatin go the other way.","lock");
+Q("gene","2022",10,"The acetylation of lysines on histones:",["loosens chromatin by adding positive charges","loosens chromatin by adding negative charges","involves histone acetyltransferase (HAT)","involves histone deacetylase (HDAC)","is covalent and therefore irreversible"],2,"It removes positive charge (not adds negative), and it's reversible by HDAC.","hy");
+Q("prot","2022",11,"The mRNA 5′-GCG ACG UCC-3′ is translated. Which anticodons were used, in order? (Ignore wobble.)",["5′-UCC-3′, 5′-ACG-3′, 5′-GCG-3′","5′-GGA-3′, 5′-CGU-3′, 5′-GCG-3′","5′-GCG-3′, 5′-ACG-3′, 5′-UCC-3′","5′-CGC-3′, 5′-CGU-3′, 5′-GGA-3′","5′-CGC-3′, 5′-GCA-3′, 5′-UCC-3′"],3,"Each anticodon is the reverse complement of its codon: GCG→CGC, ACG→CGU, UCC→GGA.","lock");
+Q("gene","2022",12,"A noncoding substitution in PEPCK-C gives constantly elevated transcription that rises only slightly with glucocorticoids. Most likely site?",["Core promoter","Enhancer element","Silencer element","Transcriptional start site","Polyadenylation site"],2,"Everyone got credit. Best answer: losing a silencer raises baseline expression.","void");
+Q("gene","2022",13,"A 5-nt deletion near PIT1 gives low PIT1 mRNA and low acetylation at the core promoter. Likely location?",["Enhancer","Polyadenylation signal","Silencer","Splice donor site","Transcriptional start site"],0,"Everyone got credit. Best answer: enhancer-bound STFs recruit HATs; losing it drops acetylation and transcription.","void");
+Q("cc","2022",14,"A new drug inhibits CDK2. Its effect on the cell cycle should include:",["inhibition of the G1/S transition","maintenance of RB in a hyperphosphorylated state","inhibition of p21 and p27","promotion of cyclin E and A transcription","None of the above"],0,"Everyone got credit. Best answer A: CDK2 hyperphosphorylates RB to release E2F.","void lock");
+Q("cc","2022",15,"p16 (INK4 family) binds CDK4 and CDK6. What effect does p16 have?",["Promotes CDK4/6–cyclin D association","Triggers release of E2F from RB","Blocks passage through the restriction point in late G1","Promotes hyperphosphorylation of RB","Triggers apoptosis if DNA damage can't be repaired"],2,"INK4 blocks cyclin D–CDK4/6, so RB stays active. E is p53's job.","hy");
+Q("bio","2022",16,"Screening a genomic library with a radiolabeled DNA probe, what do you use to detect your DNA of interest?",["Microscope","X-ray film","Reverse transcriptase","Transformation","Antibiotic treatment"],1,"Autoradiography.");
+Q("bio","2022",17,"Human brain RNA is analyzed by hybridization to a probe. Which technique?",["Western blotting","Southern blotting","Northern blotting","DNA microarray"],2,"Northern–RNA.","hy");
+Q("rna","2022",18,"Eukaryotic RNA polymerases need many accessory proteins to bind promoters. What are these called?",["General transcription factors","Activators","Accessory factors","Elongation factors","Facilitator polypeptides"],0,"GTFs (TFIID, TFIIF, TFIIH…).","hy");
+Q("rna","2022",19,"When do modifications to pre-tRNA, pre-rRNA, and pre-mRNA nucleotides occur?",["Postprandially","Postmitotically","Pretranscriptionally","Posttranscriptionally","Prematurely"],3,"After transcription.");
+Q("rna","2022",20,"The region from the TATA box to the transcription start site is termed:",["Polymerase home","Initiator","Start selector","Core promoter","Operator"],3,"Core promoter. The initiator (Inr) is just the +1 element.");
+Q("rna","2022",21,"Most notable gene-expression difference between eukaryotes and prokaryotes?",["rRNA lengths","Mitochondria","Lysosomes and peroxisomes","Sequestration of the genome in the nucleus","Chlorophyll"],3,"Compartmentalization separates transcription (nucleus) from translation (cytoplasm).");
+Q("prot","2022",22,"Most aminoacyl-tRNA synthetases share which activity with DNA polymerases?",["Proofreading","Hydrogenase","Proteolytic","Helicase","Endonucleolytic"],0,"Editing removes the wrong amino acid.");
+Q("prot","2022",23,"A mutation in the middle of an open reading frame that creates a stop codon is a:",["Frame mutation","Missense mutation","No-nonsense mutation","Silent mutation","Nonsense mutation"],4,"Nonsense → truncated protein.","hy");
+Q("rna","2022",24,"The mechanism through which RNAs are synthesized from DNA is:",["Replicational duplication","Translation","Translesion repair","Transesterification","Transcription"],4,"Transcription.");
+Q("rna","2022",26,"What is on the 3′ end of all functional, mature tRNAs?",["The cloverleaf loop","The anticodon","The sequence CCA","The codon"],2,"The amino acid attaches to the A of CCA.","hy");
+Q("gene","2022",27,"RNAi or miRNA-mediated gene regulation mediates:",["RNA ligation","RNA silencing","RNA inversion","RNA restoration","RNA quelling"],1,"Silencing by repression or degradation.","hy");
+Q("cc","2022",28,"The phase between the end of cell division and the start of DNA synthesis is:",["G1","S","G2","M","G0"],0,"Everyone got credit. Answer G1.","void");
+Q("rna","2022",29,"Which sequence lies between the 5′ cap and the AUG initiation codon?",["Stop codon","Last exon","Last intron","3′ UTR","5′ UTR"],4,"5′ untranslated region.");
+Q("dna","2022",30,"DNA polymerases can't start without a primer. What serves as the primer?",["Five-carbon sugars","Deoxyribose alone","A short RNA molecule","Proteins with free hydroxyl groups","Phosphomonoester"],2,"Primase makes a ~10-nt RNA primer with a free 3′-OH.","hy");
+Q("dna","2022",31,"What reaction does reverse transcriptase catalyze?",["Translation of RNA to DNA","Transcription of DNA to RNA","Conversion of ribonucleotides to deoxyribonucleotides","Transcription of RNA to DNA","Conversion of ribonucleotides to deoxynucleotides in the helix"],3,"RNA → cDNA. Converting ribo- to deoxyribonucleotides is RNR's job.");
+Q("dna","2022",32,"Which components are found in DNA? Choose the most complete answer.",["Phosphate, adenine, ribose","Phosphate, guanine, deoxyribose","Cytosine and ribose","Uracil and deoxyribose","Pyrophosphate and adenine"],1,"DNA = deoxyribose + phosphate + A/G/C/T.");
+Q("gene","2022",33,"A bacterial chromosome segment where genes for one pathway cluster under coordinate control is a(n):",["Operon","Operator","Promoter","Terminal controller","Origin"],0,"Operon.","hy");
+Q("prot","2022",34,"The initiator tRNA is placed in the 80S complex at which site?",["E site","I site","P site","A site","Release factor site"],2,"P site.","hy");
+Q("gene","2022",35,"Which cis-acting element typically sits next to or overlaps many prokaryotic promoters?",["Regulatory gene","Structural genes","Repressor","Operator","Terminator"],3,"The operator is just downstream of the promoter; the repressor is a trans-acting protein.");
+Q("prot","2022",36,"How many termination codons are in the genetic code?",["3","1","61","64","20"],0,"UAA, UAG, UGA. 61 codons code amino acids.");
+Q("gene","2022",37,"In the lac operon, allolactose acts as:",["an inducer","a repressor","a corepressor","an uninducer","an attenuator"],0,"Inducer.","hy");
+Q("gene","2022",38,"In the trp operon, tryptophan binds a protein at the operator, which leads to:",["attenuation","ribosome stalling","induction","maximal production of tryptophan","completion of translation"],0,"Keyed A, but per the slides, Trp + repressor on the operator is repression; attenuation is when polymerase escapes. No “repression” choice was offered. If “repression” appears, pick it.");
+Q("gene","2022",39,"The specific TF in the galactose circuit has which domains?",["DNA-binding domain (DBD)","Transcription activation domain (TAD)","Ligand-binding domain (LBD)","A, B, and C","A and B"],4,"Gal4 has DBD + TAD. Nuclear hormone receptors add an LBD.","lock");
+Q("genet","2022",40,"Which type of amelogenesis imperfecta leads to the most severe phenotype?",["Hypomaturation","Hypomineralization","Hypoplastic","Hypocalcification","None of the above"],-1,"Everyone got credit; no key was given. Severity varies within each type.","void");
+Q("genet","2022",41,"When evaluating a pedigree, “segregation” refers to:",["A consanguineous marriage","The phenotype seen generation after generation","The phenotype seen in siblings but not the previous generation","The number of males and females affected","Which parent passes on the trait and to whom"],4,"B = vertical transmission; C = horizontal; D = sex ratio.");
+Q("genet","2022",42,"For an X-linked dominant disease, an affected male will have:",["All daughters affected","All sons affected","50% of daughters affected","50% of daughters unaffected non-carriers","All sons and daughters carriers"],0,"He passes his X to every daughter and his Y to every son.","hy");
+Q("genet","2022",43,"For an X-linked recessive disease, an affected female will have:",["All daughters affected","All sons affected","50% of daughters affected","50% of daughters unaffected non-carriers","All sons and daughters carriers"],1,"Everyone got credit. Best answer B: she is homozygous, so every son gets a mutant X.","void");
+Q("genet","2022",44,"Mitochondrial inheritance: an affected mother has mild symptoms. Her children will be:",["all affected with the same severity","all affected with varying severity","unaffected","only sons affected","only daughters affected"],1,"All inherit her mitochondria; heteroplasmy makes severity vary.","hy");
+Q("genet","2022",45,"The inheritance pattern for FAM83H-related amelogenesis imperfecta is:",["Autosomal dominant","Autosomal recessive","X-linked dominant","X-linked recessive","C and D"],0,"AD.","hy lock");
+Q("genet","2022",46,"Enamelin has a key role in:",["secreting tooth enamel","removing proteins so enamel can harden","formation and growth of crystals in developing enamel","separating and supporting the mineral crystals","cleaving amelogenin"],2,"ENAM. B and E = MMP20 (enamelysin); D = amelogenin (AMELX).");
+Q("cc","2022",47,"In this phase, the nucleolus disassembles and chromatids are connected at the centromere:",["Prometaphase","Prophase","Telophase","Anaphase","Metaphase"],1,"Prophase.","hy");
+Q("cc","2022",48,"There is no inflammatory response during apoptosis because:",["apoptotic cells grow in size","apoptotic cells are engulfed by lysosomes","phagocytic cells release IL-10","phagocytic cells release intracellular contents"],2,"Macrophages engulf PS-exposing cells and release IL-10 and TGF-β.");
+Q("bio","2022",49,"An ideal cloning vector must have:",["an origin of replication","a selectable marker","a unique restriction site","A, B, and C","B and C"],3,"All three.","hy lock");
+Q("bio","2022",50,"In PCR, how is the DNA to be amplified specified?",["By adding only that DNA to the mix","By adding primers complementary to the DNA of interest","By adding a selection marker","By adding a restriction enzyme","By blotting with a radiolabeled probe"],1,"Primers flank the target.");
+/* ===================== 2021 ===================== */
+Q("dna","2021",1,"What is the site called where the replication fork begins?",["Origin of replication","Replication novum","Replication promoter","Replication starter"],0,"Ori; A-T rich in prokaryotes.");
+Q("dna","2021",2,"In general, DNA replication is ______ in both prokaryotes and eukaryotes.",["Unidirectional","Bidirectional","Random","Circular"],1,"Two forks move outward from each origin.");
+Q("dna","2021",3,"What does the lagging strand require more of than the leading strand?",["RNA primers","DNA primers","ddNTPs","dNTPs"],0,"One primer per Okazaki fragment.","hy");
+Q("dna","2021",4,"What is necessary for DNA polymerase to add a dNTP to a growing strand?",["A nucleotide with a 2′-OH","A nucleotide with a 3′-OH","A nucleotide with a 4′-OH","A nucleotide with a 5′-OH"],1,"Polymerase extends from a free 3′-OH, which is why primers and ddNTPs matter.");
+Q("dna","2021",5,"Which DNA polymerase has the major role of nucleotide incorporation during replication?",["DNA polymerase II","DNA polymerase III","DNA polymerase IV","DNA polymerase V"],1,"Pol III, highly processive with the β clamp.","hy");
+Q("dna","2021",6,"Which enzyme unwinds the DNA strand for replication?",["Primase","Polymerase","Helicase","Topoisomerase"],2,"Helicase.","hy");
+Q("dna","2021",7,"Reverse transcriptase uses ______ as a template to generate cDNA.",["complementary DNA (cDNA)","genomic DNA (gDNA)","heterogeneous nuclear RNA (hnRNA)","mature messenger RNA (mRNA)"],3,"cDNA libraries contain only expressed, spliced sequences.");
+Q("dna","2021",8,"Which statement about histones keeps DNA in the heterochromatin state?",["Increased modification by HDAC","Increased modification by HAT","Decreased lysine and arginine residues","Decreased methylated cytosine residues"],0,"Deacetylated histones hold DNA tightly.","hy");
+Q("dna","2021",9,"What is the correct sequence for mismatch excision repair in E. coli?",["MutH recognizes and recruits MutL, which activates MutS","MutS recognizes and recruits MutL, which activates MutH","MutS recognizes and recruits MutH, which activates MutL","MutL recognizes and recruits MutS, which activates MutH"],1,"S → L → H. MutH nicks the unmethylated daughter strand.","hy");
+Q("dna","2021",10,"In which phases can homologous recombination occur?",["S or G1","S or G0","G1 or G2","S or G2"],3,"A sister chromatid is only available after replication.","hy");
+Q("dna","2021",11,"What does non-homologous end joining require?",["Sister chromatid","Holliday junction","Ku protein","Template DNA"],2,"Ku; no template.","hy");
+Q("bio","2021",12,"Why is a ddNTP different from a dNTP in the Sanger method?",["It lacks a 3′-OH, which terminates elongation","It lacks a 2′-OH, which terminates elongation","It is at higher concentration than dNTP","It binds DNA more strongly than dNTP"],0,"3′-OH.","hy");
+Q("gene","2021",13,"Which is the BEST statement about alternative splicing?",["It is a consequence of a nonsense mutation","It forms multiple isoforms of a protein from a single RNA transcript","It produces a protein derived from multiple genes","It only occurs in prokaryotes"],1,"Eukaryotes only; one transcript, many isoforms.","hy");
+Q("dna","2021",14,"What is the transcriptionally active form of chromatin in interphase nuclei?",["Condensed chromatin","Condensed chromatid","Heterochromatin","Euchromatin"],3,"Euchromatin.","hy");
+Q("bio","2021",15,"Which technique amplifies a region of interest from a small DNA sample by thermal cycling?",["Southern blot","PCR","Cloning","Restriction endonucleases"],1,"PCR.","hy");
+Q("prot","2021",16,"How many mRNA nucleotides does the ribosome's A site occupy at a time?",["1","2","3","4"],2,"One codon. A, P, E together span 9 nt.");
+Q("prot","2021",17,"What is the adaptor molecule that brings amino acids to the site of protein synthesis?",["tRNA","rRNA","mRNA","Release factors"],0,"tRNA.","hy");
+Q("prot","2021",18,"Which enzyme charges tRNA with an amino acid?",["Peptidyl-tRNA synthetase","Aminoacyl-tRNA synthetase","Riboacyl-tRNA synthetase","Amino-tRNA transferase"],1,"Aminoacyl-tRNA synthetase.","hy");
+Q("prot","2021",19,"Which of these codons is a nonsense codon?",["UAA","AUG","UUU","AAA"],0,"Stop codon.","hy");
+Q("prot","2021",20,"______ on mRNA helps position ribosomes to start translation properly in bacteria.",["Promoter sequence","16S rRNA","AUG codon","Shine-Dalgarno sequence"],3,"SD is on the mRNA; 16S rRNA (on the ribosome) is what pairs with it.","hy");
+Q("prot","2021",21,"Which charged tRNA binds directly to the P site of the 30S subunit in prokaryotes?",["Met-tRNA<sup>Met</sup>","mMet-tRNA<sup>mMet</sup>","fMet-tRNA<sup>fMet</sup>","aMet-tRNA<sup>aMet</sup>"],2,"Bacteria start with N-formylmethionine.","hy");
+Q("prot","2021",22,"What is the role of peptidyl transferase?",["Transfers the peptide from the P site to the amino acid in the A site","Transfers the peptide from P to the amino acid in the E site","Transfers the peptide from A to E","Transfers the peptide from E to A"],0,"Transpeptidation, catalyzed by large-subunit rRNA.");
+Q("prot","2021",23,"Proteins translated on RER-bound ribosomes end up in:",["Nucleus","Cytoplasm","Mitochondria","Lysosomes"],3,"RER makes secreted, membrane, and lysosomal proteins; free ribosomes make the rest.");
+Q("pp","2021",24,"Which of these is a purine nucleoside?",["Uridine","Thymidine","Cytosine","Adenosine"],3,"Adenosine (base + sugar). Cytosine is a base, not a nucleoside.","hy");
+Q("genet","2021",25,"What is the genotypic ratio of progeny from Aa × aa?",["1/4 AA : 1/2 Aa : 1/4 aa","1/2 Aa : 1/2 aa","1/2 Aa : 1/2 AA","All Aa"],1,"Half get A, half get a from the Aa parent.","hy");
+Q("pp","2021",26,"IMP reacts with ______ to yield AMP.",["Glutamate","Glutamine","Aspartate","Asparagine"],2,"Aspartate (with GTP) via adenylosuccinate synthetase. GMP uses glutamine.","hy");
+Q("pp","2021",27,"What is the energy source for converting IMP to AMP?",["ATP","ADP","cAMP","GTP"],3,"GTP for AMP; ATP for GMP.","hy");
+Q("pp","2021",28,"What property of uric acid makes it a threat to human health?",["Insolubility","Solubility","High pH","Acidity"],0,"It crystallizes in joints and kidneys.");
+Q("pp","2021",29,"A null mutation in which enzyme's gene causes Lesch-Nyhan syndrome?",["PRPP transferase","HGPRT","ADA","THFR"],1,"HGPRT.","hy");
+Q("pp","2021",30,"Replacing a ribonucleotide's 2′-OH with H is catalyzed by:",["Ribonucleotide reductase","Ribonucleotide oxidase","Ribonucleotide transcarboxylase","Ribonucleotide decarboxylase"],0,"RNR.","hy");
+Q("pp","2021",31,"Which molecule is the precursor for dTTP synthesis?",["dCMP","dAMP","dGMP","dUMP"],3,"Thymidylate synthase methylates dUMP → dTMP.");
+Q("gene","2021",32,"What binds the repressor protein to induce the lac operon?",["Lactose","Glucose","lacI","Allolactose"],3,"Allolactose.","hy");
+Q("gene","2021",33,"What role does tryptophan play in the trp operon?",["Inducer","Coinducer","Repressor","Corepressor"],3,"It activates the repressor.","hy");
+Q("prot","2021",34,"What modification of initiation factors is commonly used for translation-level control in eukaryotes?",["Ubiquitinylation","Carboxylation","Phosphorylation","Aldolation"],2,"Phosphorylated eIF-2 is inactive, so it can't bring tRNAi.");
+Q("gene","2021",35,"Which molecule binds directly to the operator to inhibit transcription?",["Inducer","Inhibitor","Repressor","Corepressor"],2,"The repressor binds the operator; inducers and corepressors bind the repressor.","hy");
+Q("gene","2021",36,"A specific set of structural genes with its regulatory elements is called:",["Genome","Exon","Intron","Operon"],3,"Operon.","hy");
+Q("rna","2021",37,"The enzyme ______ copies DNA into its RNA form during transcription.",["DNA polymerase","RNA polymerase","Reverse transcriptase","Primase"],1,"RNA polymerase.");
+Q("rna","2021",38,"The proper site for initiating gene transcription is called the:",["Promoter","Operator","Mediator","Enhancer"],0,"Promoter.","hy");
+
+/* ===================== 2020 ===================== */
+Q("dna","2020",1,"Which disease is caused by defective nucleotide excision repair?",["Cushing's syndrome","Alzheimer's disease","Melanoma","Xeroderma pigmentosum"],3,"XP.","hy");
+Q("dna","2020",2,"In which step of DNA repair do nucleases and glycosylases act?",["Detection of the lesion","Removal of damaged DNA","Repair of damaged DNA","Regulation of DNA repair"],1,"Detect → remove (glycosylases, nucleases) → repair (polymerase, ligase).");
+Q("dna","2020",3,"What is the correct order of protein assembly for mismatch correction in E. coli?",["MutS-MutH-MutL","MutH-MutS-MutL","MutS-MutL-MutH","MutL-MutS-MutH"],2,"S → L → H.","hy");
+Q("dna","2020",4,"What enzyme is used to create DNA from RNA?",["Restriction enzyme","DNA polymerase","Reverse transcriptase","RNA–DNA transcriptase"],2,"Reverse transcriptase.");
+Q("dna","2020",5,"Which DNA polymerase has the major role of nucleotide incorporation during replication?",["DNA polymerase II","DNA polymerase III","DNA polymerase IV","DNA polymerase I"],1,"Pol III. Pol I removes primers.","hy");
+Q("dna","2020",6,"Telomeres ______ with age.",["Extend","Shorten","Loosen","Harden"],1,"Somatic cells lack telomerase activity.","hy");
+Q("dna","2020",7,"Which pol III holoenzyme subunit holds the polymerase on its template through many cycles?",["α","β","χ","τ"],1,"The β ring is the sliding clamp; it makes pol III processive.");
+Q("dna","2020",8,"Which is NOT an active site on DNA polymerase I?",["Polymerase activity","3′ exonuclease activity","5′ exonuclease activity","3′ endonuclease activity"],3,"Pol I has polymerase, 3′→5′ exo (proofreading), and 5′→3′ exo (primer removal).");
+Q("pp","2020",9,"Which of these is a purine nucleoside?",["Uridine","Thymidine","Cytosine","Guanosine"],3,"Guanosine.","hy");
+Q("pp","2020",10,"What is the difference between de novo and salvage nucleotide synthesis?",["De novo builds from precursor molecules; salvage builds from nucleobases","There is no significant difference","De novo occurs only in prokaryotes","Salvage occurs only in prokaryotes"],0,"Salvage reattaches free bases to PRPP.","hy");
+Q("pp","2020",11,"Which molecule is the activated sugar-phosphate donor used to make nucleotides from nucleobases?",["PRPP (5-phosphoribosyl-1-pyrophosphate)","AMP","Phosphoglycosyl pyrophosphate","ADP"],0,"PRPP, made from ribose-5-P by PRPP synthetase.");
+Q("pp","2020",12,"What is the energy source for converting IMP to AMP?",["GDP","GTP","ADP","ATP"],1,"GTP.","hy");
+Q("pp","2020",13,"Which compound is used to treat gout?",["Allopurinol","Purinol","Xanthine","Inosine"],0,"Allopurinol inhibits xanthine oxidase.");
+Q("pp","2020",14,"Which is NOT a reason HGPRT deficiency leads to gout?",["Increased PRPP","Increased cytosine","Increased IMP","Increased guanine"],1,"Cytosine is a pyrimidine and isn't in this pathway.");
+Q("pp","2020",15,"dATP is an allosteric inhibitor of:",["Deoxyribonucleotide reductase","Ribonucleotide reductase","Deoxyribonucleotide oxidase","Ribonucleotide oxidase"],1,"At the activity site. This is why ADA deficiency (↑dATP) blocks DNA synthesis.","hy");
+Q("pp","2020",16,"Fluorodeoxyuridine monophosphate inhibits which enzyme in cancer therapy?",["Dihydrofolate reductase","Thymidylate synthase","Thymidylate reductase","Thymidylate oxidase"],1,"5-FU → 5-FdUMP, a suicide inhibitor of thymidylate synthase.");
+Q("pp","2020",17,"Which nucleic acid most commonly contains unusual (modified) nucleotides?",["mRNA","tRNA","DNA","rRNA"],1,"tRNA.");
+Q("rna","2020",18,"Which statement is TRUE about eukaryotic mRNA?",["It must be transported to the cytoplasm to be translated","It is heavily modified in the cytoplasm","It is transcribed and translated in the nucleus","It is only translated in the nucleus"],0,"Processed in the nucleus, translated in the cytoplasm.");
+Q("rna","2020",19,"High levels of histone ______ correlate with high transcriptional activity.",["Acetylation","Methylation","Carboxylation","Phosphorylation"],0,"Acetylation = euchromatin.","hy");
+Q("gene","2020",20,"Which small RNA is involved in gene regulation?",["miRNA","ncRNA","piRNA","lnRNA"],0,"miRNA.");
+Q("rna","2020",21,"The enzyme ______ copies the complementary sequence from DNA into RNA.",["DNA polymerase","RNA polymerase","Nucleotide phosphorylase","Polynucleotide phosphorylase"],1,"RNA polymerase.");
+Q("rna","2020",22,"After the first ~10 nucleotides, which subunit dissociates from RNA polymerase?",["σ","α","µ","β"],0,"σ leaves; the core enzyme continues.");
+Q("rna","2020",23,"The proper site for initiation of gene transcription is called the:",["Promoter","Operator","Repressor","Insulator"],0,"Promoter.","hy");
+Q("rna","2020",24,"What termination factor do bacteria use to end transcription?",["α","σ","ρ","β"],2,"ρ (rho), a hexameric ATPase helicase, for ρ-dependent termination.");
+Q("gene","2020",25,"______ splicing allows different exon combinations from one gene to make different proteins.",["Alternative","Cooperative","Successive","Passive"],0,"Alternative splicing.","hy");
+Q("rna","2020",26,"Binding sites on DNA that bind regulatory proteins and raise transcription of a distant gene are:",["Promoters","Enhancers","Augmenters","Amplifiers"],1,"Enhancers work far away, on either strand, up- or downstream.");
+Q("prot","2020",27,"During translation, stop codons are read by:",["tRNA","tRNAi","Release factors","mRNA"],2,"No tRNA matches a stop codon; RFs bind instead.","hy");
+Q("prot","2020",28,"The first amino acid in bacterial proteins is:",["Met","fGly","fMet","Gly"],2,"fMet.","hy");
+Q("prot","2020",29,"Where is the amino acid attached to a tRNA molecule?",["3′-OH of an adenine residue","5′-OH of a uridine residue","2′-OH of a guanine residue","3′-OH of a cytosine residue"],0,"The terminal A of 3′ CCA.");
+Q("prot","2020",30,"Which sequence helps align mRNA on ribosomes to start translation in bacteria?",["TATA","Shine-Dalgarno","Pribnow","Wobble"],1,"SD. TATA and Pribnow are transcription promoters.","hy");
+Q("gene","2020",31,"What is the correct progression in miRNA development?",["Pre-miRNA, pri-miRNA, miRNA","Pro-miRNA, pri-miRNA, miRNA","Pri-miRNA, pre-miRNA, miRNA","Prepro-miRNA, pro-miRNA, miRNA"],2,"Pri (Drosha) → pre (export, Dicer) → mature miRNA → RISC.");
+Q("prot","2020",32,"What aids targeted delivery of secreted proteins to their destination from the ER?",["Hydrophobic signal sequence","Signal recognition sequence","Nuclear localization signal","Mitochondrial entry sequence"],0,"Everyone got credit. Best answer: N-terminal hydrophobic signal sequence, cotranslational.","void");
+Q("gene","2020",33,"What is the true intracellular inducer of the lac operon?",["Lactose","Glucose","cAMP","Allolactose"],3,"Allolactose.","hy");
+Q("gene","2020",34,"What role does tryptophan play in the trp operon?",["Inducer","Coinducer","Repressor","Corepressor"],3,"Corepressor.","hy");
+Q("gene","2020",35,"A set of structural genes with its regulatory elements is termed a(n):",["Promoter","Polycistron","Operator","Operon"],3,"Operon.","hy");
+Q("gene","2020",36,"CpG islands are DNA regions where ______ undergoes rapid ______.",["Glycine; acetylation","Glycine; methylation","Cytosine; acetylation","Cytosine; methylation"],3,"Cytosine methylation in promoters silences genes.","hy");
+Q("gene","2020",37,"What causes a decrease in transferrin receptor levels and an increase in ferritin levels?",["Transferrin","Iron-responsive elements","Iron","Iron regulatory proteins"],2,"High iron pulls IRPs off the IREs: TfR mRNA is degraded, ferritin is translated.");
+Q("genet","2020",38,"A pedigree shows a rare hereditary muscle disease. Most likely mode of inheritance?",["Autosomal dominant","Y-linked","X-linked dominant","X-linked recessive"],3,"Keyed X-linked recessive (affected males, carrier mothers, no father → son).","img");
+Q("genet","2020",39,"Based on the pedigree, what is the most likely mode of inheritance of this rare disease?",["Autosomal recessive","X-linked recessive","X-linked dominant","Y-linked"],2,"Keyed X-linked dominant (affected father → all daughters).","img");
+Q("cc","2020",40,"A cell is in telophase. What might be observed?",["Chromosome alignment at the equator","Cleavage furrow formation","Mitotic spindle dissociation","RNA and protein synthesis"],2,"Cleavage furrow = cytokinesis; alignment = metaphase; synthesis = G1.","hy");
+Q("cc","2020",41,"In a cell with only mutant RB, which action is inhibited?",["Activation of DNA synthesis","Arrest of the cell cycle in G1","Binding of cyclins to CDKs","Completion of nuclear division"],1,"Without functional RB, E2F is always free; the cell can't hold in G1.","hy");
+Q("cc","2020",42,"In a normal cycling cell in S phase, which protein will be active?",["BRCA1","CDK2","p21","p53"],1,"Cyclin E/A–CDK2 drives S phase.");
+Q("cc","2020",43,"Viable cells are decreasing and Bax expression is up. Which finding confirms apoptosis?",["Ruptured plasma membranes","Intracellular enzymes in the medium","Phosphatidylserine on the outer membrane leaflet","Release of mitochondria from dying cells"],2,"PS exposure is the apoptosis marker; A and B are necrosis.");
+Q("bio","2020",44,"If DNA “A” was digested with BamHI, what must DNA “B” be cut with to join them?",["BamHI","EcoRI","HindIII","BamHI gives blunt ends, so T4 ligase is needed"],0,"Same enzyme → matching sticky ends. BamHI makes cohesive ends.");
+Q("bio","2020",45,"Which statement is FALSE?",["Cells that take up recombinant plasmids are antibiotic resistant","The DNA of interest and the plasmid are cut with different restriction enzymes","Plasmid replication may be independent of cell division","Cells with recombinant plasmid are called transformed cells"],1,"They must be cut with the same enzyme.");
+Q("bio","2020",46,"Which is true regarding PCR?",["Annealing occurs between 30–65 °C","Extension occurs between 60–70 °C","All are false","All are true"],3,"Per the key, both temperature ranges are true.","lock");
+Q("bio","2020",47,"Which technique is best to detect antibodies?",["Microarray","ELISA","Western blot","Southern blot"],1,"ELISA.");
+Q("genet","2020",48,"Which statement about the 3 types of enamel defects in AI is correct?",["Hypoplastic AI is due to enamel mineralization","Hypocalcified AI is due to enamel maturation","Hypomaturation is due to enamel matrix formation","None of the statements are true"],3,"Each is shuffled. Hypoplastic = matrix; hypocalcified = mineralization; hypomaturation = maturation.","hy lock");
+Q("genet","2020",49,"A mutation in which gene gives a distinctive pattern of vertical grooves on teeth?",["AMELX","ENAM","MMP20","FAM83H"],0,"AMELX (X-linked dominant).");
+Q("prot","2020",50,"Which scenarios would alter the reading frame?  I. insertion of 1 bp  II. deletion of 2 bp  III. insertion of 3 bp",["I only","II only","I and II only","I, II, and III"],2,"Multiples of 3 keep the frame.","lock");
+
+/* ===================== L35 concept check ===================== */
+Q("cc","L35",1,"Which is the correct order of stages in the cell cycle?",["G1, S, prophase, metaphase, anaphase","S, G1, prophase, metaphase, anaphase","Prophase, S, G1, metaphase, anaphase","S, G1, anaphase, prophase, metaphase"],0,"G1 → S → G2 → mitosis (pro, prometa, meta, ana, telo).");
+
+/* ===================== 2026 review deck ===================== */
+Q("pp","R26",1,"The initial nucleotide synthesized during de novo purine synthesis is:",["AMP","GMP","IMP","UMP","CMP"],2,"IMP (base = hypoxanthine).","hy");
+Q("pp","R26",2,"Which can act as substrates for guanylate kinase (a base-specific kinase)?",["AMP only","GDP only","GMP only","Both GMP and GDP","Both AMP and GMP"],2,"Base-specific kinases act on NMPs; a non-specific kinase handles NDPs.");
+Q("pp","R26",3,"An infant has adenosine deaminase deficiency. Which molecular defect is expected in their cells?",["Hyperactive ribonucleotide reductase","High uric acid","Excess cytosine","Unimpaired DNA synthesis","Excess deoxy-ATP"],4,"↑adenosine → ↑dATP → RNR inhibited → no DNA synthesis → lymphocytes die (SCID).","hy");
+Q("pp","R26",4,"Methylation is a modification that can: (select all)",["Be found on DNA","Be found on RNA","Induce a euchromatin state","Induce a heterochromatin state","Regulate transcription"],[0,1,3,4],"Methylation is on both DNA and RNA, promotes heterochromatin, and represses transcription.","sata");
+Q("dna","R26",1,"Which bonds most directly form the DNA double helix?",["N-glycosidic","Phosphodiester","Hydrogen","Phosphoric anhydride","O-glycosidic"],2,"Hydrogen bonds pair the two strands.","hy");
+Q("dna","R26",2,"A euchromatin state is:",["transcriptionally inactive","facilitated by histone acetyltransferase","associated with condensed chromatin","facilitated by methyltransferase","facilitated by histone deacetylase"],1,"HAT opens chromatin.","hy");
+Q("dna","R26",3,"During prokaryotic replication, which enzyme resolves supercoiling?",["Helicase","Topoisomerase","Primase","DNA polymerase I","DNA polymerase III"],1,"Topo I (one strand, no ATP) and II/gyrase (both strands, ATP).");
+Q("dna","R26",4,"Which repair handles incorrect base pairing during synthesis and is methyl-directed in bacteria?",["Base excision","Mismatch excision","Nucleotide excision","Homologous recombination","Nonhomologous end-joining"],1,"Mismatch repair.","hy");
+Q("rna","R26",1,"Which forms of processing can an RNA molecule undergo? (select all)",["Nuclease trimming","Polyadenylation","Methylation","Addition of a 5′ cap","Base editing"],[0,1,2,3,4],"All five.","sata");
+Q("rna","R26",2,"How is transcription similar in eukaryotes and prokaryotes? (select all)",["Promoter region","Termination signal","Multiple RNA polymerases","Compartmentalization","Chromatin"],[0,1],"C, D, and E are eukaryote-only.","sata");
+Q("rna","R26",3,"Which does NOT accurately describe distal and proximal regulatory elements?",["Can coordinate gene regulation","Can be silencers","Can be enhancers","Directly bound by general transcription factors","Are cis-acting elements"],3,"Specific TFs bind them; GTFs work at the core promoter.");
+Q("rna","R26",4,"Which noncoding RNA has a catalytic role in protein synthesis?",["miRNA","tRNA","snRNA","rRNA","None of these"],3,"rRNA.","hy");
+Q("gene","R26",1,"The operator of a bacterial operon can be bound by:",["TFIIH","Inducer","DNA polymerase III","RNA polymerase","Repressor"],4,"Repressor.","hy");
+Q("gene","R26",2,"A lac operon is OFF and repressed (no lacZ, lacY, lacA transcription). What is the environment?",["Glucose and lactose both present","Both absent","Lactose present, glucose absent","Lactose absent, glucose present","None of the above"],3,"No lactose means the repressor sits on the operator. (Both present = uninduced, very low.)","hy");
+Q("gene","R26",3,"Which are characteristics of the bacterial stringent response? (select all)",["Inhibited rRNA synthesis","Selective increased synthesis of mRNA","Reduced ppGpp","Increased ppGpp","Activated by high amino acids"],[0,1,3],"Starvation → RelA → ↑ppGpp → rRNA down, biosynthesis mRNA prioritized.","sata");
+Q("gene","R26",4,"Which uses miRNAs, targets mRNAs, and leads to translation inhibition or mRNA degradation?",["RNA editing","RNA interference","Alternative splicing","Iron-regulated mRNA stability","Polyadenylation"],1,"RNAi.","hy");
+Q("genet","R26",1,"Mendel's F1 (all Ss) were crossed. If four F2 offspring were born, how many are expected to be ss?",["0","1","2","3","4"],1,"1/4 × 4 = 1.");
+Q("genet","R26",2,"An extremely rare missense variant in a conserved amino acid. How might it affect gene expression? (select all)",["Impairing transcription","Gain-of-function mutation in the protein","Loss-of-function mutation in the protein","Impairing translation","Impairing RNA splicing"],[1,2],"A missense change alters the protein itself.","sata");
+Q("genet","R26",3,"An affected grandfather passed a condition to all daughters but no sons; his affected daughter passed it to 1 son and 1 daughter (of 4 kids). Pattern?",["Mitochondrial","Autosomal dominant","X-linked dominant","Autosomal recessive","X-linked recessive"],2,"Father → all daughters, no sons; heterozygous mother → half.","hy");
+Q("genet","R26",4,"Both parents carry sickle cell (autosomal recessive) and plan four children. Which picture is expected?",["Mom affected, only sons affected","One parent affected, no child affected","No parents affected and at least one child affected","One parent affected, at least two children affected","Dad affected, all sons affected"],2,"Carriers are unaffected; 1/4 risk per child. Expected, not guaranteed (~68% for ≥1 of 4).");
+Q("genet","R26",5,"Based on the pedigree shown, what is the most likely pattern of inheritance?",["Y-linked","Autosomal dominant","X-linked dominant","Autosomal recessive","X-linked recessive"],1,"Keyed autosomal dominant (every generation, both sexes, male-to-male possible).","img");
+Q("cc","R26",1,"Which cyclins mainly regulate the mitotic phase?",["D and E","E and A","A and D","A and B","E and B"],3,"D = G1; E, A = S; A, B = M.","hy");
+Q("cc","R26",2,"Which describe apoptosis? (select all)",["Cells shrink and do not lyse","Induces an inflammatory response","Cells in the same region die together","Completed within a few hours","Programmed cell death"],[0,3,4],"B and C describe necrosis.","sata");
+Q("cc","R26",3,"The nuclear envelope disassembles, the spindle attaches to kinetochores, and chromosomes begin to be pulled. Which stage?",["Prophase","Prometaphase","Metaphase","Anaphase","Telophase"],1,"Prometaphase.","hy");
+Q("bio","R26",1,"Which biotechnology method is best characterized by the use of restriction enzymes?",["Recombinant DNA","PCR","Western blot","ELISA","Microarray"],0,"Cut and paste DNA from two sources.");
+Q("bio","R26",2,"Which methods measure protein amounts? (select all)",["Northern blot","Southern blot","Western blot","PCR","ELISA"],[2,4],"SNoW DRoP.","sata");
+Q("bio","R26",3,"Which PCR step binds primers to DNA flanking the region of interest?",["Initiation","Denaturation","Elongation","Annealing","Termination"],3,"Annealing.","hy");
+/* ===================== New — written from the 2026 slides to cover untested content ===================== */
+const N=(t,q,o,a,e,f)=>Q(t,"New",0,q,o,a,e,f);
+N("pp","CPS II, the regulated enzyme of pyrimidine synthesis, is activated by:",["UTP","PRPP","AMP","Carbamoyl phosphate","Orotate"],1,"PRPP activates; UTP inhibits.");
+N("pp","The first fully formed pyrimidine nucleotide is:",["CMP","OMP","UMP","dTMP","IMP"],2,"Orotate + PRPP → OMP → UMP by bifunctional UMP synthase. OMP is the intermediate.");
+N("pp","A child with megaloblastic findings and high urinary orotate improves on uridine. The defective enzyme is:",["CPS II","UMP synthase","Ornithine transcarbamylase","HGPRT","Thymidylate synthase"],1,"Hereditary orotic aciduria; uridine is salvaged, bypassing UMP synthase.");
+N("pp","Why does OTC deficiency raise orotic acid?",["OTC normally makes orotate","Excess carbamoyl phosphate spills into pyrimidine synthesis","PRPP accumulates","Uric acid converts to orotate","CPS II is inhibited"],1,"Unused mitochondrial carbamoyl phosphate feeds the pyrimidine pathway.");
+N("pp","Methotrexate affects human cells, but sulfonamides don't, because:",["Humans synthesize folate from PABA","Humans obtain folate only from the diet","Sulfonamides can't enter human cells","Methotrexate inhibits ribonucleotide reductase","Sulfonamides inhibit thymidylate synthase"],1,"Sulfonamides block bacterial folate synthesis. Methotrexate blocks THF regeneration in all dividing cells, stopping purine and dTMP synthesis.");
+N("pp","Hydroxyurea is an anticancer drug that works by:",["Inhibiting xanthine oxidase","Quenching the tyrosyl radical of ribonucleotide reductase R2","Suicide-inhibiting thymidylate synthase","Inhibiting IMP dehydrogenase","Blocking GPAT"],1,"No dNTPs, no DNA synthesis.");
+N("pp","Mycophenolic acid inhibits which branch of purine synthesis?",["IMP → AMP","IMP → GMP","PRPP → 5-phosphoribosylamine","Hypoxanthine → xanthine","dUMP → dTMP"],1,"IMP dehydrogenase.");
+N("pp","Which molecule restores the reduced sulfhydryl groups of ribonucleotide reductase after each cycle?",["NADH","Glutathione","Thioredoxin","FMN","Tetrahydrofolate"],2,"Thioredoxin, itself re-reduced by NADPH.");
+N("pp","Which enzyme converts hypoxanthine and xanthine toward uric acid and is blocked by allopurinol?",["Adenosine deaminase","Purine nucleoside phosphorylase","Xanthine oxidase","HGPRT","APRT"],2,"Xanthine oxidase.");
+N("dna","Topoisomerase II differs from topoisomerase I because it:",["Cuts only one strand and needs no ATP","Cuts both strands and requires ATP","Synthesizes RNA primers","Removes primers","Binds the Ter site"],1,"Topo II = gyrase in bacteria; target of etoposide and doxorubicin.");
+N("dna","Why are prokaryotic origins of replication rich in A-T pairs?",["A-T pairs have three hydrogen bonds","A-T pairs have two hydrogen bonds and melt more easily","Helicase only binds adenine","Primase needs thymine","DnaA binds G-C pairs"],1,"Easier strand separation.");
+N("dna","In eukaryotic replication, the sliding clamp equivalent to the bacterial β subunit is:",["RPA","ORC","PCNA","MCM","FEN1"],2,"PCNA. RPA = SSB; MCM = helicase; ORC = origin recognition; FEN1 = flap endonuclease.");
+N("dna","Base excision repair handles which lesion?",["Thymine dimers","Deaminated cytosine (uracil in DNA)","Double-strand breaks","Mismatches after replication","Bulky adducts distorting the helix"],1,"Single damaged bases: alkylation, deamination, oxidation, abasic sites.");
+N("dna","In methyl-directed mismatch repair, how does E. coli know which strand to fix?",["The new strand is methylated","The parent strand's GATC adenines are methylated","The new strand has uracil","MutS reads the ori","Ligase marks the parent strand"],1,"The unmethylated daughter strand is nicked and repaired.");
+N("dna","Which repair pathway is error-prone and used in G1 and non-dividing cells?",["Homologous recombination","Nonhomologous end joining","Mismatch repair","Base excision repair","Nucleotide excision repair"],1,"NHEJ; no template, some DNA lost.");
+N("dna","Many chemotherapy drugs such as etoposide and doxorubicin cause DNA strand breaks by inhibiting:",["Helicase","Topoisomerase","Primase","Ligase","Telomerase"],1,"Topoisomerase inhibitors.");
+N("rna","Which RNA polymerase synthesizes 5S rRNA and tRNA?",["RNA pol I","RNA pol II","RNA pol III","Primase","Prokaryotic core enzyme"],2,"Pol I makes the other rRNAs in the nucleolus.");
+N("rna","ρ-independent termination requires:",["The ρ protein binding a rut site","A GC-rich hairpin followed by a string of U's","TFIIH helicase activity","A poly-A signal (AAUAAA)","σ factor rebinding"],1,"The weak U–A pairing lets the transcript fall off.");
+N("rna","Which general transcription factor has both helicase and kinase activity?",["TFIID","TFIIF","TFIIH","TFIIB","Mediator"],2,"Melts DNA at +1 and phosphorylates pol II so it clears the promoter.");
+N("rna","Specific TFs bound to proximal elements (CAAT, GC boxes) mainly regulate:",["Which genes are expressed","How frequently transcription initiates","Splicing","Polyadenylation","mRNA export"],1,"Distal elements (enhancers) govern which genes respond to signals.");
+N("rna","The methyl group of the 5′ cap comes from:",["Folate","S-adenosylmethionine","Methionine-tRNA","ATP","NADPH"],1,"SAM.");
+N("rna","Which sequence signals cleavage before poly-A tail addition?",["TATAAT","AAUAAA","GGATCC","TTGACA","CCA"],1,"Cleavage occurs downstream; polyadenylate polymerase then adds 40–250 A's using ATP.");
+N("rna","Which describes the −35 sequence of a prokaryotic promoter?",["Essential to start transcription","Allows a high transcription rate","Binds TFIID","Located in the 3′-UTR","Is transcribed into the mRNA"],1,"The −10 Pribnow box is the essential one.");
+N("prot","Trinucleotide repeat expansion in the 5′-UTR is characteristic of:",["Huntington disease","Fragile X syndrome","Myotonic dystrophy type 1","Lesch-Nyhan","Sickle cell"],1,"Huntington = coding region; myotonic dystrophy 1 = 3′-UTR.");
+N("prot","Which factor prevents the large ribosomal subunit from joining too early in prokaryotes?",["IF-1","IF-2","IF-3","EF-Tu","RF-3"],2,"IF-3 (eIF-3 in eukaryotes).");
+N("prot","Translocation of the ribosome in eukaryotes requires:",["eIF-2-GTP","EF-1α-GTP","eEF-2-GTP","eRF","EF-Ts"],2,"EF-G-GTP in prokaryotes.");
+N("prot","Peroxisomal proteins are targeted by:",["N-terminal hydrophobic signal","Nuclear localization signal","N-terminal mitochondrial entry sequence","C-terminal tripeptide signal","Signal recognition particle"],3,"Posttranslational.");
+N("prot","Which proteins are targeted cotranslationally?",["Nuclear","Mitochondrial matrix","Peroxisomal","Secreted","Cytosolic enzymes"],3,"The N-terminal hydrophobic signal sends the ribosome to the RER during synthesis.");
+N("prot","In eukaryotes, how does the 40S subunit find the AUG start codon?",["Pairs with the Shine-Dalgarno sequence","Binds near the 5′ cap via eIF-4 and scans 5′→3′ using ATP","Binds the poly-A tail directly","Binds the TATA box","Is guided by fMet-tRNAi"],1,"Kozak context affects efficiency.");
+N("prot","Which amino acids are encoded by only one codon each?",["Leu and Ser","Met and Trp","Val and Gly","Arg and Lys","Phe and Tyr"],1,"Leu has six.");
+N("gene","With lactose and glucose both present, the lac operon is:",["Maximally expressed","Repressed completely","Uninduced, with very low expression","Attenuated","Induced by cAMP–CAP"],2,"Repressor is off, but glucose keeps cAMP low so CAP stays unbound.");
+N("gene","When tryptophan is very low, why can't the attenuator form?",["The repressor binds the attenuator","A ribosome stalls on Trp codons in the leader and covers that region","cAMP–CAP blocks it","RelA degrades it","σ factor stays bound"],1,"The operon is expressed.");
+N("gene","In the galactose circuit, galactose acts by activating:",["Gal4","Gal80","Gal3","CAP","RISC"],2,"Gal3 binds Gal80, freeing Gal4's TAD.");
+N("gene","Which is NOT a member of the nuclear receptor superfamily?",["Glucocorticoid receptor","Vitamin D receptor","Thyroid hormone receptor","Retinoic acid receptor","Insulin receptor"],4,"Insulin uses a cell-surface receptor.");
+N("gene","Which enzyme processes pri-miRNA into pre-miRNA in the nucleus?",["Dicer","Drosha","RISC","Polyadenylate polymerase","RNase H"],1,"Dicer acts in the cytoplasm.");
+N("gene","Where are the iron-responsive elements of transferrin receptor mRNA?",["5′ cap","5′-UTR","Coding region","3′-UTR","Intron"],3,"3′-UTR stem-loops bind IRPs.");
+N("gene","In which tissue is apoB mRNA edited to make apoB-48?",["Liver","Small intestine","Kidney","Adipose","Pancreas"],1,"The liver makes full-length apoB-100.");
+N("genet","Codominance is illustrated by:",["Red × white = pink flowers","AB blood type","Huntington disease","Lesch-Nyhan","Mitochondrial myopathy"],1,"Both alleles fully expressed (also sickle cell). Pink flowers = incomplete dominance.");
+N("genet","An affected heterozygous mother with an X-linked dominant trait and an unaffected father. Expected children?",["All daughters affected","All sons affected","50% of sons and 50% of daughters affected","No children affected","Only sons affected"],2,"She passes the mutant X to half her children.");
+N("genet","MMP20 mutations cause amelogenesis imperfecta by:",["Mislocalizing the protein to the nucleus","Incomplete removal of enamel matrix proteins, leaving soft enamel","Reducing crystal growth","Disorganizing crystals with vertical grooves","Overproducing amelogenin"],1,"Enamelysin normally cleaves amelogenin and ameloblastin; inheritance is AR.");
+N("genet","Why do males with AMELX mutations have more severe dental abnormalities?",["AMELX is on the Y chromosome","Males have only one X, so no normal copy","AMELX is autosomal dominant","Males lack enamelysin","Females are mosaic carriers of FAM83H"],1,"X-linked; heterozygous females have a normal copy (and X-inactivation mosaicism).");
+N("genet","A variant in the promoter region of a gene most likely affects:",["The amino acid sequence","Transcription","Splicing only","Protein targeting","tRNA charging"],1,"Noncoding variants in promoters or enhancers change expression levels.");
+N("cc","Which phase has a constant length across cell types (~6 h)?",["G1","S","G2","M","G0"],1,"G1 varies most (~10 h average); G2 ~4 h; M ~1 h.");
+N("cc","Cdc25c phosphatase is required to:",["Phosphorylate RB","Remove inhibitory tyrosine phosphates from CDK1","Degrade cyclin D","Activate p53","Release E2F"],1,"Active CDK1–cyclin B then enters the nucleus to start mitosis.");
+N("cc","Which CKI class inhibits CDK2 and includes p21?",["INK4","CIP/KIP","E2F","DP1/2","Cdc25"],1,"INK4 (p16) blocks cyclin D–CDK4/6.");
+N("cc","If DNA damage in G1 is irreparable, p53 will:",["Phosphorylate RB","Trigger apoptosis","Activate Cdc25c","Promote cyclin D synthesis","Release E2F"],1,"Repairable damage → p21 arrest; irreparable → apoptosis.");
+N("cc","Which apoptotic event is an active, ATP-requiring process?",["Cell swelling","Membrane rupture","Release of cytochrome c from mitochondria","Inflammation","Lysis"],2,"Necrosis is passive.");
+N("cc","Before the restriction point, progression through the cycle depends on:",["Cytochrome c","Growth-factor stimulation","Cdc25c only","Telomerase","IL-10"],1,"After the restriction point, the cell is committed and no longer needs growth factors.");
+N("bio","Which restriction enzyme produces blunt ends?",["BamHI","EcoRI","HindIII","HaeIII","None; all make sticky ends"],3,"Also PvuII. Blunt ends need T4 ligase.");
+N("bio","Restriction enzyme recognition sites are usually:",["10–20 bp, random","4–8 bp, palindromic","Single bases","RNA sequences","Located only in introns"],1,"They read the same 5′→3′ on both strands.");
+N("bio","A cDNA library contains:",["All genomic DNA including introns","Only sequences transcribed into mRNA","Only promoter regions","Only mitochondrial DNA","Protein sequences"],1,"Made with reverse transcriptase from mRNA.");
+N("bio","Introducing a cloning vector into a eukaryotic cell is called:",["Transformation","Transfection","Transduction","Ligation","Annealing"],1,"Transformation is for bacteria and yeast.");
+N("bio","A microarray is used to:",["Detect proteins with antibodies","Analyze expression of thousands of genes at once","Sequence one gene with ddNTPs","Cut DNA at palindromes","Amplify DNA exponentially"],1,"Fluorescent cDNA hybridizes to spots; fluorescence = mRNA amount.");
+N("bio","In a Northern blot, the position of a band indicates ______ and its intensity indicates ______.",["amount; size","size; amount","sequence; size","protein; RNA","mutation; copy number"],1,"Size by migration; amount by band strength.");
+N("bio","In ELISA, what produces the measurable signal?",["Radiolabeled DNA probe","An enzyme linked to the antibody acting on a substrate","ddNTP incorporation","Restriction digestion","Thermocycling"],1,"Color is proportional to protein amount.");
+const FC={
+pp:[
+["Purines vs pyrimidines","Purines (2 rings): A, G. Pyrimidines (1 ring): C, T (DNA), U (RNA)."],
+["Nucleoside vs nucleotide","Nucleoside = base + sugar. Nucleotide = nucleoside + 1–3 phosphates."],
+["Most abundant RNA modification","Pseudouridylation (isomerized uracil)."],
+["5-methylcytosine does what?","DNA methylation → gene silencing."],
+["Committed step of de novo purine synthesis","GPAT: PRPP + glutamine → 5-phosphoribosylamine. Inhibited by AMP/GMP; rate rises with PRPP."],
+["Regulated step of pyrimidine synthesis","CPS II (cytosol): inhibited by UTP, activated by PRPP."],
+["First purine nucleotide / its base","IMP / hypoxanthine."],
+["First pyrimidine nucleotide","UMP (orotate → OMP → UMP via UMP synthase)."],
+["IMP → AMP needs","Aspartate + GTP (adenylosuccinate synthetase). Inhibited by AMP."],
+["IMP → GMP needs","Glutamine + ATP (IMP dehydrogenase). Inhibited by GMP and mycophenolic acid."],
+["Purine ring atom sources","Gln ×2, Gly, N10-formyl-THF ×2, CO2, Asp."],
+["End product of purine vs pyrimidine breakdown","Purine → uric acid (insoluble). Pyrimidine → β-alanine/β-aminoisobutyrate + CO2 + NH3 (soluble)."],
+["Xanthine oxidase inhibitor","Allopurinol (gout)."],
+["Salvage enzymes","HGPRT (hypoxanthine, guanine) and APRT (adenine); both use PRPP."],
+["Lesch-Nyhan","Complete HGPRT loss, X-linked recessive. ↑PRPP, ↑uric acid, self-mutilation, motor and cognitive deficits."],
+["ADA deficiency → SCID mechanism","↑adenosine → ↑dATP → inhibits RNR → no DNA synthesis → lymphocytes die."],
+["Ribonucleotide reductase substrate / product","NDPs (ADP, GDP, CDP, UDP) → dNDPs. 2′-OH replaced by H."],
+["RNR regulation","ATP activates, dATP inhibits (activity site). dTTP at specificity site drives GDP → dGDP. Hydroxyurea blocks R2."],
+["Thymidylate synthase","dUMP → dTMP using N5,N10-methylene-THF. Inhibited by 5-FdUMP (5-FU)."],
+["Methotrexate vs sulfonamides","Methotrexate: folate analog, blocks THF in human cells. Sulfonamides: PABA analogs, block bacterial folate synthesis only."],
+["Hereditary orotic aciduria","UMP synthase defect; orotate accumulates; treat with uridine."],
+["OTC deficiency and pyrimidines","Excess carbamoyl phosphate feeds pyrimidine synthesis → ↑orotic acid."]
+],
+dna:[
+["Bond that pairs the two DNA strands","Hydrogen bonds. (Phosphodiester bonds link nucleotides along a strand.)"],
+["Heterochromatin vs euchromatin","Hetero: condensed, inactive, HDAC, histone methylation. Eu: open, active, HAT, acetylation."],
+["Replication is semiconservative","Each new duplex = one old strand + one new strand."],
+["DnaA","Binds DnaA box at the origin and melts the A-T-rich region."],
+["Helicase","Unwinds DNA using ATP; creates supercoils ahead."],
+["SSB proteins","Bind ssDNA cooperatively; keep strands apart; protect from nucleases."],
+["Topoisomerase I vs II","I: cuts one strand, no ATP. II (gyrase): cuts both, ATP; target of etoposide/doxorubicin."],
+["Primase","Makes ~10-nt RNA primer with a 3′-OH."],
+["DNA pol III","Main replicative pol; 5′→3′ synthesis, 3′→5′ proofreading; β subunit = sliding clamp."],
+["DNA pol I","Removes RNA primers and fills with DNA (5′→3′ exo, 3′→5′ exo, polymerase)."],
+["Lagging strand","Discontinuous Okazaki fragments, 5′→3′, away from the fork; needs many primers; ligase joins."],
+["Eukaryotic pol with primase","Pol α. δ = lagging, ε = leading, β = repair, γ = mitochondrial."],
+["PCNA / RPA / MCM","Clamp / SSB / helicase (eukaryotic)."],
+["Tus protein","Binds Ter sites to stop the fork in bacteria."],
+["Telomeres","5′-AGGGTT-3′ repeats; protect chromosome ends; shorten each division (~52 divisions)."],
+["Telomerase","Ribonucleoprotein that maintains telomeres in germ, stem, and cancer cells."],
+["NER","Bulky lesions, UV pyrimidine dimers; endonucleases cut, pol fills, ligase seals. Defective in XP."],
+["Mismatch repair order","MutS recognizes → recruits MutL → activates MutH, which nicks the unmethylated daughter strand (GATC)."],
+["BER first enzyme","Glycosylase removes the damaged base; then AP endonuclease, dRP lyase, pol I, ligase."],
+["NHEJ","DSB repair in G1; Ku binds ends; no template; error-prone."],
+["Homologous recombination","DSB repair in S/G2; sister chromatid template; most accurate."],
+["Reverse transcriptase","RNA → DNA; uses mature mRNA to make cDNA."]
+],
+rna:[
+["RNA share of total","rRNA 80%, tRNA 15%, mRNA 5%."],
+["Euk ribosome subunits and rRNAs","40S: 18S. 60S: 28S, 5.8S, 5S. Total 80S."],
+["Prok vs euk mRNA","Prok: polycistronic, no cap/tail. Euk: monocistronic, capped, poly-A. Both have UTRs."],
+["RNA is identical to which strand?","The coding (sense) strand, with U for T. Complementary to the template."],
+["Prok RNA pol subunits","2α + Ω: assembly. β′: template binding. β: polymerase. σ: promoter recognition."],
+["When does σ leave?","After ~10 nucleotides; the core enzyme continues."],
+["Prok promoter elements","−10 Pribnow box (TATAAT, essential); −35 (TTGACA, high rate)."],
+["ρ-independent termination","GC-rich hairpin + string of 8–9 U's."],
+["ρ-dependent termination","ρ (hexameric ATPase helicase) binds C-rich rut site and pulls RNA off."],
+["RNA pol I / II / III","I: 28S, 18S, 5.8S rRNA (nucleolus). II: mRNA, snRNA, miRNA. III: tRNA, 5S rRNA."],
+["Hogness box","TATA box at ~−25 in eukaryotes; binds TFIID; not essential."],
+["Inr and DPE","Inr at +1; DPE at +25."],
+["TFIID / TFIIF / TFIIH","Binds TATA / recruits pol II / helicase + kinase (promoter clearance)."],
+["Proximal vs distal elements","Proximal (<200 nt; CAAT, GC): how often. Distal (enhancers, silencers): which genes, hormone response."],
+["STF domains","DNA-binding domain (DBD) + transcription activation domain (TAD)."],
+["Cis vs trans","Cis = DNA sequences on the same chromosome. Trans = diffusible proteins (TFs)."],
+["tRNA processing","Ends trimmed, anticodon-loop intron removed, CCA added to 3′ end, bases modified. In prok and euk."],
+["5′ cap","7-methylguanosine, 5′→5′ triphosphate link; methyl from SAM; protects from nucleases; first modification."],
+["Poly-A tail","Cut after AAUAAA; 40–250 A's by polyadenylate polymerase; stability, export, translation."],
+["snRNPs","U1, U2, U4, U5, U6; mediate splicing (spliceosome)."],
+["rRNA as ribozyme","Large-subunit rRNA catalyzes peptide bond formation."]
+],
+prot:[
+["Start codon","AUG (Met; fMet in bacteria)."],
+["Stop codons","UAA, UAG, UGA."],
+["Degeneracy","Several codons per amino acid. Met and Trp have one each; Leu has six."],
+["Specificity","A codon always codes the same amino acid."],
+["Wobble","Codon base 3 (3′) pairs loosely with anticodon base 1 (5′)."],
+["Silent / missense / nonsense","Same aa / different aa / stop codon."],
+["Frameshift","1 or 2 nt in/del. 3 nt adds or removes one amino acid, frame kept."],
+["Trinucleotide repeat locations","Huntington: coding. Fragile X: 5′-UTR. Myotonic dystrophy 1: 3′-UTR."],
+["Splice-site mutation outcomes","Exon lost (shorter) or intron retained (longer)."],
+["Aminoacyl-tRNA synthetase","Attaches aa to tRNA's 3′ CCA using ATP; proofreads."],
+["A / P / E sites","A: incoming aa-tRNA. P: peptidyl-tRNA. E: exiting tRNA. Each covers 3 nt."],
+["Shine-Dalgarno","Purine-rich sequence upstream of AUG; pairs with 16S rRNA of 30S."],
+["Euk start-site selection","40S + eIF-4 bind the 5′ cap, scan 5′→3′ for AUG (ATP; Kozak)."],
+["Initiator tRNA","fMet (prok) or Met (euk); delivered by (e)IF-2-GTP straight to the P site."],
+["IF-3 / eIF-3","Prevent early large-subunit joining."],
+["Elongation factors","EF-Tu + EF-Ts (prok) / EF-1α + EF-1βγ (euk) deliver aa-tRNA. EF-G / eEF-2 translocate."],
+["Release factors","RF-1 (UAA, UAG), RF-2 (UGA) in prok; eRF reads all three in euk."],
+["Translational control in eukaryotes","Phosphorylation inactivates eIF-2."],
+["Free vs RER-bound ribosomes","Free: cytosol, nucleus, mito, peroxisome proteins. RER: secreted, membrane, lysosomal."],
+["Targeting signals","Secreted: N-term hydrophobic (cotranslational). Nucleus: NLS. Mito: N-term entry sequence. Peroxisome: C-term tripeptide."],
+["Protein degradation","Ubiquitin chain tags protein → proteasome unfolds, de-ubiquitinates, cuts to peptides."],
+["Why circularize euk mRNA?","Cap–eIF-4–poly-A binding protein ensures only mature mRNA is translated."]
+],
+gene:[
+["Operon","Pathway genes under one promoter, with an operator (prokaryotes only)."],
+["Operator binds","The repressor. Inducers and corepressors bind the repressor."],
+["Lac: lactose −, glucose +","Repressor on operator; CAP site empty; off."],
+["Lac: lactose +, glucose −","Allolactose removes repressor; cAMP–CAP bound; maximal transcription."],
+["Lac: lactose +, glucose +","Repressor off, but no cAMP–CAP; very low expression."],
+["True inducer of lac","Allolactose (not lactose)."],
+["Trp role","Corepressor: binds repressor so it can bind the operator."],
+["Attenuation","Trp high but pol escaped: leader hairpin terminates transcription early. Prokaryote-only."],
+["Trp very low","Ribosome stalls on Trp codons, attenuator can't form; operon expressed."],
+["Stringent response","Uncharged tRNA in A site → RelA → ppGpp → rRNA/tRNA transcription down."],
+["Zinc finger, leucine zipper, helix-turn-helix","DNA-binding motifs (found in the DBD)."],
+["Gal4","STF bound to UAS on every galactose gene, with or without galactose."],
+["Gal80 and Gal3","Gal80 blocks Gal4's TAD. Galactose activates Gal3, which binds Gal80 and frees the TAD."],
+["Nuclear receptor superfamily","Glucocorticoid, mineralocorticoid, androgen, estrogen, vitamin D, retinoic acid, thyroid. DBD + TAD + LBD."],
+["Glucocorticoid signaling","Cortisol binds LBD → DBD exposed → nucleus → dimer binds GRE → coordinate expression."],
+["apoB-48","Intestinal editing C → U in CAA → UAA stop; shorter protein."],
+["Low iron and TfR mRNA","IRP binds 3′ IREs → mRNA stabilized → ↑TfR."],
+["High iron","IRPs leave IREs → TfR mRNA degraded; ferritin rises."],
+["miRNA pathway","pri-miRNA → Drosha → pre-miRNA → export → Dicer → guide strand + RISC → repress or degrade target."],
+["Alternative splicing","Exon skipping, intron retention, alternative splice sites; >90% of genes; tissue isoforms."],
+["DNA methylation","Cytosine in promoter CpG islands; hypermethylated = silent."],
+["Histone acetylation","HAT removes lysine + charge → open chromatin → active. HDAC reverses."]
+],
+genet:[
+["Genotype vs phenotype","Genotype = alleles. Phenotype = observable traits."],
+["Allele / locus","Version of a gene / its position on a chromosome."],
+["Aa × Aa","1/4 AA : 1/2 Aa : 1/4 aa (3:1 phenotype)."],
+["Aa × aa","1/2 Aa : 1/2 aa."],
+["Conservative vs nonconservative missense","Similar vs very different amino acid properties."],
+["Pedigree checklist","Transmission (vertical/horizontal), sex ratio, segregation (who passes it to whom)."],
+["Autosomal dominant","Every generation, both sexes, affected parent required; 50% risk from Aa × aa."],
+["Autosomal recessive","Skips generations; carrier parents; 25% risk; consanguinity."],
+["X-linked dominant","More females; affected father → all daughters, no sons; affected mother → half."],
+["X-linked recessive","Mostly males; never father → son; all daughters of affected fathers are carriers."],
+["Y-linked","Males only; father → all sons."],
+["Mitochondrial","Affected mother → all children, variable severity (heteroplasmy); father → none."],
+["Incomplete dominance vs codominance","Intermediate phenotype (pink flowers; lecture lists Tay-Sachs) vs both expressed (AB blood, sickle cell)."],
+["Hypoplastic AI","Deficient amount: thin enamel, small teeth, gaps; matrix formation defect."],
+["Hypomineralized / hypocalcified AI","Deficient quality: normal thickness, porous, chalky; mineralization defect."],
+["Hypomaturation AI","Soft enamel; matrix proteins not removed; maturation defect."],
+["FAM83H","Most common AI gene; AD; truncated protein mislocalized to nucleus."],
+["MMP20","Enamelysin; AR; proteins not removed → soft enamel."],
+["ENAM","Enamelin; AR; crystal formation and growth."],
+["AMELX","Amelogenin; XLD (~5%); vertical grooves; males worse."]
+],
+cc:[
+["Phase lengths","G1 ~10 h (varies). S ~6 h (constant). G2 ~4 h. M ~1 h."],
+["G0","Resting cells not committed to S; can re-enter."],
+["Restriction point","Late G1; after it the cell is committed and needs no growth factors."],
+["Prophase","Chromatin condenses; chromatids at centromere; kinetochores form; nucleolus disassembles; envelope intact."],
+["Prometaphase","Nuclear envelope breaks down; spindle attaches to kinetochores."],
+["Metaphase","Chromatids align at the metaphase plate; spindle-assembly checkpoint."],
+["Anaphase","Centromeres split; sister chromatids move to opposite poles."],
+["Telophase","Spindle dissociates; nuclear envelopes re-form; chromatids decondense; nucleoli return."],
+["Cytokinesis","Actin ring contracts → cleavage furrow."],
+["Cyclin D","With CDK4/6; pass restriction point (G1/S)."],
+["Cyclins E and A","With CDK2; start DNA synthesis in early S."],
+["Cyclin B","With CDK1; G2 → M (A also helps in mitosis)."],
+["INK4 (p16)","Blocks cyclin D–CDK4/6 → arrest at restriction point."],
+["CIP/KIP (p21, p27)","Inhibit CDK2."],
+["RB","Hypophosphorylated RB binds E2F → G1 arrest. Hyperphosphorylation by CDK4/6 then CDK2 frees E2F."],
+["p53","DNA damage → p21 → arrest for repair; irreparable → apoptosis."],
+["Cdc25c","Removes inhibitory tyrosine phosphates from CDK1 → mitosis."],
+["Necrosis","Passive; groups of cells swell and lyse; inflammation; days."],
+["Apoptosis","Programmed, ATP-requiring; shrink, bleb, PS exposed, cytochrome c released; no inflammation; hours."],
+["Why no inflammation in apoptosis","Phagocytes engulf via phosphatidylserine and release IL-10 and TGF-β."]
+],
+bio:[
+["Restriction enzymes","Bacterial endonucleases; 4–8 bp palindromes; double-stranded cuts."],
+["Sticky-end enzymes","BamHI (GGATCC), EcoRI (GAATTC), HindIII (AAGCTT)."],
+["Blunt-end enzymes","HaeIII (GGCC), PvuII (CAGCTG); need T4 ligase."],
+["Why use the same enzyme for insert and vector?","Complementary sticky ends pair up."],
+["Cloning vector requirements","Origin of replication, selectable marker, unique restriction site."],
+["Transformation vs transfection","Into bacteria/yeast vs into eukaryotic cells."],
+["Genomic vs cDNA library","All DNA vs only expressed (mRNA-derived) sequences."],
+["Sanger sequencing","ddNTPs lack a 3′-OH → chain stops at that base."],
+["PCR steps","Denature → anneal (primers bind) → extend."],
+["What defines the PCR target?","Primers complementary to sequences flanking it."],
+["Southern blot","DNA: cut, gel, denature/transfer, probe."],
+["Northern blot","RNA: size (position) and amount (intensity)."],
+["Western blot","Protein, labeled antibody."],
+["ELISA","Protein or antibody detection; enzyme-linked antibody produces color."],
+["Microarray","Thousands of genes; fluorescent cDNA on DNA spots."],
+["SNoW DRoP","Southern–DNA, Northern–RNA, Western–Protein."]
+]};
+/* ---------- helpers ---------- */
+const $=(s,r=document)=>r.querySelector(s);
+const esc=s=>String(s);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+const TNAME=Object.fromEntries(TOPICS.map(t=>[t.id,t.nav]));
+const has=(q,f)=>q.f.split(" ").includes(f);
+const isSata=q=>Array.isArray(q.a);
+const qkey=q=>q.y+"-"+(q.n||QB.indexOf(q));
+const srcLabel=q=>q.y==="New"?"Written from the 2026 slides":q.y==="R26"?"2026 review deck, "+TNAME[q.t]+" Q"+q.n:q.y==="L35"?"L35 slides concept check":q.y+" exam, Q"+q.n;
+function figFor(q){return FIG[q.y+"-"+q.n]||null;}
+function usable(q){ // usable in topic practice & cumulative pools
+  if(q.a===-1) return false;
+  if(has(q,"img") && !(q.y==="2023")) return false;
+  return true;
+}
+/* build a displayable item with (optionally) shuffled options */
+function buildItem(q,doShuffle){
+  const n=q.o.length;
+  const idx=(doShuffle && !has(q,"lock"))?shuffle([...Array(n).keys()]):[...Array(n).keys()];
+  const o=idx.map(i=>q.o[i]);
+  let a;
+  if(q.a===-1) a=-1;
+  else if(isSata(q)) a=q.a.map(x=>idx.indexOf(x)).sort((x,y)=>x-y);
+  else a=idx.indexOf(q.a);
+  return {q,o,a,idx};
+}
+function isRight(item,sel){
+  if(has(item.q,"void")) return true;
+  if(item.a===-1) return true;
+  if(isSata(item.q)){const s=[...sel].sort((x,y)=>x-y);return s.length===item.a.length&&s.every((v,i)=>v===item.a[i]);}
+  return sel.length===1&&sel[0]===item.a;
+}
+const L="ABCDE";
+function ansText(item){
+  if(item.a===-1) return "No key (everyone got credit)";
+  const arr=isSata(item.q)?item.a:[item.a];
+  return arr.map(i=>L[i]+". "+item.o[i]).join("; ");
+}
+function tagsHTML(q){
+  let t="";
+  if(has(q,"hy")) t+='<span class="tag hy">high-yield</span>';
+  if(isSata(q)) t+='<span class="tag sata">select all</span>';
+  if(has(q,"void")) t+='<span class="tag void">everyone got credit</span>';
+  return t;
+}
+
+/* ---------- mastery (session only) ---------- */
+const mastered={}; // key -> true when answered correctly at least once
+function poolFor(t){return QB.filter(q=>q.t===t&&usable(q));}
+function markResult(q,ok){if(ok) mastered[qkey(q)]=true; renderStrip(); renderNav();}
+function mastery(t){const p=poolFor(t);const m=p.filter(q=>mastered[qkey(q)]).length;return {m,n:p.length,pct:Math.round(100*m/p.length)};}
+function renderStrip(){
+  $("#strip").innerHTML=TOPICS.map(t=>{const s=mastery(t.id);
+    return '<button data-go="'+t.id+'" title="'+t.title+'"><span class="lab">'+t.nav+'</span><span class="bar"><i style="width:'+s.pct+'%"></i></span><span class="num">'+s.m+' / '+s.n+'</span></button>';}).join("");
+}
+
+/* ---------- nav ---------- */
+let current="start";
+function renderNav(){
+  const link=(id,label,badge)=>'<a href="#" data-t="'+id+'" class="'+(id===current?"on":"")+'">'+(badge?'<span class="prog">'+badge+'</span>':"")+label+'</a>';
+  $("#nav").innerHTML=
+    '<div class="grp"><h3>Start</h3>'+link("start","How Exam 2 is built")+'</div>'+
+    '<div class="grp"><h3>Lectures</h3>'+TOPICS.map(t=>{const s=mastery(t.id);return link(t.id,t.nav,s.m?s.pct+"%":"");}).join("")+'</div>'+
+    '<div class="grp"><h3>Test yourself</h3>'+link("exam","Cumulative exam")+link("past","Past exams")+'</div>';
+}
+function show(id){
+  current=id;
+  document.querySelectorAll(".topic").forEach(s=>s.classList.toggle("on",s.id==="t-"+id));
+  renderNav();
+  window.scrollTo({top:0,behavior:"instant"});
+}
+
+/* ---------- topic sections ---------- */
+function renderTopics(){
+  const main=$("#main");
+  let h='<section class="topic" id="t-start">'+START_HTML+'</section>';
+  TOPICS.forEach(t=>{
+    const nq=poolFor(t.id).length, nf=FC[t.id].length;
+    h+='<section class="topic" id="t-'+t.id+'">'+
+      '<div class="topic-head"><div class="src">'+t.src+'</div><h2>'+t.title+'</h2><p class="obj">'+t.obj+'</p></div>'+
+      '<div class="modes" role="tablist">'+
+        '<button class="on" data-mode="notes" data-topic="'+t.id+'">Notes</button>'+
+        '<button data-mode="cards" data-topic="'+t.id+'">Flashcards<span class="ct">'+nf+'</span></button>'+
+        '<button data-mode="quiz" data-topic="'+t.id+'">Practice set<span class="ct">'+nq+'</span></button>'+
+      '</div>'+
+      '<div class="pane on" id="p-notes-'+t.id+'">'+NOTES[t.id]+'</div>'+
+      '<div class="pane" id="p-cards-'+t.id+'"></div>'+
+      '<div class="pane" id="p-quiz-'+t.id+'"></div>'+
+    '</section>';
+  });
+  h+='<section class="topic" id="t-exam"><div class="topic-head"><div class="src">All lectures</div><h2>Cumulative exam</h2><p class="obj">Pick the lectures and length. No feedback until you submit; then you get a score, a per-lecture breakdown, and every missed question with its explanation.</p></div><div id="exam-body"></div></section>';
+  h+='<section class="topic" id="t-past"><div class="topic-head"><div class="src">2020–2025, plus the 2026 review deck</div><h2>Past exams</h2><p class="obj">Each exam runs in its original order with its original answer choices. Questions where everyone got credit count as correct.</p></div><div id="past-body"></div></section>';
+  main.innerHTML=h;
+}
+function setMode(t,mode){
+  const sec=$("#t-"+t);
+  sec.querySelectorAll(".modes button").forEach(b=>b.classList.toggle("on",b.dataset.mode===mode));
+  ["notes","cards","quiz"].forEach(m=>$("#p-"+m+"-"+t).classList.toggle("on",m===mode));
+  if(mode==="cards"&&!FCS[t]) startCards(t);
+  if(mode==="quiz"&&!PR[t]) startPractice(t,false);
+}
+
+/* ---------- flashcards ---------- */
+const FCS={};
+function startCards(t,onlyAgain){
+  const deck=onlyAgain&&FCS[t]?FCS[t].again.slice():shuffle(FC[t].map((_,i)=>i));
+  FCS[t]={queue:deck,pos:0,known:0,again:[],total:deck.length,flip:false};
+  drawCard(t);
+}
+function drawCard(t){
+  const s=FCS[t], el=$("#p-cards-"+t);
+  if(s.pos>=s.queue.length){
+    el.innerHTML='<div class="fc-wrap"><div class="res"><div class="big">'+s.known+' / '+s.total+'</div><div class="sub">cards marked known this round</div></div>'+
+      '<div class="fc-ctrl">'+(s.again.length?'<button class="btn pri" data-fc="again" data-topic="'+t+'">Study the '+s.again.length+' I missed</button>':'')+
+      '<button class="btn" data-fc="restart" data-topic="'+t+'">Shuffle and start over</button></div></div>';
+    return;
+  }
+  const c=FC[t][s.queue[s.pos]];
+  el.innerHTML='<div class="fc-wrap"><div class="fc-bar"><span>Card '+(s.pos+1)+' of '+s.queue.length+'</span><span>'+s.known+' known, '+s.again.length+' to review</span></div>'+
+    '<div class="card'+(s.flip?" flip":"")+'" data-fc="flip" data-topic="'+t+'" tabindex="0" role="button" aria-label="Flip card">'+
+      '<div class="card-in"><div class="face front"><div class="lbl">Prompt</div><div class="txt">'+c[0]+'</div></div>'+
+      '<div class="face back"><div class="lbl">Answer</div><div class="txt">'+c[1]+'</div></div></div></div>'+
+    '<div class="fc-ctrl"><button class="btn" data-fc="prev" data-topic="'+t+'"'+(s.pos===0?" disabled":"")+'>Back</button>'+
+      '<button class="btn" data-fc="flip" data-topic="'+t+'">Flip</button>'+
+      '<button class="btn bad" data-fc="no" data-topic="'+t+'">Review again</button>'+
+      '<button class="btn good" data-fc="yes" data-topic="'+t+'">I knew it</button>'+
+      '<button class="btn" data-fc="restart" data-topic="'+t+'">Shuffle</button></div>'+
+    '<p style="font-size:13px;color:var(--ink-faint);margin-top:10px">Tap the card or press Space to flip. Arrow keys: ← review again, → knew it.</p></div>';
+}
+function fcAction(t,act){
+  const s=FCS[t]; if(!s) return;
+  if(act==="flip"){s.flip=!s.flip;$("#p-cards-"+t+" .card").classList.toggle("flip",s.flip);return;}
+  if(act==="restart"){startCards(t);return;}
+  if(act==="again"){startCards(t,true);return;}
+  if(act==="prev"){if(s.pos>0){s.pos--;s.flip=false;drawCard(t);}return;}
+  const id=s.queue[s.pos];
+  if(act==="yes") s.known++;
+  if(act==="no") s.again.push(id);
+  s.pos++; s.flip=false; drawCard(t);
+}
+
+/* ---------- practice set (immediate feedback) ---------- */
+const PR={};
+function startPractice(t,hyOnly){
+  let pool=poolFor(t); if(hyOnly) pool=pool.filter(q=>has(q,"hy"));
+  PR[t]={items:shuffle(pool).map(q=>buildItem(q,true)),pos:0,right:0,done:0,hyOnly,sel:[],checked:false};
+  drawPractice(t);
+}
+function drawPractice(t){
+  const s=PR[t], el=$("#p-quiz-"+t);
+  const top='<div class="qz-top"><span>Question '+Math.min(s.pos+1,s.items.length)+' of '+s.items.length+', '+s.right+' right so far</span>'+
+    '<span><label class="chk" style="display:inline-flex;margin:0 12px 0 0"><input type="checkbox" data-pr="hy" data-topic="'+t+'"'+(s.hyOnly?" checked":"")+'> High-yield only</label>'+
+    '<button class="btn" data-pr="restart" data-topic="'+t+'">Reshuffle</button></span></div>';
+  if(s.pos>=s.items.length){
+    const pct=s.done?Math.round(100*s.right/s.done):0;
+    el.innerHTML='<div class="qz">'+top+'<div class="res"><div class="big">'+pct+'%</div><div class="sub">'+s.right+' of '+s.done+' correct on the first try</div></div><button class="btn pri" data-pr="restart" data-topic="'+t+'">Run it again, reshuffled</button></div>';
+    return;
+  }
+  const it=s.items[s.pos], q=it.q, fig=figFor(q);
+  let h='<div class="qz">'+top+'<div class="qmeta"><span>'+srcLabel(q)+'</span>'+tagsHTML(q)+'</div>'+
+    '<div class="qtext">'+q.q+'</div>'+(fig?'<div class="figdesc">'+fig+'</div>':'')+'<div class="opts">';
+  it.o.forEach((o,i)=>{
+    let cls="opt";
+    if(s.checked){
+      const correct=isSata(q)?it.a.includes(i):i===it.a;
+      if(correct) cls+=" right"; else if(s.sel.includes(i)) cls+=" wrong";
+    } else if(s.sel.includes(i)) cls+=" sel";
+    h+='<button class="'+cls+'" data-pr="pick" data-topic="'+t+'" data-i="'+i+'"'+(s.checked?" disabled":"")+'><span class="k">'+L[i]+'</span><span>'+o+'</span></button>';
+  });
+  h+='</div>';
+  if(s.checked){
+    const ok=isRight(it,s.sel);
+    h+='<div class="expl"><b class="'+(ok?"ok":"no")+'">'+(ok?"Correct.":"Not quite. Answer: "+ansText(it)+".")+'</b> '+q.e+'</div>'+
+       '<button class="btn pri" data-pr="next" data-topic="'+t+'">Next question</button>';
+  } else if(isSata(q)){
+    h+='<button class="btn pri" data-pr="check" data-topic="'+t+'"'+(s.sel.length?"":" disabled")+'>Check answer</button>';
+  }
+  el.innerHTML=h+'</div>';
+}
+function prAction(t,act,i){
+  const s=PR[t];
+  if(act==="restart"){startPractice(t,s?s.hyOnly:false);return;}
+  if(act==="hy"){startPractice(t,!s.hyOnly);return;}
+  const it=s.items[s.pos];
+  if(act==="pick"){
+    if(s.checked) return;
+    if(isSata(it.q)){s.sel=s.sel.includes(i)?s.sel.filter(x=>x!==i):s.sel.concat(i);drawPractice(t);return;}
+    s.sel=[i]; act="check";
+  }
+  if(act==="check"){
+    s.checked=true; s.done++;
+    const ok=isRight(it,s.sel); if(ok) s.right++;
+    markResult(it.q,ok); drawPractice(t); return;
+  }
+  if(act==="next"){s.pos++;s.sel=[];s.checked=false;drawPractice(t);
+    $("#p-quiz-"+t).scrollIntoView({block:"start",behavior:"instant"});}
+}
+/* ---------- exam runner (cumulative + past) ---------- */
+const EX={};
+function startExam(box,items,opts){
+  if(EX[box]&&EX[box].timer) clearInterval(EX[box].timer);
+  const s={items,ans:items.map(()=>[]),pos:0,label:opts.label,timed:opts.timed,remaining:opts.timed?items.length*90:0,timer:null,done:false,back:opts.back};
+  EX[box]=s;
+  if(s.timed){s.timer=setInterval(()=>{s.remaining--;const el=$("#"+box+" .timer");if(el){el.textContent=fmt(s.remaining);el.classList.toggle("low",s.remaining<=120);}if(s.remaining<=0) submitExam(box);},1000);}
+  drawExam(box);
+}
+const fmt=sec=>{sec=Math.max(0,sec);return Math.floor(sec/60)+":"+String(sec%60).padStart(2,"0");};
+function drawExam(box){
+  const s=EX[box], el=$("#"+box);
+  if(s.done) return drawResults(box);
+  const it=s.items[s.pos], q=it.q, sel=s.ans[s.pos], fig=figFor(q);
+  const answered=s.ans.filter(a=>a.length).length;
+  let h='<div class="qz"><div class="qz-top"><span><b>'+s.label+'</b>, question '+(s.pos+1)+' of '+s.items.length+' ('+answered+' answered)</span>'+
+    '<span>'+(s.timed?'<span class="timer">'+fmt(s.remaining)+'</span> ':'')+'<button class="btn" data-ex="submit" data-box="'+box+'">Submit exam</button></span></div>'+
+    '<div class="qmeta"><span>'+srcLabel(q)+'</span>'+(isSata(q)?'<span class="tag sata">select all</span>':'')+'</div>'+
+    '<div class="qtext">'+q.q+'</div>'+(fig?'<div class="figdesc">'+fig+'</div>':'')+'<div class="opts">';
+  it.o.forEach((o,i)=>{h+='<button class="opt'+(sel.includes(i)?" sel":"")+'" data-ex="pick" data-box="'+box+'" data-i="'+i+'"><span class="k">'+L[i]+'</span><span>'+o+'</span></button>';});
+  h+='</div><div class="fc-ctrl" style="margin-bottom:16px"><button class="btn" data-ex="prev" data-box="'+box+'"'+(s.pos===0?" disabled":"")+'>Back</button>'+
+    (s.pos<s.items.length-1?'<button class="btn pri" data-ex="next" data-box="'+box+'">Next</button>':'<button class="btn pri" data-ex="submit" data-box="'+box+'">Submit exam</button>')+'</div>'+
+    '<div style="display:flex;flex-wrap:wrap;gap:4px">';
+  s.items.forEach((_,i)=>{const a=s.ans[i].length;h+='<button class="btn" style="padding:3px 0;width:34px;font-size:12.5px;'+(i===s.pos?"border-color:var(--accent);color:var(--accent);":"")+(a?"background:var(--surface-2);":"")+'" data-ex="jump" data-box="'+box+'" data-i="'+i+'" aria-label="Question '+(i+1)+'">'+(i+1)+'</button>';});
+  el.innerHTML=h+'</div></div>';
+}
+function exAction(box,act,i){
+  const s=EX[box]; if(!s) return;
+  if(act==="pick"){const q=s.items[s.pos].q;
+    if(isSata(q)) s.ans[s.pos]=s.ans[s.pos].includes(i)?s.ans[s.pos].filter(x=>x!==i):s.ans[s.pos].concat(i);
+    else s.ans[s.pos]=[i];
+    drawExam(box);return;}
+  if(act==="next"&&s.pos<s.items.length-1){s.pos++;drawExam(box);return;}
+  if(act==="prev"&&s.pos>0){s.pos--;drawExam(box);return;}
+  if(act==="jump"){s.pos=i;drawExam(box);return;}
+  if(act==="submit"){
+    const blank=s.ans.filter(a=>!a.length).length;
+    if(blank&&s.remaining!==0&&!confirm(blank+" question"+(blank>1?"s are":" is")+" unanswered. Submit anyway?")) return;
+    submitExam(box);}
+  if(act==="back"){s.back();}
+}
+function submitExam(box){
+  const s=EX[box]; if(s.done) return;
+  if(s.timer) clearInterval(s.timer);
+  s.done=true;
+  s.res=s.items.map((it,k)=>{const ok=s.ans[k].length>0&&isRight(it,s.ans[k])||has(it.q,"void");markResult(it.q,ok&&!has(it.q,"void"));return ok;});
+  drawResults(box); $("#"+box).scrollIntoView({block:"start",behavior:"instant"});
+}
+function drawResults(box){
+  const s=EX[box], el=$("#"+box);
+  const right=s.res.filter(Boolean).length, n=s.items.length, pct=Math.round(100*right/n);
+  const by={};
+  s.items.forEach((it,k)=>{const t=it.q.t;by[t]=by[t]||[0,0];by[t][1]++;if(s.res[k])by[t][0]++;});
+  let h='<div class="qz"><div class="res"><div class="big">'+pct+'%</div><div class="sub">'+right+' of '+n+' correct, '+s.label+'</div><div class="bk">'+
+    TOPICS.filter(t=>by[t.id]).map(t=>{const b=by[t.id];return '<div>'+t.nav+'<br><b>'+b[0]+' / '+b[1]+'</b> ('+Math.round(100*b[0]/b[1])+'%)</div>';}).join("")+'</div></div>'+
+    '<div class="fc-ctrl" style="margin-bottom:18px"><button class="btn pri" data-ex="back" data-box="'+box+'">Choose another exam</button></div>';
+  const miss=s.items.map((it,k)=>[it,k]).filter(([it,k])=>!s.res[k]);
+  h+='<div class="sec"><h3>'+(miss.length?"Missed questions ("+miss.length+")":"No misses. Nice.")+'</h3>';
+  miss.forEach(([it,k])=>{
+    const yours=s.ans[k].length?s.ans[k].map(i=>L[i]+". "+it.o[i]).join("; "):"(left blank)";
+    h+='<div class="miss-item"><div class="qmeta">Q'+(k+1)+', '+srcLabel(it.q)+', '+TNAME[it.q.t]+'</div><div class="qq">'+it.q.q+'</div>'+
+       '<div class="yy">Your answer: '+yours+'</div><div class="cc">Correct: '+ansText(it)+'</div><div style="margin-top:4px">'+it.q.e+'</div></div>';
+  });
+  el.innerHTML=h+'</div></div>';
+}
+
+/* ---------- cumulative exam setup ---------- */
+function examPool(){
+  const ts=[...document.querySelectorAll("#exam-body input[data-et]:checked")].map(x=>x.dataset.et);
+  const src=$("#ex-src").value, hy=$("#ex-hy").checked;
+  return QB.filter(q=>usable(q)&&ts.includes(q.t)&&(!hy||has(q,"hy"))&&
+    (src==="all"||(src==="past"&&/^20/.test(q.y))||(src==="recent"&&(q.y==="2025"||q.y==="2024"||q.y==="2023"))||(src==="new"&&(q.y==="New"||q.y==="R26"))));
+}
+function renderExamSetup(){
+  $("#exam-body").innerHTML='<div class="setup">'+
+    '<label class="h">Lectures</label><div class="chks">'+TOPICS.map(t=>'<label class="chk"><input type="checkbox" data-et="'+t.id+'" checked> '+t.nav+'</label>').join("")+'</div>'+
+    '<label class="h" for="ex-src">Question source</label><select id="ex-src"><option value="all">Everything (past exams, review deck, new)</option><option value="past">Past exams only (2020–2025)</option><option value="recent">Recent exams only (2023–2025)</option><option value="new">Review deck and new questions only</option></select>'+
+    '<label class="h" for="ex-len">Length</label><select id="ex-len"><option value="25">25 questions</option><option value="50" selected>50 questions (full exam)</option><option value="75">75 questions</option><option value="999">Every matching question</option></select>'+
+    '<label class="h">Options</label><label class="chk"><input type="checkbox" id="ex-hy"> High-yield only</label><label class="chk"><input type="checkbox" id="ex-timed"> Timed (90 seconds per question)</label>'+
+    '<p id="ex-count" style="margin-top:14px;color:var(--ink-soft);font-size:14.5px"></p>'+
+    '<button class="btn pri" id="ex-go">Start exam</button></div>';
+  updateCount();
+}
+function updateCount(){const n=examPool().length,len=+$("#ex-len").value;$("#ex-count").textContent=n+" questions match. This exam will use "+Math.min(n,len)+".";$("#ex-go").disabled=!n;}
+function goExam(){
+  const pool=shuffle(examPool()).slice(0,+$("#ex-len").value);
+  startExam("exam-body",pool.map(q=>buildItem(q,true)),{label:"Cumulative exam",timed:$("#ex-timed").checked,back:renderExamSetup});
+}
+
+/* ---------- past exams ---------- */
+const PAST=[["2025","Most recent; closest to this year's style"],["2024","Same 50-question format"],["2023","Several questions everyone got credit for"],["2022","Includes harder vignettes"],["2021","Incomplete file (38 questions)"],["2020","Four-option format"],["R26","2026 review deck, 27 questions, select-all included"]];
+function renderPast(){
+  $("#past-body").innerHTML='<label class="chk" style="margin-bottom:14px"><input type="checkbox" id="past-timed"> Timed (90 seconds per question)</label><div class="yrs">'+
+    PAST.map(([y,d])=>{const n=QB.filter(q=>q.y===y).length;return '<button class="yr" data-past="'+y+'"><b>'+(y==="R26"?"Review deck":y+" Exam 2")+'</b><span>'+n+' questions. '+d+'</span></button>';}).join("")+'</div>';
+}
+function goPast(y){
+  const order=["pp","dna","rna","gene","genet","cc","bio","prot"];
+  let qs=QB.filter(q=>q.y===y);
+  if(y==="R26") qs.sort((a,b)=>order.indexOf(a.t)-order.indexOf(b.t)||a.n-b.n); else qs.sort((a,b)=>a.n-b.n);
+  startExam("past-body",qs.map(q=>buildItem(q,false)),{label:y==="R26"?"2026 review deck":y+" Exam 2",timed:$("#past-timed").checked,back:renderPast});
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click",ev=>{
+  const a=ev.target.closest("#nav a[data-t]"); if(a){ev.preventDefault();show(a.dataset.t);return;}
+  const g=ev.target.closest("[data-go]"); if(g){show(g.dataset.go);return;}
+  const m=ev.target.closest("[data-mode]"); if(m){setMode(m.dataset.topic,m.dataset.mode);return;}
+  const f=ev.target.closest("[data-fc]"); if(f){fcAction(f.dataset.topic,f.dataset.fc);return;}
+  const p=ev.target.closest("[data-pr]"); if(p&&p.tagName!=="INPUT"){prAction(p.dataset.topic,p.dataset.pr,+p.dataset.i);return;}
+  const e=ev.target.closest("[data-ex]"); if(e){exAction(e.dataset.box,e.dataset.ex,+e.dataset.i);return;}
+  const y=ev.target.closest("[data-past]"); if(y){goPast(y.dataset.past);return;}
+  if(ev.target.id==="ex-go"){goExam();return;}
+});
+document.addEventListener("change",ev=>{
+  const p=ev.target.closest("input[data-pr]"); if(p){prAction(p.dataset.topic,"hy");return;}
+  if(ev.target.closest("#exam-body .setup")) updateCount();
+});
+document.addEventListener("keydown",ev=>{
+  if(!TOPICS.some(t=>t.id===current)) return;
+  const pane=$("#p-cards-"+current); if(!pane||!pane.classList.contains("on")||!FCS[current]) return;
+  if(ev.target.tagName==="INPUT"||ev.target.tagName==="SELECT") return;
+  if(ev.key===" "||ev.key==="Enter"){ev.preventDefault();fcAction(current,"flip");}
+  else if(ev.key==="ArrowRight") fcAction(current,"yes");
+  else if(ev.key==="ArrowLeft") fcAction(current,"no");
+});
+
+/* ---------- boot ---------- */
+renderTopics(); renderExamSetup(); renderPast(); renderStrip(); show("start");
+</script>
+</body>
+</html>
