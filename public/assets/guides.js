@@ -62,6 +62,12 @@ const STUDY_GUIDES = [
     file:   "morphology-exam2.html",
     desc:   "Tooth ID, Muscles of Mastication, Dental Anomolies, and General Tooth Morphology"
   }
+  {
+    course: "DENT 620-1 – Dental Morphology & Occlusion",
+    exam:   "Exam 3",
+    file:   "morphology-exam-3.html",
+    desc:   "Cumulative review of material since day 1 through cuspal pathways/occlusion concepts"
+  }
 ];
 
 /* ---- page machinery: no need to edit below here ---------- */
