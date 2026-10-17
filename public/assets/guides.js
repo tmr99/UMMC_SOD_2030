@@ -39,6 +39,12 @@ const STUDY_GUIDES = [
     desc:   "Peripheral Blood, Circulatory System, and Organ Systems I"
   },
   {
+    course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
+    exam:   "Exam 3",
+    file:   "histology-exam-3.html",
+    desc:   "Organ Systems II"
+  },
+  {
     course: "DENT 604 – Biochemistry",
     exam:   "Exam I",
     file:   "biochem-exam-1.html",
@@ -49,6 +55,18 @@ const STUDY_GUIDES = [
     exam:   "Exam II",
     file:   "biochem-exam-2.html",
     desc:   "Molecular Genetics"
+   },
+   {
+    course: "DENT 604 – Biochemistry",
+    exam:   "Exam III",
+    file:   "biochem-exam-3.html",
+    desc:   "Metabolism"
+  },
+  {
+    course: "DENT 604 – Biochemistry",
+    exam:   "Exam IV",
+    file:   "biochem-exam-4.html",
+    desc:   "TBA"
   },
   {
     course: "DENT 620-1 – Dental Morphology & Occlusion",
