@@ -61,7 +61,7 @@ const STUDY_GUIDES = [
     exam:   "Exam 2",
     file:   "morphology-exam2.html",
     desc:   "Tooth ID, Muscles of Mastication, Dental Anomolies, and General Tooth Morphology"
-  }
+  },
   {
     course: "DENT 620-1 – Dental Morphology & Occlusion",
     exam:   "Exam 3",
