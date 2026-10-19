@@ -45,6 +45,12 @@ const STUDY_GUIDES = [
     desc:   "Organ Systems II"
   },
   {
+    course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
+    exam:   "Exam 4",
+    file:   "histology-exam-4.html",
+    desc:   "TBA"
+  },
+  {
     course: "DENT 604 – Biochemistry",
     exam:   "Exam I",
     file:   "biochem-exam-1.html",
