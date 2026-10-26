@@ -39,6 +39,35 @@
     .guide { grid-template-columns:1fr; }
     .guide-open { grid-column:1; grid-row:auto; text-align:center; margin-top:.5rem; }
   }
+
+  /* ---- Archive dropdown (shared look on Study Guides + Courses) ---- */
+  .archive { margin-top:2.8rem; border-top:1px solid var(--line); padding-top:1.3rem; }
+  .archive > summary,
+  .archive-term > summary {
+    cursor:pointer; list-style:none;
+    display:flex; align-items:baseline; gap:.6rem;
+    font-family:var(--font-display); font-weight:600;
+  }
+  .archive > summary::-webkit-details-marker,
+  .archive-term > summary::-webkit-details-marker { display:none; }
+  .archive > summary::before,
+  .archive-term > summary::before {
+    content:"\25B8"; display:inline-block; color:var(--muted);
+    font-size:.85em; transition:transform .15s ease;
+  }
+  .archive[open] > summary::before,
+  .archive-term[open] > summary::before { transform:rotate(90deg); }
+  .arch-label { font-size:1.15rem; }
+  .arch-count { font-family:var(--font-body); font-weight:400; font-size:.85rem; color:var(--muted); }
+  .archive-term {
+    margin:1rem 0 0; padding:.55rem 0 .3rem 1rem;
+    border-left:2px solid var(--line);
+  }
+  .archive-term > summary { font-size:1rem; color:var(--muted); }
+  .archive .guide-course { margin-top:1.3rem; }
+  .archive .guide-course h2 { font-size:1rem; }
+  .archive .guide { border-left-color:var(--line); }
+  .archive .grid { margin:1rem 0 .4rem; }
 </style>
 </head>
 <body>
