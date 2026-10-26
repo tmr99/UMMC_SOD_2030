@@ -237,7 +237,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   <div class="hero-in">
     <div>
       <h1>Biochemistry Exam&nbsp;3</h1>
-      <p class="lede">Dr. Hosler’s block, built from his redox (10-15-26), oxphos and sugar-catabolism topic lists, the cellular ET handout, five slide sets, and every Hosler question from 2017–2025. Notes for each topic, a practice set for each, flashcards, worked ΔG problems and a cumulative exam.</p>
+      <p class="lede">Dr. Hosler’s block, built from his redox (10-15-26), oxphos and sugar-catabolism topic lists, the cellular ET handout, six slide sets, and every Hosler question from 2017–2025. Notes for each topic, a practice set for each, flashcards, worked ΔG problems and a cumulative exam.</p>
       <div class="hero-meta">
         <span class="pill on">Repeat stems tagged in magenta</span>
         <span class="pill">DENT 604</span>
@@ -276,6 +276,8 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   <div class="grp"><h3>Slides (lists pending)</h3>
     <a href="#pdh" data-t="pdh">PDH &amp; TCA cycle <span class="prog" data-p="pdh"></span></a>
     <a href="#faox" data-t="faox">FA oxidation &amp; ethanol <span class="prog" data-p="faox"></span></a>
+    <a href="#glycogen" data-t="glycogen">Glycogen <span class="prog" data-p="glycogen"></span></a>
+    <a href="#gneo" data-t="gneo">Gluconeogenesis <span class="prog" data-p="gneo"></span></a>
   </div>
   <div class="grp"><h3>Practice</h3>
     <a href="#cards" data-t="cards">Flashcards</a>
@@ -425,6 +427,8 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li><b>Fructose and galactose</b> arrows with the deficient enzyme of each disease circled.</li>
       <li><b>PDH box</b>: E1 TPP, E2 lipoyllysine, E3 FAD; kinase − / phosphatase +; regulator arrows.</li>
       <li><b>TCA wheel</b> with the 4 dehydrogenases, 2 CO₂ steps, GTP, and the isocitrate DH / α-KG DH regulators.</li>
+      <li><b>Glycogen</b>: synthesis chain (phosphoglucomutase → UDP-glucose → glycogenin → synthase α1→4 → branching 6–8 to α1→6 at 11); breakdown (phosphorylase → G-1-P, stops at 4; debranching 3 to α1→4, frees α1→6 glucose); G-6-Pase liver only.</li>
+      <li><b>Gluconeogenesis</b>: the 4 bypass enzymes with location and cost; costs per precursor (pyruvate 4 NTP + 2 NADH, lactate 4 NTP + 1 NADH, glycerol and glutamine ~0); precursor shares (lactate 50, glutamine 15, alanine 12, glycerol 8, other AA 15); not Leu or Lys.</li>
       <li><b>FA entry</b>: activation sites (LCFA cytoplasm, MCFA matrix), CPT I → translocase → CPT II, malonyl-CoA ⊣ CPT I; one β-ox cycle; acyl-CoA DH isozyme ranges.</li>
     </ol>
   </div>
@@ -564,6 +568,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <div><span class="f">UQ → ubisemiquinone (UQ•⁻ / UQH•) → ubiquinol (UQH₂)</span></div>
     </div>
     <ul>
+      <li><b>Oxidation runs the same states in reverse</b> (topic 13): fully reduced → semiquinone → oxidized, one electron at a time.</li>
       <li><b>Accepting two</b>: both 1e⁻ steps run in very rapid succession (FMN taking 2e⁻ from NADH).</li>
       <li><b>Donating one at a time</b>: electrons go out sequentially to 1e⁻ carriers (FMN → Fe-S wire).</li>
       <li>FMN and FAD share the same three-ring redox headgroup from riboflavin (vitamin B2). You don’t need to tell them apart.</li>
@@ -795,7 +800,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
   <div class="sec">
     <h3>Glutamine synthetase: acyl phosphate chemistry</h3>
-    <p>You don’t need to memorize the structures. Know the three moves.</p>
+    <p>Topic 21 says you don’t need to memorize this chemistry; know the concept (phosphorylation makes the carbon easier for a nucleophile to attack). The three moves:</p>
     <ol>
       <li><b>Phosphorylation.</b> Glutamate’s side-chain carboxyl O⁻ attacks the δ+ γ-P of ATP → γ-glutamyl phosphate (an acyl phosphate) + ADP.</li>
       <li><b>Electron withdrawal.</b> The attached phosphate pulls electron density off the carbonyl C, making it more susceptible to attack by an electron pair.</li>
@@ -1386,6 +1391,167 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   <div class="quiz" data-topic="faox"></div>
 </section>
 
+<!-- ================= GLYCOGEN ================= -->
+<section class="topic" id="t-glycogen">
+  <div class="topic-head">
+    <div class="src">Glycogen &amp; gluconeogenesis slides 1–10 · Topic list not yet posted</div>
+    <h2>Glycogen synthesis and glycogenolysis</h2>
+    <p class="obj">Liver stores glucose as glycogen in the fed state and breaks it down in the fasting state; only liver can turn the product into free glucose for blood. This lecture covers the pathways; their regulation is a separate lecture.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Liver glucose homeostasis</h3>
+    <ul>
+      <li>Liver takes up large amounts of glucose in the fed state, then holds blood glucose at <b>4–5 mM</b> in the fasting state by <b>glycogenolysis</b> and <b>gluconeogenesis</b>.</li>
+      <li>Tissues that depend on a constant glucose supply: <b>brain, red blood cells, exercising muscle, kidney medulla, lens, cornea, testes</b>.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Glycogen: what and where</h3>
+    <ul>
+      <li>A storage polymer of glucose made mainly by <b>liver and skeletal muscle</b>, stored as granules in the cytoplasm.</li>
+      <li>Linear chains are α(1→4); branch points are α(1→6). Its branching is <b>dichotomous: every branch branches</b>.</li>
+      <li><b>Brain, adipose and red blood cells make none.</b></li>
+      <li>Tissues other than liver don’t export glycogen-derived glucose: only liver has <b>glucose 6-phosphatase</b> to turn G-6-P into glucose.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Synthesis</h3>
+    <p>All cellular oligosaccharides and polysaccharides are built from <b>UDP-monosaccharide</b> precursors. For glycogen, that’s <b>UDP-glucose</b>.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Enzyme</th><th>Reaction</th></tr></thead>
+      <tbody>
+        <tr><td><b>Phosphoglucomutase</b></td><td>G-6-P → G-1-P</td></tr>
+        <tr><td>UDP-glucose pyrophosphorylase (figure)</td><td>G-1-P + UTP → UDP-glucose + PPi; pyrophosphatase splits PPi → 2 Pi</td></tr>
+        <tr><td><b>Glycogenin</b></td><td>Glycosyltransferase that attaches glucose monomers <b>to itself</b> (on a tyrosine), priming the chain</td></tr>
+        <tr><td><b>Glycogen synthase</b></td><td>Glycosyltransferase that adds glucose from UDP-glucose by <b>α(1→4)</b> bonds to an existing polymer (non-reducing ends)</td></tr>
+        <tr><td><b>Branching enzyme</b> (amylo-4:6-transferase)</td><td>When a chain reaches <b>11 residues</b>, removes <b>6–8</b> and attaches them to another glucosyl unit by an <b>α(1→6)</b> bond</td></tr>
+      </tbody>
+    </table></div>
+    <div class="chain">G-6-P —phosphoglucomutase→ G-1-P —+UTP→ UDP-glucose —glycogen synthase (α1→4) / branching enzyme (α1→6)→ glycogen on glycogenin</div>
+  </div>
+
+  <div class="sec">
+    <h3>Glycogenolysis</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Enzyme</th><th>What it does</th></tr></thead>
+      <tbody>
+        <tr><td><b>Glycogen phosphorylase</b> (PLP cofactor)</td><td>Uses Pi to release <b>glucose 1-P</b> one at a time from α(1→4) bonds (phosphorolysis). Stops when a branch is down to <b>4 residues</b>, leaving a <b>limit dextran</b></td></tr>
+        <tr><td><b>Debranching enzyme</b>, activity 1</td><td>Cuts <b>3 residues</b> as a unit from the limit dextran and attaches them to a longer chain by an <b>α(1→4)</b> bond</td></tr>
+        <tr><td><b>Debranching enzyme</b>, activity 2</td><td>Releases the single α(1→6)-linked residue as <b>free glucose</b></td></tr>
+        <tr><td>Phosphoglucomutase</td><td>G-1-P → G-6-P</td></tr>
+        <tr><td><b>Glucose 6-phosphatase</b> (liver)</td><td>G-6-P → glucose for export</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Products of glycogenolysis are roughly <b>8 glucose 1-P : 1 free glucose</b> (figure).</li>
+      <li>In muscle and other non-liver cells, G-6-P <b>enters glycolysis</b> (or another pathway); it can’t leave as glucose.</li>
+      <li>Glycogenolysis has no NAD⁺-dependent dehydrogenase.</li>
+    </ul>
+    <div class="box warn"><p><b>Two branching numbers people swap.</b> Branching enzyme moves <b>6–8</b> residues to an <b>α(1→6)</b> link. Debranching enzyme moves <b>3</b> residues to an <b>α(1→4)</b> link, then frees the last α(1→6) glucose.</p></div>
+    <p>Figure boxes on his slides name glycogen storage diseases (von Gierke: glucose 6-phosphatase; McArdle: muscle glycogen phosphorylase; Pompe: lysosomal α-1,4-glucosidase). They aren’t in his slide text, so treat them as lower priority until the topic list arrives.</p>
+  </div>
+  <div class="quiz" data-topic="glycogen"></div>
+</section>
+
+<!-- ================= GLUCONEOGENESIS ================= -->
+<section class="topic" id="t-gneo">
+  <div class="topic-head">
+    <div class="src">Glycogen &amp; gluconeogenesis slides 11–28 · Topic list not yet posted</div>
+    <h2>Gluconeogenesis</h2>
+    <p class="obj">Liver (90%) and renal cortex (10%) rebuild glucose from lactate, amino acids and glycerol by reversing glycolysis, with four special enzymes to get around its three irreversible steps, paid for by fatty acid oxidation.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Why and where</h3>
+    <ul>
+      <li>Keeps blood glucose up in the <b>fasting and extended fasting</b> states; glucose is essential fuel for <b>brain and erythrocytes</b>.</li>
+      <li>Done by <b>hepatocytes (90%)</b> and the <b>renal cortex (10%)</b>.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>The three bypasses</h3>
+    <p>Gluconeogenesis reverses most glycolytic reactions with the same enzymes. Three glycolytic steps have a large negative ΔG and can’t be reversed, so different enzymes go around them.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Irreversible glycolytic step</th><th>Gluconeogenic bypass</th><th>Location</th><th>Cost</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="2">Pyruvate kinase (PEP → pyruvate)</td><td><b>Pyruvate carboxylase</b>: pyruvate + HCO₃⁻ + ATP → OAA</td><td>Matrix only</td><td>1 ATP</td></tr>
+        <tr><td><b>PEP carboxykinase (PEPCK)</b>: OAA + GTP → PEP + CO₂ + GDP</td><td>Cytoplasm</td><td>1 GTP</td></tr>
+        <tr><td>PFK-1 (F-6-P → F-1,6-BP)</td><td><b>Fructose 1,6-bisphosphatase</b>: F-1,6-BP + H₂O → F-6-P + Pi</td><td>Cytoplasm</td><td>None</td></tr>
+        <tr><td>Glucokinase / hexokinase (glucose → G-6-P)</td><td><b>Glucose 6-phosphatase</b>: G-6-P + H₂O → glucose + Pi</td><td>Liver and renal cortex</td><td>None</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Reversing pyruvate kinase takes <b>two NTP-requiring reactions</b>. The two ATP-driven phosphorylations of glycolysis are replaced by two <b>energy-independent phosphatases</b>.</li>
+      <li>Because pyruvate carboxylase is only in the matrix, <b>OAA is transaminated to aspartate</b> to cross the IMM, then turned back into OAA in the cytoplasm, both by <b>aspartate transaminase</b>.</li>
+      <li>Every reaction <b>before triose phosphate isomerase runs twice</b> per glucose made.</li>
+      <li>Glucose leaves the hepatocyte through <b>GLUT-2 or GLUT-1</b>.</li>
+      <li>Shared with glycolysis (reversible): enolase, phosphoglycerate mutase, phosphoglycerate kinase, <b>GAPDH</b>, triose phosphate isomerase, aldolase, phosphoglucose isomerase.</li>
+      <li>Pyruvate carboxylase is activated by acetyl-CoA, which piles up from fatty acid oxidation in the fasting liver.</li>
+    </ul>
+    <div class="chain">2 Pyruvate → 2 OAA → 2 PEP → … → 2 1,3-BPG → 2 G-3-P (via DHAP) → F-1,6-BP → F-6-P → G-6-P → glucose</div>
+    <div class="box warn"><p><b>Glucose 6-phosphatase location.</b> Slides 3 and 10 say only liver has it; slide 15 says liver and renal cortex. For “allows liver but not muscle to release glucose,” the answer is glucose 6-phosphatase either way. If an option says kidney cortex also has it, that matches slide 15.</p></div>
+  </div>
+
+  <div class="sec">
+    <h3>Energy cost</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Starting material</th><th>Cost per glucose (Hosler)</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Pyruvate (or alanine)</td><td><b>4 NTP + 2 NADH</b></td><td>2 NTP more than glycolysis yields</td></tr>
+        <tr><td>Lactate</td><td><b>4 NTP + 1 NADH</b></td><td>Oxidizing lactate to pyruvate in the cytoplasm supplies NADH (his slide says one; strictly, 2 lactate per glucose give 2)</td></tr>
+        <tr><td>Glycerol</td><td><b>No net energy</b></td><td>Enters as DHAP, skipping the 4 NTP + 2 NADH steps; making 2 DHAP costs 2 ATP but yields 2 NADH, which oxphos turns into more than 2 ATP</td></tr>
+        <tr><td>Glutamine</td><td><b>Zero overall</b></td><td>Glutamine → OAA yields 1 NTP, 3 NADH, 1 UQH₂; 1 NADH + 1 UQH₂ give ≥3 NTP by oxphos</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Liver and kidney cortex get the NTP and NADH for gluconeogenesis from <b>fatty acid oxidation</b>, their main fuel in the fasting state.</li>
+    </ul>
+    <div class="box warn"><p>Most textbooks and boards count gluconeogenesis from pyruvate as <b>6 high-energy phosphates</b> (4 ATP + 2 GTP) plus 2 NADH. Hosler’s slide says 4 NTP + 2 NADH. On his exam, use his numbers; on boards, expect 6.</p></div>
+  </div>
+
+  <div class="sec">
+    <h3>Precursors during an overnight fast</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Precursor</th><th>Source and process</th><th class="n">Share</th></tr></thead>
+      <tbody>
+        <tr><td><b>Lactate</b></td><td>RBCs, skin, skeletal muscle, intestinal epithelium (the <b>Cori cycle</b>)</td><td class="n">~50%</td></tr>
+        <tr><td><b>Glutamine</b></td><td>Muscle limited proteolysis; Leu, Ile, Val pass amino groups to α-KG → glutamate; glutamine synthetase adds a second NH₃</td><td class="n">~15%</td></tr>
+        <tr><td><b>Alanine</b></td><td>Muscle: ~25% straight from proteolysis, ~75% by transamination of pyruvate by alanine aminotransferase (the <b>alanine cycle</b>)</td><td class="n">~12%</td></tr>
+        <tr><td><b>Glycerol</b></td><td>TAG lipolysis in adipocytes</td><td class="n">~8%</td></tr>
+        <tr><td>Other glucogenic amino acids</td><td>Released intact from muscle proteolysis (Gly, Ser, Thr, Pro, Arg, His, Met, Cys, Phe, Tyr, Trp)</td><td class="n">~15%</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box hy"><p><b>All amino acids except leucine and lysine</b> can feed gluconeogenesis, because their catabolism makes OAA or pyruvate. Fatty acids, acetyl-CoA and ketone bodies <b>cannot</b>: acetyl-CoA can’t be turned back into pyruvate. In a prolonged fast, amino acids from muscle are the main carbon source.</p></div>
+  </div>
+
+  <div class="sec">
+    <h3>How each precursor gets in</h3>
+    <h4>Lactate: the Cori cycle</h4>
+    <ul>
+      <li>Liver takes up blood lactate, <b>lactate DH</b> makes pyruvate + NADH, pyruvate enters mitochondria for <b>pyruvate carboxylase</b>.</li>
+      <li>Cycle: liver glucose → blood → muscle (and RBCs) → lactate → blood → liver → glucose. Useful to know for boards.</li>
+    </ul>
+    <h4>Glutamine (from muscle)</h4>
+    <div class="chain">Glutamine —glutaminase→ glutamate + NH₄⁺ —glutamate DH (NAD⁺)→ α-KG + NH₄⁺ + NADH → TCA steps → OAA</div>
+    <p>Liver removes NH₃ from the glutamine side chain with <b>glutaminase</b>.</p>
+    <h4>Alanine: the alanine cycle</h4>
+    <ul>
+      <li>In fasting and starvation, muscle releases alanine to <b>carry ammonia to the liver</b> and supply carbon.</li>
+      <li><b>Alanine aminotransferase (ALT)</b> makes alanine from pyruvate in muscle; in liver ALT <b>runs in reverse</b> to make pyruvate. Same cost as from pyruvate: 4 NTP + 2 NADH.</li>
+      <li>The amino group goes to α-KG → glutamate → glutamate DH releases NH₄⁺ for urea.</li>
+      <li>Muscle releases <b>glutamine and alanine</b> to move ammonia to the liver.</li>
+    </ul>
+    <h4>Glycerol</h4>
+    <div class="chain">Glycerol —glycerol kinase (ATP)→ glycerol 3-P —glycerol 3-P DH (NAD⁺)→ DHAP → gluconeogenesis</div>
+    <p>Two glycerol (3C) → two DHAP → one glucose (6C). In a fasting type 1 diabetic without insulin, glycerol from runaway lipolysis is a major source of the hyperglycemic glucose.</p>
+  </div>
+  <div class="quiz" data-topic="gneo"></div>
+</section>
+
 <!-- ================= FLASHCARDS ================= -->
 <section class="topic" id="t-cards">
   <div class="topic-head">
@@ -1434,8 +1600,8 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
   <div class="pending">
     <h4>Coming as they post</h4>
-    <p>Topic lists for PDH/TCA and for FA oxidation and ethanol. When they arrive, each section will be checked line by line against its list, as the redox, oxphos and sugar sections already have been.</p>
-    <p>Still to come as slides: regulation of glycolysis and gluconeogenesis (PFK-1, F-2,6-BP, AMP, insulin and glucagon), glycogen, the pentose phosphate pathway, lipid digestion and transport, lipolysis, fatty acid synthesis, ketone bodies, and nitrogen metabolism and the urea cycle.</p>
+    <p>Topic lists for PDH/TCA, FA oxidation and ethanol, and glycogen and gluconeogenesis. When they arrive, each section will be checked line by line against its list, as the redox, oxphos and sugar sections already have been.</p>
+    <p>Still to come as slides: regulation of glycolysis, gluconeogenesis and glycogen metabolism (PFK-1, F-2,6-BP, AMP, insulin and glucagon, glycogen synthase and phosphorylase), the pentose phosphate pathway, lipid digestion and transport, lipolysis, fatty acid synthesis, ketone bodies, and nitrogen metabolism and the urea cycle.</p>
     <p>Your past-exam files already contain those questions, so they will drop straight into the practice sets.</p>
   </div>
 </section>
@@ -1708,7 +1874,7 @@ Q("faox","Predicted","p","The auxiliary enzymes for unsaturated fatty acids eith
 Q("faox","Predicted","p","Catabolism of excessive ethanol raises matrix NADH, which:",["Speeds the TCA cycle","Partially inhibits the TCA cycle and enhances fatty acid synthesis","Activates PDH","Activates CPT I","Blocks alcohol dehydrogenase"],1,"Slide 28.");
 Q("faox","Predicted","p","Acetyl-CoA synthetase, the last step of ethanol catabolism, uses:",["ATP → ADP + Pi","ATP → AMP + PPi","GTP","NAD⁺","Biotin"],1,"Like fatty acyl-CoA synthetase, it costs two high-energy bonds.");
 Q("faox","Predicted","p","Coupling a fatty acid to CoA serves to:",["Release energy as heat","Provide energy for downstream reactions and make the FA more water-soluble","Transport it across the OMM","Reduce its double bonds","Inhibit CPT I"],1,"Slide 22.");
-const TOPICS={redox:"Redox vocabulary",carriers:"Electron carriers",dg:"Potentials & ΔG",nad:"NAD⁺ dehydrogenases",atp:"ATP & coupling",oxphos:"Oxphos",control:"Respiratory control",carb:"Sugar catabolism",pdh:"PDH & TCA",faox:"FA oxidation & ethanol"};
+const TOPICS={redox:"Redox vocabulary",carriers:"Electron carriers",dg:"Potentials & ΔG",nad:"NAD⁺ dehydrogenases",atp:"ATP & coupling",oxphos:"Oxphos",control:"Respiratory control",carb:"Sugar catabolism",pdh:"PDH & TCA",faox:"FA oxidation & ethanol",glycogen:"Glycogen",gneo:"Gluconeogenesis"};
 
 const CARDS=[
 ["redox","What is a RAMO?","A redox active molecular orbital: one outer-shell orbital that holds its 1 (sometimes 2) electron(s) less tightly than the molecule’s other orbitals, so the electron can be captured by another RAMO."],
@@ -1926,6 +2092,79 @@ Q("carb","Predicted","p","In hereditary fructose intolerance, ATP synthesis is i
 Q("carb","Predicted","p","A person lacking fructokinase will:",["Develop liver failure after eating fructose","Not catabolize fructose, but suffer little harm","Be unable to digest sucrose","Accumulate fructose 1-phosphate","Lack aldolase B"],1,"Essential fructosuria.");
 Q("carb","Predicted","p","Which sequence shows galactose entering glycolysis?",["Gal → Gal-6-P → Glu-6-P","Gal → Gal-1-P → Glu-1-P → Glu-6-P","Gal → glucose → Glu-6-P","Gal → Gal-1-P → F-1-P","Gal → lactose → glucose"],1,"Item 19.");
 Q("carb","Predicted","p","Fructose 1-phosphate enters glycolysis as:",["Fructose 6-phosphate","Glucose 6-phosphate","DHAP and glyceraldehyde (phosphorylated to G-3-P)","Fructose 1,6-bisphosphate","Pyruvate"],2,"Aldolase B, then triose kinase.");
+/* ===== GLYCOGEN ===== */
+Q("glycogen","2025, 2024, 2023, 2020, 2019, 2017","hd","Which enzyme allows liver, but not muscle, to release glucose into blood after glycogenolysis or gluconeogenesis?",["Glycogen synthase","Phosphofructokinase 1","Hexokinase","Glucose 6-phosphatase","Pyruvate carboxylase"],3,"Muscle G-6-P stays in the cell and enters glycolysis.");
+Q("glycogen","2020, 2018 Final","hd","During glycogen synthesis, which enzyme removes 6–8 glucose residues from a chain and attaches them to another glucosyl unit by an α(1→6) linkage?",["Glycogen synthase","Glycogen phosphorylase","Branching enzyme","Debranching enzyme","Glycogenin"],2,"It acts once a chain reaches 11 residues.");
+Q("glycogen","2018","hd","In glycogenolysis, which enzyme removes 3 residues from a limit dextran and attaches them to a longer chain by an α(1→4) linkage?",["Glycogen synthase","Glycogen phosphorylase","Branching enzyme","Debranching enzyme","Glycogenin"],3,"Then it frees the remaining α(1→6) glucose.");
+Q("glycogen","2019, 2017","d","Which enzyme of glycogenolysis acts on both α(1→4) and α(1→6) bonds between glucose molecules?",["Glycogen phosphorylase","Glycogen synthase","Glycogenin","Debranching enzyme","Branching enzyme"],3,"It moves 3 residues to an α(1→4) bond and releases the α(1→6) glucose.");
+Q("glycogen","2024","h","Which binds as a substrate in the active site of glycogen synthase?",["UDP-glucose","Ribose 5-phosphate","Fructose 2,6-bisphosphate","Limit dextran","ATP"],0,"All polysaccharides are built from UDP-monosaccharides.");
+Q("glycogen","2025","h","Which directly supplies activated glucose monomers to glycogen synthase?",["Glucose-CoA","Glucose 6-phosphate","Acetyl glucose","UDP-glucose","Debranching enzyme"],3,"The 2025 class most often picked G-6-P; it must go to G-1-P and then UDP-glucose first.");
+Q("glycogen","Predicted","p","Glycogenin is:",["A phosphatase","A glycosyltransferase that attaches glucose monomers to itself, priming glycogen","The enzyme that makes α(1→6) branches","A GLUT transporter","The enzyme that releases glucose 1-P"],1,"Slide 7.");
+Q("glycogen","Predicted","p","Phosphoglucomutase converts:",["Glucose to G-6-P","G-6-P to G-1-P (and back)","G-1-P to UDP-glucose","G-6-P to F-6-P","Glycogen to glucose"],1,"It works in both synthesis and breakdown.");
+Q("glycogen","Predicted","p","Branching enzyme acts once a glycogen chain reaches how many residues?",["4","6","8","11","20"],3,"It then moves 6–8 residues to an α(1→6) link.");
+Q("glycogen","Predicted","p","Glycogen phosphorylase releases which product from α(1→4) bonds?",["Free glucose","Glucose 1-phosphate","Glucose 6-phosphate","UDP-glucose","Maltose"],1,"Phosphorolysis with Pi.");
+Q("glycogen","Predicted","p","A limit dextran is left because glycogen phosphorylase:",["Can’t break α(1→6) bonds and can’t reach the active site once a branch is 4 residues long","Runs out of Pi","Is inhibited by glucose","Only works in muscle","Makes UDP-glucose"],0,"Slide 9.");
+Q("glycogen","Predicted","p","Debranching enzyme releases the glucose at the α(1→6) branch point as:",["Glucose 1-phosphate","Free glucose","Glucose 6-phosphate","UDP-glucose","Fructose 6-phosphate"],1,"That’s why glycogenolysis yields about 8 G-1-P per free glucose.");
+Q("glycogen","Predicted","p","Which tissue makes NO glycogen?",["Liver","Skeletal muscle","Heart","Red blood cells","Kidney"],3,"Brain, adipose and erythrocytes make none.");
+Q("glycogen","Predicted","p","In skeletal muscle, glucose 6-phosphate from glycogenolysis:",["Is exported to blood as glucose","Enters glycolysis","Is converted to UDP-glucose for export","Is stored in the matrix","Is converted to lactose"],1,"Muscle lacks glucose 6-phosphatase.");
+Q("glycogen","Predicted","p","Which tissues depend on a constant supply of blood glucose?",["Liver and adipose","Brain, RBCs, exercising muscle, kidney medulla, lens, cornea and testes","Only the brain","Heart and kidney cortex","Intestinal epithelium only"],1,"Slide 2.");
+
+/* ===== GLUCONEOGENESIS ===== */
+Q("gneo","2019","d","The gluconeogenic enzyme that reverses the glycolytic reaction catalyzed by hexokinase is:",["Fructose 1,6-bisphosphatase","PEP carboxykinase","Glucose 6-phosphatase","Aldolase","Glucokinase"],2,"An energy-independent phosphatase.");
+Q("gneo","2019","d","Pyruvate can be converted to all of the following. Which conversion requires the MOST ATP?",["Glucose","Alanine","Acetyl-CoA","Lactate","Oxaloacetate"],0,"Gluconeogenesis costs 4 NTP + 2 NADH per glucose.");
+Q("gneo","2017","d","Pyruvate can be converted to all of the following. Which requires the longest series of reactions?",["Acetyl-CoA","Alanine","Glucose","Lactate","Oxaloacetate"],2,"The others are one step.");
+Q("gneo","2023","h","During the fasting state, lipolysis supports gluconeogenesis in the liver by providing which precursor?",["Pyruvate","Glycogen","Glycerol","Amino acids","Oxaloacetate"],2,"Fatty acids themselves can’t make glucose.");
+Q("gneo","2020, 2018","hd","In the fasting state, glycerol released from adipocytes is transported to the liver and used for:",["Chylomicrons","Ketone bodies","The TCA cycle","Gluconeogenesis","Glycogen synthesis"],3,"Glycerol kinase and glycerol 3-P DH make DHAP.");
+Q("gneo","2018","d","In the fasting state, which feeds most directly into gluconeogenesis?",["Acetyl-CoA","Glycerol","Fatty acids","Ketone bodies","Ethanol"],1,"The others give acetyl-CoA, which can’t make net glucose.");
+Q("gneo","2020, 2018 Final, 2019, 2017","hd","In a prolonged fast, which provides carbon for gluconeogenesis?",["Fatty acids","Acetyl-CoA","Amino acids","Ketone bodies","Glycogen"],2,"From muscle proteolysis; all amino acids except Leu and Lys qualify.");
+Q("gneo","2024","","Miners trapped 20 days with water but no food keep blood glucose above 4 mM. On day 19, the most likely gluconeogenic precursor is:",["Fatty acids from muscle","Fructose from RBCs","Ketone bodies from VLDL","α-Ketoacids (amino acid carbon skeletons) released by skeletal muscle","Cholesterol from chylomicrons"],3,"Glycogen is long gone; muscle protein supplies the carbon.");
+Q("gneo","2024","","Which product of liver alanine transaminase can directly enter gluconeogenesis?",["Lactate","Glutamine","Glycerol","Pyruvate","PEP"],3,"ALT runs alanine → pyruvate in liver.");
+Q("gneo","2020, 2017 Final","hd","Pyruvate is converted to alanine by:",["Pyruvate carboxylase","Alanine aminotransferase","Pyruvate kinase","Lactate DH","Pyruvate DH"],1,"In muscle, for the alanine cycle.");
+Q("gneo","2019, 2017","hd","Which two amino acids does skeletal muscle release to transfer ammonia to the liver?",["Glutamate and α-KG","Pyruvate and lactate","Citrulline and ornithine","Glutamine and alanine","Acetoacetate and β-hydroxybutyrate"],3,"Both are also gluconeogenic precursors.");
+Q("gneo","2024, 2019","h","The liver removes NH₃ from the side-chain amide of imported glutamine using:",["Glutaminase","Glutamate DH","Alanine transaminase","Malate DH","Aspartate transaminase"],0,"Glutamate DH then removes the second NH₃.");
+Q("gneo","2025","","Which fuel is oxidized to provide most of the NADH and NTP the liver needs for gluconeogenesis in the fasting state?",["Glucose","Fatty acids","Ketone bodies","Glycogen","Galactose"],1,"Slide 16.");
+Q("gneo","2019, 2017","hd","In a fasting type 1 diabetic who hasn’t injected insulin, which molecule is the source of hyperglycemia?",["Dietary glucose","β-Hydroxybutyrate","Cholesterol","Acetyl-CoA","Glycerol"],4,"Uncontrolled lipolysis releases glycerol, which liver turns into glucose.");
+Q("gneo","2018 Final","d","Which reaction is highly unlikely in human liver cells?",["Acetyl-CoA → pyruvate","Acetyl-CoA → β-hydroxybutyrate","Pyruvate → acetyl-CoA","Alanine → pyruvate","Pyruvate → oxaloacetate"],0,"PDH is irreversible; that’s why fatty acids can’t make glucose.");
+Q("gneo","Predicted","p","Which three glycolytic enzymes catalyze steps that gluconeogenesis must bypass?",["Hexokinase/glucokinase, PFK-1, pyruvate kinase","Aldolase, enolase, GAPDH","PGK, PFK-1, aldolase","Hexokinase, GAPDH, enolase","Triose phosphate isomerase, PGK, pyruvate kinase"],0,"Their large negative ΔG makes them irreversible.");
+Q("gneo","Predicted","p","Reversing the pyruvate kinase step requires which enzymes, in order?",["PEPCK, then pyruvate carboxylase","Pyruvate carboxylase, then PEP carboxykinase","Pyruvate DH, then citrate synthase","Lactate DH, then enolase","Pyruvate kinase run in reverse"],1,"Two NTP-requiring reactions.");
+Q("gneo","Predicted","p","PEP carboxykinase uses which energy source?",["ATP","GTP","UTP","NADH","None"],1,"OAA + GTP → PEP + CO₂ + GDP.");
+Q("gneo","Predicted","p","OAA made by pyruvate carboxylase reaches the cytoplasm by:",["Diffusing through the IMM","Conversion to aspartate by aspartate transaminase, transport, and reconversion to OAA","Porin","Conversion to citrate","Conversion to acetyl-CoA"],1,"Slide 13.");
+Q("gneo","Predicted","p","The two ATP-driven phosphorylations of glycolysis are replaced in gluconeogenesis by:",["Two kinases using GTP","Two energy-independent phosphatases","Two dehydrogenases","Two transaminases","One carboxylase"],1,"Fructose 1,6-bisphosphatase and glucose 6-phosphatase.");
+Q("gneo","Predicted","p","Per glucose made, Hosler’s energy cost of gluconeogenesis from pyruvate is:",["2 NTP","2 NTP + 2 NADH","4 NTP + 2 NADH","4 NTP + 1 NADH","6 NTP and no NADH"],2,"Boards usually count 6 high-energy phosphates.");
+Q("gneo","Predicted","p","Gluconeogenesis from lactate costs less NADH than from pyruvate because:",["Lactate skips pyruvate carboxylase","Oxidizing lactate to pyruvate in the cytoplasm supplies one NADH","Lactate enters as DHAP","Lactate is made in liver","Lactate yields GTP"],1,"4 NTP + 1 NADH.");
+Q("gneo","Predicted","p","Why does gluconeogenesis from glycerol require no additional energy?",["Glycerol is phosphorylated without ATP","It enters as DHAP, skipping the 4 NTP + 2 NADH steps, and the NADH made converting glycerol to DHAP repays the ATP used","Glycerol is converted to acetyl-CoA","Glycerol bypasses glucose 6-phosphatase","Glycerol is made by the liver"],1,"Slides 25–26.");
+Q("gneo","Predicted","p","Gluconeogenesis is carried out by:",["Muscle and liver","Liver (90%) and renal cortex (10%)","Brain and liver","Adipose and liver","Kidney medulla only"],1,"Slide 11.");
+Q("gneo","Predicted","ph","During an overnight fast, the largest single source of carbon for gluconeogenesis is:",["Glycerol","Alanine","Glutamine","Lactate (Cori cycle)","Leucine"],3,"About 50%; glutamine ~15%, alanine ~12%, glycerol ~8%.");
+Q("gneo","Predicted","p","Which amino acids CANNOT serve as gluconeogenic precursors?",["Alanine and glutamine","Leucine and lysine","Serine and glycine","Aspartate and asparagine","Valine and isoleucine"],1,"Their catabolism doesn’t produce OAA or pyruvate.");
+Q("gneo","Predicted","p","Glycerol enters gluconeogenesis as:",["Pyruvate","Oxaloacetate","Dihydroxyacetone phosphate","Glucose 6-phosphate","Acetyl-CoA"],2,"Glycerol kinase, then glycerol 3-P dehydrogenase.");
+Q("gneo","Predicted","p","The overall energy cost to the liver of making glucose from glutamine is about:",["Zero","2 NTP","4 NTP + 2 NADH","6 NTP","10 NTP"],0,"Glutamine → OAA yields 1 NTP, 3 NADH and 1 UQH₂, repaying the cost.");
+Q("gneo","Predicted","p","Glucose made by gluconeogenesis leaves the hepatocyte through:",["SGLT1","GLUT-4","GLUT-2 or GLUT-1","Porin","The Na⁺/K⁺ pump"],2,"Slide 15.");
+Q("gneo","Predicted","p","In the alanine cycle, alanine aminotransferase:",["Runs only in liver","Makes alanine from pyruvate in muscle and runs in reverse to make pyruvate in liver","Makes glutamine","Is irreversible","Requires NADH"],1,"Slide 23.");
+CARDS.push(
+["glycogen","Blood glucose in the fasting state, and how liver holds it","4–5 mM, by glycogenolysis and gluconeogenesis."],
+["glycogen","Tissues that need a constant glucose supply","Brain, RBCs, exercising muscle, kidney medulla, lens, cornea, testes."],
+["glycogen","Tissues that make no glycogen","Brain, adipose, erythrocytes."],
+["glycogen","What all polysaccharides are built from","UDP-monosaccharides; for glycogen, UDP-glucose."],
+["glycogen","Glycogen synthesis enzymes in order","Phosphoglucomutase (G-6-P → G-1-P), UDP-glucose formation, glycogenin (primes itself), glycogen synthase (α1→4), branching enzyme."],
+["glycogen","Branching enzyme","At 11 residues, moves 6–8 residues to another glucosyl unit by α(1→6)."],
+["glycogen","Glycogen phosphorylase","Releases glucose 1-P from α(1→4) bonds; stops 4 residues from a branch, leaving a limit dextran."],
+["glycogen","Debranching enzyme’s two activities","1) Moves 3 residues to a longer chain by α(1→4). 2) Releases the α(1→6) residue as free glucose."],
+["glycogen","Why only liver exports glucose","Only liver (and renal cortex, slide 15) has glucose 6-phosphatase."],
+["gneo","Where gluconeogenesis happens","Liver 90%, renal cortex 10%."],
+["gneo","The four bypass enzymes","Pyruvate carboxylase (matrix, ATP), PEPCK (GTP), fructose 1,6-bisphosphatase, glucose 6-phosphatase."],
+["gneo","How OAA leaves the matrix in gluconeogenesis","As aspartate, via aspartate transaminase on both sides."],
+["gneo","Energy cost from pyruvate, lactate, glycerol, glutamine","Pyruvate 4 NTP + 2 NADH; lactate 4 NTP + 1 NADH; glycerol and glutamine ~0 net."],
+["gneo","What fuels gluconeogenesis","Fatty acid oxidation in liver and kidney cortex."],
+["gneo","Overnight-fast precursor shares","Lactate ~50%, glutamine ~15%, alanine ~12%, glycerol ~8%, other amino acids ~15%."],
+["gneo","Amino acids that can’t make glucose","Leucine and lysine."],
+["gneo","Cori cycle","Liver glucose → muscle/RBC lactate → liver → glucose."],
+["gneo","Alanine cycle","Muscle ALT makes alanine from pyruvate; liver ALT reverses it to pyruvate; carries NH₃ to liver."],
+["gneo","Glycerol entry","Glycerol kinase (ATP) → glycerol 3-P → glycerol 3-P DH (NAD⁺) → DHAP."],
+["gneo","Glutamine entry","Glutaminase → glutamate → glutamate DH → α-KG → TCA → OAA."]
+);
+WORKED.push(
+{t:"Cost of gluconeogenesis by precursor",q:"Using Hosler’s slides, what does one glucose cost the liver from pyruvate, lactate and glycerol?",s:["Pyruvate: 4 NTP + 2 NADH (2 pyruvate in, all steps before triose phosphate isomerase run twice).","Lactate: lactate DH oxidizes lactate to pyruvate in the cytoplasm, supplying NADH. Hosler’s slide gives 4 NTP + 1 NADH. (Strictly, 2 lactate per glucose make 2 NADH; on his exam, use his number.)","Glycerol: 2 glycerol → 2 DHAP costs 2 ATP and yields 2 NADH (≥ 2 ATP by oxphos), and DHAP skips the expensive steps → about zero."],a:"Pyruvate 4 NTP + 2 NADH; lactate 4 NTP + 1 NADH; glycerol about zero. (Boards count 6 high-energy phosphates from pyruvate.)"}
+);
 /* ---------- helpers ---------- */
 const $=(s,r)=> (r||document).querySelector(s);
 const $$=(s,r)=> Array.from((r||document).querySelectorAll(s));
