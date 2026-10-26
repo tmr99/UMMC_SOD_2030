@@ -237,7 +237,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   <div class="hero-in">
     <div>
       <h1>Biochemistry Exam&nbsp;3</h1>
-      <p class="lede">Dr. Hosler’s block, built from his redox (10-15-26) and oxphos topic lists, the cellular ET handout, five slide sets, and every Hosler question from 2017–2025. Notes for each topic, a practice set for each, flashcards, worked ΔG problems and a cumulative exam.</p>
+      <p class="lede">Dr. Hosler’s block, built from his redox (10-15-26), oxphos and sugar-catabolism topic lists, the cellular ET handout, five slide sets, and every Hosler question from 2017–2025. Notes for each topic, a practice set for each, flashcards, worked ΔG problems and a cumulative exam.</p>
       <div class="hero-meta">
         <span class="pill on">Repeat stems tagged in magenta</span>
         <span class="pill">DENT 604</span>
@@ -271,9 +271,9 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
     <a href="#atp" data-t="atp">ATP &amp; coupling <span class="prog" data-p="atp"></span></a>
     <a href="#oxphos" data-t="oxphos">Oxidative phosphorylation <span class="prog" data-p="oxphos"></span></a>
     <a href="#control" data-t="control">Respiratory control <span class="prog" data-p="control"></span></a>
+    <a href="#carb" data-t="carb">Sugar catabolism <span class="prog" data-p="carb"></span></a>
   </div>
   <div class="grp"><h3>Slides (lists pending)</h3>
-    <a href="#carb" data-t="carb">Sugar catabolism <span class="prog" data-p="carb"></span></a>
     <a href="#pdh" data-t="pdh">PDH &amp; TCA cycle <span class="prog" data-p="pdh"></span></a>
     <a href="#faox" data-t="faox">FA oxidation &amp; ethanol <span class="prog" data-p="faox"></span></a>
   </div>
@@ -379,6 +379,17 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
 
   <div class="sec">
+    <h3>What the sugar-catabolism topic list tells you directly</h3>
+    <ul>
+      <li>Glycolysis: <b>no structures, no chemistry</b>. Know hexokinase and PFK-1 substrates/products, that GAPDH makes NADH, and that 1,3-BPG and PEP phosphorylate ADP at phosphoglycerate kinase and pyruvate kinase.</li>
+      <li>Lactate: he cares more about <b>why</b> a cell releases lactate (four conditions) than <b>which</b> tissues do. For uptake, know the <b>liver takes the bulk at rest</b>.</li>
+      <li>Shuttles: schemes and key enzymes only; skip the malate–aspartate IMM transporters.</li>
+      <li>Off the exam: intestinal processing of fructose (still preliminary).</li>
+      <li>Aldolase B deficiency hurts ATP synthesis in <b>liver and kidney</b>; fructokinase deficiency just means fructose isn’t used.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
     <h3>About the answer keys used here</h3>
     <p>2022–2025 answers come from Hosler’s keyed file. The 2017–2020 files had no key, so those answers were worked out from his handout and slides; they carry a gold “key derived” tag. Predicted questions are new stems written for topic-list items he has rarely tested; they carry a teal tag.</p>
   </div>
@@ -410,6 +421,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li><b>ATP numbers</b>: −7.3 standard, ≈ −11 cellular, ATP/ADP ≈ 100, Pi 3–5 mM.</li>
       <li><b>Glycolysis line</b>: 10 enzymes in order with −ATP at steps 1 and 3, NADH at GAPDH, +ATP at PGK and pyruvate kinase.</li>
       <li><b>Hexokinase vs glucokinase</b> mini-table (Km, Vmax, product inhibition, tissue, GLUT partner).</li>
+      <li><b>The four conditions that make cells release lactate</b>: few mitochondria; high ATP/ADP or low O₂; NADH overload; no mitochondria (RBC).</li>
       <li><b>Fructose and galactose</b> arrows with the deficient enzyme of each disease circled.</li>
       <li><b>PDH box</b>: E1 TPP, E2 lipoyllysine, E3 FAD; kinase − / phosphatase +; regulator arrows.</li>
       <li><b>TCA wheel</b> with the 4 dehydrogenases, 2 CO₂ steps, GTP, and the isocitrate DH / α-KG DH regulators.</li>
@@ -1039,151 +1051,156 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
 <!-- ================= CARB ================= -->
 <section class="topic" id="t-carb">
   <div class="topic-head">
-    <div class="src">Glucose, fructose &amp; galactose catabolism slides 1–35 · Topic list not yet posted</div>
+    <div class="src">Glucose, fructose &amp; galactose topic list 2026 (items 1–20) · Slides 1–35</div>
     <h2>Glucose, fructose and galactose catabolism</h2>
     <p class="obj">Sugars are absorbed by Na⁺-driven and passive transport, trapped by phosphorylation, and split by glycolysis into 2 pyruvate, 2 net ATP and 2 NADH that must be re-oxidized for glycolysis to continue.</p>
   </div>
 
   <div class="sec">
-    <h3>Digestion and absorption</h3>
+    <h3>Digestion and uptake (items 1–7)</h3>
     <ul>
-      <li>Glycosidases from <b>saliva (first site of starch hydrolysis)</b>, stomach, pancreas and small intestine cut polymers (amylose, amylopectin) down to disaccharides (maltose) and then monosaccharides.</li>
-      <li><b>SGLT1</b> (intestinal lumen → epithelial cell) is <b>secondary active transport</b>: it co-transports glucose with Na⁺, using the Na⁺ gradient made by the Na⁺/K⁺ pump. The cell must keep <b>low internal Na⁺</b>. No ATP is hydrolyzed by SGLT1 itself.</li>
-      <li><b>Galactose uses SGLT1 too.</b> Fructose enters from the lumen through a uniporter. All three leave the epithelial cell into blood through uniporters.</li>
-      <li>HFCS 42 is 42% fructose; apple juice contains HFCS 66; honey is similar to HFCS.</li>
+      <li><b>(1)</b> Digestion breaks <b>starch, lactose and sucrose</b> down to glucose, galactose and fructose in the lumen of the small intestine. Glycosidases act in saliva (starch hydrolysis starts in the <b>mouth</b>), stomach, pancreas and intestine. <b>Cellulose stays intact</b> and leaves as fiber.</li>
+      <li><b>(2)</b> Glucose and galactose cross the intestinal epithelium in three steps:
+        <ul>
+          <li><b>SGLT1</b> (lumen side) co-transports glucose or galactose with Na⁺. This is secondary active transport; the cell must keep <b>low internal Na⁺</b>. SGLT1 hydrolyzes no ATP.</li>
+          <li>The <b>Na⁺/K⁺ pump</b> (blood side) uses ATP to pump Na⁺ out, keeping the gradient.</li>
+          <li><b>GLUT-2</b> (blood side) lets glucose and galactose leave down their gradient into blood.</li>
+        </ul>
+      </li>
+      <li>Fructose enters from the lumen by its own uniporter, not SGLT1.</li>
     </ul>
     <div class="box key">
-      <h4>Oral rehydration therapy (cholera)</h4>
-      <p>Cholera toxin causes massive secretory diarrhea. Drinking dilute glucose + NaCl works because SGLT1 takes up glucose and Na⁺ together, then the uniporter and Na⁺/K⁺ pump move them into blood. Both solutes need water to stay dissolved, so <b>water follows them from lumen to blood</b>. No hospital or professionals needed.</p>
+      <h4>(3) Oral rehydration therapy</h4>
+      <p>Secretory diarrhea (e.g., cholera) kills by dehydration. Drinking dilute glucose + NaCl works because SGLT1 takes up glucose and Na⁺ together, and GLUT-2 plus the Na⁺/K⁺ pump move them into blood. Both solutes must stay dissolved, so <b>water follows them from lumen to blood</b>.</p>
     </div>
-  </div>
-
-  <div class="sec">
-    <h3>Getting glucose into cells and trapping it</h3>
-    <p>GLUT transporters are facilitated-diffusion uniporters that move glucose down its concentration gradient. Phosphorylation to <b>glucose 6-phosphate traps glucose</b> because GLUTs don’t bind G-6-P.</p>
+    <ul>
+      <li><b>(4)</b> GLUTs are facilitated-diffusion uniporters. Phosphorylation to <b>glucose 6-phosphate traps glucose</b> because GLUTs don’t bind G-6-P.</li>
+    </ul>
     <div class="tbl"><table>
       <thead><tr><th>Property</th><th>Hexokinase (most cells)</th><th>Glucokinase (liver, pancreatic β cells)</th></tr></thead>
       <tbody>
         <tr><td>Affinity (Km)</td><td>High affinity, <b>low Km</b></td><td>Lower affinity, <b>high Km</b></td></tr>
         <tr><td>Vmax</td><td>Lower</td><td><b>Higher</b>: faster at high glucose (e.g., 10 mM)</td></tr>
-        <tr><td>Product inhibition by G-6-P</td><td><b>Yes</b></td><td><b>No</b></td></tr>
+        <tr><td>G-6-P inhibition</td><td><b>Yes, allosteric</b> (item 6)</td><td><b>No</b></td></tr>
         <tr><td>Best when</td><td>Fasting, blood glucose ~4–5 mM</td><td>Fed state, glucose above 5 mM</td></tr>
         <tr><td>Matched transporter</td><td>GLUT-1, GLUT-3, GLUT-4 (low Km)</td><td>GLUT-2 (high Km, high Vmax)</td></tr>
       </tbody>
     </table></div>
-    <h4>Why liver captures so much glucose after a meal (up to 20% of the total)</h4>
+    <h4>(5) Why liver captures so much glucose after a meal</h4>
     <ol>
       <li>Ingested glucose reaches liver first, through the portal vein.</li>
       <li>GLUT-2 imports faster at high glucose (high Km, high Vmax).</li>
-      <li>Glucokinase phosphorylates faster at high glucose and is not slowed by its product.</li>
+      <li>Glucokinase phosphorylates faster at high glucose and is <b>not inhibited by G-6-P</b>.</li>
     </ol>
-    <p>Liver uses that glucose largely to make glycogen. In <b>skeletal muscle and adipose</b>, insulin’s first effect is to <b>recruit GLUT-4</b> to the plasma membrane, up to 20-fold, in the fed state.</p>
+    <p><b>(7)</b> In <b>skeletal muscle and adipose</b>, insulin’s first effect in the fed state is to <b>recruit GLUT-4</b> to the plasma membrane, up to 20-fold.</p>
   </div>
 
   <div class="sec">
-    <h3>Glycolysis (cytoplasm)</h3>
+    <h3>Glycolysis (items 8–10)</h3>
+    <div class="box hy">
+      <h4>His one-sentence strategy (item 8)</h4>
+      <p>Two phosphorylations by ATP make <b>fructose 1,6-bisphosphate</b>, which is cleaved into two <b>glyceraldehyde 3-P</b> (after DHAP is isomerized). Further processing makes <b>1,3-bisphosphoglycerate</b> and then <b>phosphoenolpyruvate</b>, phosphorylating agents that each phosphorylate ADP. The end product is <b>pyruvate</b>.</p>
+    </div>
+    <p><b>Item 9 tells you exactly what to know.</b> No structures, no reaction chemistry. You <b>do</b> need the rows marked “Know” below.</p>
     <div class="tbl"><table>
-      <thead><tr><th class="n">Step</th><th>Reaction</th><th>Enzyme</th><th>Energy</th></tr></thead>
+      <thead><tr><th class="n">Step</th><th>Reaction</th><th>Enzyme</th><th>Energy</th><th>List</th></tr></thead>
       <tbody>
-        <tr><td class="n">1</td><td>Glucose → glucose 6-P</td><td>Hexokinase / glucokinase</td><td class="dn">−1 ATP</td></tr>
-        <tr><td class="n">2</td><td>G-6-P → fructose 6-P</td><td>Phosphoglucose isomerase</td><td></td></tr>
-        <tr><td class="n">3</td><td>F-6-P → fructose 1,6-bisphosphate</td><td>Phosphofructokinase 1 (PFK-1)</td><td class="dn">−1 ATP</td></tr>
-        <tr><td class="n">4</td><td>F-1,6-BP → DHAP + glyceraldehyde 3-P</td><td>Aldolase</td><td>6C → two 3C</td></tr>
-        <tr><td class="n">5</td><td>DHAP ⇌ glyceraldehyde 3-P</td><td>Triose phosphate isomerase</td><td>Now ×2</td></tr>
-        <tr><td class="n">6</td><td>G-3-P + NAD⁺ + Pi → 1,3-bisphosphoglycerate</td><td><b>Glyceraldehyde 3-P dehydrogenase</b></td><td>+2 NADH</td></tr>
-        <tr><td class="n">7</td><td>1,3-BPG → 3-phosphoglycerate</td><td>Phosphoglycerate kinase</td><td class="up">+2 ATP</td></tr>
-        <tr><td class="n">8</td><td>3-PG → 2-PG</td><td>Phosphoglycerate mutase</td><td></td></tr>
-        <tr><td class="n">9</td><td>2-PG → phosphoenolpyruvate + H₂O</td><td>Enolase</td><td></td></tr>
-        <tr><td class="n">10</td><td>PEP → pyruvate</td><td>Pyruvate kinase</td><td class="up">+2 ATP</td></tr>
+        <tr><td class="n">1</td><td><b>Glucose + ATP → glucose 6-P + ADP</b></td><td><b>Hexokinase</b> / glucokinase</td><td class="dn">−1 ATP</td><td><b>Know</b></td></tr>
+        <tr><td class="n">2</td><td>G-6-P → fructose 6-P</td><td>Phosphoglucose isomerase</td><td></td><td></td></tr>
+        <tr><td class="n">3</td><td><b>Fructose 6-P + ATP → fructose 1,6-bisphosphate + ADP</b></td><td><b>Phosphofructokinase 1</b></td><td class="dn">−1 ATP</td><td><b>Know</b></td></tr>
+        <tr><td class="n">4</td><td>F-1,6-BP → DHAP + glyceraldehyde 3-P</td><td>Aldolase</td><td>6C → two 3C</td><td>Strategy</td></tr>
+        <tr><td class="n">5</td><td>DHAP ⇌ glyceraldehyde 3-P</td><td>Triose phosphate isomerase</td><td>Now ×2</td><td>Strategy</td></tr>
+        <tr><td class="n">6</td><td>G-3-P + NAD⁺ + Pi → 1,3-BPG + NADH</td><td><b>Glyceraldehyde 3-P dehydrogenase</b></td><td>+2 NADH</td><td><b>Know</b></td></tr>
+        <tr><td class="n">7</td><td><b>1,3-BPG + ADP → 3-phosphoglycerate + ATP</b></td><td><b>Phosphoglycerate kinase</b></td><td class="up">+2 ATP</td><td><b>Know</b></td></tr>
+        <tr><td class="n">8–9</td><td>3-PG → 2-PG → phosphoenolpyruvate</td><td>Mutase, enolase</td><td></td><td></td></tr>
+        <tr><td class="n">10</td><td><b>PEP + ADP → pyruvate + ATP</b></td><td><b>Pyruvate kinase</b></td><td class="up">+2 ATP</td><td><b>Know</b></td></tr>
       </tbody>
     </table></div>
-    <div class="eqbox"><div><span class="f">Glucose + 2 ADP + 2 Pi + 2 NAD⁺ → 2 pyruvate + 2 ATP + 2 NADH</span><span class="g">2 ATP spent, 4 made, net 2; no CO₂ released</span></div></div>
+    <div class="eqbox"><div><span class="f">Glucose + 2 ADP + 2 Pi + 2 NAD⁺ → 2 pyruvate + 2 ATP + 2 NADH</span><span class="g">Item 10: 2 ATP spent, 4 made, net 2; no CO₂</span></div></div>
     <ul>
-      <li>Three phases: <b>investment</b> (steps 1–3), <b>cleavage</b> (4–5), <b>energy generation</b> (6–10).</li>
-      <li><b>Substrate-level phosphorylation</b>: a phosphorylated metabolite (1,3-BPG, PEP) directly phosphorylates ADP. Glycolysis is the pathway that makes ATP this way.</li>
-      <li><b>GAPDH</b> is the only NAD⁺-dependent dehydrogenase of glycolysis. It uses the energy of a two-electron oxidation to attach Pi, making the powerful phosphorylating agent <b>1,3-BPG</b>.</li>
-      <li>GAPDH runs in both glycolysis and gluconeogenesis.</li>
-      <li>Fructose 1,6-bisphosphate is an intermediate of glucose catabolism but not of fatty acid catabolism.</li>
-      <li>With enough oxphos, the 2 NADH are re-oxidized in mitochondria (via shuttles), making more ATP.</li>
+      <li><b>GAPDH</b> is the only NAD⁺-dependent dehydrogenase of glycolysis. It uses the energy of a two-electron oxidation to make the strong phosphorylating agent <b>1,3-BPG</b>.</li>
+      <li><b>1,3-BPG and PEP</b> phosphorylate ADP in the active sites of <b>phosphoglycerate kinase</b> and <b>pyruvate kinase</b>: substrate-level phosphorylation.</li>
+      <li>F-1,6-BP is an intermediate of glucose catabolism but not of fatty acid catabolism. GAPDH runs in both glycolysis and gluconeogenesis.</li>
     </ul>
-    <div class="box warn"><p>Regulation of PFK-1 (AMP, fructose 2,6-bisphosphate, ATP, citrate) appears on many of his old exams but isn’t in this slide deck. It will be added when the regulation lecture arrives.</p></div>
+    <div class="box warn"><p>PFK-1 regulation (AMP, fructose 2,6-bisphosphate, ATP, citrate) isn’t on this list. It shows up on many old exams, so expect it with the regulation lecture.</p></div>
   </div>
 
   <div class="sec">
-    <h3>“Anaerobic” glycolysis: lactate</h3>
-    <ul>
-      <li>Glycolysis stops without NAD⁺. When oxphos can’t re-oxidize NADH as fast as GAPDH makes it, <b>lactate dehydrogenase</b> reduces pyruvate to lactate with NADH, regenerating NAD⁺.</li>
-      <li>Lactate leaves with one H⁺ via a lactate transporter. <b>Cells need not be anaerobic</b> to make lactate.</li>
-      <li>Cellular ΔG for the LDH reaction ≈ 0.9 kcal/mol, so it reverses easily.</li>
-    </ul>
+    <h3>Electron shuttles (item 11)</h3>
+    <p>NAD⁺ and NADH are <b>not transported</b> across the IMM, so cytosolic NADH electrons cross by shuttle. Know the scheme and key enzymes of each.</p>
     <div class="tbl"><table>
-      <thead><tr><th>Lactate producers (rest)</th><th class="n">Share</th><th>Why</th></tr></thead>
+      <thead><tr><th>Shuttle</th><th>Key enzymes</th><th>Electrons end up on</th><th>Tissues (slides)</th></tr></thead>
       <tbody>
-        <tr><td>Skeletal muscle</td><td class="n">~25%</td><td>Fast-twitch glycolysis outruns mitochondria; top producer in hard exercise</td></tr>
-        <tr><td>Skin</td><td class="n">~25%</td><td>Avascular epidermis, low O₂</td></tr>
-        <tr><td><b>Red blood cells</b></td><td class="n">~20%</td><td>No mitochondria; lactate is their only end product</td></tr>
-        <tr><td>Gut lining</td><td class="n">~10%</td><td>Burns glutamine (small intestine) or butyrate (colon); high ATP/ADP slows oxphos</td></tr>
-        <tr><td>Adipocytes</td><td class="n">~5–10%</td><td>Few mitochondria</td></tr>
-      </tbody>
-    </table></div>
-    <div class="tbl"><table>
-      <thead><tr><th>Lactate consumers (rest)</th><th class="n">Share</th><th>What happens after lactate → pyruvate</th></tr></thead>
-      <tbody>
-        <tr><td>Liver</td><td class="n">~50–60%</td><td>Gluconeogenesis (Cori cycle); some PDH/TCA</td></tr>
-        <tr><td>Kidney</td><td class="n">~20–30%</td><td>Some gluconeogenesis; rest PDH/TCA</td></tr>
-        <tr><td>Heart</td><td class="n">Smaller</td><td>All through PDH and TCA</td></tr>
-        <tr><td>Slow-twitch muscle</td><td class="n">Smaller</td><td>PDH/TCA; takes lactate from nearby fast-twitch fibers</td></tr>
+        <tr><td><b>Malate–aspartate</b></td><td>Cytoplasmic and matrix <b>malate DH</b> and <b>aspartate aminotransferase</b></td><td>Matrix NADH → Complex I</td><td>Heart, liver, kidney</td></tr>
+        <tr><td><b>Glycerol phosphate</b></td><td>Cytosolic <b>glycerol 3-P DH</b> (NADH reduces DHAP); mitochondrial <b>glycerol 3-P DH</b> (FAD, IMS face)</td><td>UQ → UQH₂ (bypasses Complex I)</td><td>Brain, skeletal muscle, brown fat (faster)</td></tr>
       </tbody>
     </table></div>
     <ul>
-      <li>Consumers import lactate + H⁺ and run <b>lactate + NAD⁺ → pyruvate + NADH</b>. This is the <b>first step</b> of lactate use in every tissue (liver, heart, brain, kidney).</li>
-      <li>It is pulled right because pyruvate is consumed (PDH, pyruvate carboxylase, alanine transaminase) and NADH is consumed by Complex I.</li>
-      <li>Removing blood lactate prevents acidosis. <b>RBCs never import and oxidize lactate.</b> During exercise, working muscle and heart are the main consumers.</li>
+      <li><b>Malate–aspartate scheme:</b> cytosolic malate DH reduces OAA to malate with NADH → malate enters the matrix → matrix malate DH re-oxidizes it, making matrix NADH → OAA is transaminated to aspartate, which returns to the cytoplasm and is transaminated back to OAA. It depends on malate DH running opposite ways in the two compartments.</li>
+      <li>Hosler says <b>don’t memorize the IMM transporters</b> of the malate–aspartate shuttle (“enough is enough”).</li>
     </ul>
+    <div class="box warn"><p>Item 11 says both shuttles let glycolytic NADH be oxidized “by Complex I.” His slide 26 and his handout put the glycerol phosphate shuttle’s electrons on <b>UQ</b>, through mitochondrial glycerol 3-P DH, so they skip Complex I. Go with the slide; it matches the 2019 question where that enzyme reduces UQ.</p></div>
   </div>
 
   <div class="sec">
-    <h3>Cytoplasm-to-matrix electron shuttles</h3>
-    <p>NAD⁺ and NADH are <b>not transported</b> across the IMM, so glycolytic NADH electrons cross by shuttle.</p>
+    <h3>“Anaerobic” glycolysis (items 12–15)</h3>
+    <ul>
+      <li><b>(12)</b> Glycolysis needs NAD⁺ for GAPDH. Cytosolic NADH must be re-oxidized or glycolysis stops.</li>
+      <li><b>(13)</b> “Anaerobic” glycolysis means NADH is re-oxidized by cytosolic <b>lactate dehydrogenase</b> instead of oxphos: 2e⁻ go from NADH to pyruvate, making <b>lactate</b>. Lactate + H⁺ is exported to blood. Another cell must take it up, run LDH in reverse, and oxidize the NADH by oxphos.</li>
+    </ul>
+    <div class="eqbox">
+      <div><span class="f">Pyruvate + NADH + H⁺ ⇌ lactate + NAD⁺</span><span class="g">Slide 19: cellular ΔG ≈ 0.9 kcal/mol, so it reverses easily</span></div>
+    </div>
+    <div class="box hy">
+      <h4>(14) Focus on conditions, not tissue rankings</h4>
+      <p>Essentially every cell has LDH. Any cell whose oxphos can’t oxidize cytosolic NADH as fast as glycolysis makes it will release lactate. Cells need not be anaerobic.</p>
+    </div>
     <div class="tbl"><table>
-      <thead><tr><th>Shuttle</th><th>Tissues</th><th>Electrons end up on</th><th>Parts</th></tr></thead>
+      <thead><tr><th>Condition that slows oxphos (item 14)</th><th>Example from the slides</th></tr></thead>
       <tbody>
-        <tr><td><b>Malate–aspartate</b></td><td>Heart, liver, kidney</td><td>Matrix <b>NADH</b> (enters at Complex I)</td><td>Cytoplasmic and matrix malate DH and aspartate aminotransferase; malate–α-KG antiporter; aspartate–glutamate antiporter. Depends on malate DH running opposite ways in the two compartments.</td></tr>
-        <tr><td><b>Glycerol phosphate</b></td><td>Brain, skeletal muscle, brown fat (faster)</td><td><b>UQ → UQH₂</b> (bypasses Complex I)</td><td>Cytosolic glycerol 3-P DH reduces DHAP with NADH; mitochondrial glycerol 3-P DH (FAD) on the IMS face reduces UQ</td></tr>
+        <tr><td>a) Few mitochondria</td><td>Adipocytes; fast-twitch muscle fibers</td></tr>
+        <tr><td>b) High ATP/ADP, or low [O₂]</td><td>Gut lining (plentiful fuel, high ATP/ADP); avascular epidermis of skin (low O₂)</td></tr>
+        <tr><td>c) NADH “overload” from other catabolic pathways</td><td>Gut cells burning glutamine or butyrate</td></tr>
+        <tr><td>d) No mitochondria at all</td><td><b>Red blood cells</b>: lactate is their only end product</td></tr>
       </tbody>
     </table></div>
-    <p>Cytosolic glycerol 3-P DH is also how adipose makes glycerol 3-P for triacylglycerol: DHAP reduced by NADH.</p>
-  </div>
-
-  <div class="sec">
-    <h3>Fructose</h3>
     <ul>
-      <li>Metabolized mainly in <b>liver</b>, then kidney, because they have highly active <b>fructokinase</b>. Poor fuel for muscle and brain.</li>
-      <li>Fructose + ATP → <b>fructose 1-phosphate</b> (fructokinase) → <b>aldolase B</b> → DHAP + glyceraldehyde. Triose kinase phosphorylates glyceraldehyde to G-3-P. Both enter glycolysis below PFK-1.</li>
-      <li>2018 research: much dietary fructose may be turned into glucose in intestinal epithelial cells, by a process not regulated by insulin.</li>
+      <li><b>(15)</b> Lactate consumers import lactate + H⁺ and run <b>lactate + NAD⁺ → pyruvate + NADH</b>, the first step of lactate use in any tissue. <b>At rest, the liver takes up the bulk of blood lactate.</b> Kidney, heart and slow-twitch muscle also excel at it; during exercise, working muscle and heart become the main consumers.</li>
+      <li>The reaction is pulled right because pyruvate is consumed (PDH, pyruvate carboxylase, alanine transaminase) and NADH is consumed by Complex I.</li>
+      <li><b>RBCs never take up and oxidize lactate.</b> Clearing blood lactate prevents acidosis.</li>
     </ul>
   </div>
 
   <div class="sec">
-    <h3>Galactose</h3>
+    <h3>Fructose (items 16–18)</h3>
     <ul>
-      <li>From lactose; processed mainly by liver.</li>
-      <li>Galactose + ATP → <b>galactose 1-P</b> (galactokinase) → <b>Gal-1-P uridyltransferase</b> (with two other enzymes) → G-1-P → G-6-P → glycolysis.</li>
-      <li>G-6-P can be dephosphorylated by glucose 6-phosphatase to release glucose to blood; that enzyme’s activity rises right after birth.</li>
+      <li><b>(16)</b> Fructose is taken up by <b>liver</b> and phosphorylated by liver <b>fructokinase</b> to <b>fructose 1-phosphate</b> (fructokinase is not product-inhibited). Muscle and brain lack an active fructokinase.</li>
+      <li><b>(17)</b> Entry into glycolysis: <b>aldolase B</b> splits F-1-P into <b>DHAP</b> + <b>glyceraldehyde</b>; triose kinase uses ATP to make <b>glyceraldehyde 3-P</b>. DHAP and G-3-P both enter glycolysis below PFK-1.</li>
+      <li>The 2018 idea that intestinal cells convert fructose to glucose is <b>not on the exam</b> (item 16, still preliminary).</li>
     </ul>
+    <div class="chain">Fructose —fructokinase (ATP)→ F-1-P —aldolase B→ DHAP + glyceraldehyde —triose kinase (ATP)→ G-3-P → glycolysis</div>
   </div>
 
   <div class="sec">
-    <h3>Genetic errors (very high yield)</h3>
+    <h3>Galactose (item 19)</h3>
+    <ul>
+      <li>From lactose; taken up mainly by liver.</li>
+      <li><b>Galactokinase</b> (ATP) makes Gal-1-P; <b>Gal-1-P uridyltransferase</b> (with two other enzymes) converts it to Glu-1-P; then Glu-1-P → Glu-6-P → glycolysis.</li>
+    </ul>
+    <div class="chain">Gal → Gal-1-P → Glu-1-P → Glu-6-P → glycolysis</div>
+  </div>
+
+  <div class="sec">
+    <h3>Genetic defects (items 18, 20)</h3>
     <div class="tbl"><table>
       <thead><tr><th>Disorder</th><th>Missing enzyme</th><th>Result</th></tr></thead>
       <tbody>
-        <tr><td>Essential fructosuria</td><td>Fructokinase</td><td>Benign</td></tr>
-        <tr><td><b>Hereditary fructose intolerance</b></td><td><b>Aldolase B</b></td><td>F-1-P builds up (fructokinase isn’t product-inhibited), traps hepatic Pi → <b>liver ATP synthesis fails</b> → liver failure; gluconeogenesis fails, brain starved in the fasting state</td></tr>
-        <tr><td><b>Classic galactosemia</b></td><td><b>Gal-1-P uridyltransferase</b></td><td>Gal-1-P builds up, traps hepatic Pi → <b>liver ATP synthesis impaired</b></td></tr>
+        <tr><td>Essential fructosuria</td><td>Fructokinase</td><td>Not particularly dangerous, but <b>fructose isn’t catabolized</b></td></tr>
+        <tr><td><b>Hereditary fructose intolerance</b></td><td><b>Aldolase B</b></td><td>F-1-P sequesters cellular phosphate → <b>ATP synthesis inhibited in liver and kidney</b>; eating fructose is toxic</td></tr>
+        <tr><td><b>Classic galactosemia</b></td><td><b>Gal-1-P uridyltransferase</b></td><td>Gal-1-P sequesters phosphate; consequences like the fructose defect</td></tr>
       </tbody>
     </table></div>
-    <div class="box hy"><p>His answer for both diseases, every year: <b>low free phosphate in liver cells, inhibiting ATP synthesis</b>. Not uptake failure, not hexokinase deficiency, not obesity.</p></div>
+    <div class="box hy"><p>His answer for both, every year: <b>low free phosphate, inhibiting ATP synthesis</b>. Not uptake failure, not hexokinase deficiency, not obesity.</p></div>
   </div>
   <div class="quiz" data-topic="carb"></div>
 </section>
@@ -1417,7 +1434,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
   <div class="pending">
     <h4>Coming as they post</h4>
-    <p>Topic lists for sugar catabolism, PDH/TCA, and FA oxidation and ethanol. When they arrive, each section will be checked line by line against its list, as the redox and oxphos sections already have been.</p>
+    <p>Topic lists for PDH/TCA and for FA oxidation and ethanol. When they arrive, each section will be checked line by line against its list, as the redox, oxphos and sugar sections already have been.</p>
     <p>Still to come as slides: regulation of glycolysis and gluconeogenesis (PFK-1, F-2,6-BP, AMP, insulin and glucagon), glycogen, the pentose phosphate pathway, lipid digestion and transport, lipolysis, fatty acid synthesis, ketone bodies, and nitrogen metabolism and the urea cycle.</p>
     <p>Your past-exam files already contain those questions, so they will drop straight into the practice sets.</p>
   </div>
@@ -1630,7 +1647,7 @@ Q("carb","Predicted","p","Oral rehydration therapy for cholera works because:",[
 Q("carb","Predicted","p","Hexokinase is favored in the fasting state because it:",["Has a high Km","Has a high affinity (low Km) for glucose, trapping glucose when blood glucose is ~4–5 mM","Is not product-inhibited","Works only in liver","Requires insulin"],1,"Glucokinase’s high Km makes it slow at fasting glucose.");
 Q("carb","Predicted","p","Which statement about hexokinase and glucokinase is correct?",["Both are inhibited by glucose 6-P","Hexokinase is inhibited by glucose 6-P; glucokinase is not","Glucokinase is inhibited by glucose 6-P; hexokinase is not","Neither phosphorylates glucose","Both have the same Km"],1,"Slide 10.");
 Q("carb","Predicted","p","Lactate production by a tissue indicates that:",["The tissue lacks O₂","Glycolysis is producing NADH faster than oxphos re-oxidizes it","PDH is phosphorylated","Mitochondria are absent","Complex IV is inhibited"],1,"“Anaerobic” glycolysis can happen with O₂ present (skin, gut, adipocytes, fast-twitch muscle).");
-Q("carb","Predicted","p","Brain, skeletal muscle and brown fat prefer the glycerol phosphate shuttle. Its electrons enter oxphos at:",["Complex I as NADH","Ubiquinone, via mitochondrial glycerol 3-P dehydrogenase","Cytochrome c","Complex IV","ATP synthase"],1,"Faster, but bypasses Complex I, so fewer H⁺ are pumped.");
+Q("carb","Predicted","p","Brain, skeletal muscle and brown fat prefer the glycerol phosphate shuttle. Its electrons enter oxphos at:",["Complex I as NADH","Ubiquinone, via mitochondrial glycerol 3-P dehydrogenase","Cytochrome c","Complex IV","ATP synthase"],1,"Faster, but bypasses Complex I, so fewer H⁺ are pumped. (Topic list item 11 loosely says both shuttles feed Complex I; his slide 26 shows UQ.)");
 Q("carb","Predicted","p","The malate–aspartate shuttle is needed because:",["NADH is made in the matrix","NAD⁺ and NADH are not transported across the inner mitochondrial membrane","Malate is a proton pump","Aspartate carries electrons directly","Complex I faces the cytoplasm"],1,"Electrons cross as malate; NADH is regenerated by matrix malate DH.");
 Q("carb","Predicted","p","Essential fructosuria results from a deficiency of:",["Aldolase B, and is lethal","Fructokinase, and is essentially benign","Gal-1-P uridyltransferase","Glucokinase","Triose kinase"],1,"Without fructokinase, fructose is simply not trapped.");
 Q("carb","Predicted","p","In hereditary fructose intolerance, why does the brain suffer in the fasting state?",["Fructose is toxic to neurons","Low hepatic ATP inhibits gluconeogenesis","Brain lacks GLUT-3","Aldolase B is required in brain","Lactate accumulates in brain"],1,"Slide 31: liver can’t make glucose without ATP.");
@@ -1806,14 +1823,14 @@ CARDS.push(
 ["carb","Substrate-level phosphorylation","A phosphorylated metabolite (1,3-BPG, PEP) directly phosphorylates ADP."],
 ["carb","Only NAD⁺-dependent step of glycolysis","Glyceraldehyde 3-P dehydrogenase: 2e⁻ oxidation drives formation of 1,3-bisphosphoglycerate."],
 ["carb","Why is lactate made?","To regenerate NAD⁺ when oxphos can’t re-oxidize glycolytic NADH fast enough. O₂ may be present."],
-["carb","Top lactate producers at rest","Skeletal muscle ~25%, skin ~25%, RBCs ~20%, gut ~10%, adipocytes ~5–10%."],
-["carb","Top lactate consumers at rest","Liver ~50–60% (Cori cycle), kidney ~20–30%, heart, slow-twitch muscle. RBCs never consume it."],
+["carb","Four conditions that make a cell release lactate","a) few mitochondria; b) high ATP/ADP or low O₂; c) NADH overload from other catabolic pathways; d) no mitochondria (RBCs)."],
+["carb","Who takes up blood lactate?","At rest, the liver takes up the bulk. Kidney, heart and slow-twitch muscle also excel. RBCs never consume it."],
 ["carb","First step in lactate use","Lactate + NAD⁺ → pyruvate + NADH (lactate dehydrogenase)."],
-["carb","Malate–aspartate shuttle: tissues and destination","Heart, liver, kidney; electrons reach matrix NADH."],
+["carb","Malate–aspartate shuttle: key enzymes","Cytoplasmic and matrix malate DH and aspartate aminotransferase. Electrons reach matrix NADH (heart, liver, kidney). Skip the IMM transporters."],
 ["carb","Glycerol phosphate shuttle: tissues and destination","Brain, skeletal muscle, brown fat; electrons reach UQ (bypass Complex I)."],
 ["carb","Fructose pathway in liver","Fructokinase → F-1-P → aldolase B → DHAP + glyceraldehyde → (triose kinase) G-3-P → glycolysis."],
-["carb","Galactose pathway","Galactokinase → Gal-1-P → Gal-1-P uridyltransferase (+2 enzymes) → G-6-P."],
-["carb","Hereditary fructose intolerance","Aldolase B deficiency; F-1-P traps hepatic Pi → ATP synthesis fails → liver failure."],
+["carb","Galactose pathway","Gal → Gal-1-P (galactokinase) → Glu-1-P (Gal-1-P uridyltransferase + 2 enzymes) → Glu-6-P → glycolysis."],
+["carb","Hereditary fructose intolerance","Aldolase B deficiency; F-1-P sequesters phosphate → ATP synthesis inhibited in liver and kidney; fructose is toxic."],
 ["carb","Classic galactosemia","Gal-1-P uridyltransferase deficiency; Gal-1-P traps hepatic Pi → impaired ATP synthesis."],
 ["pdh","PDH overall reaction","Pyruvate + CoA + NAD⁺ → acetyl-CoA + CO₂ + NADH; ΔG°′ −8 kcal/mol."],
 ["pdh","PDH E1, E2, E3 prosthetic groups","E1 TPP; E2 lipoyllysine; E3 FAD. No biotin."],
@@ -1888,6 +1905,27 @@ Q("control","Predicted","ph","When UCP-1 is fully activated in brown fat mitocho
 Q("control","Predicted","p","With UCP-1 fully active, the rate of ET from NADH to O₂ is limited by:",["Electrostatic backpressure","The supply of NADH","The rate of ATP synthesis","The ATP/ADP ratio","The number of c subunits"],1,"No backpressure, so ET runs as fast as NADH supply allows.");
 Q("control","Predicted","p","In infants, brown fat is located adjacent to which organs?",["Brain, liver and spleen","Heart, lungs and kidneys","Stomach and intestine","Skeletal muscle of the limbs","Skin of the hands and feet"],1,"It heats them because infants don’t shiver.");
 Q("control","Predicted","p","Breathing rate rises during exercise because:",["Δψ rises","Oxphos consumes O₂, and ET through CIV speeds up","ATP synthase consumes CO₂","Glycolysis requires O₂","UCP-1 is activated in muscle"],1,"Respiratory control item 7.");
+CARDS.push(
+["carb","What happens to cellulose?","It isn’t digested; it leaves the body intact as fiber."],
+["carb","Three transport steps for glucose across the gut wall","SGLT1 (lumen, with Na⁺) → GLUT-2 (out to blood); the Na⁺/K⁺ pump keeps internal Na⁺ low."],
+["carb","Hexokinase and PFK-1: substrates and products","Hexokinase: glucose + ATP → G-6-P + ADP. PFK-1: F-6-P + ATP → F-1,6-BP + ADP."],
+["carb","Phosphorylating agents of glycolysis and where they act","1,3-BPG at phosphoglycerate kinase; PEP at pyruvate kinase."],
+["carb","Fructokinase deficiency","Essential fructosuria: not dangerous, but fructose isn’t catabolized."]
+);
+Q("carb","Predicted","p","Which dietary carbohydrate is NOT digested and leaves the body intact?",["Starch","Lactose","Sucrose","Cellulose","Maltose"],3,"Topic list item 1: cellulose is fiber.");
+Q("carb","Predicted","p","In intestinal epithelial cells, glucose moves from the cell into blood through:",["SGLT1","GLUT-2","GLUT-4","The Na⁺/K⁺ pump","Porin"],1,"SGLT1 brings it in from the lumen; GLUT-2 lets it out to blood.");
+Q("carb","Predicted","p","The role of the Na⁺/K⁺ pump in intestinal glucose absorption is to:",["Phosphorylate glucose","Keep intracellular Na⁺ low so SGLT1 can co-transport Na⁺ and glucose inward","Move glucose into blood","Hydrolyze lactose","Export galactose"],1,"It makes SGLT1 secondary active transport.");
+Q("carb","Predicted","p","Hexokinase differs from glucokinase in that hexokinase is:",["Found only in liver","Allosterically inhibited by its product, glucose 6-phosphate","A high-Km enzyme","Not able to phosphorylate glucose","Activated by insulin through GLUT-2"],1,"Topic list item 6.");
+Q("carb","Predicted","p","The substrates of phosphofructokinase 1 are:",["Glucose and ATP","Fructose 6-phosphate and ATP","Fructose 1,6-bisphosphate and ADP","Fructose 1-phosphate and ATP","Glyceraldehyde 3-P and NAD⁺"],1,"Products: fructose 1,6-bisphosphate and ADP.");
+Q("carb","Predicted","p","The glycolytic enzymes that phosphorylate ADP using 1,3-bisphosphoglycerate and phosphoenolpyruvate are:",["Hexokinase and PFK-1","GAPDH and enolase","Phosphoglycerate kinase and pyruvate kinase","Aldolase and triose phosphate isomerase","Pyruvate carboxylase and PEPCK"],2,"Item 9.");
+Q("carb","Predicted","p","“Anaerobic” glycolysis refers to glycolysis in which:",["O₂ is completely absent","NADH is re-oxidized by cytosolic lactate dehydrogenase instead of by oxphos","Pyruvate enters the TCA cycle","No ATP is made","Fructose is the substrate"],1,"Item 13. O₂ may be present.");
+Q("carb","Predicted","ph","All of the following promote lactate production and release by a cell EXCEPT:",["A low number of mitochondria","A high ATP/ADP","An overload of NADH from catabolic pathways other than glycolysis","Low [O₂]","A rapid rate of NADH oxidation by oxphos"],4,"Lactate is made when oxphos can’t keep up with glycolytic NADH.");
+Q("carb","Predicted","p","A cell with abundant mitochondria and O₂ releases lactate after a large influx of fatty acids and glutamine. The most likely reason is:",["It lacks lactate DH","Its oxphos is overloaded with NADH from other catabolic pathways, so cytosolic NADH is oxidized slowly","Glycolysis has stopped","Its ATP/ADP is very low","PDH is fully active"],1,"Item 14c.");
+Q("carb","Predicted","p","At rest, the bulk of blood lactate is taken up by:",["Red blood cells","Skin","Liver","Adipose","Brain"],2,"Item 15.");
+Q("carb","Predicted","p","In hereditary fructose intolerance, ATP synthesis is inhibited in:",["Brain and muscle","Liver and kidney","Red blood cells","Intestinal epithelium only","Adipose"],1,"Item 18: fructose 1-phosphate sequesters phosphate.");
+Q("carb","Predicted","p","A person lacking fructokinase will:",["Develop liver failure after eating fructose","Not catabolize fructose, but suffer little harm","Be unable to digest sucrose","Accumulate fructose 1-phosphate","Lack aldolase B"],1,"Essential fructosuria.");
+Q("carb","Predicted","p","Which sequence shows galactose entering glycolysis?",["Gal → Gal-6-P → Glu-6-P","Gal → Gal-1-P → Glu-1-P → Glu-6-P","Gal → glucose → Glu-6-P","Gal → Gal-1-P → F-1-P","Gal → lactose → glucose"],1,"Item 19.");
+Q("carb","Predicted","p","Fructose 1-phosphate enters glycolysis as:",["Fructose 6-phosphate","Glucose 6-phosphate","DHAP and glyceraldehyde (phosphorylated to G-3-P)","Fructose 1,6-bisphosphate","Pyruvate"],2,"Aldolase B, then triose kinase.");
 /* ---------- helpers ---------- */
 const $=(s,r)=> (r||document).querySelector(s);
 const $$=(s,r)=> Array.from((r||document).querySelectorAll(s));
