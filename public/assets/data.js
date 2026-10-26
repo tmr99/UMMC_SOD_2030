@@ -50,6 +50,7 @@ const TERMS = [
 ];
 
 const FINISHED_COURSES = {
+  "DENT 600A":         "Fall 2026",
   "DENT 607-1":        "Fall 2026",
   "DENT 617-1":        "Fall 2026",
   "DENT 620-1A / 1B":  "Fall 2026",
@@ -118,11 +119,18 @@ const DEADLINES = [
    ---------------------------------------------------------- */
 const COURSES = [
   {
-    code: "DENT 600A / 600B",
+    code: "DENT 600A",
     name: "Gross Anatomy – Osteology",
     instructor: "Dr. Yuefeng Lu · ylu3@umc.edu · R735",
     syllabus: "assets/syllabi/dent-600.docx",
-    note: "Tuesdays 1–5pm, 7A / SOM 324. One competency exam on 9/22, practical and written, with 70% required on each. Repeat attempts are allowed, but remediated scores cap at 70. Written is 10% of 600A; practical is 15% of 600B. Texts: Liebgott ch. 6; McMinn's atlas."
+    note: "Tuesdays 1–5pm, 7A / SOM 324. One competency exam on 9/22, practical and written, with 70% required on each. Repeat attempts were allowed, but remediated scores cap at 70. Texts: Liebgott ch. 6; McMinn's atlas."
+  },
+  {
+    code: "DENT 600B",
+    name: "Gross Anatomy – Dissection",
+    instructor: "Dr. Yuefeng Lu · ylu3@umc.edu · R735",
+    syllabus: "assets/syllabi/dent-600.docx",
+    note: "Picks up after the osteology block under the same course number. Schedule, grading, and exam dates to be added — check the course name and details against the syllabus."
   },
   {
     code: "DENT 601A",

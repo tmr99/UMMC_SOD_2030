@@ -27,6 +27,7 @@ const TERM_ORDER = [
    "course name exactly as written below": "term it finished"
    ---------------------------------------------------------- */
 const ARCHIVED_COURSES = {
+  "DENT 600A – Osteology": "Fall 2026",
   "DENT 620-1 – Dental Morphology & Occlusion": "Fall 2026"
 };
 
