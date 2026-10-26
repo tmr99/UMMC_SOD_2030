@@ -110,22 +110,61 @@
   if (allDates) { renderDeadlines(allDates, DEADLINES.slice().sort(byDate)); }
 
   /* ---- courses page --------------------------------------- */
+  function courseCard(c) {
+    return '<div class="card">' +
+      (c.code ? '<span class="card-code">' + c.code + '</span>' : '') +
+      '<h3>' + c.name + '</h3>' +
+      (c.instructor ? '<p>' + c.instructor + '</p>' : '') +
+      (c.note ? '<p>' + c.note + '</p>' : '') +
+      (c.syllabus
+        ? '<p><a href="' + c.syllabus + '">Syllabus</a></p>'
+        : '<p class="soon">Syllabus coming soon</p>') +
+    '</div>';
+  }
+
+  var finished = (typeof FINISHED_COURSES !== 'undefined') ? FINISHED_COURSES : {};
+  var termList = (typeof TERMS !== 'undefined') ? TERMS : [];
+
   var grid = document.querySelector('[data-courses]');
   if (grid) {
-    if (!COURSES.length) {
-      grid.innerHTML = '<p class="empty">Course details coming soon.</p>';
+    var running = COURSES.filter(function (c) { return !finished[c.code]; });
+    grid.innerHTML = running.length
+      ? running.map(courseCard).join('')
+      : '<p class="empty">Course details coming soon.</p>';
+  }
+
+  var courseArchive = document.querySelector('[data-courses-archive]');
+  if (courseArchive) {
+    var done = COURSES.filter(function (c) { return !!finished[c.code]; });
+    if (!done.length) {
+      courseArchive.innerHTML = '';
     } else {
-      grid.innerHTML = COURSES.map(function (c) {
-        return '<div class="card">' +
-          (c.code ? '<span class="card-code">' + c.code + '</span>' : '') +
-          '<h3>' + c.name + '</h3>' +
-          (c.instructor ? '<p>' + c.instructor + '</p>' : '') +
-          (c.note ? '<p>' + c.note + '</p>' : '') +
-          (c.syllabus
-            ? '<p><a href="' + c.syllabus + '">Syllabus</a></p>'
-            : '<p class="soon">Syllabus coming soon</p>') +
-        '</div>';
-      }).join('');
+      var byTerm = {};
+      done.forEach(function (c) {
+        var t = finished[c.code] || 'Earlier';
+        if (!byTerm[t]) { byTerm[t] = []; }
+        byTerm[t].push(c);
+      });
+
+      var names = Object.keys(byTerm).sort(function (a, b) {
+        var ia = termList.indexOf(a), ib = termList.indexOf(b);
+        if (ia === -1 && ib === -1) { return a < b ? 1 : -1; }
+        if (ia === -1) { return 1; }
+        if (ib === -1) { return -1; }
+        return ia - ib;
+      });
+
+      courseArchive.innerHTML = '<details class="archive">' +
+        '<summary><span class="arch-label">Completed courses</span>' +
+        '<span class="arch-count">' + done.length +
+        (done.length === 1 ? ' course' : ' courses') + ' &middot; ' + names.length +
+        (names.length === 1 ? ' term' : ' terms') + '</span></summary>' +
+        names.map(function (t) {
+          return '<details class="archive-term"><summary>' + t + '</summary>' +
+            '<div class="grid">' + byTerm[t].map(courseCard).join('') + '</div>' +
+          '</details>';
+        }).join('') +
+      '</details>';
     }
   }
 })();

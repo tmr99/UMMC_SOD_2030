@@ -33,7 +33,27 @@ const COURSE_NAMES = {
   "DENT 620-1":  "Dental Morphology & Occlusion",
   "DENT 622-1":  "Problem-Oriented Dentistry",
   "DENT 623-1":  "Clinical Problem Solving I",
+  "Operative":   "Introduction to Operative Dentistry",
   "DENT 642-1":  "Ethics & Professional Identity"
+};
+
+
+/* ---- TERMS + COMPLETED COURSES ---------------------------
+   When a course finishes, add one line to FINISHED_COURSES
+   with the term it ended in. Its card moves into the
+   "Completed courses" dropdown on the Courses page.
+   The code on the left must match the course's "code" below.
+   ---------------------------------------------------------- */
+const TERMS = [
+  "Spring 2027",
+  "Fall 2026"
+];
+
+const FINISHED_COURSES = {
+  "DENT 607-1":        "Fall 2026",
+  "DENT 617-1":        "Fall 2026",
+  "DENT 620-1A / 1B":  "Fall 2026",
+  "DENT 622-1":        "Fall 2026"
 };
 
 
@@ -73,13 +93,16 @@ const DEADLINES = [
   { date: "2026-10-13", title: "Ethics session 3",                    course: "DENT 642-1",  note: "1:00–3:00pm, D113 — bring questions for the D3/D4 panel" },
   { date: "2026-10-19", title: "Dental photographs project due",      course: "DENT 622-1",  note: "5:00pm in Canvas" },
   { date: "2026-10-20", title: "Ethics session 4",                    course: "DENT 642-1",  note: "1:00–3:00pm, D113 — ethics case analysis due the night before" },
-  { date: "2026-10-20", title: "Materials Science begins",            course: "DENT 619",    note: "1:00–3:00pm, D113" },
+  { date: "2026-10-20", title: "Lecture 1 — Introduction / Dental Materials", course: "DENT 619", note: "1:00–3:00pm, D113" },
+  { date: "2026-10-29", title: "Lecture 2 — Structure & bonding in solids", course: "DENT 619", note: "1:00–3:00pm, D114 — watch the Canvas videos and finish the pretest first" },
   { date: "2026-10-21", title: "Final exam",                          course: "DENT 622-1",  note: "4:00–4:50pm, D113 — sessions 34–39" },
   { date: "2026-10-23", title: "Exam 3 / OSCE",                       course: "DENT 620-1",  note: "8:00am–12:00pm, D114 / Sim" },
 
   /* --- November --- */
+  { date: "2026-11-05", title: "Lecture 3 — Physical & mechanical properties", course: "DENT 619", note: "1:00–3:00pm, Bench — pre-class videos and pretest due first" },
   { date: "2026-11-06", title: "Exam III — lectures 41–60",           course: "DENT 604",    note: "1:00pm, R354" },
   { date: "2026-11-09", title: "Exam 3 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
+  { date: "2026-11-12", title: "Lecture 4 — Composites", course: "DENT 619", note: "3:00–5:00pm, D114 — note the later start time" },
   { date: "2026-11-10", title: "Ethics session 5",                    course: "DENT 642-1",  note: "1:00–3:00pm, D113 — career interview due beforehand" },
   { date: "2026-11-27", title: "Thanksgiving — no class",             course: "",            note: "" },
 
@@ -141,7 +164,7 @@ const COURSES = [
     name: "Materials Science",
     instructor: "Dr. Yuanyuan Duan · yduan@umc.edu · D528-04",
     syllabus: "assets/syllabi/dent-619.docx",
-    note: "3 credits, continuing into spring. Four fall lectures (10/20, 10/29, 11/5, 11/12). All four exams are in the spring semester, dates TBA. An in-class Canvas quiz at every lecture counts for 5% combined. Exam 1 is 38% of the course grade."
+    note: "3 credits, continuing into spring. Four fall lectures: 10/20 (D113), 10/29 (D114), 11/5 (Bench), and 11/12, which runs 3–5pm in D114 instead of the usual 1–3pm. Flipped classroom — the Canvas videos and pretest must be finished before each session. All four exams are in the spring, dates TBA. In-class Canvas quizzes are 5% combined; Exam 1 is 38%, and Exams 2–4 are 19% each. Faculty: Duan, Janorkar, Roach, Williamson. Texts: Phillips' Science of Dental Materials 13e; Callister, Materials Science and Engineering 10e."
   },
   {
     code: "DENT 620-1A / 1B",
@@ -163,6 +186,13 @@ const COURSES = [
     instructor: "Scott Phillips · smphillips@umc.edu",
     syllabus: "assets/syllabi/dent-623.docx",
     note: "6 credits. Tuesday mornings Grand Round (R154). No fixed exam dates. Compliance Office online training and quizzes must be completed by the medical center deadline to pass the course."
+  },
+  {
+    code: "Course number TBA",
+    name: "Introduction to Operative Dentistry",
+    instructor: "",
+    syllabus: "",
+    note: "Beginning this term. Schedule, grading, and exam dates will be added once the syllabus is posted."
   },
   {
     code: "DENT 642-1",
