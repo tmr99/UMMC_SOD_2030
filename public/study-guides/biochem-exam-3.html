@@ -213,6 +213,32 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
 .scen-out th:not(:first-child){text-align:center}
 .scen-out td .up,.scen-out td .dn,.scen-out td .eqv{font-size:19px;line-height:1}
 
+
+/* ---------- oxphos diagram ---------- */
+.oxdiag{border:1px solid var(--rule);border-radius:3px;background:var(--surface);margin:0 0 14px;overflow-x:auto}
+.oxdiag svg{display:block;width:100%;min-width:600px;height:auto;font-family:var(--sans)}
+.d-ims{fill:var(--accent-soft)}.d-mem{fill:var(--flag-soft)}.d-mat{fill:var(--teal-soft)}
+.d-lbl{fill:var(--ink-soft);font-size:13px;font-weight:600}
+.d-cx{fill:var(--surface);stroke:var(--ink);stroke-width:1.5}
+.d-cxl{fill:var(--ink);font-size:15px;font-weight:600}
+.d-sm{fill:var(--ink-soft);font-size:11.5px}
+.d-sub{fill:var(--ink);font-size:13px}
+.d-uq{fill:var(--paper);stroke:var(--teal);stroke-width:1.5}
+.d-cyt{fill:var(--paper);stroke:var(--accent);stroke-width:1.5}
+.d-e{stroke:var(--accent);stroke-width:2.2;stroke-dasharray:5 4;fill:none}
+.d-e-fill{fill:var(--accent)}
+.d-h{stroke:var(--teal);stroke-width:2.2;fill:none}
+.d-h-fill{fill:var(--teal)}
+.d-hl{fill:var(--teal);font-size:12.5px;font-weight:600}
+.d-plus{fill:var(--accent);font-size:13px;font-weight:600;letter-spacing:1px}
+.d-minus{fill:var(--teal);font-size:17px;font-weight:700;letter-spacing:1px}
+.d-psi{fill:var(--ink);font-size:14px;font-weight:600}
+.d-ucp{fill:var(--bad-soft);stroke:var(--bad);stroke-width:1.5}
+.d-u{fill:var(--bad);font-size:12.5px;font-weight:600}
+.d-uarr{stroke:var(--bad);stroke-width:3;fill:none}
+.d-u-fill{fill:var(--bad)}
+.d-hide{display:none}
+.d-dim{opacity:.25}
 @media (max-width:980px){
   .hero-in{grid-template-columns:1fr;gap:26px}
 }
@@ -912,6 +938,106 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
     </table></div>
   </div>
 
+
+  <div class="sec">
+    <h3>Draw it like slide 8: interactive diagram</h3>
+    <p>Hosler expects you to draw this from memory. Study it, then cover it and redraw it. The toggle adds UCP-1 the way his uncoupling study tip suggests (red arrows).</p>
+    <div class="seg" role="group" aria-label="Diagram mode"><button type="button" class="on" data-ox="normal" aria-pressed="true">Coupled (normal)</button><button type="button" data-ox="ucp" aria-pressed="false">UCP-1 active (brown fat)</button></div>
+    <div class="oxdiag" id="oxDiag">
+<svg viewBox="0 0 780 400" role="img" aria-labelledby="oxTitle oxDesc" xmlns="http://www.w3.org/2000/svg">
+<title id="oxTitle">Oxidative phosphorylation across the inner mitochondrial membrane</title>
+<desc id="oxDesc">Electrons flow from NADH in the matrix through Complex I to the ubiquinone pool in the membrane, then Complex III, soluble cytochrome c in the intermembrane space, and Complex IV, which reduces oxygen to water. Complexes I, III and IV pump 4, 2 and 4 protons into the intermembrane space, making the intermembrane face positive and the matrix face negative. Protons return through ATP synthase, which makes ATP from ADP and phosphate. When UCP-1 is active, protons return through UCP-1 instead, the membrane potential falls to zero and ATP synthesis stops.</desc>
+<defs>
+<marker id="ae" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-e-fill"/></marker>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-h-fill"/></marker>
+<marker id="au" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="d-u-fill"/></marker>
+</defs>
+<rect x="0" y="0" width="780" height="120" class="d-ims"/>
+<rect x="0" y="120" width="780" height="60" class="d-mem"/>
+<rect x="0" y="180" width="780" height="220" class="d-mat"/>
+<text x="12" y="22" class="d-lbl">IMS (P side)</text>
+<text x="12" y="146" class="d-lbl">IMM</text>
+<text x="12" y="392" class="d-lbl">Matrix (N side)</text>
+
+<text x="770" y="22" text-anchor="end" class="d-psi" id="oxPsi">Δψ ≈ 180 mV</text>
+<!-- Complex I -->
+<rect x="70" y="112" width="110" height="76" rx="8" class="d-cx"/>
+<rect x="70" y="188" width="44" height="120" rx="8" class="d-cx"/>
+<text x="125" y="146" text-anchor="middle" class="d-cxl">CI</text>
+<text x="125" y="164" text-anchor="middle" class="d-sm">4 pumps</text>
+<text x="92" y="246" text-anchor="middle" class="d-sm">FMN</text>
+<text x="92" y="262" text-anchor="middle" class="d-sm">Fe-S</text>
+<text x="92" y="278" text-anchor="middle" class="d-sm">→N2</text>
+<text x="40" y="350" class="d-sub">NADH → NAD⁺</text>
+<path d="M75 335 L85 312" class="d-e" marker-end="url(#ae)"/>
+<!-- UQ pool -->
+<ellipse cx="225" cy="150" rx="34" ry="18" class="d-uq"/>
+<text x="225" y="155" text-anchor="middle" class="d-sm">UQ/UQH₂</text>
+<path d="M180 150 L190 150" class="d-e" marker-end="url(#ae)"/>
+<!-- Complex III -->
+<rect x="270" y="98" width="90" height="104" rx="8" class="d-cx"/>
+<text x="315" y="146" text-anchor="middle" class="d-cxl">CIII</text>
+<text x="315" y="164" text-anchor="middle" class="d-sm">2 H⁺</text>
+<path d="M259 150 L268 150" class="d-e" marker-end="url(#ae)"/>
+<!-- cyt c -->
+<circle cx="405" cy="62" r="20" class="d-cyt"/>
+<text x="405" y="66" text-anchor="middle" class="d-sm">cyt c</text>
+<path d="M350 98 L388 76" class="d-e" marker-end="url(#ae)"/>
+<path d="M423 74 L450 96" class="d-e" marker-end="url(#ae)"/>
+<!-- Complex IV -->
+<rect x="440" y="98" width="90" height="104" rx="8" class="d-cx"/>
+<text x="485" y="146" text-anchor="middle" class="d-cxl">CIV</text>
+<text x="485" y="164" text-anchor="middle" class="d-sm">4 H⁺</text>
+<text x="372" y="252" class="d-sub">½O₂ → H₂O</text>
+<path d="M470 202 L448 236" class="d-e" marker-end="url(#ae)"/>
+<!-- H+ pumping -->
+<g class="d-pump">
+<path d="M150 270 L150 52" class="d-h" marker-end="url(#ah)"/><text x="156" y="48" class="d-hl">4H⁺</text>
+<path d="M335 270 L335 52" class="d-h" marker-end="url(#ah)"/><text x="341" y="48" class="d-hl">2H⁺</text>
+<path d="M510 270 L510 52" class="d-h" marker-end="url(#ah)"/><text x="516" y="48" class="d-hl">4H⁺</text>
+</g>
+<!-- ATP synthase -->
+<g id="oxAtps">
+<rect x="645" y="118" width="70" height="64" rx="10" class="d-cx"/>
+<text x="680" y="146" text-anchor="middle" class="d-cxl">Fo</text>
+<text x="680" y="162" text-anchor="middle" class="d-sm">8 c + a</text>
+<rect x="676" y="182" width="8" height="40" class="d-cx"/>
+<ellipse cx="680" cy="262" rx="52" ry="40" class="d-cx"/>
+<text x="680" y="258" text-anchor="middle" class="d-cxl">F1</text>
+<text x="680" y="276" text-anchor="middle" class="d-sm">α₃β₃ (γ)</text>
+<path d="M695 40 L695 112" class="d-h" marker-end="url(#ah)"/><text x="702" y="60" class="d-hl">H⁺</text>
+<text x="680" y="332" text-anchor="middle" class="d-sub">ADP + Pi → ATP</text>
+</g>
+<g class="d-charge" id="oxCharges">
+<text x="190" y="114" class="d-plus">+ + + + +</text>
+<text x="370" y="114" class="d-plus">+ + +</text>
+<text x="548" y="114" class="d-plus">+ + + + + +</text>
+<text x="190" y="200" class="d-minus">− − − − −</text>
+<text x="372" y="200" class="d-minus">− − −</text>
+<text x="548" y="200" class="d-minus">− − − − − −</text>
+</g>
+<!-- UCP-1 -->
+<g id="oxUcp" class="d-hide">
+<rect x="575" y="116" width="30" height="68" rx="6" class="d-ucp"/>
+<text x="590" y="214" text-anchor="middle" class="d-u">UCP-1</text>
+<path d="M590 40 L590 112" class="d-uarr" marker-end="url(#au)"/>
+<path d="M590 186 L590 290" class="d-uarr" marker-end="url(#au)"/>
+<text x="598" y="306" class="d-u">heat</text>
+</g>
+<text x="210" y="384" class="d-sub" id="oxNote">e⁻ path (dashed) · H⁺ pumping (solid) · ATP synthase returns H⁺</text>
+</svg>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>Read the diagram</th><th>Coupled</th><th>UCP-1 active</th></tr></thead>
+      <tbody>
+        <tr><td>Where H⁺ return</td><td>Through Fo of ATP synthase (needs ADP + Pi)</td><td>Through UCP-1</td></tr>
+        <tr><td>Δψ</td><td>~180 mV, + outside, − inside</td><td>Zero</td></tr>
+        <tr><td>ATP synthesis</td><td>Set by ADP supply</td><td>Zero</td></tr>
+        <tr><td>ET and pumping</td><td>Set by backpressure from Δψ</td><td>Maximum the NADH supply allows</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
   <div class="sec">
     <h3>Complex I step by step (list item 5, a–h)</h3>
     <ol>
@@ -1063,7 +1189,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li>Infants: brown fat sits <b>adjacent to the heart, lungs and kidneys</b> and heats them when the infant is cold, because <b>infants don’t shiver</b>.</li>
       <li>Brown fat persists in adults; the role of UCP-1 in adults is <b>still under investigation</b>.</li>
     </ol>
-    <p>Hosler’s study tip: draw oxphos like slides 10–13 of the uncoupling set, with red arrows as UCP-1, and walk through the consequences.</p>
+    <p>Hosler’s study tip: draw oxphos like slides 10–13 of the uncoupling set, with red arrows as UCP-1, and walk through the consequences. The interactive diagram in the <a href="#oxphos">Oxidative phosphorylation</a> section has a UCP-1 toggle for exactly this.</p>
     <p>Slide extras, lower priority: the H⁺ circuit still runs, faster than normal, nearly all through UCP-1; his proposed heat mechanism is friction from H⁺–water clusters (5 or 9 waters) breaking and re-forming; brown fat can be up to 5% of infant body mass; adult brown fat is seen on cold-exposure FDG-PET.</p>
     <div class="box warn"><p><b>Old answers reconciled.</b> The 2020 key said “cold temperature and fatty acids” and the 2026 slides say norepinephrine. The topic list links them: cold → norepinephrine → fatty acids. Any option naming that chain, or cold with fatty acids, is correct.</p></div>
   </div>
@@ -1107,8 +1233,18 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <p>Secretory diarrhea (e.g., cholera) kills by dehydration. Drinking dilute glucose + NaCl works because SGLT1 takes up glucose and Na⁺ together, and GLUT-2 plus the Na⁺/K⁺ pump move them into blood. Both solutes must stay dissolved, so <b>water follows them from lumen to blood</b>.</p>
     </div>
     <ul>
-      <li><b>(4)</b> GLUTs are facilitated-diffusion uniporters. Phosphorylation to <b>glucose 6-phosphate traps glucose</b> because GLUTs don’t bind G-6-P.</li>
+      <li><b>(4)</b> GLUTs are facilitated-diffusion uniporters that move glucose <b>in and out</b> of cells down its concentration gradient. Phosphorylation to <b>glucose 6-phosphate traps glucose</b> because GLUTs don’t bind G-6-P.</li>
     </ul>
+    <div class="tbl"><table>
+      <thead><tr><th>Transporter (slide 11)</th><th>Where</th><th class="n">Km for glucose</th><th>Insulin-dependent?</th></tr></thead>
+      <tbody>
+        <tr><td>GLUT-1</td><td>Many cells</td><td class="n">2–5 mM</td><td>No</td></tr>
+        <tr><td><b>GLUT-2</b></td><td>Pancreatic β cells, hepatocytes (also gut exit to blood)</td><td class="n"><b>~15 mM</b></td><td>No</td></tr>
+        <tr><td>GLUT-3</td><td>Many cells</td><td class="n">2–5 mM</td><td>No</td></tr>
+        <tr><td><b>GLUT-4</b></td><td>Skeletal muscle, adipose</td><td class="n">2–5 mM</td><td><b>Yes</b></td></tr>
+      </tbody>
+    </table></div>
+    <p>The low-Km GLUTs (1, 3, 4) match hexokinase’s kinetics and work well at fasting glucose (~4–5 mM). High-Km GLUT-2 pairs with glucokinase and speeds up as glucose rises after a meal. GLUT-4 is the <b>only insulin-dependent</b> one.</p>
     <div class="tbl"><table>
       <thead><tr><th>Property</th><th>Hexokinase (most cells)</th><th>Glucokinase (liver, pancreatic β cells)</th></tr></thead>
       <tbody>
@@ -1356,6 +1492,8 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li>FA oxidation is the <b>major source of energy for ATP synthesis</b> in humans. It occurs in the <b>mitochondrial matrix</b>.</li>
       <li>Active in muscle, heart, kidney cortex and liver; argued <b>not to occur in brain</b>.</li>
       <li>Two-carbon fragments come off the <b>carboxyl end</b> as acetyl-CoA, which the TCA cycle can oxidize.</li>
+      <li><b>Cross-topic (glycogen/gluconeogenesis list, item 7):</b> in the fasting liver, β-oxidation makes the <b>acetyl-CoA that activates pyruvate carboxylase</b> and the NADH and ATP that pay for gluconeogenesis.</li>
+      <li><b>Cross-topic (oxphos list, respiratory control item 8):</b> β-hydroxyacyl-CoA DH is NAD⁺-dependent, so β-oxidation runs faster when oxphos speeds up (more NAD⁺) and slower when it slows.</li>
     </ul>
   </div>
 
@@ -1694,6 +1832,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li><b>Perilipins</b> coat the droplet and protect it from lipases.</li>
       <li><b>Epinephrine</b> binds its receptor → <b>protein kinase A phosphorylates perilipins</b> → they move and open gaps → lipases reach the TAG.</li>
       <li><b>Insulin strongly inhibits lipolysis</b> in the fed state by keeping perilipin protection in place.</li>
+      <li><b>Cross-topic (oxphos list, UCP-1 item 2):</b> in brown fat, cold → norepinephrine → lipolysis releases the <b>fatty acids that activate UCP-1</b>.</li>
     </ul>
     <div class="tbl"><table>
       <thead><tr><th>Order</th><th>Lipase</th><th>Removes</th></tr></thead>
@@ -2699,6 +2838,16 @@ CARDS.push(
 ["ppp","Non-oxidative branch","Transketolases move 2C, transaldolases move 3C; reversible; exchanges with F-6-P and G-3-P."],
 ["ppp","Need ribose 5-P but not NADPH","Reverse the non-oxidative reactions, pulling F-6-P + G-3-P from glycolysis; regulated only by ribose 5-P demand."]
 );
+Q("carb","Predicted","p","GLUT transporters move glucose:",["Only into cells, using ATP","In and out of cells down its concentration gradient (facilitated diffusion)","Only out of cells","With Na⁺","Only in liver"],1,"Slide 8.");
+Q("carb","Predicted","ph","Which glucose transporter is insulin-dependent?",["GLUT-1","GLUT-2","GLUT-3","GLUT-4","SGLT1"],3,"Muscle and adipose; insulin recruits it to the membrane.");
+Q("carb","Predicted","p","Which GLUT has a high Km for glucose (~15 mM) and is found in hepatocytes and pancreatic β cells?",["GLUT-1","GLUT-2","GLUT-3","GLUT-4","SGLT1"],1,"It matches glucokinase.");
+Q("carb","Predicted","p","GLUT-1 and GLUT-3 are best described as:",["Insulin-dependent, muscle-specific","Found in many cells, low Km (2–5 mM), not insulin-dependent","High-Km liver transporters","Na⁺ co-transporters","Mitochondrial transporters"],1,"Slide 11 table.");
+Q("control","Predicted","p","The role of UCP-1 in adult humans is:",["Proven to be the main source of body heat","Still an area of investigation","Absent, since adults have no brown fat","To make ATP","To pump protons out of the matrix"],1,"Topic list UCP-1 item 7: brown fat persists in adults; its role remains under study.");
+Q("faox","Predicted","p","In the fasting liver, β-oxidation supports gluconeogenesis by:",["Providing carbon for glucose","Producing acetyl-CoA that activates pyruvate carboxylase, plus NADH and ATP","Inhibiting PEPCK","Producing glycerol","Activating glycogen synthase"],1,"Cross-topic: glycogen/gluconeogenesis list item 7.");
+CARDS.push(
+["carb","GLUT family (slide 11)","GLUT-1, GLUT-3: many cells, Km 2–5 mM. GLUT-2: liver and β cells, Km ~15 mM. GLUT-4: muscle and adipose, 2–5 mM, the only insulin-dependent one."],
+["oxphos","Draw oxphos from memory","Matrix NADH → CI (4H⁺) → UQ pool → CIII (2H⁺) → cyt c in IMS → CIV (4H⁺) → O₂ → H₂O; H⁺ return through ATP synthase; + IMS, − matrix, 180 mV."]
+);
 /* ---------- helpers ---------- */
 const $=(s,r)=> (r||document).querySelector(s);
 const $$=(s,r)=> Array.from((r||document).querySelectorAll(s));
@@ -2884,8 +3033,23 @@ function initExam(){
   setup();
 }
 
+
+/* ---------- oxphos diagram toggle ---------- */
+function initOx(){
+  const box=document.querySelector('[data-ox]');if(!box) return;
+  const grp=box.parentElement;
+  grp.addEventListener("click",e=>{const b=e.target.closest("button[data-ox]");if(!b) return;
+    grp.querySelectorAll("button").forEach(x=>{const on=x===b;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on?"true":"false");});
+    const u=b.dataset.ox==="ucp";
+    document.getElementById("oxUcp").classList.toggle("d-hide",!u);
+    document.getElementById("oxAtps").classList.toggle("d-dim",u);
+    document.getElementById("oxCharges").classList.toggle("d-dim",u);
+    document.getElementById("oxPsi").textContent=u?"Δψ → 0":"Δψ ≈ 180 mV";
+    document.getElementById("oxNote").textContent=u?"UCP-1 returns H⁺ (red) · no Δψ · ATP synthase idle · ET at max":"e⁻ path (dashed) · H⁺ pumping (solid) · ATP synthase returns H⁺";
+  });
+}
 /* ---------- boot ---------- */
-initLadder();initScen();initCards();initWorked();initExam();
+initLadder();initScen();initCards();initWorked();initExam();initOx();
 $$(".quiz[data-topic]").forEach(makeQuiz);
 renderMastery();
 show(location.hash.slice(1)||"intel",true);
