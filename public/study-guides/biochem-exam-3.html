@@ -120,7 +120,7 @@ th{font-weight:600;font-size:13px;color:var(--ink-soft);border-bottom-width:1.5p
 tbody tr:hover{background:var(--surface)}
 td.n,th.n{font-variant-numeric:tabular-nums;white-space:nowrap}
 .up{color:var(--good);font-weight:600}.dn{color:var(--bad);font-weight:600}.eqv{color:var(--ink-faint);font-weight:600}
-.chain{font-family:var(--mono);font-size:14px;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:12px 16px;margin:0 0 16px;overflow-x:auto;white-space:nowrap}
+.chain{font-family:var(--mono);font-size:14px;line-height:1.7;background:var(--surface);border:1px solid var(--rule);border-radius:3px;padding:12px 16px;margin:0 0 16px;overflow-wrap:anywhere}
 
 /* ---------- buttons ---------- */
 .btn{padding:7px 15px;border:1px solid var(--ink);background:var(--ink);color:var(--on-ink);border-radius:2px;font-size:14px;font-weight:500}
@@ -237,7 +237,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   <div class="hero-in">
     <div>
       <h1>Biochemistry Exam&nbsp;3</h1>
-      <p class="lede">Dr. Hosler’s block, built from his redox (10-15-26), oxphos and sugar-catabolism topic lists, the cellular ET handout, six slide sets, and every Hosler question from 2017–2025. Notes for each topic, a practice set for each, flashcards, worked ΔG problems and a cumulative exam.</p>
+      <p class="lede">Dr. Hosler’s block, built from his redox (10-15-26), oxphos, sugar-catabolism and glycogen/gluconeogenesis topic lists, the cellular ET handout, eight slide sets, and every Hosler question from 2017–2025. Notes for each topic, a practice set for each, flashcards, worked ΔG problems and a cumulative exam.</p>
       <div class="hero-meta">
         <span class="pill on">Repeat stems tagged in magenta</span>
         <span class="pill">DENT 604</span>
@@ -272,12 +272,16 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
     <a href="#oxphos" data-t="oxphos">Oxidative phosphorylation <span class="prog" data-p="oxphos"></span></a>
     <a href="#control" data-t="control">Respiratory control <span class="prog" data-p="control"></span></a>
     <a href="#carb" data-t="carb">Sugar catabolism <span class="prog" data-p="carb"></span></a>
+    <a href="#glycogen" data-t="glycogen">Glycogen <span class="prog" data-p="glycogen"></span></a>
+    <a href="#gneo" data-t="gneo">Gluconeogenesis <span class="prog" data-p="gneo"></span></a>
   </div>
   <div class="grp"><h3>Slides (lists pending)</h3>
     <a href="#pdh" data-t="pdh">PDH &amp; TCA cycle <span class="prog" data-p="pdh"></span></a>
     <a href="#faox" data-t="faox">FA oxidation &amp; ethanol <span class="prog" data-p="faox"></span></a>
-    <a href="#glycogen" data-t="glycogen">Glycogen <span class="prog" data-p="glycogen"></span></a>
-    <a href="#gneo" data-t="gneo">Gluconeogenesis <span class="prog" data-p="gneo"></span></a>
+    <a href="#lipid" data-t="lipid">Lipoproteins &amp; FA synthesis <span class="prog" data-p="lipid"></span></a>
+    <a href="#ketone" data-t="ketone">Lipolysis &amp; ketone bodies <span class="prog" data-p="ketone"></span></a>
+    <a href="#reg" data-t="reg">Regulation of liver glucose <span class="prog" data-p="reg"></span></a>
+    <a href="#ppp" data-t="ppp">Pentose phosphate pathway <span class="prog" data-p="ppp"></span></a>
   </div>
   <div class="grp"><h3>Practice</h3>
     <a href="#cards" data-t="cards">Flashcards</a>
@@ -328,6 +332,14 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
         <tr><td>Lipoyllysine carries an acetyl group and two electrons</td><td class="n">2018, 2020, 2022, 2023, 2025</td></tr>
         <tr><td>SGLT1: glucose uptake driven by Na⁺ co-transport</td><td class="n">2017F, 2018, 2020, 2022, 2022F, 2023</td></tr>
         <tr><td>Acyl-CoA DH electrons enter oxphos on UQH₂; each β-ox cycle = NADH + UQH₂ + acetyl-CoA</td><td class="n">2019, 2020, 2022, 2024, 2025</td></tr>
+        <tr><td>Glucose 6-phosphatase lets liver (not muscle) release glucose</td><td class="n">2017, 2019, 2020, 2023, 2024, 2025</td></tr>
+        <tr><td>Chylomicrons are made by intestinal epithelial cells; LPL releases FA + glycerol</td><td class="n">2017–2025</td></tr>
+        <tr><td>Serum albumin carries fatty acids released by adipocytes</td><td class="n">2018F, 2020, 2024, 2025</td></tr>
+        <tr><td>DKA: uncontrolled fatty acid release; ketone synthesis fed by FA oxidation</td><td class="n">2017, 2019, 2020, 2023, 2025</td></tr>
+        <tr><td>Citrate is the carbon exported for FA synthesis; citrate lyase makes cytosolic acetyl-CoA</td><td class="n">2018, 2023, 2024, 2025</td></tr>
+        <tr><td>F-2,6-BP raises PFK-1’s affinity for F-6-P; AMP activates PFK-1; both inhibit F-1,6-BPase</td><td class="n">2017–2025</td></tr>
+        <tr><td>Insulin activates glycogen synthase; glucagon activates glycogen phosphorylase</td><td class="n">2017–2025</td></tr>
+        <tr><td>NADP⁺ activates G6PD; ribose 5-P made from F-6-P + G-3-P when NADPH is high</td><td class="n">2017–2025</td></tr>
       </tbody>
     </table></div>
   </div>
@@ -392,6 +404,17 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
 
   <div class="sec">
+    <h3>What the glycogen/gluconeogenesis topic list tells you directly</h3>
+    <ul>
+      <li>Know <b>why liver and muscle glycogen differ</b>: glucose 6-phosphatase is restricted to liver and kidney cortex.</li>
+      <li>Know the enzymes of synthesis and breakdown, the <b>three bypassed glycolytic steps</b>, and the <b>two reactions from pyruvate to PEP</b>.</li>
+      <li>Fatty acid oxidation in the fasting liver makes the acetyl-CoA that <b>activates pyruvate carboxylase</b>.</li>
+      <li>Know the five substrates and where they come from, how <b>lactate and alanine</b> enter, and the <b>cost difference between alanine (4 NTP + 2 NADH) and glycerol (none)</b>, with the reason.</li>
+      <li>Not on the list: precursor percentages, glycogen storage diseases, the glutamine and lactate cost calculations.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
     <h3>About the answer keys used here</h3>
     <p>2022–2025 answers come from Hosler’s keyed file. The 2017–2020 files had no key, so those answers were worked out from his handout and slides; they carry a gold “key derived” tag. Predicted questions are new stems written for topic-list items he has rarely tested; they carry a teal tag.</p>
   </div>
@@ -429,6 +452,11 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li><b>TCA wheel</b> with the 4 dehydrogenases, 2 CO₂ steps, GTP, and the isocitrate DH / α-KG DH regulators.</li>
       <li><b>Glycogen</b>: synthesis chain (phosphoglucomutase → UDP-glucose → glycogenin → synthase α1→4 → branching 6–8 to α1→6 at 11); breakdown (phosphorylase → G-1-P, stops at 4; debranching 3 to α1→4, frees α1→6 glucose); G-6-Pase liver only.</li>
       <li><b>Gluconeogenesis</b>: the 4 bypass enzymes with location and cost; costs per precursor (pyruvate 4 NTP + 2 NADH, lactate 4 NTP + 1 NADH, glycerol and glutamine ~0); precursor shares (lactate 50, glutamine 15, alanine 12, glycerol 8, other AA 15); not Leu or Lys.</li>
+      <li><b>Lipoproteins</b>: chylomicron (intestine, ApoB-48) vs VLDL (liver, ApoB-100); ApoC-II activates LPL, ApoE clears remnants (both from HDL); LPL = receptor + enzyme → FA + glycerol.</li>
+      <li><b>FA synthesis</b>: citrate export → citrate lyase → ACC (insulin +, citrate +, palmitoyl-CoA −) → malonyl-CoA ⊣ CPT I → FAS (ACP, 2C from malonyl-CoA, NADPH) → palmitate; NADPH from PPP + malic enzyme.</li>
+      <li><b>Lipolysis and ketones</b>: perilipin–PKA; ATGL → HSL → MGL; albumin carries FA; thiolase → HMG-CoA synthase → lyase → acetoacetate ⇌ β-HB; liver lacks succinyl-CoA:acetoacetate CoA transferase; DKA three causes.</li>
+      <li><b>Regulation grid</b>: fed vs fasting arrows; synthase/phosphorylase opposite phosphorylation; bifunctional enzyme (insulin → dephos → PFK-2 → F-2,6-BP ↑); PFK-1 + F-2,6-BP, AMP / − ATP, citrate; F-1,6-BPase − F-2,6-BP, AMP; liver phosphorylase − glucose; muscle phosphorylase + AMP, Ca²⁺, − ATP.</li>
+      <li><b>PPP</b>: G6PD (+ NADP⁺, − NADPH) → 2 NADPH + CO₂ + ribulose 5-P; reversal pulls F-6-P + G-3-P when only ribose 5-P is needed; NADPH uses list.</li>
       <li><b>FA entry</b>: activation sites (LCFA cytoplasm, MCFA matrix), CPT I → translocase → CPT II, malonyl-CoA ⊣ CPT I; one β-ox cycle; acyl-CoA DH isozyme ranges.</li>
     </ol>
   </div>
@@ -1127,7 +1155,7 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
       <li><b>1,3-BPG and PEP</b> phosphorylate ADP in the active sites of <b>phosphoglycerate kinase</b> and <b>pyruvate kinase</b>: substrate-level phosphorylation.</li>
       <li>F-1,6-BP is an intermediate of glucose catabolism but not of fatty acid catabolism. GAPDH runs in both glycolysis and gluconeogenesis.</li>
     </ul>
-    <div class="box warn"><p>PFK-1 regulation (AMP, fructose 2,6-bisphosphate, ATP, citrate) isn’t on this list. It shows up on many old exams, so expect it with the regulation lecture.</p></div>
+    <div class="box key"><p>PFK-1 regulation (AMP, fructose 2,6-bisphosphate, ATP, citrate) is covered in the <a href="#reg">Regulation</a> section.</p></div>
   </div>
 
   <div class="sec">
@@ -1394,39 +1422,52 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
 <!-- ================= GLYCOGEN ================= -->
 <section class="topic" id="t-glycogen">
   <div class="topic-head">
-    <div class="src">Glycogen &amp; gluconeogenesis slides 1–10 · Topic list not yet posted</div>
+    <div class="src">Glycogen, glycogenolysis &amp; gluconeogenesis topic list 2026 (items 1–5) · Slides 1–10</div>
     <h2>Glycogen synthesis and glycogenolysis</h2>
-    <p class="obj">Liver stores glucose as glycogen in the fed state and breaks it down in the fasting state; only liver can turn the product into free glucose for blood. This lecture covers the pathways; their regulation is a separate lecture.</p>
+    <p class="obj">Liver stores glucose as glycogen in the fed state and breaks it down to hold blood glucose in the fasting state; muscle keeps its glycogen for itself. Regulation of these pathways is a separate lecture.</p>
   </div>
 
   <div class="sec">
-    <h3>Liver glucose homeostasis</h3>
+    <h3>Role of liver glycogen and gluconeogenesis (item 1)</h3>
     <ul>
-      <li>Liver takes up large amounts of glucose in the fed state, then holds blood glucose at <b>4–5 mM</b> in the fasting state by <b>glycogenolysis</b> and <b>gluconeogenesis</b>.</li>
-      <li>Tissues that depend on a constant glucose supply: <b>brain, red blood cells, exercising muscle, kidney medulla, lens, cornea, testes</b>.</li>
+      <li>Liver takes up large amounts of glucose in the fed state, then keeps blood glucose at a minimum of <b>4–5 mM</b> during <b>fasting and starvation</b> by <b>glycogenolysis</b> and <b>gluconeogenesis</b>.</li>
+      <li>Tissues that depend on a constant glucose supply (slide 2): <b>brain, red blood cells, exercising muscle, kidney medulla, lens, cornea, testes</b>.</li>
     </ul>
   </div>
 
   <div class="sec">
-    <h3>Glycogen: what and where</h3>
+    <h3>Liver glycogen vs muscle glycogen (item 2)</h3>
+    <div class="tbl"><table>
+      <thead><tr><th></th><th>Liver glycogen</th><th>Skeletal muscle glycogen</th></tr></thead>
+      <tbody>
+        <tr><td>Purpose</td><td>Maintain <b>blood glucose</b> for the whole body</td><td>Fuel for the <b>muscle cell itself</b></td></tr>
+        <tr><td>Fate of G-6-P from glycogenolysis</td><td>Glucose 6-phosphatase → free glucose → blood</td><td>Enters <b>glycolysis</b> inside the muscle</td></tr>
+        <tr><td>Glucose 6-phosphatase?</td><td><b>Yes</b> (also kidney cortex)</td><td><b>No</b></td></tr>
+      </tbody>
+    </table></div>
+    <p>The whole difference comes from restricting <b>glucose 6-phosphatase to liver cells and cells of the kidney cortex</b>. That’s why only liver (and renal cortex) can release free glucose into blood.</p>
+    <p>Glycogen is made mainly by liver and skeletal muscle; <b>brain, adipose and red blood cells make none</b>.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Structure and location (item 3)</h3>
     <ul>
-      <li>A storage polymer of glucose made mainly by <b>liver and skeletal muscle</b>, stored as granules in the cytoplasm.</li>
-      <li>Linear chains are α(1→4); branch points are α(1→6). Its branching is <b>dichotomous: every branch branches</b>.</li>
-      <li><b>Brain, adipose and red blood cells make none.</b></li>
-      <li>Tissues other than liver don’t export glycogen-derived glucose: only liver has <b>glucose 6-phosphatase</b> to turn G-6-P into glucose.</li>
+      <li>A storage polymer of glucose: linear chains joined <b>α(1→4)</b>, branch points <b>α(1→6)</b>.</li>
+      <li>Branching is <b>dichotomous: every branch branches</b>, giving many non-reducing ends where enzymes add or remove glucose.</li>
+      <li>Stored as <b>glycogen granules in the cytoplasm</b>, built on the protein <b>glycogenin</b>.</li>
     </ul>
   </div>
 
   <div class="sec">
-    <h3>Synthesis</h3>
+    <h3>Synthesis (item 4)</h3>
     <p>All cellular oligosaccharides and polysaccharides are built from <b>UDP-monosaccharide</b> precursors. For glycogen, that’s <b>UDP-glucose</b>.</p>
     <div class="tbl"><table>
-      <thead><tr><th>Enzyme</th><th>Reaction</th></tr></thead>
+      <thead><tr><th>Enzyme</th><th>Activity</th></tr></thead>
       <tbody>
         <tr><td><b>Phosphoglucomutase</b></td><td>G-6-P → G-1-P</td></tr>
         <tr><td>UDP-glucose pyrophosphorylase (figure)</td><td>G-1-P + UTP → UDP-glucose + PPi; pyrophosphatase splits PPi → 2 Pi</td></tr>
         <tr><td><b>Glycogenin</b></td><td>Glycosyltransferase that attaches glucose monomers <b>to itself</b> (on a tyrosine), priming the chain</td></tr>
-        <tr><td><b>Glycogen synthase</b></td><td>Glycosyltransferase that adds glucose from UDP-glucose by <b>α(1→4)</b> bonds to an existing polymer (non-reducing ends)</td></tr>
+        <tr><td><b>Glycogen synthase</b></td><td>Glycosyltransferase that adds glucose from UDP-glucose by <b>α(1→4)</b> bonds to an existing polymer</td></tr>
         <tr><td><b>Branching enzyme</b> (amylo-4:6-transferase)</td><td>When a chain reaches <b>11 residues</b>, removes <b>6–8</b> and attaches them to another glucosyl unit by an <b>α(1→6)</b> bond</td></tr>
       </tbody>
     </table></div>
@@ -1434,24 +1475,23 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
 
   <div class="sec">
-    <h3>Glycogenolysis</h3>
+    <h3>Breakdown: glycogenolysis (item 5)</h3>
     <div class="tbl"><table>
-      <thead><tr><th>Enzyme</th><th>What it does</th></tr></thead>
+      <thead><tr><th>Enzyme</th><th>Activity</th></tr></thead>
       <tbody>
-        <tr><td><b>Glycogen phosphorylase</b> (PLP cofactor)</td><td>Uses Pi to release <b>glucose 1-P</b> one at a time from α(1→4) bonds (phosphorolysis). Stops when a branch is down to <b>4 residues</b>, leaving a <b>limit dextran</b></td></tr>
+        <tr><td><b>Glycogen phosphorylase</b> (PLP cofactor)</td><td>Uses Pi to release <b>glucose 1-P</b> one at a time from α(1→4) bonds. Stops 4 residues from a branch, leaving a <b>limit dextran</b></td></tr>
         <tr><td><b>Debranching enzyme</b>, activity 1</td><td>Cuts <b>3 residues</b> as a unit from the limit dextran and attaches them to a longer chain by an <b>α(1→4)</b> bond</td></tr>
         <tr><td><b>Debranching enzyme</b>, activity 2</td><td>Releases the single α(1→6)-linked residue as <b>free glucose</b></td></tr>
         <tr><td>Phosphoglucomutase</td><td>G-1-P → G-6-P</td></tr>
-        <tr><td><b>Glucose 6-phosphatase</b> (liver)</td><td>G-6-P → glucose for export</td></tr>
+        <tr><td><b>Glucose 6-phosphatase</b> (liver, kidney cortex)</td><td>G-6-P → glucose for export</td></tr>
       </tbody>
     </table></div>
     <ul>
-      <li>Products of glycogenolysis are roughly <b>8 glucose 1-P : 1 free glucose</b> (figure).</li>
-      <li>In muscle and other non-liver cells, G-6-P <b>enters glycolysis</b> (or another pathway); it can’t leave as glucose.</li>
+      <li>Products are roughly <b>8 glucose 1-P : 1 free glucose</b> (figure).</li>
       <li>Glycogenolysis has no NAD⁺-dependent dehydrogenase.</li>
     </ul>
     <div class="box warn"><p><b>Two branching numbers people swap.</b> Branching enzyme moves <b>6–8</b> residues to an <b>α(1→6)</b> link. Debranching enzyme moves <b>3</b> residues to an <b>α(1→4)</b> link, then frees the last α(1→6) glucose.</p></div>
-    <p>Figure boxes on his slides name glycogen storage diseases (von Gierke: glucose 6-phosphatase; McArdle: muscle glycogen phosphorylase; Pompe: lysosomal α-1,4-glucosidase). They aren’t in his slide text, so treat them as lower priority until the topic list arrives.</p>
+    <p>Figure boxes name glycogen storage diseases (von Gierke, McArdle, Pompe). They’re not on the topic list; skip them for this exam.</p>
   </div>
   <div class="quiz" data-topic="glycogen"></div>
 </section>
@@ -1459,9 +1499,9 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
 <!-- ================= GLUCONEOGENESIS ================= -->
 <section class="topic" id="t-gneo">
   <div class="topic-head">
-    <div class="src">Glycogen &amp; gluconeogenesis slides 11–28 · Topic list not yet posted</div>
+    <div class="src">Glycogen, glycogenolysis &amp; gluconeogenesis topic list 2026 (items 6–11) · Slides 11–28</div>
     <h2>Gluconeogenesis</h2>
-    <p class="obj">Liver (90%) and renal cortex (10%) rebuild glucose from lactate, amino acids and glycerol by reversing glycolysis, with four special enzymes to get around its three irreversible steps, paid for by fatty acid oxidation.</p>
+    <p class="obj">Liver (90%) and renal cortex (10%) rebuild glucose from lactate, amino acids and glycerol by reversing glycolysis, using four enzymes to get around its three exergonic steps, powered by fatty acid oxidation.</p>
   </div>
 
   <div class="sec">
@@ -1473,83 +1513,407 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
 
   <div class="sec">
-    <h3>The three bypasses</h3>
-    <p>Gluconeogenesis reverses most glycolytic reactions with the same enzymes. Three glycolytic steps have a large negative ΔG and can’t be reversed, so different enzymes go around them.</p>
+    <h3>Bypassing three exergonic steps (items 6–8)</h3>
+    <p><b>(6)</b> Gluconeogenesis reverses glycolysis, using the same enzymes for reversible steps. The three glycolytic reactions with a large negative ΔG are bypassed by different reactions: <b>glucokinase/hexokinase, PFK-1 and pyruvate kinase</b>.</p>
     <div class="tbl"><table>
-      <thead><tr><th>Irreversible glycolytic step</th><th>Gluconeogenic bypass</th><th>Location</th><th>Cost</th></tr></thead>
+      <thead><tr><th>Glycolytic step bypassed</th><th>Gluconeogenic reaction</th><th>Location</th><th>Cost</th></tr></thead>
       <tbody>
         <tr><td rowspan="2">Pyruvate kinase (PEP → pyruvate)</td><td><b>Pyruvate carboxylase</b>: pyruvate + HCO₃⁻ + ATP → OAA</td><td>Matrix only</td><td>1 ATP</td></tr>
         <tr><td><b>PEP carboxykinase (PEPCK)</b>: OAA + GTP → PEP + CO₂ + GDP</td><td>Cytoplasm</td><td>1 GTP</td></tr>
         <tr><td>PFK-1 (F-6-P → F-1,6-BP)</td><td><b>Fructose 1,6-bisphosphatase</b>: F-1,6-BP + H₂O → F-6-P + Pi</td><td>Cytoplasm</td><td>None</td></tr>
-        <tr><td>Glucokinase / hexokinase (glucose → G-6-P)</td><td><b>Glucose 6-phosphatase</b>: G-6-P + H₂O → glucose + Pi</td><td>Liver and renal cortex</td><td>None</td></tr>
+        <tr><td>Glucokinase / hexokinase (glucose → G-6-P)</td><td><b>Glucose 6-phosphatase</b>: G-6-P + H₂O → glucose + Pi</td><td><b>Unique to liver and renal cortex</b></td><td>None</td></tr>
       </tbody>
     </table></div>
     <ul>
-      <li>Reversing pyruvate kinase takes <b>two NTP-requiring reactions</b>. The two ATP-driven phosphorylations of glycolysis are replaced by two <b>energy-independent phosphatases</b>.</li>
-      <li>Because pyruvate carboxylase is only in the matrix, <b>OAA is transaminated to aspartate</b> to cross the IMM, then turned back into OAA in the cytoplasm, both by <b>aspartate transaminase</b>.</li>
-      <li>Every reaction <b>before triose phosphate isomerase runs twice</b> per glucose made.</li>
-      <li>Glucose leaves the hepatocyte through <b>GLUT-2 or GLUT-1</b>.</li>
-      <li>Shared with glycolysis (reversible): enolase, phosphoglycerate mutase, phosphoglycerate kinase, <b>GAPDH</b>, triose phosphate isomerase, aldolase, phosphoglucose isomerase.</li>
-      <li>Pyruvate carboxylase is activated by acetyl-CoA, which piles up from fatty acid oxidation in the fasting liver.</li>
+      <li><b>(7)</b> Two reactions convert pyruvate to PEP: <b>pyruvate carboxylase</b>, then <b>PEPCK</b>.</li>
+      <li><b>(7)</b> In the fasting liver, <b>fatty acid oxidation generates the acetyl-CoA that activates pyruvate carboxylase</b>.</li>
+      <li><b>(8)</b> The two ATP-driven phosphorylations of glycolysis are replaced by two <b>energy-independent phosphatases</b>: fructose 1,6-bisphosphatase and glucose 6-phosphatase.</li>
+      <li>Because pyruvate carboxylase is only in the matrix, OAA is <b>transaminated to aspartate</b> to cross the IMM, then turned back into OAA in the cytoplasm, both by aspartate transaminase (slide 13).</li>
+      <li>Every reaction <b>before triose phosphate isomerase runs twice</b> per glucose made. Glucose leaves the hepatocyte through <b>GLUT-2 or GLUT-1</b>.</li>
+      <li>Shared, reversible enzymes include enolase, phosphoglycerate mutase, phosphoglycerate kinase, <b>GAPDH</b>, triose phosphate isomerase and aldolase.</li>
     </ul>
     <div class="chain">2 Pyruvate → 2 OAA → 2 PEP → … → 2 1,3-BPG → 2 G-3-P (via DHAP) → F-1,6-BP → F-6-P → G-6-P → glucose</div>
-    <div class="box warn"><p><b>Glucose 6-phosphatase location.</b> Slides 3 and 10 say only liver has it; slide 15 says liver and renal cortex. For “allows liver but not muscle to release glucose,” the answer is glucose 6-phosphatase either way. If an option says kidney cortex also has it, that matches slide 15.</p></div>
   </div>
 
   <div class="sec">
-    <h3>Energy cost</h3>
+    <h3>Major substrates and where they come from (item 9)</h3>
     <div class="tbl"><table>
-      <thead><tr><th>Starting material</th><th>Cost per glucose (Hosler)</th><th>Why</th></tr></thead>
-      <tbody>
-        <tr><td>Pyruvate (or alanine)</td><td><b>4 NTP + 2 NADH</b></td><td>2 NTP more than glycolysis yields</td></tr>
-        <tr><td>Lactate</td><td><b>4 NTP + 1 NADH</b></td><td>Oxidizing lactate to pyruvate in the cytoplasm supplies NADH (his slide says one; strictly, 2 lactate per glucose give 2)</td></tr>
-        <tr><td>Glycerol</td><td><b>No net energy</b></td><td>Enters as DHAP, skipping the 4 NTP + 2 NADH steps; making 2 DHAP costs 2 ATP but yields 2 NADH, which oxphos turns into more than 2 ATP</td></tr>
-        <tr><td>Glutamine</td><td><b>Zero overall</b></td><td>Glutamine → OAA yields 1 NTP, 3 NADH, 1 UQH₂; 1 NADH + 1 UQH₂ give ≥3 NTP by oxphos</td></tr>
-      </tbody>
-    </table></div>
-    <ul>
-      <li>Liver and kidney cortex get the NTP and NADH for gluconeogenesis from <b>fatty acid oxidation</b>, their main fuel in the fasting state.</li>
-    </ul>
-    <div class="box warn"><p>Most textbooks and boards count gluconeogenesis from pyruvate as <b>6 high-energy phosphates</b> (4 ATP + 2 GTP) plus 2 NADH. Hosler’s slide says 4 NTP + 2 NADH. On his exam, use his numbers; on boards, expect 6.</p></div>
-  </div>
-
-  <div class="sec">
-    <h3>Precursors during an overnight fast</h3>
-    <div class="tbl"><table>
-      <thead><tr><th>Precursor</th><th>Source and process</th><th class="n">Share</th></tr></thead>
+      <thead><tr><th>Substrate</th><th>Source</th><th class="n">Overnight-fast share (slide)</th></tr></thead>
       <tbody>
         <tr><td><b>Lactate</b></td><td>RBCs, skin, skeletal muscle, intestinal epithelium (the <b>Cori cycle</b>)</td><td class="n">~50%</td></tr>
-        <tr><td><b>Glutamine</b></td><td>Muscle limited proteolysis; Leu, Ile, Val pass amino groups to α-KG → glutamate; glutamine synthetase adds a second NH₃</td><td class="n">~15%</td></tr>
-        <tr><td><b>Alanine</b></td><td>Muscle: ~25% straight from proteolysis, ~75% by transamination of pyruvate by alanine aminotransferase (the <b>alanine cycle</b>)</td><td class="n">~12%</td></tr>
+        <tr><td><b>Glutamine</b></td><td>Skeletal muscle limited proteolysis; Leu, Ile, Val pass amino groups to α-KG → glutamate; glutamine synthetase adds a second NH₃</td><td class="n">~15%</td></tr>
+        <tr><td><b>Alanine</b></td><td>Skeletal muscle: ~25% straight from proteolysis, ~75% by transamination of pyruvate (the <b>alanine cycle</b>)</td><td class="n">~12%</td></tr>
         <tr><td><b>Glycerol</b></td><td>TAG lipolysis in adipocytes</td><td class="n">~8%</td></tr>
-        <tr><td>Other glucogenic amino acids</td><td>Released intact from muscle proteolysis (Gly, Ser, Thr, Pro, Arg, His, Met, Cys, Phe, Tyr, Trp)</td><td class="n">~15%</td></tr>
+        <tr><td>Other <b>glucogenic amino acids</b></td><td>Released intact from muscle proteolysis</td><td class="n">~15%</td></tr>
       </tbody>
     </table></div>
-    <div class="box hy"><p><b>All amino acids except leucine and lysine</b> can feed gluconeogenesis, because their catabolism makes OAA or pyruvate. Fatty acids, acetyl-CoA and ketone bodies <b>cannot</b>: acetyl-CoA can’t be turned back into pyruvate. In a prolonged fast, amino acids from muscle are the main carbon source.</p></div>
+    <div class="box hy"><p><b>All amino acids except leucine and lysine</b> are glucogenic, because their catabolism makes OAA or pyruvate. Fatty acids, acetyl-CoA and ketone bodies <b>cannot</b> make glucose, since acetyl-CoA can’t become pyruvate. In a prolonged fast, muscle amino acids are the main carbon source. The percentages aren’t on the list; know the five substrates and their sources.</p></div>
   </div>
 
   <div class="sec">
-    <h3>How each precursor gets in</h3>
+    <h3>How lactate and alanine enter (item 10)</h3>
     <h4>Lactate: the Cori cycle</h4>
-    <ul>
-      <li>Liver takes up blood lactate, <b>lactate DH</b> makes pyruvate + NADH, pyruvate enters mitochondria for <b>pyruvate carboxylase</b>.</li>
-      <li>Cycle: liver glucose → blood → muscle (and RBCs) → lactate → blood → liver → glucose. Useful to know for boards.</li>
-    </ul>
-    <h4>Glutamine (from muscle)</h4>
-    <div class="chain">Glutamine —glutaminase→ glutamate + NH₄⁺ —glutamate DH (NAD⁺)→ α-KG + NH₄⁺ + NADH → TCA steps → OAA</div>
-    <p>Liver removes NH₃ from the glutamine side chain with <b>glutaminase</b>.</p>
+    <div class="chain">Blood lactate → liver: lactate + NAD⁺ —lactate DH→ pyruvate + NADH → mitochondria → pyruvate carboxylase → OAA → PEPCK → … → glucose</div>
+    <p>Cycle: liver glucose → blood → muscle and RBCs → lactate → blood → liver → glucose.</p>
     <h4>Alanine: the alanine cycle</h4>
+    <div class="chain">Muscle: pyruvate + glutamate —ALT→ alanine + α-KG → blood → liver: alanine + α-KG —ALT (reversed)→ pyruvate + glutamate → gluconeogenesis</div>
     <ul>
-      <li>In fasting and starvation, muscle releases alanine to <b>carry ammonia to the liver</b> and supply carbon.</li>
-      <li><b>Alanine aminotransferase (ALT)</b> makes alanine from pyruvate in muscle; in liver ALT <b>runs in reverse</b> to make pyruvate. Same cost as from pyruvate: 4 NTP + 2 NADH.</li>
-      <li>The amino group goes to α-KG → glutamate → glutamate DH releases NH₄⁺ for urea.</li>
-      <li>Muscle releases <b>glutamine and alanine</b> to move ammonia to the liver.</li>
+      <li>In fasting and starvation, muscle releases alanine to <b>carry ammonia to the liver</b> and to supply carbon as pyruvate.</li>
+      <li><b>Alanine aminotransferase</b> makes alanine in muscle and <b>runs in reverse</b> in liver. Glutamate DH then releases the NH₄⁺ for urea.</li>
+      <li>Muscle releases <b>glutamine and alanine</b> to move ammonia to the liver. Liver removes the glutamine side-chain NH₃ with <b>glutaminase</b>.</li>
     </ul>
-    <h4>Glycerol</h4>
-    <div class="chain">Glycerol —glycerol kinase (ATP)→ glycerol 3-P —glycerol 3-P DH (NAD⁺)→ DHAP → gluconeogenesis</div>
-    <p>Two glycerol (3C) → two DHAP → one glucose (6C). In a fasting type 1 diabetic without insulin, glycerol from runaway lipolysis is a major source of the hyperglycemic glucose.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Energy: alanine vs glycerol (item 11)</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Substrate</th><th>NTP + NADH per glucose</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td><b>Alanine</b> (same as pyruvate)</td><td><b>4 NTP + 2 NADH</b></td><td>Enters as pyruvate, so it must pass pyruvate carboxylase, PEPCK, phosphoglycerate kinase and GAPDH (the NTP- and NADH-using steps)</td></tr>
+        <tr><td><b>Glycerol</b></td><td><b>No net energy</b></td><td>Enters as <b>DHAP</b>, above those steps, so it skips the 4 NTP + 2 NADH. Making 2 DHAP costs 2 ATP but yields 2 NADH, which oxphos turns into more than 2 ATP</td></tr>
+      </tbody>
+    </table></div>
+    <div class="chain">Glycerol —glycerol kinase (ATP)→ glycerol 3-P —glycerol 3-P DH (NAD⁺)→ DHAP → F-1,6-BP → glucose (2 glycerol per glucose)</div>
+    <ul>
+      <li>Liver and kidney cortex get the NTP and NADH from <b>fatty acid oxidation</b>, their main fasting fuel.</li>
+      <li>Slide extras, not on the list: lactate 4 NTP + 1 NADH (his slide; strictly 2 lactate give 2 NADH); glutamine about zero net (glutamine → OAA yields 1 NTP, 3 NADH, 1 UQH₂).</li>
+      <li>A fasting type 1 diabetic without insulin turns glycerol from runaway lipolysis into hyperglycemic glucose.</li>
+    </ul>
+    <div class="box warn"><p>Boards usually count gluconeogenesis from pyruvate as <b>6 high-energy phosphates</b> (4 ATP + 2 GTP) plus 2 NADH. Hosler’s slide says 4 NTP + 2 NADH. Use his number on his exam.</p></div>
   </div>
   <div class="quiz" data-topic="gneo"></div>
+</section>
+
+<!-- ================= LIPID TRANSPORT & FA SYNTHESIS ================= -->
+<section class="topic" id="t-lipid">
+  <div class="topic-head">
+    <div class="src">Fatty acid &amp; ketone body metabolism slides 1–25 · Topic list not yet posted</div>
+    <h2>Dietary fat, lipoproteins and fatty acid synthesis</h2>
+    <p class="obj">In the fed state, dietary fat travels from gut to tissues in chylomicrons, excess fuel in liver becomes palmitate and TAG that leaves in VLDL, and lipoprotein lipase hands the fatty acids to muscle, heart and adipose.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Ingested lipids and cholesterol</h3>
+    <ul>
+      <li>We eat mainly <b>triacylglycerol (TAG)</b>, plus phospholipids and cholesterol.</li>
+      <li><b>Humans don’t catabolize cholesterol for energy.</b> It goes into membranes, bile salts and steroid hormones, or is excreted, much of it in feces as bile salts.</li>
+      <li>We also make cholesterol from acetyl-CoA; <b>statins</b> inhibit that synthesis to lower blood cholesterol.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Digestion and chylomicrons</h3>
+    <ol>
+      <li>Fat forms <b>globules</b> in the small intestine.</li>
+      <li>The liver adds <b>bile salts</b> (detergents such as <b>cholate</b>, made by hydroxylating cholesterol). They <b>emulsify</b> globules into small droplets; they do not hydrolyze anything.</li>
+      <li><b>Pancreatic lipases</b> turn each TAG into <b>2 fatty acids + 1 monoacylglycerol</b>.</li>
+      <li>Inside <b>intestinal epithelial cells</b>, acyl transferases rebuild TAG starting from monoacylglycerol.</li>
+      <li>TAG and cholesterol esters are packaged into <b>chylomicrons</b> and released (via lymph) into the bloodstream.</li>
+    </ol>
+    <p>A chylomicron is mostly TAG inside a <b>monolayer</b> of membrane lipid, with recognition proteins (apoproteins) in that monolayer.</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Apoprotein</th><th>Where it comes from</th><th>Job</th></tr></thead>
+      <tbody>
+        <tr><td><b>ApoB-48</b></td><td>Inserted when the chylomicron forms (intestine)</td><td>Binding site recognized by the <b>receptor</b> function of lipoprotein lipase</td></tr>
+        <tr><td><b>ApoB-100</b></td><td>VLDL (liver)</td><td>Same role on VLDL: recognized by LPL</td></tr>
+        <tr><td><b>ApoC-II</b></td><td>Transferred from <b>HDL</b> in blood</td><td><b>Activates the lipase activity</b> of LPL</td></tr>
+        <tr><td><b>ApoE</b></td><td>Transferred from <b>HDL</b> in blood</td><td>Helps the <b>liver clear chylomicron remnants</b></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>Lipoprotein lipase (LPL)</h3>
+    <ul>
+      <li>Secreted by cells that use fatty acids as fuel (<b>skeletal muscle, heart, adrenal, kidney, intestine, lung, mammary gland</b>) and by adipose, then attached to the <b>endothelium of their capillaries</b>.</li>
+      <li>LPL is <b>both a receptor and an enzyme</b>: it binds passing chylomicrons and VLDL, then hydrolyzes their TAG to <b>free fatty acids + glycerol</b>.</li>
+      <li>Fatty acids go into the underlying cells; glycerol may be taken up or left in blood for the <b>liver</b>.</li>
+      <li>The chylomicron remnant is cleared by the liver (ApoE). LPL is most active in the <b>fed state</b>; insulin promotes it in adipose (slide 25 figure).</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Fatty acid synthesis (fed state)</h3>
+    <div class="eqbox"><div><span class="f">Acetyl-CoA + ATP + NADPH + H⁺ → palmitate + CoA + ADP + Pi + H₂O + NADP⁺</span><span class="g">Overall reaction as written on slide 13 (unbalanced)</span></div></div>
+    <ul>
+      <li>Happens in the <b>cytoplasm</b>, mainly in <b>liver and lactating mammary gland</b>, less in adipose. Fed state: <b>high insulin/low glucagon</b>.</li>
+    </ul>
+    <h4>Why liver makes fat</h4>
+    <ol>
+      <li>Any mix of fuels (carbohydrate, fat, protein, ethanol) beyond what catabolism can handle raises <b>NADH/NAD⁺</b>; the NAD⁺-dependent TCA dehydrogenases slow.</li>
+      <li><b>Citrate accumulates</b> and is <b>exported</b> from the matrix to the cytoplasm. <b>Acetyl-CoA can’t cross the IMM.</b></li>
+      <li><b>Citrate lyase</b> (ATP) splits citrate into <b>acetyl-CoA + OAA</b> in the cytoplasm.</li>
+      <li>Cytosolic <b>malate DH</b> reduces OAA to malate; <b>malic enzyme</b> oxidizes malate to pyruvate + CO₂, making <b>NADPH</b>. Pyruvate returns to the matrix.</li>
+    </ol>
+    <p><b>NADPH sources:</b> the <b>pentose phosphate pathway</b> and <b>malic enzyme</b>.</p>
+    <h4>Acetyl-CoA carboxylase: the committed step</h4>
+    <div class="eqbox"><div><span class="f">Acetyl-CoA + HCO₃⁻ + ATP → malonyl-CoA</span><span class="g">Irreversible, committed, highly regulated; biotin enzyme</span></div></div>
+    <div class="tbl"><table>
+      <thead><tr><th>Control</th><th>Activates</th><th>Inhibits</th></tr></thead>
+      <tbody>
+        <tr><td>Hormonal</td><td><b>High insulin/glucagon</b> (more enzyme and more activity)</td><td>Glucagon</td></tr>
+        <tr><td>Allosteric</td><td><b>Citrate</b></td><td><b>Palmitoyl-CoA</b></td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Malonyl-CoA inhibits CPT I</b>, so newly made fatty acids aren’t immediately oxidized (no futile cycle).</p>
+    <h4>Fatty acid synthase</h4>
+    <ul>
+      <li>One large polypeptide with <b>seven domains, seven activities and seven active sites</b>.</li>
+      <li>One domain is <b>acyl carrier protein (ACP)</b>; its long flexible linker (like CoA) <b>swings the growing chain</b> between active sites.</li>
+      <li>The chain grows <b>2 C at a time</b>, each delivered by <b>3-C malonyl-CoA</b>; <b>CO₂ release</b> helps drive the reaction.</li>
+      <li>Its reductions are the reverse of β-oxidation but use <b>NADPH</b>; a high NADPH/NADP⁺ helps drive synthesis.</li>
+      <li>End product: <b>palmitate (16:0)</b>, no double bonds.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>VLDL and fat storage in adipose</h3>
+    <ul>
+      <li><b>VLDL</b> is assembled by the <b>liver</b> to export TAG made there; structurally like chylomicrons, with <b>ApoB-100</b>.</li>
+      <li>Most VLDL TAG comes from <b>recycled fatty acids</b>; less from de novo synthesis.</li>
+      <li>Liver TAG is built from <b>glycerol 3-phosphate + fatty acyl-CoA</b> (fatty acyl-CoA synthetase plus a few acyl transferases).</li>
+      <li>Moving TAG from a lipoprotein into an adipocyte means <b>breaking it down (LPL), importing the fatty acids, and rebuilding TAG</b> inside. Adipose makes glycerol 3-P from glucose (DHAP reduced by NADH); lipoprotein glycerol goes back to the liver.</li>
+    </ul>
+    <div class="chain">Excess glucose → pyruvate → acetyl-CoA → citrate (exported) → citrate lyase → acetyl-CoA → malonyl-CoA → palmitate → TAG → VLDL → LPL → adipose TAG</div>
+  </div>
+  <div class="quiz" data-topic="lipid"></div>
+</section>
+
+<!-- ================= LIPOLYSIS & KETONE BODIES ================= -->
+<section class="topic" id="t-ketone">
+  <div class="topic-head">
+    <div class="src">Fatty acid &amp; ketone body metabolism slides 26–38 · Topic list not yet posted</div>
+    <h2>Lipolysis and ketone bodies</h2>
+    <p class="obj">In the fasting state, adipocytes release fatty acids (carried on serum albumin) and glycerol; the liver oxidizes the fatty acids and turns the excess acetyl-CoA into ketone bodies for other tissues, including the starving brain.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Lipolysis in white adipose</h3>
+    <ul>
+      <li>Adipocytes store TAG in one large lipid droplet. In the fasting state, cytoplasmic lipases “nibble away” at its edges: <b>lipolysis</b>.</li>
+      <li><b>Perilipins</b> coat the droplet and protect it from lipases.</li>
+      <li><b>Epinephrine</b> binds its receptor → <b>protein kinase A phosphorylates perilipins</b> → they move and open gaps → lipases reach the TAG.</li>
+      <li><b>Insulin strongly inhibits lipolysis</b> in the fed state by keeping perilipin protection in place.</li>
+    </ul>
+    <div class="tbl"><table>
+      <thead><tr><th>Order</th><th>Lipase</th><th>Removes</th></tr></thead>
+      <tbody>
+        <tr><td class="n">1</td><td><b>Adipose triglyceride lipase (ATGL)</b></td><td>First fatty acid</td></tr>
+        <tr><td class="n">2</td><td><b>Hormone-sensitive lipase (HSL)</b></td><td>Second fatty acid; strongly inhibited by insulin (via dephosphorylation), released in fasting</td></tr>
+        <tr><td class="n">3</td><td><b>Monoglyceride lipase (MGL)</b></td><td>Third fatty acid → free glycerol</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box warn"><p>His 2019 final keyed <b>glucagon</b> as the hormone that promotes fatty acid release from adipocytes; the 2026 slides name <b>epinephrine</b> (via PKA). Both raise cAMP and PKA. Expect the hormonal-regulation lecture to settle which he wants.</p></div>
+  </div>
+
+  <div class="sec">
+    <h3>Where the products go</h3>
+    <ul>
+      <li><b>Free fatty acids</b> are released to blood, <b>bound by serum albumin</b>, and delivered to tissues that oxidize them.</li>
+      <li><b>Glycerol travels free</b> in blood and is taken up by several cell types, but mostly by the <b>liver</b> (gluconeogenesis).</li>
+      <li>Fatty acids not used for β-oxidation are re-esterified to glycerol in the liver and sent out again in <b>VLDL</b>.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Ketone bodies: a circulating form of acetyl-CoA</h3>
+    <ul>
+      <li>Made in <b>liver mitochondria</b> from acetyl-CoA. Acetyl-CoA stays inside cells; ketone bodies circulate.</li>
+      <li>Each has <b>4 carbons = two acetyl-CoA</b>. Most tissues import them and turn them back into acetyl-CoA; <b>liver cannot</b>.</li>
+      <li>Made in the <b>fasting state</b> (and in long exercise) because <b>fatty acid oxidation raises acetyl-CoA</b> while <b>OAA is withdrawn into gluconeogenesis</b>, slowing the TCA cycle.</li>
+    </ul>
+    <h4>Synthesis (liver mitochondria)</h4>
+    <div class="chain">2 acetyl-CoA —thiolase→ acetoacetyl-CoA —HMG-CoA synthase (+acetyl-CoA)→ HMG-CoA —HMG-CoA lyase→ acetoacetate (+ acetyl-CoA)</div>
+    <ul>
+      <li>Acetoacetate → <b>3-hydroxybutyrate (β-HB)</b> by 3-hydroxybutyrate DH using NADH. β-HB is <b>more reduced and more water-soluble</b>.</li>
+      <li>Acetoacetate → <b>acetone</b> + CO₂ <b>spontaneously</b>.</li>
+    </ul>
+    <h4>Breakdown (non-liver tissues: short and rapid)</h4>
+    <div class="chain">β-HB —β-HB DH (NAD⁺ → NADH)→ acetoacetate —succinyl-CoA:acetoacetate CoA transferase (succinyl-CoA → succinate)→ acetoacetyl-CoA —thiolase (+CoA)→ 2 acetyl-CoA → TCA cycle</div>
+    <div class="box hy"><p><b>Liver makes but can’t use ketone bodies</b>: hepatocytes lack <b>succinyl-CoA:acetoacetate CoA transferase</b>. That prevents a futile cycle.</p></div>
+  </div>
+
+  <div class="sec">
+    <h3>The logic of ketone bodies</h3>
+    <ul>
+      <li>A <b>soluble, transportable form of acetyl-CoA</b> that doesn’t require the liver to release its CoA.</li>
+      <li>In starvation the <b>brain runs on ~50% ketone bodies, ~50% glucose</b>. That lowers its glucose demand and <b>slows the breakdown of muscle protein</b> for gluconeogenesis.</li>
+      <li>Over days of fasting, blood β-HB rises far more than acetoacetate, while glucose and fatty acids stay fairly flat (slide 37).</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Diabetic ketoacidosis</h3>
+    <p>With insulin deficiency:</p>
+    <ol>
+      <li>Fatty acid release from adipocytes is <b>continuously activated</b> (HSL unchecked), <b>flooding the liver with fatty acids</b>.</li>
+      <li><b>Gluconeogenesis is activated</b>, depleting OAA.</li>
+      <li>Ketone body synthesis <b>runs out of control</b>. Ketone bodies are <b>acids</b>; untreated, DKA can drop blood pH lethally.</li>
+    </ol>
+  </div>
+  <div class="quiz" data-topic="ketone"></div>
+</section>
+
+<!-- ================= REGULATION ================= -->
+<section class="topic" id="t-reg">
+  <div class="topic-head">
+    <div class="src">Regulation of liver glucose metabolism &amp; PPP slides 1–16 · Topic list not yet posted</div>
+    <h2>Regulation of liver glucose metabolism</h2>
+    <p class="obj">Insulin and glucagon flip the liver between storing and releasing glucose by phosphorylating key enzymes and by setting the level of fructose 2,6-bisphosphate; AMP, glucose, G-6-P and Ca²⁺ fine-tune the same enzymes locally.</p>
+  </div>
+
+  <div class="sec">
+    <h3>The big picture</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Pathway (liver)</th><th>Fed state, high insulin</th><th>Fasting state, high glucagon</th></tr></thead>
+      <tbody>
+        <tr><td>Glycolysis</td><td class="up">↑</td><td class="dn">↓</td></tr>
+        <tr><td>Glycogen synthesis</td><td class="up">↑</td><td class="dn">↓</td></tr>
+        <tr><td>Glycogenolysis</td><td class="dn">↓</td><td class="up">↑</td></tr>
+        <tr><td>Gluconeogenesis</td><td class="dn">↓</td><td class="up">↑</td></tr>
+      </tbody>
+    </table></div>
+    <p>Two tools do the work: <b>reversible phosphorylation</b> (hormonal) and <b>allosteric regulation</b> (local).</p>
+  </div>
+
+  <div class="sec">
+    <h3>Tool 1: reversible phosphorylation</h3>
+    <ul>
+      <li><b>Protein kinases</b> phosphorylate surface –OH groups on <b>serine and threonine</b>; <b>protein phosphatases</b> remove them.</li>
+      <li>Phosphorylation activates some enzymes and inactivates others, usually by raising or lowering the active site’s affinity for substrate.</li>
+    </ul>
+    <h4>Glycogen synthase vs glycogen phosphorylase: opposite responses</h4>
+    <div class="tbl"><table>
+      <thead><tr><th>Enzyme</th><th>Phosphorylated (glucagon, epinephrine)</th><th>Dephosphorylated (insulin)</th></tr></thead>
+      <tbody>
+        <tr><td><b>Glycogen synthase</b></td><td class="dn">Inactive (protein kinase A adds P)</td><td class="up">Active (protein phosphatase removes P)</td></tr>
+        <tr><td><b>Glycogen phosphorylase</b></td><td class="up">Active (phosphorylase kinase adds P)</td><td class="dn">Inactive (protein phosphatase removes P)</td></tr>
+      </tbody>
+    </table></div>
+    <p><b>Insulin</b> raises glycogen synthase and lowers glycogen phosphorylase. <b>Glucagon and epinephrine</b> do the opposite.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Tool 2: allosteric regulation</h3>
+    <ul>
+      <li>Allosteric regulators bind a site <b>distant from the active site</b> and raise (activate) or lower (inhibit) the active site’s affinity for substrate.</li>
+      <li>One enzyme can have binding sites for <b>several</b> allosteric regulators.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Fructose 2,6-bisphosphate: the hormonal switch for glycolysis vs gluconeogenesis</h3>
+    <ul>
+      <li>F-2,6-BP is an <b>allosteric regulator</b>, not a pathway intermediate. (Don’t confuse it with F-1,6-BP, the product of PFK-1.)</li>
+      <li>Bound to <b>PFK-1</b>, it <b>raises PFK-1’s affinity for fructose 6-phosphate</b> and lowers its affinity for the allosteric inhibitors <b>ATP and citrate</b> → glycolysis ↑.</li>
+      <li>At the same time it <b>inhibits fructose 1,6-bisphosphatase</b> → gluconeogenesis ↓.</li>
+    </ul>
+    <h4>Making and destroying F-2,6-BP: the bifunctional enzyme</h4>
+    <ul>
+      <li><b>PFK-2</b> uses ATP to phosphorylate C2 of F-6-P → F-2,6-BP. <b>FBP-2</b> (fructose bisphosphate phosphatase-2) removes it → F-6-P.</li>
+      <li>Both activities sit on <b>one polypeptide</b> (a dimer), the <b>bifunctional enzyme</b>, and are reciprocally regulated by phosphorylation.</li>
+    </ul>
+    <div class="tbl"><table>
+      <thead><tr><th>Signal</th><th>Bifunctional enzyme</th><th>Active domain</th><th>F-2,6-BP</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td><b>Insulin</b> (fed)</td><td>Phosphatase → <b>dephosphorylated</b></td><td>PFK-2</td><td class="up">↑ made</td><td>PFK-1 ↑, F-1,6-BPase ↓: glycolysis ↑, gluconeogenesis ↓</td></tr>
+        <tr><td><b>Glucagon</b> (fasting)</td><td>Kinase → <b>phosphorylated</b></td><td>FBP-2</td><td class="dn">↓ broken down</td><td>PFK-1 not stimulated, F-1,6-BPase not inhibited: glycolysis ↓, gluconeogenesis ↑</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box hy"><p><b>Old-exam pattern.</b> Glucagon starts the pathway that <b>breaks down</b> F-2,6-BP; insulin starts the one that <b>makes</b> it. F-2,6-BP raises PFK-1’s affinity for <b>fructose 6-phosphate</b>. Removing F-2,6-BP stimulates gluconeogenesis by relieving inhibition of the enzyme that makes <b>fructose 6-phosphate</b> (F-1,6-BPase).</p></div>
+  </div>
+
+  <div class="sec">
+    <h3>Non-hormonal regulation</h3>
+    <h4>AMP: the low-energy signal</h4>
+    <div class="eqbox"><div><span class="f">2 ADP ⇌ ATP + AMP</span><span class="g">Adenylate kinase; AMP rises steeply as ATP falls</span></div></div>
+    <ul>
+      <li><b>AMP activates PFK-1</b> (stimulates glycolysis in <b>all</b> cells) and <b>inhibits fructose 1,6-bisphosphatase</b> (gluconeogenesis ↓).</li>
+      <li>This lets any cell, even a liver cell in the fasting state, catabolize glucose when it needs ATP.</li>
+    </ul>
+    <h4>Glycogen enzymes</h4>
+    <div class="tbl"><table>
+      <thead><tr><th>Tissue</th><th>Glycogen phosphorylase</th><th>Glycogen synthase</th><th>Logic</th></tr></thead>
+      <tbody>
+        <tr><td><b>Liver</b></td><td>Inhibited by <b>free glucose</b> and G-6-P</td><td>Activated by <b>G-6-P</b></td><td>Blood glucose equilibrates via high-Km <b>GLUT-2</b>; glucose inside means blood glucose is still high, so no glycogenolysis yet</td></tr>
+        <tr><td><b>Skeletal muscle</b></td><td>Inhibited by <b>ATP</b> and G-6-P; activated by <b>AMP</b> and <b>Ca²⁺</b></td><td>Activated by <b>G-6-P</b></td><td>Muscle breaks down glycogen for its own ATP needs; contraction releases Ca²⁺ from the sarcoplasmic reticulum</td></tr>
+      </tbody>
+    </table></div>
+    <p>G-6-P accumulation signals substrate is available, so it activates glycogen synthesis.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Every regulator in one table</h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Enzyme</th><th>Activated by</th><th>Inhibited by</th></tr></thead>
+      <tbody>
+        <tr><td>PFK-1</td><td>F-2,6-BP, AMP</td><td>ATP, citrate</td></tr>
+        <tr><td>Fructose 1,6-bisphosphatase</td><td>(Glucagon, by lowering F-2,6-BP)</td><td>F-2,6-BP, AMP</td></tr>
+        <tr><td>PFK-2 domain</td><td>Insulin (dephosphorylation)</td><td>Glucagon (phosphorylation)</td></tr>
+        <tr><td>FBP-2 domain</td><td>Glucagon (phosphorylation)</td><td>Insulin (dephosphorylation)</td></tr>
+        <tr><td>Glycogen synthase</td><td>Insulin (dephosphorylation), G-6-P</td><td>Glucagon/epinephrine (phosphorylation)</td></tr>
+        <tr><td>Glycogen phosphorylase</td><td>Glucagon/epinephrine (phosphorylation); muscle: AMP, Ca²⁺</td><td>Insulin (dephosphorylation); liver: glucose, G-6-P; muscle: ATP, G-6-P</td></tr>
+        <tr><td>Hexokinase (earlier deck)</td><td></td><td>G-6-P</td></tr>
+        <tr><td>Pyruvate carboxylase (earlier deck)</td><td>Acetyl-CoA</td><td></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="quiz" data-topic="reg"></div>
+</section>
+
+<!-- ================= PPP ================= -->
+<section class="topic" id="t-ppp">
+  <div class="topic-head">
+    <div class="src">Regulation of liver glucose metabolism &amp; PPP slides 17–22 · Topic list not yet posted</div>
+    <h2>Pentose phosphate pathway</h2>
+    <p class="obj">The PPP oxidizes glucose 6-phosphate to make NADPH and ribose 5-phosphate; demand for NADPH turns on its oxidative branch, and demand for ribose 5-P sets the direction of its non-oxidative branch.</p>
+  </div>
+
+  <div class="sec">
+    <h3>Why the PPP exists</h3>
+    <ul>
+      <li>Produces <b>NADPH</b> and <b>ribose 5-phosphate</b>, entirely in the <b>cytoplasm</b>. Most active in <b>liver</b>; makes <b>~60% of the body’s NADPH</b>.</li>
+      <li>Cells with mitochondria keep cytosolic <b>NAD⁺ oxidized</b> (NAD⁺/NADH 10–700) but <b>NADP⁺ highly reduced</b> (NADPH/NADP⁺ ~10). NAD⁺ accepts electrons in catabolism; NADPH donates them in anabolism.</li>
+    </ul>
+    <div class="tbl"><table>
+      <thead><tr><th>NADPH is used for</th><th>Ribose 5-P is used for</th></tr></thead>
+      <tbody>
+        <tr><td>Synthesis of fatty acids, cholesterol, isoprenoids, amino acids, nucleotides; <b>glutathione reductase</b> (H₂O₂ removal); <b>cytochromes P450</b> (biosynthesis, detoxification); <b>NO synthase</b>; <b>NADPH oxidase</b> in neutrophils (makes superoxide)</td><td>Nucleotides for nucleic acids, and NAD⁺, NADP⁺, FAD and CoA</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sec">
+    <h3>Oxidative branch</h3>
+    <div class="chain">G-6-P —G-6-P dehydrogenase (NADP⁺ → NADPH)→ 6-phosphoglucono-δ-lactone —gluconolactonase (H₂O)→ 6-phosphogluconate —6-phosphogluconate DH (NADP⁺ → NADPH, CO₂)→ ribulose 5-P</div>
+    <ul>
+      <li>Per G-6-P: <b>2 NADPH + 1 CO₂</b> + ribulose 5-P (→ ribose 5-P).</li>
+      <li><b>Glucose 6-phosphate dehydrogenase</b> starts the branch and is set by <b>NADPH demand</b>:
+        <ul>
+          <li><b>Allosterically activated by NADP⁺.</b></li>
+          <li><b>Inhibited by NADPH</b> (allosteric or product inhibition).</li>
+        </ul>
+        So the <b>NADPH/NADP⁺ ratio</b> decides whether G-6-P is bound by G6PD.</li>
+    </ul>
+  </div>
+
+  <div class="sec">
+    <h3>Non-oxidative branch</h3>
+    <ul>
+      <li>Reversible “dance of carbon”: <b>transketolases move 2-C pieces</b>, <b>transaldolases move 3-C pieces</b> between sugars.</li>
+      <li>No NADPH is made here.</li>
+    </ul>
+    <div class="tbl"><table>
+      <thead><tr><th>Cell needs</th><th>What runs</th><th>Glycolytic connection</th></tr></thead>
+      <tbody>
+        <tr><td><b>NADPH, not ribose 5-P</b></td><td>Oxidative branch; extra ribulose 5-P drives the non-oxidative reactions forward</td><td>Returns <b>F-6-P and G-3-P</b> to glycolysis</td></tr>
+        <tr><td><b>Ribose 5-P, not NADPH</b> (NADPH/NADP⁺ high enough to inhibit G6PD)</td><td>Non-oxidative reactions <b>run in reverse</b>, regulated only by ribose 5-P demand</td><td>Pulls <b>F-6-P and G-3-P</b> out of glycolysis</td></tr>
+        <tr><td>Both</td><td>Oxidative branch; ribose 5-P goes to nucleotide synthesis</td><td></td></tr>
+      </tbody>
+    </table></div>
+    <div class="box hy"><p>Old-exam answer, four years running: when a cell has plenty of NADPH but needs ribose 5-P, it pulls <b>fructose 6-phosphate and glyceraldehyde 3-phosphate</b> from glycolysis and reverses the non-oxidative reactions. When ribose 5-P is plentiful but NADPH is needed, <b>G6PD is activated</b>.</p></div>
+  </div>
+  <div class="quiz" data-topic="ppp"></div>
 </section>
 
 <!-- ================= FLASHCARDS ================= -->
@@ -1600,9 +1964,8 @@ details.calc[open] summary{border-bottom:1px solid var(--rule)}
   </div>
   <div class="pending">
     <h4>Coming as they post</h4>
-    <p>Topic lists for PDH/TCA, FA oxidation and ethanol, and glycogen and gluconeogenesis. When they arrive, each section will be checked line by line against its list, as the redox, oxphos and sugar sections already have been.</p>
-    <p>Still to come as slides: regulation of glycolysis, gluconeogenesis and glycogen metabolism (PFK-1, F-2,6-BP, AMP, insulin and glucagon, glycogen synthase and phosphorylase), the pentose phosphate pathway, lipid digestion and transport, lipolysis, fatty acid synthesis, ketone bodies, and nitrogen metabolism and the urea cycle.</p>
-    <p>Your past-exam files already contain those questions, so they will drop straight into the practice sets.</p>
+    <p>Topic lists for PDH/TCA, FA oxidation and ethanol, fatty acid and ketone body metabolism, and regulation and the PPP. When they arrive, each section will be checked line by line against its list, as the redox, oxphos, sugar and glycogen/gluconeogenesis sections already have been.</p>
+    <p>Still to come as slides: nitrogen metabolism and the urea cycle, and any lectures on hormone signaling (insulin secretion, receptors, cAMP) or oxidative stress. His old exams test those, and the questions are waiting.</p>
   </div>
 </section>
 
@@ -1874,7 +2237,7 @@ Q("faox","Predicted","p","The auxiliary enzymes for unsaturated fatty acids eith
 Q("faox","Predicted","p","Catabolism of excessive ethanol raises matrix NADH, which:",["Speeds the TCA cycle","Partially inhibits the TCA cycle and enhances fatty acid synthesis","Activates PDH","Activates CPT I","Blocks alcohol dehydrogenase"],1,"Slide 28.");
 Q("faox","Predicted","p","Acetyl-CoA synthetase, the last step of ethanol catabolism, uses:",["ATP → ADP + Pi","ATP → AMP + PPi","GTP","NAD⁺","Biotin"],1,"Like fatty acyl-CoA synthetase, it costs two high-energy bonds.");
 Q("faox","Predicted","p","Coupling a fatty acid to CoA serves to:",["Release energy as heat","Provide energy for downstream reactions and make the FA more water-soluble","Transport it across the OMM","Reduce its double bonds","Inhibit CPT I"],1,"Slide 22.");
-const TOPICS={redox:"Redox vocabulary",carriers:"Electron carriers",dg:"Potentials & ΔG",nad:"NAD⁺ dehydrogenases",atp:"ATP & coupling",oxphos:"Oxphos",control:"Respiratory control",carb:"Sugar catabolism",pdh:"PDH & TCA",faox:"FA oxidation & ethanol",glycogen:"Glycogen",gneo:"Gluconeogenesis"};
+const TOPICS={redox:"Redox vocabulary",carriers:"Electron carriers",dg:"Potentials & ΔG",nad:"NAD⁺ dehydrogenases",atp:"ATP & coupling",oxphos:"Oxphos",control:"Respiratory control",carb:"Sugar catabolism",pdh:"PDH & TCA",faox:"FA oxidation & ethanol",glycogen:"Glycogen",gneo:"Gluconeogenesis",lipid:"Lipoproteins & FA synthesis",ketone:"Lipolysis & ketones",reg:"Glucose regulation",ppp:"Pentose phosphate"};
 
 const CARDS=[
 ["redox","What is a RAMO?","A redox active molecular orbital: one outer-shell orbital that holds its 1 (sometimes 2) electron(s) less tightly than the molecule’s other orbitals, so the electron can be captured by another RAMO."],
@@ -2149,7 +2512,7 @@ CARDS.push(
 ["glycogen","Branching enzyme","At 11 residues, moves 6–8 residues to another glucosyl unit by α(1→6)."],
 ["glycogen","Glycogen phosphorylase","Releases glucose 1-P from α(1→4) bonds; stops 4 residues from a branch, leaving a limit dextran."],
 ["glycogen","Debranching enzyme’s two activities","1) Moves 3 residues to a longer chain by α(1→4). 2) Releases the α(1→6) residue as free glucose."],
-["glycogen","Why only liver exports glucose","Only liver (and renal cortex, slide 15) has glucose 6-phosphatase."],
+["glycogen","Liver vs muscle glycogen","Liver glycogen maintains blood glucose; muscle glycogen fuels the muscle itself. Glucose 6-phosphatase is restricted to liver and kidney cortex."],
 ["gneo","Where gluconeogenesis happens","Liver 90%, renal cortex 10%."],
 ["gneo","The four bypass enzymes","Pyruvate carboxylase (matrix, ATP), PEPCK (GTP), fructose 1,6-bisphosphatase, glucose 6-phosphatase."],
 ["gneo","How OAA leaves the matrix in gluconeogenesis","As aspartate, via aspartate transaminase on both sides."],
@@ -2164,6 +2527,177 @@ CARDS.push(
 );
 WORKED.push(
 {t:"Cost of gluconeogenesis by precursor",q:"Using Hosler’s slides, what does one glucose cost the liver from pyruvate, lactate and glycerol?",s:["Pyruvate: 4 NTP + 2 NADH (2 pyruvate in, all steps before triose phosphate isomerase run twice).","Lactate: lactate DH oxidizes lactate to pyruvate in the cytoplasm, supplying NADH. Hosler’s slide gives 4 NTP + 1 NADH. (Strictly, 2 lactate per glucose make 2 NADH; on his exam, use his number.)","Glycerol: 2 glycerol → 2 DHAP costs 2 ATP and yields 2 NADH (≥ 2 ATP by oxphos), and DHAP skips the expensive steps → about zero."],a:"Pyruvate 4 NTP + 2 NADH; lactate 4 NTP + 1 NADH; glycerol about zero. (Boards count 6 high-energy phosphates from pyruvate.)"}
+);
+/* ===== glycogen / gneo list additions ===== */
+Q("glycogen","Predicted","ph","Liver glycogen maintains blood glucose, but skeletal muscle glycogen does not, because:",["Muscle glycogen lacks α(1→6) branches","Glucose 6-phosphatase is restricted to liver and kidney cortex","Muscle lacks glycogen phosphorylase","Muscle glycogen is stored in mitochondria","Muscle has no GLUT transporters"],1,"Topic list item 2. Muscle G-6-P enters glycolysis.");
+Q("glycogen","Predicted","p","Glycogen is stored as:",["Lipid droplets in adipocytes","Granules in the cytoplasm","Vesicles in the ER","Granules in the mitochondrial matrix","Extracellular fibers"],1,"Item 3.");
+Q("glycogen","Predicted","p","Glycogen’s branching is described as “dichotomous,” meaning:",["It has no branches","Every branch branches","Only one branch per molecule","Branches are α(1→4)","Branches occur every 2 residues"],1,"Slide 4.");
+Q("gneo","Predicted","ph","In the fasting liver, the acetyl-CoA that activates pyruvate carboxylase comes mainly from:",["Glycolysis","Fatty acid oxidation","Ketone body breakdown","Glycogenolysis","The PDH complex"],1,"Topic list item 7.");
+Q("gneo","Predicted","p","Glucose 6-phosphatase is found in:",["All tissues","Liver and renal cortex","Liver and skeletal muscle","Brain and liver","Adipose and liver"],1,"Topic list item 8.");
+Q("gneo","Predicted","ph","Why does gluconeogenesis from alanine require 4 NTP + 2 NADH per glucose while gluconeogenesis from glycerol requires no net energy?",["Alanine is oxidized by the TCA cycle","Alanine enters as pyruvate and must pass the NTP- and NADH-using steps; glycerol enters as DHAP above them","Glycerol enters as pyruvate","Alanine enters as DHAP","Glycerol is converted to glucose in muscle"],1,"Topic list item 11.");
+Q("gneo","Predicted","p","In liver, lactate enters gluconeogenesis by:",["Direct conversion to PEP","Lactate DH oxidizing it to pyruvate, which pyruvate carboxylase converts to OAA","Conversion to alanine","Entering as DHAP","Conversion to acetyl-CoA"],1,"Item 10.");
+Q("gneo","Predicted","p","Which is NOT a major gluconeogenic substrate in the fasting state?",["Lactate","Glutamine","Fatty acids","Glycerol","Alanine"],2,"Fatty acids yield acetyl-CoA; they power gluconeogenesis but supply no carbon.");
+
+/* ===== LIPID TRANSPORT & FA SYNTHESIS ===== */
+Q("lipid","2025","","During digestion, cholate is released from the liver into the small intestine in order to:",["Disperse large fat droplets into small fat droplets","Remove fatty acids from TAG","Hydrolyze peptide bonds","Remove epithelial membranes","Help glucose uptake"],0,"Bile salts emulsify; pancreatic lipases hydrolyze.");
+Q("lipid","2024, 2020, 2019 Final, 2018 Final, 2023 Final","h","Chylomicrons are synthesized in and released from:",["Liver","Pancreas","Intestinal epithelial cells","Skeletal muscle","Adipose"],2,"VLDL comes from liver.");
+Q("lipid","2025","","Chylomicrons are released from intestinal epithelial cells to circulate:",["Detergents","Glutamine","Dietary glucose, fructose and galactose","Dietary fatty acids, glycerol and cholesterol","Dietary amino acids"],3,"As TAG and cholesterol esters.");
+Q("lipid","2023, 2019, 2017, 2018","hd","Which transports dietary triacylglycerol from the intestine to adipose and other tissues?",["Chylomicrons","Serum albumin","HDL","SGLT1","VLDL"],0,"VLDL carries TAG made in the liver.");
+Q("lipid","2017 Final, 2018","hd","Which transports triacylglycerol synthesized in the liver to other tissues?",["Albumin","Chylomicrons","HDL","SGLT1","VLDL"],4,"VLDL is assembled by hepatocytes.");
+Q("lipid","2019","d","During their maturation, circulating VLDL and chylomicrons obtain apoproteins from:",["LDL","Lipoprotein lipase","Endothelial cells","Cholesterol","HDL"],4,"ApoC-II and ApoE.");
+Q("lipid","2024, 2025","h","The products released by lipoprotein lipase are:",["Acetate and CoA","Fatty acyl-CoA and carnitine","TAG and glucose","TAG and DHAP","Free fatty acids and glycerol"],4,"LPL hydrolyzes TAG in passing lipoproteins.");
+Q("lipid","2020, 2019, 2024, 2023","hd","Triacylglycerol in circulating chylomicrons and VLDL is broken down by:",["Lipoprotein lipase","Hormone-sensitive lipase","Monoglyceride lipase","Fatty acyl-CoA synthetase","Serum albumin"],0,"HSL acts inside adipocytes.");
+Q("lipid","2017","d","TAG synthesized by liver is packaged into ______ and released for catabolism by muscle by ______.",["Chylomicrons; HSL","VLDL; lipoprotein lipase","VLDL; HSL","VLDL; perilipins","HDL; ApoC-II"],1,"Same LPL that handles chylomicrons.");
+Q("lipid","2023","","In the fed state, fatty acids from dietary TAG are released from circulating lipoproteins for β-oxidation by muscle through:",["Lipoprotein lipase","CPT I","Hormone-sensitive lipase","Perilipins","Bile salts in blood"],0,"Fed-state LPL.");
+Q("lipid","2023","","Which enzyme is more likely to be active 30 minutes after a meal than after an 8-hour fast?",["Debranching enzyme","Glycogen phosphorylase","Fructose 1,6-bisphosphatase","Lipoprotein lipase","Hormone-sensitive lipase"],3,"The others are fasting enzymes.");
+Q("lipid","2020, 2018 Final","hd","Which enzyme is more active 30 minutes after a meal than after a 12-hour fast?",["Glucose 6-phosphatase","Hormone-sensitive lipase","Glycogen phosphorylase","Acetyl-CoA carboxylase","PEP carboxykinase"],3,"High insulin/glucagon stimulates ACC.");
+Q("lipid","2023, 2018","h","The enzyme that produces acetyl-CoA in the cytoplasm from citrate released by mitochondria is:",["Acetyl-CoA carboxylase","Pyruvate carboxylase","Pyruvate DH","Citrate lyase","Citrate synthase"],3,"Uses ATP; also releases OAA.");
+Q("lipid","2025, 2024","h","Carbon for fatty acid synthesis is exported from the mitochondrial matrix as:",["Acetyl-CoA","Succinyl-CoA","Malonyl-CoA","Citrate","Pyruvate"],3,"Acetyl-CoA can’t cross the IMM.");
+Q("lipid","2017","d","Which compound is NOT transported across the inner mitochondrial membrane?",["Acetyl-CoA","Aspartate","Citrate","Malate","Pyruvate"],0,"That’s why citrate is exported instead.");
+Q("lipid","2023","","In FA synthesis, the hormonally regulated addition of a carboxyl group to acetyl-CoA is catalyzed by:",["Acetyl-CoA carboxylase","Pyruvate carboxylase","Fatty acid synthase","Citrate lyase","Citrate synthase"],0,"The committed step.");
+Q("lipid","2019","d","The product of acetyl-CoA carboxylase is:",["Malonyl-CoA","Acetoacetyl-CoA","Citryl-CoA","Succinyl-CoA","Acetyl-CoA"],0,"Which also inhibits CPT I.");
+Q("lipid","2025","","Acetyl-CoA carboxylase of liver is hormonally activated by:",["AMP","Insulin signaling","Glucagon signaling","Fructose 1,6-bisphosphate","Acetoacetate"],1,"High insulin/glucagon.");
+Q("lipid","2017","d","Which enzyme requires biotin as a cofactor?",["Acetyl-CoA carboxylase","Pyruvate kinase","Fatty acid synthase","PFK-1","Pyruvate DH"],0,"Carboxylases use biotin.");
+Q("lipid","2024","","Which is consumed during the reactions catalyzed by fatty acid synthase?",["NAD⁺","NADPH","Palmitate","CO₂","ADP"],1,"NADPH is the reductant; CO₂ is released.");
+Q("lipid","2019, 2017 Final","hd","Eating excess glucose can lead to obesity by:",["Increasing cytoplasmic acetyl-CoA","Activating alcohol DH","Preventing glycolysis","Activating HSL","Preventing gluconeogenesis"],0,"Via citrate export and citrate lyase.");
+Q("lipid","2019 Final, 2017","hd","Eating excess glucose or fructose can lead to obesity by:",["Inhibiting glycolysis","Increasing cytoplasmic citrate","Inhibiting PDH","Inhibiting LPL","Activating HSL"],1,"Citrate is the exported carbon and an ACC activator.");
+Q("lipid","2024","","Which pathway is LEAST active during the stress/exercise metabolic state?",["Oxphos","Fatty acid synthesis","Glycogenolysis","FA oxidation","TCA cycle"],1,"It’s a fed-state pathway.");
+Q("lipid","2019 Final","d","The hydrocarbon end product of ethanol metabolism can be used to make all of the following EXCEPT:",["Palmitate","Glycogen","β-Hydroxybutyrate","Citrate","Malonyl-CoA"],1,"Acetyl-CoA can’t make net glucose or glycogen.");
+Q("lipid","Predicted","p","Humans use dietary cholesterol for all of the following EXCEPT:",["Cell membranes","Bile salts","Steroid hormones","Catabolism for energy","Excretion"],3,"Slide 3.");
+Q("lipid","Predicted","p","Pancreatic lipases convert each TAG in the intestinal lumen to:",["3 fatty acids + glycerol","2 fatty acids + monoacylglycerol","Fatty acyl-CoA","Diacylglycerol + glycerol","Chylomicrons"],1,"Epithelial cells rebuild TAG from monoacylglycerol.");
+Q("lipid","Predicted","p","Which apoprotein is inserted when the chylomicron forms and is recognized by LPL’s receptor function?",["ApoB-48","ApoB-100","ApoC-II","ApoE","ApoA-I"],0,"ApoB-100 plays this role on VLDL.");
+Q("lipid","Predicted","ph","Which apoprotein activates the lipase activity of lipoprotein lipase?",["ApoB-48","ApoB-100","ApoC-II","ApoE","ApoA-I"],2,"Acquired from HDL.");
+Q("lipid","Predicted","p","ApoE on chylomicrons:",["Activates LPL","Facilitates clearance of chylomicron remnants by the liver","Binds glucose","Is made by adipose","Is the LPL receptor-binding site"],1,"Slide 11.");
+Q("lipid","Predicted","p","Lipoprotein lipase is best described as:",["A cytoplasmic enzyme of adipocytes","Both a receptor and an enzyme, attached to capillary endothelium","A plasma protein that carries fatty acids","A liver enzyme that makes VLDL","An intestinal brush-border enzyme"],1,"Slide 10.");
+Q("lipid","Predicted","p","Fatty acid synthesis occurs mainly in:",["The mitochondrial matrix of muscle","The cytoplasm of liver and lactating mammary gland","The ER of brain","Peroxisomes","Red blood cells"],1,"Slide 13.");
+Q("lipid","Predicted","p","The NADPH for fatty acid synthesis comes from:",["Complex I and the TCA cycle","The pentose phosphate pathway and malic enzyme","Glycolysis and lactate DH","β-Oxidation","Glutamate DH"],1,"Slide 16.");
+Q("lipid","Predicted","p","Acetyl-CoA carboxylase is allosterically:",["Activated by palmitoyl-CoA, inhibited by citrate","Activated by citrate, inhibited by palmitoyl-CoA","Activated by glucagon","Inhibited by insulin","Activated by malonyl-CoA"],1,"Slide 18.");
+Q("lipid","Predicted","p","In fatty acid synthase, the domain that carries the growing chain between active sites is:",["Biotin","Acyl carrier protein (ACP)","CoA","Lipoyllysine","Carnitine"],1,"Its long flexible linker resembles CoA.");
+Q("lipid","Predicted","p","Each 2-carbon unit added by fatty acid synthase is delivered by:",["Acetyl-CoA","3-carbon malonyl-CoA, with release of CO₂","Citrate","Pyruvate","Succinyl-CoA"],1,"CO₂ release helps drive the reaction.");
+Q("lipid","Predicted","p","The end product of fatty acid synthase is:",["Stearate (18:0)","Oleate (18:1)","Palmitate (16:0)","Arachidonate","Acetoacetate"],2,"Slide 21.");
+Q("lipid","Predicted","p","Most of the TAG packaged into VLDL comes from:",["De novo fatty acid synthesis","Recycled fatty acids","Ketone bodies","Chylomicron glycerol","Cholesterol"],1,"Slide 23.");
+Q("lipid","Predicted","p","To store chylomicron TAG, an adipocyte must:",["Take up the intact chylomicron","Import fatty acids released by LPL and resynthesize TAG","Bind TAG to perilipins in blood","Convert TAG to ketone bodies","Use HSL to import TAG"],1,"Slide 25.");
+
+/* ===== LIPOLYSIS & KETONES ===== */
+Q("ketone","2020, 2018","hd","In adipocytes, access of cytoplasmic lipases to the TAG droplet is promoted by:",["High glucagon/low insulin","Serum albumin","Lipoprotein lipase","High insulin/low glucagon","Bile salts"],0,"Fasting-state signaling phosphorylates perilipins.");
+Q("ketone","2023, 2025","h","Release of fatty acids from adipocytes in the fasting state begins with:",["Import of chylomicron remnants","Import of adipocytes into hepatocytes","Increased access of three TAG lipases to the TAG droplet","Binding of chylomicrons to perilipins","Insulin-stimulated LPL synthesis in the droplet"],2,"After perilipin phosphorylation: ATGL, HSL, MGL.");
+Q("ketone","2020, 2018 Final, 2024, 2025","hd","Free fatty acids released from adipocytes in the fasting state travel in blood bound to:",["VLDL","Chylomicrons","HDL","Serum albumin","Perilipins"],3,"Glycerol travels free.");
+Q("ketone","2019 Final","d","A hormone that starts a signal pathway promoting fatty acid release from adipocytes is:",["Insulin","Serum albumin","VLDL","Glucagon","N-acetylglutamate"],3,"The 2026 slides name epinephrine (PKA phosphorylates perilipins); glucagon was his 2019 key.");
+Q("ketone","2017 Final","d","Insulin prevents the activation of:",["PFK-1","Acetyl-CoA carboxylase","Hormone-sensitive lipase","Lipoprotein lipase","Glycogen synthase"],2,"By dephosphorylation.");
+Q("ketone","2020, 2019, 2023","hd","Diabetic ketoacidosis results from the uncontrolled release from adipocytes of (and import into liver of):",["Chylomicrons","Acetyl-CoA","Glycerol","Perilipins","Fatty acids"],4,"Fatty acids flood the liver.");
+Q("ketone","2017","d","Diabetic ketoacidosis is driven by the constant activation of:",["Chylomicron synthesis","Acetyl-CoA carboxylase","Hormone-sensitive lipase","Lipoprotein lipase","Gluconeogenesis only"],2,"No insulin to inhibit HSL.");
+Q("ketone","2023, 2025","h","In the fasting liver, the acetyl-CoA used to make ketone bodies comes mainly from:",["The PDH complex","Gluconeogenesis","Glycogenolysis","Fatty acid oxidation","Glutamine oxidation"],3,"OAA withdrawal slows the TCA cycle too.");
+Q("ketone","2020, 2017","hd","Ketone body synthesis increases in the fasting state for all of these reasons EXCEPT:",["OAA is withdrawn into gluconeogenesis","HSL is active","Insulin activates the enzymes of ketone body synthesis","FA oxidation produces acetyl-CoA","Albumin delivers fatty acids to liver"],2,"Insulin is low in fasting.");
+Q("ketone","2023","","Which process is more likely to be active after an 8-hour fast than 30 minutes after a meal?",["Fatty acid synthesis","Glycogen synthesis","Insulin secretion","VLDL formation","Ketone body synthesis"],4,"A fasting pathway.");
+Q("ketone","2025","h","Liver makes but cannot oxidize ketone bodies because hepatocytes lack:",["Acetoacetate","β-Hydroxybutyrate","β-HB dehydrogenase","Thiolase","Succinyl-CoA:acetoacetate CoA transferase"],4,"This prevents a futile cycle.");
+Q("ketone","2019","d","Which tissue cannot convert ketone bodies into acetyl-CoA?",["Brain","Liver","Skeletal muscle","Heart","Nerve"],1,"Same reason: no CoA transferase.");
+Q("ketone","2024","","Which process does NOT take place in liver?",["Uptake of chylomicron remnants","Fatty acid synthesis","Gluconeogenesis","Breakdown of ketone bodies","Release of glucose into blood"],3,"Liver makes ketone bodies but can’t break them down.");
+Q("ketone","2018, 2019 Final","hd","Upon uptake into non-liver cells, ketone bodies are converted into:",["Glucose","Pyruvate","Acetyl-CoA","Lactate","NAD⁺"],2,"One β-HB yields two acetyl-CoA.");
+Q("ketone","2024","h","Ketone bodies are released into blood as a circulating form of:",["Glucose","Glycerol","Acetyl-CoA","OAA","Pyruvate"],2,"Slide 32.");
+Q("ketone","2023","","Ketone bodies taken up by the brain are broken down to the same molecule used to make them in liver. That molecule enters which pathway in brain?",["Glycogen synthesis","TCA cycle","Glycolysis","Oxphos","PPP"],1,"Acetyl-CoA.");
+Q("ketone","2018 Final","d","Rising acetyl-CoA in liver (fasting) leads to the release of which into blood?",["Alanine","Glucose","DHAP","Lactate","Acetoacetate"],4,"A ketone body.");
+Q("ketone","2019 Final","d","High ketone body production by liver correlates MOST with:",["High LPL activity near adipocytes","High fructose 1,6-bisphosphatase activity in liver","High circulating chylomicrons","Low HSL activity","Low pyruvate carboxylase activity"],1,"Both are fasting-state liver activities (gluconeogenesis withdraws OAA).");
+Q("ketone","2020, 2019 Final","hd","In the last miles of a marathon on water only, a likely fuel for her skeletal muscle is:",["Lactate released from liver","Glucose from glycogen made inside muscle","FAs made from muscle protein","Glucose from ketone bodies","Fatty acids released from adipocytes"],4,"Muscle glycogen is depleted; ketone bodies can’t make glucose.");
+Q("ketone","Predicted","p","Perilipins are phosphorylated during lipolysis by:",["Insulin receptor","Protein kinase A, after epinephrine binds its receptor","AMP kinase","LPL","HSL"],1,"Slide 28.");
+Q("ketone","Predicted","ph","The order in which adipocyte lipases remove fatty acids from TAG is:",["HSL, ATGL, MGL","ATGL, HSL, MGL","MGL, HSL, ATGL","LPL, HSL, MGL","ATGL, MGL, HSL"],1,"Slide 29.");
+Q("ketone","Predicted","p","Glycerol released by lipolysis travels in blood:",["Bound to albumin","Free, and is taken up mostly by liver","In VLDL","In chylomicrons","Attached to perilipins"],1,"Slide 30.");
+Q("ketone","Predicted","p","Ketone bodies are made in:",["The cytoplasm of muscle","Liver mitochondria","Adipocytes","Brain","Red blood cells"],1,"Slide 32.");
+Q("ketone","Predicted","p","Which enzymes make acetoacetate from acetyl-CoA, in order?",["Thiolase, HMG-CoA synthase, HMG-CoA lyase","HMG-CoA lyase, thiolase, HMG-CoA synthase","Citrate synthase, aconitase","ACC, FAS","Thiolase, CoA transferase"],0,"Slide 34.");
+Q("ketone","Predicted","p","Compared with acetoacetate, β-hydroxybutyrate is:",["Less reduced","More reduced and more water-soluble","A 6-carbon molecule","Not a ketone body used by brain","Made spontaneously"],1,"Acetone forms spontaneously.");
+Q("ketone","Predicted","ph","During starvation, ketone bodies spare muscle protein because:",["They make glucose","The brain uses ~50% ketone bodies, lowering its glucose need and the rate of muscle proteolysis for gluconeogenesis","They inhibit HSL","They activate glycogen synthase","They are converted to amino acids"],1,"Slide 36.");
+Q("ketone","Predicted","p","Each ketone body (acetoacetate or β-HB) is equivalent to how many acetyl-CoA?",["One","Two","Three","Four","Eight"],1,"Four carbons.");
+Q("ketone","Predicted","p","In DKA, why do ketone bodies accumulate?",["Insulin activates HMG-CoA synthase","Unchecked lipolysis floods liver with fatty acids while active gluconeogenesis depletes OAA","Ketone bodies can’t be made without insulin","Brain stops using ketone bodies","LPL is overactive"],1,"Slide 38. Ketone bodies are acids.");
+CARDS.push(
+["lipid","Bile salts","Detergents made from cholesterol (e.g., cholate) by the liver; emulsify fat globules into droplets."],
+["lipid","Pancreatic lipase products","2 fatty acids + 1 monoacylglycerol per TAG."],
+["lipid","Chylomicron vs VLDL","Chylomicron: dietary TAG from intestinal epithelium, ApoB-48. VLDL: liver-made TAG, ApoB-100."],
+["lipid","ApoC-II and ApoE","Both acquired from HDL. ApoC-II activates LPL; ApoE helps liver clear remnants."],
+["lipid","Lipoprotein lipase","Receptor + enzyme on capillary endothelium of FA-using tissues and adipose; TAG → FA + glycerol."],
+["lipid","Cholesterol fate","Not catabolized for energy; membranes, bile salts, steroid hormones, excretion. Statins block synthesis."],
+["lipid","Why liver makes fat","Fuel excess → NADH/NAD⁺ ↑ → TCA slows → citrate exported → citrate lyase → cytosolic acetyl-CoA."],
+["lipid","NADPH sources for FA synthesis","Pentose phosphate pathway and malic enzyme."],
+["lipid","Acetyl-CoA carboxylase regulation","Insulin/glucagon ↑ and citrate activate; palmitoyl-CoA inhibits. Committed, irreversible step."],
+["lipid","Fatty acid synthase","One polypeptide, 7 domains/activities; ACP swings chain; 2C per malonyl-CoA (CO₂ released); NADPH; product palmitate 16:0."],
+["lipid","Most VLDL TAG comes from","Recycled fatty acids, not de novo synthesis."],
+["ketone","Perilipins","Coat the TAG droplet; PKA phosphorylation (after epinephrine) moves them so lipases get in. Insulin keeps them protective."],
+["ketone","Lipases of lipolysis in order","ATGL (1st FA), HSL (2nd; inhibited by insulin via dephosphorylation), MGL (3rd)."],
+["ketone","Fate of lipolysis products","FA bound to serum albumin → tissues; glycerol free → mostly liver."],
+["ketone","Why ketone bodies form","Fasting: FA oxidation raises acetyl-CoA while OAA goes to gluconeogenesis and the TCA cycle slows."],
+["ketone","Ketone body synthesis","2 acetyl-CoA → thiolase → acetoacetyl-CoA → HMG-CoA synthase → HMG-CoA → lyase → acetoacetate ⇌ β-HB (NADH); acetone spontaneous."],
+["ketone","Ketone body breakdown","β-HB → acetoacetate (NADH) → CoA transferase (succinyl-CoA) → acetoacetyl-CoA → thiolase → 2 acetyl-CoA."],
+["ketone","Why liver can’t use ketone bodies","No succinyl-CoA:acetoacetate CoA transferase; prevents a futile cycle."],
+["ketone","Ketone bodies in starvation","Brain ~50% ketones, ~50% glucose; spares muscle protein."],
+["ketone","DKA","No insulin → lipolysis unchecked, FA flood liver; gluconeogenesis depletes OAA; ketone synthesis runs away; acidosis."]
+);
+/* ===== REGULATION ===== */
+Q("reg","2023, 2025, 2019 Final","h","Which gluconeogenic enzyme is allosterically inhibited by both AMP and fructose 2,6-bisphosphate?",["GAPDH","Pyruvate carboxylase","Fructose 1,6-bisphosphatase","Glucose 6-phosphatase","Aldolase"],2,"The same two molecules activate PFK-1.");
+Q("reg","2025, 2018, 2018 Final","h","In liver, fructose 2,6-bisphosphate allosterically activates:",["Fructose 1,6-bisphosphatase","Phosphofructokinase 1","Glycogen synthase","Fructose 2,6-bisphosphatase","Glucokinase"],1,"And it inhibits fructose 1,6-bisphosphatase.");
+Q("reg","2020, 2019, 2017 Final, 2017","hd","The binding of fructose 2,6-bisphosphate to PFK-1 increases PFK-1’s affinity for:",["DHAP","NADP⁺","Glucose 6-phosphate","Insulin","Fructose 6-phosphate"],4,"And lowers its affinity for the inhibitors ATP and citrate.");
+Q("reg","2018","hd","To promote glycolysis and inhibit gluconeogenesis in the fed state, F-2,6-BP stimulates ______ and inhibits ______.",["Glucokinase; PEPCK","Pyruvate kinase; glucose 6-phosphatase","PFK-1; fructose 1,6-bisphosphatase","Pyruvate carboxylase; GAPDH","PDH; PFK-2"],2,"Slide 8.");
+Q("reg","2023","","High insulin/glucagon alters glycolysis in liver by:",["Activating adenylate kinase","Activating hexokinase by phosphorylation","Promoting the synthesis of fructose 2,6-bisphosphate","Stimulating glycogen phosphorylase","Promoting dephosphorylation of F-2,6-BP"],2,"Insulin → phosphatase → PFK-2 domain active.");
+Q("reg","2024","","In the fasting liver, dephosphorylation of F-2,6-BP to F-6-P stimulates gluconeogenesis by releasing inhibition of an enzyme that directly produces:",["Glucose 6-P","Acetyl-CoA","Fructose 6-phosphate","Free glucose","Glutamine"],2,"Fructose 1,6-bisphosphatase.");
+Q("reg","2019, 2017 Final","hd","The hormone that starts a signal pathway resulting in the BREAKDOWN of fructose 2,6-bisphosphate is:",["Insulin","AMP","Protein kinase A","Tyrosine kinase","Glucagon"],4,"Glucagon → kinase → FBP-2 domain active.");
+Q("reg","2017","hd","The hormone that starts a signal pathway resulting in the SYNTHESIS of fructose 2,6-bisphosphate is:",["Glucagon","AMP","Protein kinase A","Glucose","Insulin"],4,"Insulin → phosphatase → PFK-2 domain active.");
+Q("reg","2020, 2019, 2018","hd","Which intracellular molecule rises when a cell’s ATP/ADP declines and allosterically activates PFK-1 (glycolysis)?",["Cyclic AMP","N-acetylglutamate","Glucose 1-P","AMP","Fructose 1-P"],3,"Made by adenylate kinase.");
+Q("reg","2018 Final","d","Which is an allosteric activator of PFK-1 in the fasting state?",["ATP","Fructose 2,6-bisphosphate","Pyruvate","AMP","N-acetyl glutamate"],3,"F-2,6-BP is low in the fasting liver.");
+Q("reg","2019 Final","d","Rising AMP stimulates which pathway by allosteric binding to one of its enzymes?",["Glycolysis","Glycogen synthesis","Gluconeogenesis","TCA cycle","FA synthesis"],0,"AMP activates PFK-1.");
+Q("reg","2023","","When ATP/ADP falls, AMP rises because it is made by:",["Pyruvate kinase","Phosphoglycerate kinase","Succinyl-CoA synthetase","Adenylate kinase","PFK-2"],3,"2 ADP ⇌ ATP + AMP.");
+Q("reg","2024","","Which molecule (1) rises when hepatocyte ATP/ADP declines and (2) allosterically down-regulates gluconeogenesis?",["AMP","Acetyl-CoA","Glucose 6-P","DHAP","Glycerol"],0,"It inhibits fructose 1,6-bisphosphatase.");
+Q("reg","2020, 2017 Final","hd","Which enzyme is activated by signal transduction starting with glucagon binding to hepatocytes?",["Glycogen phosphorylase","Debranching enzyme","Glycogenin","Glycogen synthase","Branching enzyme"],0,"Phosphorylation activates it.");
+Q("reg","2017, 2025, 2024, 2023, 2019 Final","hd","Which glycogen enzyme is activated by insulin signaling in hepatocytes?",["Glycogen phosphorylase","Debranching enzyme","Glycogenin","Glycogen synthase","Branching enzyme"],3,"Dephosphorylation activates it.");
+Q("reg","2023","","Glucagon binding to hepatocytes increases the activity of BOTH enzymes in which pair?",["Glycogen phosphorylase; fructose 1,6-bisphosphatase","Glycogen synthase; glucose 6-phosphatase","PFK-1; hexokinase","Adenylate kinase; pyruvate kinase","Glycogen synthase; PFK-1"],0,"Glycogenolysis and gluconeogenesis up.");
+Q("reg","2020, 2019 Final","hd","During fasting, glucagon stimulates gluconeogenesis by increasing the activity of:",["Hexokinase","Fructose 1,6-bisphosphatase","PFK-1","Pyruvate kinase","PDH"],1,"By lowering F-2,6-BP.");
+Q("reg","2023","","Which protein most allows free glucose to allosterically regulate glycogen phosphorylase in hepatocytes?",["Adenylate kinase","Hexokinase","GLUT-2","G-6-P dehydrogenase","Fructose 2,6-bisphosphatase"],2,"Blood glucose equilibrates across GLUT-2.");
+Q("reg","2019","d","Which has a high Km for glucose that lets hepatocytes monitor blood glucose and adjust glycogen phosphorylase in the fasting state?",["Hexokinase","GLUT-2","PFK-1","Glycogenin","Insulin"],1,"Slide 16.");
+Q("reg","2018","d","In the fed state, which is activated?",["Glycogen synthase","Glycogen phosphorylase","Branching enzyme","Debranching enzyme","Glycogenin"],0,"Insulin dephosphorylates it.");
+Q("reg","2018 Final","d","Which enzyme is more active after a 12-hour fast than 30 minutes after a meal?",["Glucose 6-phosphatase","Glycogen synthase","PFK-1","Acetyl-CoA carboxylase","Fatty acid synthase"],0,"Glucose release in the fasting state.");
+Q("reg","2020","d","In the fed state, which liver pathway is down-regulated by the insulin/glucagon ratio?",["FA synthesis","Gluconeogenesis","Glycogen synthesis","Glycolysis","VLDL formation"],1,"Slide 1.");
+Q("reg","2019, 2017","hd","During the fed state, all of these may occur in liver EXCEPT:",["FA synthesis","Glycogen synthesis","Glycolysis","VLDL formation","Gluconeogenesis"],4,"Gluconeogenesis is a fasting pathway.");
+Q("reg","Predicted","p","Protein kinases regulate enzymes by phosphorylating:",["Lysine and arginine","Surface –OH groups on serine and threonine","Cysteine thiols","The heme iron","Glutamate carboxyls"],1,"Slide 3.");
+Q("reg","Predicted","p","When the bifunctional enzyme PFK-2/FBP-2 is DEphosphorylated:",["FBP-2 is active and F-2,6-BP is destroyed","PFK-2 is active and F-2,6-BP is made","Both domains are inactive","Glycogen phosphorylase is activated","It becomes a GLUT"],1,"Insulin signaling activates the phosphatase.");
+Q("reg","Predicted","p","PFK-2 and FBP-2 are:",["Separate enzymes in different organelles","Two activities on a single polypeptide (the bifunctional enzyme)","Isozymes of PFK-1","Both kinases","Mitochondrial enzymes"],1,"Slide 10.");
+Q("reg","Predicted","p","Besides raising PFK-1’s affinity for F-6-P, F-2,6-BP lowers PFK-1’s affinity for:",["AMP and ADP","The allosteric inhibitors ATP and citrate","Glucose","Insulin","NADH"],1,"Slide 7.");
+Q("reg","Predicted","ph","Glucagon and epinephrine signaling affect the glycogen enzymes by:",["Activating glycogen synthase and inhibiting glycogen phosphorylase","Phosphorylating both: inactivating glycogen synthase and activating glycogen phosphorylase","Dephosphorylating both","Activating both","Degrading glycogenin"],1,"Opposite responses to the same phosphorylation.");
+Q("reg","Predicted","p","In skeletal muscle, glycogen phosphorylase is activated by:",["ATP and glucose","AMP and Ca²⁺","Insulin and G-6-P","Citrate","F-2,6-BP"],1,"Muscle breaks down glycogen for its own ATP needs; contraction releases Ca²⁺.");
+Q("reg","Predicted","p","In liver, free glucose inside the hepatocyte:",["Activates glycogen phosphorylase","Inhibits glycogen phosphorylase, signaling that blood glucose is still high","Activates PFK-2","Inhibits glycogen synthase","Activates glucose 6-phosphatase"],1,"Slide 16.");
+Q("reg","Predicted","p","Glucose 6-phosphate accumulation:",["Inhibits glycogen synthase","Activates glycogen synthase (substrate is available)","Activates glycogen phosphorylase","Has no effect on glycogen enzymes","Activates FBP-2"],1,"Slide 16; it also inhibits phosphorylase.");
+Q("reg","Predicted","p","AMP stimulates glycolysis in:",["Liver only","Muscle only","All cells","Red blood cells only","No cells"],2,"Slide 14.");
+
+/* ===== PPP ===== */
+Q("ppp","2020, 2017, 2025","hd","Increasing concentrations of which will most enhance oxidation of G-6-P by glucose 6-phosphate dehydrogenase?",["Pyruvate","Ribose 5-P","NADP⁺","AMP","NAD⁺"],2,"NADP⁺ allosterically activates G6PD.");
+Q("ppp","2019, 2019 Final","hd","Glucose 6-phosphate dehydrogenase is allosterically activated by:",["Pyruvate","Ribose 5-P","AMP","NADP⁺","NAD⁺"],3,"NADPH inhibits it.");
+Q("ppp","2018","d","G6PD of the pentose phosphate pathway is activated by:",["F-1,6-BP","F-2,6-BP","AMP","A decreasing NADPH/NADP⁺","Free glucose"],3,"Rising NADP⁺ (falling NADPH) means NADPH demand.");
+Q("ppp","2023","","Which ratio MOST directly determines whether G-6-P is bound by G6PD?",["Cytoplasmic ATP/ADP","Cytoplasmic NADPH/NADP⁺","Mitochondrial NAD⁺/NADH","Acetyl-CoA/CoA","Glutamate/α-KG"],1,"Slide 20.");
+Q("ppp","2025, 2019 Final, 2017 Final","hd","A cell has ample NADPH but needs ribose 5-phosphate. Which two glycolytic metabolites are siphoned off by the non-oxidative PPP?",["G-6-P and ATP","G-3-P and OAA","PEP and glycerol","Fructose 6-phosphate and glyceraldehyde 3-phosphate","Pyruvate and lactate"],3,"The non-oxidative reactions run in reverse.");
+Q("ppp","2018","d","When NADPH/NADP⁺ is high, a demand for ribose 5-P is met by:",["Activating G6PD","Gluconeogenesis","Decarboxylating glucose","Breaking down NADH","Reversing the non-oxidative reactions of the PPP"],4,"G6PD is inhibited by NADPH.");
+Q("ppp","2018 Final","d","When ribose 5-P is high, a demand for NADPH is met by:",["Activating G6PD","GAPDH","Oxidative decarboxylation of pyruvate","Pyruvate kinase","Reversing the non-oxidative PPP"],0,"Excess ribulose 5-P returns to glycolysis.");
+Q("ppp","2018","d","Which metabolic pathway takes place entirely in the cytosol?",["TCA cycle","Pyruvate → acetyl-CoA","Pentose phosphate pathway","β-Oxidation","Urea cycle"],2,"Slide 18.");
+Q("ppp","2017 Final","d","Glutathione reductase reduces oxidized glutathione (GSSG) using:",["Catalase","NADPH","FADH₂","Reduced glutathione","Cysteine"],1,"One of NADPH’s listed uses (H₂O₂ removal).");
+Q("ppp","Predicted","p","The pentose phosphate pathway produces:",["NADH and ATP","NADPH and ribose 5-phosphate","FADH₂ and CO₂ only","Acetyl-CoA","Lactate"],1,"Slide 18.");
+Q("ppp","Predicted","p","In the cytoplasm of cells with mitochondria:",["Both NAD⁺ and NADP⁺ pools are highly reduced","NAD⁺ is kept oxidized while NADP⁺ is kept highly reduced (NADPH/NADP⁺ ~10)","Both pools are oxidized","NADPH/NADP⁺ is ~0.01","NADH/NAD⁺ ~10"],1,"NAD⁺ for catabolism, NADPH for anabolism.");
+Q("ppp","Predicted","p","Roughly what share of the body’s NADPH comes from the pentose phosphate pathway?",["10%","~60%","100%","25%","90%"],1,"Most active in liver.");
+Q("ppp","Predicted","p","Which is NOT a listed use of NADPH?",["Fatty acid synthesis","Glutathione reductase","Cytochromes P450","NADPH oxidase in neutrophils","Complex I of oxphos"],4,"Complex I oxidizes NADH.");
+Q("ppp","Predicted","p","Ribose 5-phosphate from the PPP is used to make all of the following EXCEPT:",["Nucleotides","NAD⁺","FAD","Coenzyme A","Palmitate"],4,"Slide 18.");
+Q("ppp","Predicted","p","Each glucose 6-phosphate oxidized through the oxidative branch yields:",["1 NADPH","2 NADPH and 1 CO₂","2 NADH","1 ATP","2 NADPH and 2 CO₂"],1,"G6PD and 6-phosphogluconate DH each make one NADPH.");
+Q("ppp","Predicted","p","In the non-oxidative PPP, transketolases and transaldolases move, respectively:",["3-C and 2-C units","2-C and 3-C units","Phosphates and CO₂","Electrons and protons","1-C and 4-C units"],1,"Slide 21.");
+Q("ppp","Predicted","p","When ribose 5-P isn’t removed for nucleotide synthesis, rising ribulose 5-P:",["Inhibits G6PD","Drives the non-oxidative reactions toward F-6-P and G-3-P for glycolysis","Is exported to blood","Is converted to NADH","Activates PFK-2"],1,"Slide 21.");
+CARDS.push(
+["reg","Fed vs fasting liver","Fed (insulin): glycolysis ↑, glycogen synthesis ↑, glycogenolysis ↓, gluconeogenesis ↓. Fasting (glucagon): the reverse."],
+["reg","Protein kinases and phosphatases","Kinases phosphorylate Ser/Thr –OH; phosphatases remove the phosphate. Usually changes active-site affinity for substrate."],
+["reg","Glycogen synthase vs phosphorylase","Phosphorylation (glucagon/epinephrine) inactivates synthase and activates phosphorylase; insulin’s phosphatase does the reverse."],
+["reg","What F-2,6-BP does","Activates PFK-1 (↑ affinity for F-6-P, ↓ for ATP and citrate) and inhibits fructose 1,6-bisphosphatase."],
+["reg","Bifunctional enzyme","PFK-2 (makes F-2,6-BP) + FBP-2 (destroys it) on one chain. Dephosphorylated (insulin): PFK-2 active. Phosphorylated (glucagon): FBP-2 active."],
+["reg","AMP as a regulator","Made by adenylate kinase (2 ADP ⇌ ATP + AMP) as ATP falls; activates PFK-1, inhibits F-1,6-BPase."],
+["reg","Liver glycogen phosphorylase local control","Inhibited by free glucose (via GLUT-2) and G-6-P."],
+["reg","Muscle glycogen phosphorylase local control","Activated by AMP and Ca²⁺; inhibited by ATP and G-6-P."],
+["reg","G-6-P and glycogen synthase","G-6-P activates glycogen synthase in liver and muscle."],
+["ppp","PPP products and location","NADPH and ribose 5-P; cytoplasm; most active in liver; ~60% of body NADPH."],
+["ppp","Cytosolic redox pools","NAD⁺/NADH 10–700 (oxidized); NADPH/NADP⁺ ~10 (reduced)."],
+["ppp","Uses of NADPH","Synthesis of FA, cholesterol, isoprenoids, amino acids, nucleotides; glutathione reductase; P450s; NO synthase; neutrophil NADPH oxidase."],
+["ppp","Oxidative branch","G-6-P → (G6PD, NADPH) → 6-phosphoglucono-δ-lactone → 6-phosphogluconate → (NADPH, CO₂) → ribulose 5-P."],
+["ppp","G6PD regulation","Activated by NADP⁺; inhibited by NADPH. Set by NADPH demand."],
+["ppp","Non-oxidative branch","Transketolases move 2C, transaldolases move 3C; reversible; exchanges with F-6-P and G-3-P."],
+["ppp","Need ribose 5-P but not NADPH","Reverse the non-oxidative reactions, pulling F-6-P + G-3-P from glycolysis; regulated only by ribose 5-P demand."]
 );
 /* ---------- helpers ---------- */
 const $=(s,r)=> (r||document).querySelector(s);
