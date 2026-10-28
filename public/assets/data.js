@@ -32,8 +32,9 @@ const COURSE_NAMES = {
   "DENT 619":    "Materials Science",
   "DENT 620-1":  "Dental Morphology & Occlusion",
   "DENT 622-1":  "Problem-Oriented Dentistry",
+  "DENT 616-1A": "Caries I – Intro to Operative (Lecture)",
+  "DENT 616-1B": "Caries I – Intro to Operative (Lab)",
   "DENT 623-1":  "Clinical Problem Solving I",
-  "Operative":   "Introduction to Operative Dentistry",
   "DENT 642-1":  "Ethics & Professional Identity"
 };
 
@@ -98,19 +99,35 @@ const DEADLINES = [
   { date: "2026-10-29", title: "Lecture 2 — Structure & bonding in solids", course: "DENT 619", note: "1:00–3:00pm, D114 — watch the Canvas videos and finish the pretest first" },
   { date: "2026-10-21", title: "Final exam",                          course: "DENT 622-1",  note: "4:00–4:50pm, D113 — sessions 34–39" },
   { date: "2026-10-23", title: "Exam 3 / OSCE",                       course: "DENT 620-1",  note: "8:00am–12:00pm, D114 / Sim" },
+  { date: "2026-10-27", title: "Course begins — orientation",          course: "DENT 616-1A", note: "1:00–5:00pm, D113" },
 
   /* --- November --- */
   { date: "2026-11-05", title: "Lecture 3 — Physical & mechanical properties", course: "DENT 619", note: "1:00–3:00pm, Bench — pre-class videos and pretest due first" },
   { date: "2026-11-06", title: "Exam III — lectures 41–60",           course: "DENT 604",    note: "1:00pm, R354" },
   { date: "2026-11-09", title: "Exam 3 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
+  { date: "2026-11-12", title: "Instrument ID exam",                   course: "DENT 616-1A", note: "1:00–3:00pm, Bench Lab — 10% of the lecture grade" },
   { date: "2026-11-12", title: "Lecture 4 — Composites", course: "DENT 619", note: "3:00–5:00pm, D114 — note the later start time" },
   { date: "2026-11-10", title: "Ethics session 5",                    course: "DENT 642-1",  note: "1:00–3:00pm, D113 — career interview due beforehand" },
+  { date: "2026-11-24", title: "Practicals 1 & 2 — Class I amalgam",   course: "DENT 616-1B", note: "1:00–5:00pm, SIM Lab — prep then restoration, 6% each" },
   { date: "2026-11-27", title: "Thanksgiving — no class",             course: "",            note: "" },
 
   /* --- December --- */
   { date: "2026-12-02", title: "Exam IV — lectures 61–82",            course: "DENT 604",    note: "1:00pm, R354" },
   { date: "2026-12-08", title: "Final exam — lectures 1–82",          course: "DENT 604",    note: "1:00–4:00pm, R354 — comprehensive, 25% of grade" },
-  { date: "2026-12-10", title: "Exam 4 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" }
+  { date: "2026-12-07", title: "Practicals 3 & 4 — Class V composite",  course: "DENT 616-1B", note: "8:00am–12:00pm, SIM / Bench Lab — prep then restoration, 6% each" },
+  { date: "2026-12-07", title: "Midterm exam",                        course: "DENT 616-1A", note: "1:00–3:00pm, SIM Lab — 40% of the lecture grade" },
+  { date: "2026-12-10", title: "Exam 4 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
+
+  /* --- January 2027 --- */
+  { date: "2027-01-08", title: "Practicals 5 & 6 — Class II amalgam",  course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep then amalgam restoration, 9% each" },
+  { date: "2027-01-22", title: "Practicals 7 & 8 — Class II composite", course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep then composite restoration, 9% each" },
+
+  /* --- February 2027 --- */
+  { date: "2027-02-11", title: "CDCA board exam — no class",          course: "",            note: "" },
+  { date: "2027-02-18", title: "Practicals 9 & 10 — back-to-back Class II", course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep then restoration, 10% each" },
+  { date: "2027-02-22", title: "Practicals 11 & 12 — Class III composite", course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep and restoration with rubber dam, 10% each" },
+  { date: "2027-02-24", title: "Final written exam",                  course: "DENT 616-1A", note: "8:00–10:00am, Bench Lab — 50% of the lecture grade" },
+  { date: "2027-02-26", title: "Exam — topic TBD",                    course: "DENT 616-1B", note: "8:00am–12:00pm, SIM / Bench Lab — listed as TBD on the syllabus" }
 ];
 
 
@@ -196,11 +213,18 @@ const COURSES = [
     note: "6 credits. Tuesday mornings Grand Round (R154). No fixed exam dates. Compliance Office online training and quizzes must be completed by the medical center deadline to pass the course."
   },
   {
-    code: "Course number TBA",
-    name: "Introduction to Operative Dentistry",
-    instructor: "",
-    syllabus: "",
-    note: "Beginning this term. Schedule, grading, and exam dates will be added once the syllabus is posted."
+    code: "DENT 616-1A",
+    name: "Caries I – Intro to Operative Dentistry (Lecture)",
+    instructor: "Dr. Joanna Seo · jseo@umc.edu · D403 · 601-984-6030",
+    syllabus: "assets/syllabi/dent-616.docx",
+    note: "3 credits, running 10/27 through February. Caries detection and risk assessment, cavity preparation principles, instruments, and restorative materials. Instrument ID exam 10%, midterm 40%, final 50%. Attendance is taken in the first 10 minutes and a late arrival counts as an absence; an unreported absence costs three points off the final grade. 70% is required in the lecture and lab halves independently. Texts: Sturdevant's Art and Science of Operative Dentistry 7e; Schwartz, Fundamentals of Operative Dentistry 4e."
+  },
+  {
+    code: "DENT 616-1B",
+    name: "Caries I – Intro to Operative Dentistry (Lab)",
+    instructor: "Dr. Joanna Seo · jseo@umc.edu · D403 · 601-984-6030",
+    syllabus: "assets/syllabi/dent-616.docx",
+    note: "7 credits in SIM and Bench Lab. Graded entirely on twelve practical examinations: Class I amalgam (6% each), Class V composite (6% each), Class II amalgam and composite (9% each), back-to-back Class II (10% each), and Class III composite (10% each). Preparations must be checked and approved by faculty before restoring — restoring without approval fails that practical. Rubrics are shared during practice exercises. No notes, devices, or textbooks during practicals."
   },
   {
     code: "DENT 642-1",

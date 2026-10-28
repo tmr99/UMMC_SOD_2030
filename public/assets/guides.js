@@ -62,7 +62,7 @@ const STUDY_GUIDES = [
     course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
     exam:   "Exam 3",
     file:   "histology-exam-3.html",
-    desc:   "Organ Systems II & Embryology"
+    desc:   "Organ Systems II"
   },
   {
     course: "DENT 601A/B – Microscopic & Developmental Anatomy (Histology)",
