@@ -95,6 +95,30 @@ const STUDY_GUIDES = [
     desc:   "Lectures 61–82. Guide in progress."
   },
   {
+    course: "DENT 616-1A – Caries I / Intro to Operative",
+    exam:   "Midterm",
+    file:   "operative-midterm.html",
+    desc:   "Caries detection and risk assessment, fundamentals of operative, nomenclature, instruments, amalgam manipulation, Class I preparations, and bonding. Guide in progress."
+  },
+  {
+    course: "DENT 616-1A – Caries I / Intro to Operative",
+    exam:   "Final",
+    file:   "operative-final.html",
+    desc:   "Cumulative: everything from the midterm plus composites, glass ionomer, matrices, Class II and Class III preparations, and rubber dam isolation. Guide in progress."
+  },
+  {
+    course: "DENT 649-1 – Comprehensive General Dentistry Assessment",
+    exam:   "Midterm",
+    file:   "cgda-midterm.html",
+    desc:   "INBDE-format review across the D1 fall courses. Guide in progress."
+  },
+  {
+    course: "DENT 649-1 – Comprehensive General Dentistry Assessment",
+    exam:   "Final",
+    file:   "cgda-final.html",
+    desc:   "INBDE-format review across the full D1 year. Guide in progress."
+  },
+  {
     course: "DENT 620-1 – Dental Morphology & Occlusion",
     exam:   "Exam 1",
     file:   "morphology-exam-1.html",

@@ -35,7 +35,8 @@ const COURSE_NAMES = {
   "DENT 616-1A": "Caries I – Intro to Operative (Lecture)",
   "DENT 616-1B": "Caries I – Intro to Operative (Lab)",
   "DENT 623-1":  "Clinical Problem Solving I",
-  "DENT 642-1":  "Ethics & Professional Identity"
+  "DENT 642-1":  "Ethics & Professional Identity",
+  "DENT 649-1":  "Comprehensive General Dentistry Assessment I"
 };
 
 
@@ -89,6 +90,7 @@ const DEADLINES = [
   { date: "2026-10-01", title: "Impressions / casts — Group 1",       course: "DENT 620-1",  note: "1:00–5:00pm, Bench / Clinic" },
   { date: "2026-10-02", title: "Impressions / casts — Group 2",       course: "DENT 620-1",  note: "8:00am–12:00pm, Bench / Clinic" },
   { date: "2026-10-06", title: "Impressions / casts — Group 3",       course: "DENT 620-1",  note: "9:00am–12:00pm, Bench / Clinic" },
+  { date: "2026-10-06", title: "CGDA prep session 1",                  course: "DENT 649-1",  note: "3:00–5:00pm, D113" },
   { date: "2026-10-09", title: "Exam II — lectures 23–38",            course: "DENT 604",    note: "1:00pm, R354" },
   { date: "2026-10-14", title: "Exam 2 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
   { date: "2026-10-12", title: "Quiz 5",                              course: "DENT 622-1",  note: "3:00pm, D113 — sessions 27–33" },
@@ -103,6 +105,7 @@ const DEADLINES = [
 
   /* --- November --- */
   { date: "2026-11-05", title: "Lecture 3 — Physical & mechanical properties", course: "DENT 619", note: "1:00–3:00pm, Bench — pre-class videos and pretest due first" },
+  { date: "2026-11-05", title: "CGDA prep session 2",                  course: "DENT 649-1",  note: "3:00–5:00pm, D113" },
   { date: "2026-11-06", title: "Exam III — lectures 41–60",           course: "DENT 604",    note: "1:00pm, R354" },
   { date: "2026-11-09", title: "Exam 3 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
   { date: "2026-11-12", title: "Instrument ID exam",                   course: "DENT 616-1A", note: "1:00–3:00pm, Bench Lab — 10% of the lecture grade" },
@@ -117,6 +120,7 @@ const DEADLINES = [
   { date: "2026-12-07", title: "Practicals 3 & 4 — Class V composite",  course: "DENT 616-1B", note: "8:00am–12:00pm, SIM / Bench Lab — prep then restoration, 6% each" },
   { date: "2026-12-07", title: "Midterm exam",                        course: "DENT 616-1A", note: "1:00–3:00pm, SIM Lab — 40% of the lecture grade" },
   { date: "2026-12-10", title: "Exam 4 — practical + written",        course: "DENT 601A/B", note: "Practical 8:30, written 10:05, SM 326" },
+  { date: "2026-12-10", title: "Midterm — INBDE format",              course: "DENT 649-1",  note: "1:00–3:00pm, D113 — 25% of the grade; same day as the Histology exam" },
 
   /* --- January 2027 --- */
   { date: "2027-01-08", title: "Practicals 5 & 6 — Class II amalgam",  course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep then amalgam restoration, 9% each" },
@@ -127,7 +131,14 @@ const DEADLINES = [
   { date: "2027-02-18", title: "Practicals 9 & 10 — back-to-back Class II", course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep then restoration, 10% each" },
   { date: "2027-02-22", title: "Practicals 11 & 12 — Class III composite", course: "DENT 616-1B", note: "8:00am–12:00pm, SIM Lab — prep and restoration with rubber dam, 10% each" },
   { date: "2027-02-24", title: "Final written exam",                  course: "DENT 616-1A", note: "8:00–10:00am, Bench Lab — 50% of the lecture grade" },
-  { date: "2027-02-26", title: "Exam — topic TBD",                    course: "DENT 616-1B", note: "8:00am–12:00pm, SIM / Bench Lab — listed as TBD on the syllabus" }
+  { date: "2027-02-26", title: "Exam — topic TBD",                    course: "DENT 616-1B", note: "8:00am–12:00pm, SIM / Bench Lab — listed as TBD on the syllabus" },
+
+  /* --- March 2027 --- */
+  { date: "2027-03-25", title: "CGDA prep session 3",                  course: "DENT 649-1",  note: "3:00–5:00pm, D114 — date may shift around other courses" },
+
+  /* --- April 2027 --- */
+  { date: "2027-04-15", title: "CGDA prep session 4",                  course: "DENT 649-1",  note: "1:00–3:00pm, D114 — date may shift around other courses" },
+  { date: "2027-04-29", title: "Final exam — INBDE format",            course: "DENT 649-1",  note: "8:00–11:00am, D114 — 75% of the grade, covers the whole D1 year" }
 ];
 
 
@@ -225,6 +236,13 @@ const COURSES = [
     instructor: "Dr. Joanna Seo · jseo@umc.edu · D403 · 601-984-6030",
     syllabus: "assets/syllabi/dent-616.docx",
     note: "7 credits in SIM and Bench Lab. Graded entirely on twelve practical examinations: Class I amalgam (6% each), Class V composite (6% each), Class II amalgam and composite (9% each), back-to-back Class II (10% each), and Class III composite (10% each). Preparations must be checked and approved by faculty before restoring — restoring without approval fails that practical. Rubrics are shared during practice exercises. No notes, devices, or textbooks during practicals."
+  },
+  {
+    code: "DENT 649-1",
+    name: "Comprehensive General Dentistry Assessment I",
+    instructor: "Dr. James Lott · jrlott@umc.edu · D501 · 601-984-6015",
+    syllabus: "assets/syllabi/dent-649.docx",
+    note: "1 credit, graded pass/fail at 70%. A cumulative assessment of the whole D1 year — every preclinical, clinical, and biomedical course — written in INBDE format. Midterm 12/10 (25%) and final 4/29 (75%), with two prep sessions per semester. Questions are submitted by course directors across the departments, so old course material is the study material."
   },
   {
     code: "DENT 642-1",
