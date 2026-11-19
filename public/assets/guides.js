@@ -95,6 +95,12 @@ const STUDY_GUIDES = [
     desc:   "Lectures 61–82. Guide in progress."
   },
   {
+    course: "DENT 604 – Biochemistry",
+    exam:   "Final Exam",
+    file:   "biochem-final.html",
+    desc:   "Lectures 1–82. Guide in progress."
+  },
+  {
     course: "DENT 616-1A – Caries I / Intro to Operative",
     exam:   "Midterm",
     file:   "operative-midterm.html",
